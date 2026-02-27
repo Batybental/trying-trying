@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PoE Gem Planner</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#0a0a0a;--bg2:#111;--bg3:#181818;--bg4:#1f1f1f;
+    --bd:#252525;--bd2:#333;
+    --tx:#e0e0e0;--tx2:#888;--tx3:#555;
+    --green:#4caf72;--yellow:#d4a836;--purple:#9b7fd4;--red:#e05555;--blue:#3a8fff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--tx);font-family:'Inter',system-ui,sans-serif;font-size:14px;min-height:100vh;}
+  header{display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:48px;background:var(--bg2);border-bottom:1px solid var(--bd);}
+  .h-title{font-size:15px;font-weight:600;}
+  .h-title span{color:var(--tx2);font-weight:400;font-size:13px;margin-left:8px;}
+  .h-sub{font-size:12px;color:var(--tx3);}
+  .app{display:grid;grid-template-columns:220px 1fr 280px;height:calc(100vh - 48px);}
+  .left{background:var(--bg2);border-right:1px solid var(--bd);padding:14px 12px;overflow-y:auto;display:flex;flex-direction:column;gap:18px;}
+  .lbl{font-size:11px;font-weight:600;letter-spacing:.7px;text-transform:uppercase;color:var(--tx3);margin-bottom:7px;}
+  .class-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;}
+  .cbtn{padding:7px 4px;border:1px solid var(--bd);background:var(--bg3);color:var(--tx2);font-family:inherit;font-size:12px;font-weight:500;cursor:pointer;border-radius:3px;transition:all .12s;text-align:center;}
+  .cbtn:hover{border-color:var(--bd2);color:var(--tx);}
+  .cbtn.active{border-color:var(--blue);background:rgba(58,143,255,.1);color:#7dbfff;}
+  .filter-group{display:flex;flex-direction:column;gap:3px;}
+  .ftoggle{display:flex;align-items:center;gap:8px;cursor:pointer;padding:5px 6px;border-radius:3px;transition:background .1s;user-select:none;}
+  .ftoggle:hover{background:var(--bg3);}
+  .ftoggle input{display:none;}
+  .chk{width:14px;height:14px;border:1px solid var(--bd2);background:var(--bg3);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .12s;}
+  .ftoggle input:checked + .chk{background:var(--blue);border-color:var(--blue);}
+  .chk::after{content:'✓';color:#fff;font-size:10px;display:none;font-weight:700;}
+  .ftoggle input:checked + .chk::after{display:block;}
+  .flbl{font-size:13px;}
+  .search{width:100%;padding:7px 10px;background:var(--bg3);border:1px solid var(--bd);color:var(--tx);font-family:inherit;font-size:13px;outline:none;border-radius:3px;transition:border-color .12s;}
+  .search:focus{border-color:var(--blue);}
+  .search::placeholder{color:var(--tx3);}
+  .info{font-size:12px;color:var(--tx3);line-height:1.7;padding:10px;background:var(--bg3);border:1px solid var(--bd);border-radius:3px;}
+  .info a{color:var(--tx2);}
+  .main{background:var(--bg);overflow-y:auto;display:flex;flex-direction:column;}
+  .stats{display:flex;height:36px;align-items:center;background:var(--bg2);border-bottom:1px solid var(--bd);padding:0 16px;flex-shrink:0;}
+  .si{font-size:12px;color:var(--tx2);padding:0 14px;border-right:1px solid var(--bd);height:100%;display:flex;align-items:center;gap:5px;}
+  .si:first-child{padding-left:0;}.si:last-child{border-right:none;}
+  .sv{color:var(--tx);font-weight:600;}
+  .thead{display:grid;grid-template-columns:1fr 80px 160px 160px 70px;padding:8px 16px;background:var(--bg2);border-bottom:1px solid var(--bd);font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--tx3);position:sticky;top:0;z-index:10;flex-shrink:0;}
+  .thead span{cursor:pointer;user-select:none;transition:color .1s;}
+  .thead span:hover{color:var(--tx);}
+  .glist{flex:1;}
+  .grow{display:grid;grid-template-columns:1fr 80px 160px 160px 70px;padding:8px 16px;border-bottom:1px solid var(--bd);align-items:center;cursor:pointer;transition:background .08s;}
+  .grow:hover{background:var(--bg2);}
+  .grow.ck{background:rgba(76,175,114,.06);}
+  .grow.ck:hover{background:rgba(76,175,114,.1);}
+  .gname{display:flex;align-items:center;gap:8px;min-width:0;}
+  .gbox{width:13px;height:13px;border:1px solid var(--bd2);background:var(--bg3);border-radius:2px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .1s;}
+  .grow.ck .gbox{background:var(--green);border-color:var(--green);}
+  .gbox::after{content:'✓';color:#fff;font-size:9px;display:none;font-weight:700;}
+  .grow.ck .gbox::after{display:block;}
+  .glink{color:var(--tx);text-decoration:none;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:color .1s;}
+  .glink:hover{color:var(--blue);}
+  .badge{font-size:11px;font-weight:500;padding:2px 6px;border-radius:2px;}
+  .badge.skill{background:rgba(212,168,54,.12);color:var(--yellow);border:1px solid rgba(212,168,54,.2);}
+  .badge.sup{background:rgba(155,127,212,.12);color:var(--purple);border:1px solid rgba(155,127,212,.2);}
+  .stag{font-size:12px;display:flex;align-items:center;gap:5px;}
+  .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+  .dg{background:var(--green);}.dy{background:var(--yellow);}.dd{background:var(--tx3);}
+  .stag.q{color:var(--green);}.stag.v{color:var(--yellow);}.stag.d{color:var(--tx3);font-style:italic;}
+  .qcell{font-size:12px;color:var(--tx2);}
+  .apill{display:inline-block;padding:1px 5px;background:var(--bg4);border:1px solid var(--bd2);border-radius:2px;font-size:10px;font-weight:600;color:var(--tx3);margin-right:5px;}
+  .ccell{font-size:12px;}
+  .cfree{color:var(--green);font-weight:500;}
+  .calt{color:var(--yellow);}
+  .calt small{color:var(--tx3);font-size:10px;margin-left:2px;}
+  .cnone{color:var(--tx3);}
+  .sbox{display:flex;flex-direction:column;align-items:center;justify-content:center;height:300px;gap:12px;color:var(--tx3);}
+  .spin{width:28px;height:28px;border:2px solid var(--bd2);border-top-color:var(--blue);border-radius:50%;animation:sp .7s linear infinite;}
+  @keyframes sp{to{transform:rotate(360deg);}}
+  .sbox p{font-size:13px;}
+  .right{background:var(--bg2);border-left:1px solid var(--bd);display:flex;flex-direction:column;overflow:hidden;}
+  .cart-h{padding:12px 14px;border-bottom:1px solid var(--bd);flex-shrink:0;}
+  .cart-t{font-size:13px;font-weight:600;margin-bottom:4px;}
+  .cart-m{font-size:12px;color:var(--tx2);display:flex;justify-content:space-between;}
+  .cart-m .tot{color:var(--yellow);font-weight:500;}
+  .clist{flex:1;overflow-y:auto;}
+  .cseclbl{padding:8px 14px 4px;font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;}
+  .cseclbl.f{color:var(--green);}.cseclbl.b{color:var(--yellow);}
+  .citem{display:flex;align-items:center;padding:6px 14px;gap:8px;border-bottom:1px solid var(--bd);}
+  .ci-info{flex:1;min-width:0;}
+  .ci-name{font-size:13px;color:var(--tx);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .ci-meta{font-size:11px;color:var(--tx3);margin-top:1px;}
+  .ci-cost{font-size:12px;color:var(--yellow);white-space:nowrap;flex-shrink:0;}
+  .ci-cost.f{color:var(--green);}
+  .cremove{width:18px;height:18px;background:none;border:1px solid transparent;color:var(--tx3);cursor:pointer;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border-radius:2px;transition:all .1s;}
+  .cremove:hover{background:rgba(224,85,85,.15);border-color:rgba(224,85,85,.4);color:var(--red);}
+  .cempty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:200px;gap:8px;color:var(--tx3);}
+  .cempty-icon{font-size:28px;opacity:.4;}
+  .cempty p{font-size:12px;text-align:center;line-height:1.6;}
+  .cacts{padding:10px 14px;border-top:1px solid var(--bd);display:flex;flex-direction:column;gap:6px;flex-shrink:0;}
+  .btn{padding:8px 14px;font-family:inherit;font-size:12px;font-weight:500;cursor:pointer;transition:all .12s;border-radius:3px;width:100%;}
+  .btn-p{background:var(--blue);color:#fff;border:1px solid var(--blue);}
+  .btn-p:hover{background:#5aa0ff;}
+  .btn-s{background:transparent;color:var(--tx2);border:1px solid var(--bd);}
+  .btn-s:hover{border-color:var(--bd2);color:var(--tx);}
+  .btn:disabled{opacity:.35;cursor:not-allowed;}
+  .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(60px);background:var(--bg4);border:1px solid var(--bd2);color:var(--tx);padding:8px 18px;font-size:13px;border-radius:4px;transition:transform .25s;z-index:100;pointer-events:none;}
+  .toast.show{transform:translateX(-50%) translateY(0);}
+  ::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:transparent;}::-webkit-scrollbar-thumb{background:var(--bd2);border-radius:2px;}
+  @media(max-width:900px){.app{grid-template-columns:1fr;height:auto;}.main{height:60vh;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="h-title">PoE Gem Planner <span>Path of Exile 1</span></div>
+  <div class="h-sub">Live data from poewiki.net</div>
+</header>
+<div class="app">
+  <aside class="left">
+    <div>
+      <div class="lbl">Character Class</div>
+      <div class="class-grid">
+        <button class="cbtn active" data-class="Marauder">Marauder</button>
+        <button class="cbtn" data-class="Ranger">Ranger</button>
+        <button class="cbtn" data-class="Witch">Witch</button>
+        <button class="cbtn" data-class="Duelist">Duelist</button>
+        <button class="cbtn" data-class="Templar">Templar</button>
+        <button class="cbtn" data-class="Shadow">Shadow</button>
+        <button class="cbtn" data-class="Scion" style="grid-column:span 2">Scion</button>
+      </div>
+    </div>
+    <div>
+      <div class="lbl">Search</div>
+      <input class="search" id="searchInput" placeholder="Gem name...">
+    </div>
+    <div>
+      <div class="lbl">Source</div>
+      <div class="filter-group">
+        <label class="ftoggle"><input type="checkbox" id="fQuest" checked><span class="chk"></span><span class="flbl" style="color:var(--green)">&#9679; Quest reward (free)</span></label>
+        <label class="ftoggle"><input type="checkbox" id="fVendor" checked><span class="chk"></span><span class="flbl" style="color:var(--yellow)">&#9679; Buy from vendor</span></label>
+        <label class="ftoggle"><input type="checkbox" id="fDrop" checked><span class="chk"></span><span class="flbl" style="color:var(--tx3)">&#9679; Drop / other</span></label>
+      </div>
+    </div>
+    <div>
+      <div class="lbl">Gem Type</div>
+      <div class="filter-group">
+        <label class="ftoggle"><input type="checkbox" id="fSkill" checked><span class="chk"></span><span class="flbl">Skill Gems</span></label>
+        <label class="ftoggle"><input type="checkbox" id="fSup" checked><span class="chk"></span><span class="flbl">Support Gems</span></label>
+      </div>
+    </div>
+    <div style="margin-top:auto">
+      <div class="info">
+        Data from <a href="https://www.poewiki.net" target="_blank">poewiki.net</a> Cargo API.<br><br>
+        Cost in Alteration Orbs is estimated from required level. Actual cost scales with your character level.
+      </div>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="stats">
+      <div class="si">Shown: <span class="sv" id="stTotal">&#8212;</span></div>
+      <div class="si">Free: <span class="sv" id="stFree">&#8212;</span></div>
+      <div class="si">To buy: <span class="sv" id="stBuy">&#8212;</span></div>
+    </div>
+    <div class="thead">
+      <span onclick="sortBy('name')">Gem &#8597;</span>
+      <span onclick="sortBy('type')">Type &#8597;</span>
+      <span onclick="sortBy('source')">Source &#8597;</span>
+      <span onclick="sortBy('quest')">Quest / Act &#8597;</span>
+      <span>Cost</span>
+    </div>
+    <div class="glist" id="gemList">
+      <div class="sbox"><div class="spin"></div><p>Loading data from poewiki.net...</p></div>
+    </div>
+  </main>
+  <aside class="right">
+    <div class="cart-h">
+      <div class="cart-t">Shopping List</div>
+      <div class="cart-m"><span id="cCount">0 gems selected</span><span class="tot" id="cTotal"></span></div>
+    </div>
+    <div class="clist" id="cartList">
+      <div class="cempty"><div class="cempty-icon">&#128142;</div><p>Click gems to add them<br>to your list</p></div>
+    </div>
+    <div class="cacts">
+      <button class="btn btn-p" id="btnCopy" disabled onclick="copyList()">Copy list</button>
+      <button class="btn btn-s" id="btnClear" disabled onclick="clearCart()">Clear</button>
+    </div>
+  </aside>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const API='https://www.poewiki.net/w/api.php';
+let allGems=[],checked=new Set(),sortKey='name',sortDir=1,cls='Marauder';
+function estCost(lvl){return Math.max(1,Math.floor((lvl||1)/10));}
+async function cq(p){
+  const u=new URL(API);
+  u.searchParams.set('action','cargoquery');u.searchParams.set('format','json');u.searchParams.set('origin','*');
+  for(const[k,v]of Object.entries(p))u.searchParams.set(k,v);
+  return(await(await fetch(u)).json()).cargoquery?.map(r=>r.title)||[];
+}
+async function cqAll(p){
+  let off=0,res=[];
+  while(true){const rows=await cq({...p,limit:500,offset:off});res=res.concat(rows);if(rows.length<500)break;off+=500;}
+  return res;
+}
+function parseCls(s){return s?s.split(/[,;|/\u0000-\u001F]+/).map(x=>x.trim()).filter(Boolean):[];}
+async function load(){
+  document.getElementById('gemList').innerHTML='<div class="sbox"><div class="spin"></div><p>Loading data from poewiki.net...</p></div>';
+  try{
+    const[qr,vr,ir]=await Promise.all([
+      cqAll({tables:'quest_rewards',fields:'quest_rewards._pageName=gem,quest_rewards.act,quest_rewards.quest,quest_rewards.classes',where:'quest_rewards.act IS NOT NULL',order_by:'quest_rewards.act ASC'}),
+      cqAll({tables:'vendor_rewards',fields:'vendor_rewards._pageName=gem,vendor_rewards.act,vendor_rewards.quest,vendor_rewards.classes,vendor_rewards.npc',where:'vendor_rewards.act IS NOT NULL',order_by:'vendor_rewards.act ASC'}),
+      cqAll({tables:'items',fields:'items._pageName=gem,items.name,items.required_level,items.tags',where:'items.class_id="Active Skill Gem" OR items.class_id="Support Skill Gem"'}),
+    ]);
+    const gi={};
+    for(const r of ir)gi[r.gem||'']={name:r.name||r.gem||'',lvl:parseInt(r.required_level)||1,sup:(r.tags||'').toLowerCase().includes('support')};
+    const qm={},vm={};
+    for(const r of qr){const g=r.gem||'';(qm[g]=qm[g]||[]).push({act:parseInt(r.act)||1,quest:r.quest||'',classes:parseCls(r.classes)});}
+    for(const r of vr){const g=r.gem||'';(vm[g]=vm[g]||[]).push({act:parseInt(r.act)||1,quest:r.quest||'',npc:r.npc||'',classes:parseCls(r.classes)});}
+    const keys=new Set([...Object.keys(qm),...Object.keys(vm)]);
+    allGems=[];
+    for(const k of keys){if(!k)continue;const i=gi[k]||{name:k,lvl:1,sup:false};allGems.push({key:k,name:i.name,lvl:i.lvl,sup:i.sup,qe:qm[k]||[],ve:vm[k]||[]});}
+    allGems.sort((a,b)=>a.name.localeCompare(b.name));
+    render();
+  }catch(e){
+    console.error(e);
+    document.getElementById('gemList').innerHTML='<div class="sbox"><p style="color:var(--red)">Failed to load data. Check console.</p><button class="btn btn-s" onclick="load()" style="margin-top:12px;width:120px">Retry</button></div>';
+  }
+}
+function gemSrc(gem,c){
+  const fq=gem.qe.find(e=>!e.classes.length||e.classes.some(x=>x.toLowerCase()===c.toLowerCase()));
+  if(fq)return{type:'quest',e:fq};
+  const fv=gem.ve.find(e=>!e.classes.length||e.classes.some(x=>x.toLowerCase()===c.toLowerCase()));
+  if(fv)return{type:'vendor',e:fv};
+  if(gem.qe.length||gem.ve.length){const a=gem.ve[0]||gem.qe[0];return{type:(a?.act||99)<=3?'siosa':'lily',e:a};}
+  return{type:'drop',e:null};
+}
+function sord(t){return{quest:0,vendor:1,siosa:2,lily:3,drop:4}[t]??5;}
+function render(){
+  const s=document.getElementById('searchInput').value.trim().toLowerCase();
+  const sq=document.getElementById('fQuest').checked,sv=document.getElementById('fVendor').checked;
+  const sd=document.getElementById('fDrop').checked,sk=document.getElementById('fSkill').checked,ss=document.getElementById('fSup').checked;
+  let gems=allGems.filter(g=>g.sup?ss:sk).filter(g=>!s||g.name.toLowerCase().includes(s)).map(g=>({...g,s:gemSrc(g,cls)})).filter(g=>{const t=g.s.type;return(t==='quest'&&sq)||(('vendor siosa lily'.includes(t))&&sv)||(t==='drop'&&sd);});
+  gems.sort((a,b)=>{
+    let va,vb;
+    if(sortKey==='name'){va=a.name;vb=b.name;}else if(sortKey==='type'){va=a.sup?1:0;vb=b.sup?1:0;}
+    else if(sortKey==='source'){va=sord(a.s.type);vb=sord(b.s.type);}else if(sortKey==='quest'){va=a.s.e?.act||99;vb=b.s.e?.act||99;}else{va=a.name;vb=b.name;}
+    return va<vb?-sortDir:va>vb?sortDir:0;
+  });
+  document.getElementById('stTotal').textContent=gems.length;
+  document.getElementById('stFree').textContent=gems.filter(g=>g.s.type==='quest').length;
+  document.getElementById('stBuy').textContent=gems.filter(g=>g.s.type!=='quest'&&g.s.type!=='drop').length;
+  if(!gems.length){document.getElementById('gemList').innerHTML='<div class="sbox"><p>No gems match the current filters.</p></div>';return;}
+  document.getElementById('gemList').innerHTML=gems.map(gem=>{
+    const ck=checked.has(gem.key),c=estCost(gem.lvl),t=gem.s.type;
+    const wiki='https://www.poewiki.net/wiki/'+encodeURIComponent(gem.key.replace(/ /g,'_'));
+    let sh='',ch='',qh='';
+    if(t==='quest'){sh='<span class="stag q"><span class="dot dg"></span>Quest reward</span>';ch='<span class="cfree">Free</span>';qh=gem.s.e?'<span class="apill">Act '+gem.s.e.act+'</span>'+eh(gem.s.e.quest):'';}
+    else if(t==='vendor'){sh='<span class="stag v"><span class="dot dy"></span>'+eh(gem.s.e?.npc||'Vendor')+'</span>';ch='<span class="calt">'+c+'<small>Alt</small></span>';qh=gem.s.e?'<span class="apill">Act '+gem.s.e.act+'</span>'+eh(gem.s.e.quest):'';}
+    else if(t==='siosa'){sh='<span class="stag v"><span class="dot dy"></span>Siosa</span>';ch='<span class="calt">'+c+'<small>Alt</small></span>';qh='<span class="apill">Act 3</span>A Fixture of Fate';}
+    else if(t==='lily'){sh='<span class="stag v"><span class="dot dy"></span>Lilly Roth</span>';ch='<span class="calt">'+c+'<small>Alt</small></span>';qh='<span class="apill">Act 6+</span>Fallen from Grace';}
+    else{sh='<span class="stag d"><span class="dot dd"></span>Drop only</span>';ch='<span class="cnone">&#8212;</span>';}
+    return '<div class="grow'+(ck?' ck':'')+'" onclick="tog(\''+ea(gem.key)+'\','+c+')" data-gem="'+ea(gem.key)+'">'
+      +'<div class="gname"><div class="gbox"></div><a class="glink" href="'+wiki+'" target="_blank" onclick="event.stopPropagation()">'+eh(gem.name)+'</a></div>'
+      +'<div><span class="badge '+(gem.sup?'sup':'skill')+'">'+(gem.sup?'Support':'Skill')+'</span></div>'
+      +'<div>'+sh+'</div><div class="qcell">'+qh+'</div><div class="ccell">'+ch+'</div></div>';
+  }).join('');
+  renderCart();
+}
+function tog(key,cost){
+  checked.has(key)?checked.delete(key):checked.add(key);
+  document.querySelector('[data-gem="'+ea(key)+'"]')?.classList.toggle('ck',checked.has(key));
+  renderCart();
+}
+function renderCart(){
+  const cg=allGems.filter(g=>checked.has(g.key)).map(g=>{const s=gemSrc(g,cls);return{...g,s,cost:s.type==='quest'?0:estCost(g.lvl)};});
+  const free=cg.filter(g=>g.s.type==='quest'),buy=cg.filter(g=>g.s.type!=='quest');
+  const tot=buy.reduce((s,g)=>s+g.cost,0);
+  document.getElementById('cCount').textContent=cg.length+' gem'+(cg.length!==1?'s':'')+' selected';
+  document.getElementById('cTotal').textContent=tot>0?'~'+tot+' Alt':'';
+  document.getElementById('btnCopy').disabled=cg.length===0;
+  document.getElementById('btnClear').disabled=cg.length===0;
+  if(!cg.length){document.getElementById('cartList').innerHTML='<div class="cempty"><div class="cempty-icon">&#128142;</div><p>Click gems to add them<br>to your list</p></div>';return;}
+  let h='';
+  if(free.length){h+='<div class="cseclbl f">Quest Rewards</div>';h+=free.map(g=>'<div class="citem"><div class="ci-info"><div class="ci-name">'+eh(g.name)+'</div><div class="ci-meta">Act '+(g.s.e?.act||'?')+' &middot; '+eh(g.s.e?.quest||'&#8212;')+'</div></div><span class="ci-cost f">Free</span><button class="cremove" onclick="tog(\''+ea(g.key)+'\',0)">&#x2715;</button></div>').join('');}
+  if(buy.length){
+    h+='<div class="cseclbl b" style="margin-top:4px">To Purchase</div>';
+    h+=buy.map(g=>{
+      const m=g.s.type==='vendor'?eh(g.s.e?.npc||'&#8212;')+' &middot; Act '+(g.s.e?.act||'?'):g.s.type==='siosa'?'Siosa &middot; Act 3':g.s.type==='lily'?'Lilly Roth &middot; Act 6+':'Drop only';
+      return '<div class="citem"><div class="ci-info"><div class="ci-name">'+eh(g.name)+'</div><div class="ci-meta">'+m+'</div></div><div class="ci-cost">~'+g.cost+' Alt</div><button class="cremove" onclick="tog(\''+ea(g.key)+'\','+g.cost+')">&#x2715;</button></div>';
+    }).join('');
+  }
+  document.getElementById('cartList').innerHTML=h;
+}
+function clearCart(){checked.clear();document.querySelectorAll('.grow.ck').forEach(r=>r.classList.remove('ck'));renderCart();}
+function copyList(){
+  const cg=allGems.filter(g=>checked.has(g.key)).map(g=>{const s=gemSrc(g,cls);return{...g,s,cost:s.type==='quest'?0:estCost(g.lvl)};});
+  const free=cg.filter(g=>g.s.type==='quest'),buy=cg.filter(g=>g.s.type!=='quest');
+  let t='=== PoE Gem Planner - '+cls+' ===\n\n';
+  if(free.length){t+='QUEST REWARDS (FREE):\n';free.forEach(g=>{t+='  - '+g.name+' - Act '+(g.s.e?.act||'?')+': '+(g.s.e?.quest||'-')+'\n';});t+='\n';}
+  if(buy.length){
+    t+='TO PURCHASE:\n';
+    buy.forEach(g=>{const w=g.s.type==='vendor'?(g.s.e?.npc||'-')+' (Act '+(g.s.e?.act||'?')+')':g.s.type==='siosa'?'Siosa (A Fixture of Fate)':g.s.type==='lily'?'Lilly Roth (Act 6+)':'Drop only';t+='  - '+g.name+' - '+w+' - ~'+g.cost+' Alteration Orb'+(g.cost!==1?'s':'')+'\n';});
+    t+='\nEstimated total: ~'+buy.reduce((s,g)=>s+g.cost,0)+' Alteration Orbs\n';
+  }
+  navigator.clipboard.writeText(t).then(()=>showToast('Copied!')).catch(()=>prompt('Copy:',t));
+}
+function sortBy(k){sortKey===k?sortDir*=-1:(sortKey=k,sortDir=1);render();}
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.cbtn').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');cls=b.dataset.class;render();
+}));
+document.getElementById('searchInput').addEventListener('input',render);
+['fQuest','fVendor','fDrop','fSkill','fSup'].forEach(id=>document.getElementById(id).addEventListener('change',render));
+function eh(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function ea(s){return String(s).replace(/'/g,"\\'").replace(/"/g,'&quot;');}
+function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200);}
+load();
+</script>
+</body>
+</html>
