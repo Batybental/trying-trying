@@ -61,18 +61,16 @@
   .gem-row:hover{background:rgba(255,255,255,.02);}
   .gem-row.in-list{background:rgba(58,143,255,.06);}
   .gem-row.in-list:hover{background:rgba(58,143,255,.1);}
-  .gem-row.owned{background:rgba(76,175,114,.05);opacity:.5;}
-  .gem-row.owned:hover{opacity:.75;}
   .row-icon{width:13px;height:13px;border:1px solid var(--bd2);border-radius:2px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;color:transparent;transition:all .1s;flex-shrink:0;}
   .gem-row.in-list .row-icon{background:var(--blue);border-color:var(--blue);color:#fff;}
-  .gem-row.owned .row-icon{background:var(--green);border-color:var(--green);color:#fff;}
   .name-cell{display:flex;align-items:center;gap:7px;min-width:0;}
-  .name-cell a{color:var(--tx);text-decoration:none;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-  .name-cell a:hover{color:var(--blue);}
-  .owned-btn{display:none;width:15px;height:15px;border:1px solid var(--bd2);background:none;border-radius:2px;cursor:pointer;font-size:9px;color:var(--tx3);align-items:center;justify-content:center;flex-shrink:0;transition:all .1s;padding:0;margin-left:auto;}
-  .gem-row:hover .owned-btn,.gem-row.owned .owned-btn{display:flex;}
-  .owned-btn:hover{border-color:var(--green);color:var(--green);}
-  .gem-row.owned .owned-btn{color:var(--green);border-color:var(--green);}
+  /* gem colors by attribute */
+  .name-cell a{text-decoration:none;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .name-cell a:hover{filter:brightness(1.4);}
+  .gc-str   .name-cell a{color:#c47a3a;}
+  .gc-dex   .name-cell a{color:#54a860;}
+  .gc-int   .name-cell a{color:#6b9fd4;}
+  .gc-gen    .name-cell a{color:var(--tx2);}
   .type-cell{font-size:11px;font-weight:500;}
   .type-cell.skill{color:#d4a836;}
   .type-cell.support{color:#9b7fd4;}
@@ -106,14 +104,18 @@
   .cart-total{color:var(--yellow);}
   .cart-list{flex:1;overflow-y:auto;padding:4px 0;}
   .cart-sec{padding:5px 14px 2px;font-size:10px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;}
-  .cart-sec.s-free{color:var(--green);}
+  .cart-sec.s-quest{color:var(--green);}
   .cart-sec.s-buy{color:var(--yellow);}
   .cart-sec.s-owned{color:#6af;}
   .cart-item{display:flex;align-items:center;padding:5px 14px;border-bottom:1px solid rgba(37,37,37,.5);gap:6px;}
   .ci-info{flex:1;min-width:0;}
   .ci-name{font-size:12px;color:var(--tx);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .ci-meta{font-size:10px;color:var(--tx3);margin-top:1px;}
-  .ci-cost{font-size:11px;color:var(--yellow);white-space:nowrap;flex-shrink:0;}
+  .ci-cost{font-size:11px;white-space:nowrap;flex-shrink:0;}
+  /* owned toggle button in cart */
+  .ci-own-btn{width:15px;height:15px;background:none;border:1px solid var(--bd2);border-radius:2px;cursor:pointer;font-size:9px;color:var(--tx3);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:0;transition:all .1s;}
+  .ci-own-btn:hover{border-color:var(--green);color:var(--green);}
+  .ci-own-btn.is-owned{border-color:var(--green);color:var(--green);}
   .rm-btn{width:15px;height:15px;background:none;border:1px solid rgba(200,60,60,.2);border-radius:2px;color:rgba(200,60,60,.4);cursor:pointer;font-size:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .1s;padding:0;}
   .rm-btn:hover{background:rgba(200,60,60,.1);border-color:var(--red);color:var(--red);}
   .cart-empty{display:flex;align-items:center;justify-content:center;height:120px;}
@@ -166,7 +168,7 @@
     <div>
       <div class="lbl">Source</div>
       <div class="filter-group">
-        <label class="ftoggle"><input type="checkbox" id="fQuest" checked><span class="chk"></span><span class="flbl">🟢 Quest reward (free)</span></label>
+        <label class="ftoggle"><input type="checkbox" id="fQuest" checked><span class="chk"></span><span class="flbl">🟢 Quest reward</span></label>
         <label class="ftoggle"><input type="checkbox" id="fVendor" checked><span class="chk"></span><span class="flbl">🟡 Buy from vendor</span></label>
         <label class="ftoggle"><input type="checkbox" id="fDrop" checked><span class="chk"></span><span class="flbl">⚫ Drop only</span></label>
       </div>
@@ -186,7 +188,7 @@
     </div>
     <div class="info">
       <b>Click row</b> → shopping list<br>
-      <b>✓ button</b> → mark as owned<br><br>
+      <b>✓ in list</b> → mark as owned<br><br>
       Vendor prices by req. level:<br>
       1–7 → Scroll of Wisdom<br>
       8–15 → Orb of Transmutation<br>
@@ -199,9 +201,6 @@
   <main class="main">
     <div class="stats-bar">
       <div class="si">Shown: <b id="sTotal">—</b></div>
-      <div class="si">Free: <b id="sFree">—</b></div>
-      <div class="si">To buy: <b id="sBuy">—</b></div>
-      <div class="si">Owned: <b id="sOwned">0</b></div>
     </div>
     <div class="col-head">
       <span></span>
@@ -228,8 +227,8 @@
       <div class="cart-empty"><p>Click a gem to add<br>it to your list.</p></div>
     </div>
     <div class="cart-legend">
-      <div class="legend-row"><div class="li li-list">✓</div> In shopping list</div>
-      <div class="legend-row"><div class="li li-owned">✓</div> Owned — use ✓ button</div>
+      <div class="legend-row"><div class="li li-list">✓</div> In shopping list — click row</div>
+      <div class="legend-row"><div class="li li-owned">✓</div> Owned — click ✓ in list</div>
     </div>
     <div class="cart-actions">
       <button class="btn btn-primary" id="btnCopy" disabled onclick="copyList()">Copy list</button>
@@ -247,6 +246,11 @@ let sortKey = 'name', sortDir = 1, selectedClass = 'Marauder';
 const ORB_ORDER = {'Scroll of Wisdom':0,'Orb of Transmutation':1,'Orb of Alteration':2,'Orb of Chance':3,'Orb of Alchemy':4};
 const ORB_SHORT = {'Scroll of Wisdom':'Wisdom','Orb of Transmutation':'Transmute','Orb of Alteration':'Alteration','Orb of Chance':'Chance','Orb of Alchemy':'Alchemy'};
 const ORB_CLASS = {'Scroll of Wisdom':'orb-wisdom','Orb of Transmutation':'orb-transmute','Orb of Alteration':'orb-alt','Orb of Chance':'orb-chance','Orb of Alchemy':'orb-alch'};
+
+// Gem color from precomputed field in gems.json (highest attribute requirement)
+function gemColorClass(gem) {
+  return 'gc-' + (gem.color || 'gen');
+}
 
 async function loadGems() {
   try {
@@ -314,9 +318,6 @@ function renderGems() {
   });
 
   document.getElementById('sTotal').textContent = gems.length;
-  document.getElementById('sFree').textContent  = gems.filter(g=>g.src.type==='quest').length;
-  document.getElementById('sBuy').textContent   = gems.filter(g=>!['quest','drop'].includes(g.src.type)).length;
-  document.getElementById('sOwned').textContent = ownedGems.size;
 
   if (!gems.length) {
     document.getElementById('gemList').innerHTML=`<div class="state-box"><p>No gems match the filters.</p></div>`;
@@ -324,16 +325,17 @@ function renderGems() {
   }
 
   document.getElementById('gemList').innerHTML = gems.map(g => {
-    const iW=wantedGems.has(g.key), iO=ownedGems.has(g.key);
-    const sc = iO?'owned':iW?'in-list':'';
-    const ic = (iO||iW)?'✓':'';
+    const iW=wantedGems.has(g.key);
+    const sc = iW ? 'in-list' : '';
+    const ic = iW ? '✓' : '';
     const {src} = g;
+    const gc = gemColorClass(g);
 
     let srcHtml,locHtml,costHtml;
     if(src.type==='quest'){
       srcHtml=`<span class="tag tag-free">Quest</span>`;
       locHtml=src.entry?`<span class="act-b">Act ${src.entry.act}</span>${esc(src.entry.quest)}`:'';
-      costHtml=`<span class="cost-free">FREE</span> <span style="color:var(--tx3)">(${orbHtml(g.vendorCost)})</span>`;
+      costHtml=`${orbHtml(g.vendorCost)} <span style="color:var(--green);font-size:10px">(quest)</span>`;
     } else if(src.type==='vendor'){
       srcHtml=`<span class="tag tag-vendor">Vendor</span>`;
       locHtml=src.entry?`<span class="act-b">Act ${src.entry.act}</span>${esc(src.entry.npc)}`:'';
@@ -352,11 +354,10 @@ function renderGems() {
     }
 
     const wiki=`https://www.poewiki.net/wiki/${encodeURIComponent(g.key.replace(/ /g,'_'))}`;
-    return `<div class="gem-row ${sc}" data-key="${ea(g.key)}" onclick="rowClick(event,'${ea(g.key)}')">
+    return `<div class="gem-row ${sc} ${gc}" data-key="${ea(g.key)}" onclick="rowClick(event,'${ea(g.key)}')">
       <div class="row-icon">${ic}</div>
       <div class="name-cell">
         <a href="${wiki}" target="_blank" onclick="event.stopPropagation()">${esc(g.name)}</a>
-        <button class="owned-btn" title="${iO?'Unmark':'Mark as owned'}" onclick="event.stopPropagation();toggleOwned('${ea(g.key)}')">${iO?'✕':'✓'}</button>
       </div>
       <div class="type-cell ${g.isSupport?'support':'skill'}">${g.isSupport?'Support':'Skill'}</div>
       <div class="src-cell">${srcHtml}</div>
@@ -373,7 +374,7 @@ function orbHtml(c) {
   return `<span class="${ORB_CLASS[c.orb]||'cost-orb'}">${c.qty}× ${ORB_SHORT[c.orb]||c.orb}</span>`;
 }
 
-function rowClick(e,key){ if(!ownedGems.has(key)) toggleWanted(key); }
+function rowClick(e,key){ toggleWanted(key); }
 
 function toggleWanted(key) {
   wantedGems.has(key)?wantedGems.delete(key):wantedGems.add(key);
@@ -384,94 +385,112 @@ function toggleWanted(key) {
 
 function toggleOwned(key) {
   if(ownedGems.has(key)){ ownedGems.delete(key); }
-  else { ownedGems.add(key); wantedGems.delete(key); }
-  const row=document.querySelector(`[data-key="${ea(key)}"]`);
-  if(row){
-    const o=ownedGems.has(key);
-    row.classList.toggle('owned',o); row.classList.remove('in-list');
-    row.querySelector('.row-icon').textContent=o?'✓':'';
-    const b=row.querySelector('.owned-btn'); if(b){b.textContent=o?'✕':'✓';}
-  }
-  document.getElementById('sOwned').textContent=ownedGems.size;
+  else { ownedGems.add(key); }
   renderCart();
 }
 
 function renderCart() {
-  const wanted=allGems.filter(g=>wantedGems.has(g.key)).map(g=>({...g,src:getSource(g,selectedClass)}));
-  const owned =allGems.filter(g=>ownedGems.has(g.key));
-  const free  =wanted.filter(g=>g.src.type==='quest');
-  const buy   =wanted.filter(g=>g.src.type!=='quest');
-  const total =wanted.length+owned.length;
+  const wanted = allGems.filter(g=>wantedGems.has(g.key)).map(g=>({...g,src:getSource(g,selectedClass)}));
+  const total  = wanted.length;
 
-  document.getElementById('btnCopy').disabled =total===0;
-  document.getElementById('btnClear').disabled=total===0;
-  document.getElementById('cartCount').textContent=`${wanted.length} gem${wanted.length!==1?'s':''} selected`;
+  document.getElementById('btnCopy').disabled  = total===0;
+  document.getElementById('btnClear').disabled = total===0;
+  document.getElementById('cartCount').textContent = `${total} gem${total!==1?'s':''} selected`;
 
-  const costMap={};
-  buy.forEach(g=>{ if(g.vendorCost) costMap[g.vendorCost.orb]=(costMap[g.vendorCost.orb]||0)+g.vendorCost.qty; });
-  document.getElementById('cartTotal').textContent=
-    Object.entries(costMap).map(([o,q])=>`${q}× ${ORB_SHORT[o]||o}`).join(', ');
+  // Split: quest (free) vs vendor purchase
+  const questGems  = wanted.filter(g=>g.src.type==='quest');
+  const vendorGems = wanted.filter(g=>g.src.type!=='quest');
+
+  // Cost summary (only vendor gems, but show real cost for quest gems too when calculating totals)
+  const allCostMap={};
+  wanted.forEach(g=>{ if(g.vendorCost) allCostMap[g.vendorCost.orb]=(allCostMap[g.vendorCost.orb]||0)+g.vendorCost.qty; });
+  // For summary show only vendor
+  const buyCostMap={};
+  vendorGems.forEach(g=>{ if(g.vendorCost) buyCostMap[g.vendorCost.orb]=(buyCostMap[g.vendorCost.orb]||0)+g.vendorCost.qty; });
+  document.getElementById('cartTotal').textContent =
+    Object.entries(buyCostMap).map(([o,q])=>`${q}× ${ORB_SHORT[o]||o}`).join(', ');
 
   if(total===0){ document.getElementById('cartList').innerHTML=`<div class="cart-empty"><p>Click a gem to add<br>it to your list.</p></div>`; return; }
 
   let html='';
-  if(free.length){
-    html+=`<div class="cart-sec s-free">Quest rewards (free)</div>`;
-    html+=free.map(g=>`<div class="cart-item">
-      <div class="ci-info"><div class="ci-name">${esc(g.name)}</div><div class="ci-meta">Act ${g.src.entry?.act??'?'} · ${esc(g.src.entry?.quest||'—')}</div></div>
-      <span class="cost-free" style="font-size:11px">FREE</span>
-      <button class="rm-btn" onclick="toggleWanted('${ea(g.key)}')">✕</button>
-    </div>`).join('');
-  }
-  if(buy.length){
-    html+=`<div class="cart-sec s-buy" style="margin-top:4px">To purchase</div>`;
-    html+=buy.map(g=>{
-      const meta=g.src.type==='vendor'?`${esc(g.src.entry?.npc||'—')} · Act ${g.src.entry?.act??'?'}`:
-                 g.src.type==='siosa'?'Siosa · A Fixture of Fate':
-                 g.src.type==='lilyroth'?'Lilly Roth · Act 6':'Drop only';
-      const cstr=g.vendorCost?`${g.vendorCost.qty}× ${ORB_SHORT[g.vendorCost.orb]||g.vendorCost.orb}`:'—';
-      return `<div class="cart-item">
-        <div class="ci-info"><div class="ci-name">${esc(g.name)}</div><div class="ci-meta">${meta}</div></div>
-        <div class="ci-cost">${cstr}</div>
+
+  if(questGems.length){
+    html+=`<div class="cart-sec s-quest">Quest rewards</div>`;
+    html+=questGems.map(g=>{
+      const iO=ownedGems.has(g.key);
+      const costStr=g.vendorCost?`${orbHtmlCart(g.vendorCost)} <span style="color:var(--green);font-size:10px">(quest)</span>`:'—';
+      return `<div class="cart-item" style="${iO?'opacity:.45':''}">
+        <div class="ci-info">
+          <div class="ci-name">${esc(g.name)}</div>
+          <div class="ci-meta">Act ${g.src.entry?.act??'?'} · ${esc(g.src.entry?.quest||'—')}</div>
+        </div>
+        <div class="ci-cost">${costStr}</div>
+        <button class="ci-own-btn ${iO?'is-owned':''}" title="${iO?'Unmark owned':'Mark as owned'}" onclick="toggleOwned('${ea(g.key)}')">${iO?'✕':'✓'}</button>
         <button class="rm-btn" onclick="toggleWanted('${ea(g.key)}')">✕</button>
       </div>`;
     }).join('');
   }
-  if(owned.length){
-    html+=`<div class="cart-sec s-owned" style="margin-top:4px">Owned</div>`;
-    html+=owned.map(g=>`<div class="cart-item" style="opacity:.5">
-      <div class="ci-info"><div class="ci-name">${esc(g.name)}</div></div>
-      <span style="font-size:10px;color:var(--green)">owned</span>
-      <button class="rm-btn" onclick="toggleOwned('${ea(g.key)}')">✕</button>
-    </div>`).join('');
+
+  if(vendorGems.length){
+    html+=`<div class="cart-sec s-buy" style="margin-top:4px">To purchase</div>`;
+    html+=vendorGems.map(g=>{
+      const iO=ownedGems.has(g.key);
+      const meta=g.src.type==='vendor'?`${esc(g.src.entry?.npc||'—')} · Act ${g.src.entry?.act??'?'}`:
+                 g.src.type==='siosa'?'Siosa · A Fixture of Fate':
+                 g.src.type==='lilyroth'?'Lilly Roth · Act 6':'Drop only';
+      const costStr=g.vendorCost?orbHtmlCart(g.vendorCost):'—';
+      return `<div class="cart-item" style="${iO?'opacity:.45':''}">
+        <div class="ci-info">
+          <div class="ci-name">${esc(g.name)}</div>
+          <div class="ci-meta">${meta}</div>
+        </div>
+        <div class="ci-cost">${costStr}</div>
+        <button class="ci-own-btn ${iO?'is-owned':''}" title="${iO?'Unmark owned':'Mark as owned'}" onclick="toggleOwned('${ea(g.key)}')">${iO?'✕':'✓'}</button>
+        <button class="rm-btn" onclick="toggleWanted('${ea(g.key)}')">✕</button>
+      </div>`;
+    }).join('');
   }
+
   document.getElementById('cartList').innerHTML=html;
+}
+
+// Simpler orbHtml for cart (no class coloring, just yellow)
+function orbHtmlCart(c) {
+  if(!c) return `<span class="cost-dash">—</span>`;
+  return `<span class="${ORB_CLASS[c.orb]||'cost-orb'}">${c.qty}× ${ORB_SHORT[c.orb]||c.orb}</span>`;
 }
 
 function clearAll(){
   wantedGems.clear(); ownedGems.clear();
-  document.querySelectorAll('.gem-row').forEach(r=>{ r.classList.remove('in-list','owned'); r.querySelector('.row-icon').textContent=''; });
-  document.getElementById('sOwned').textContent=0;
+  document.querySelectorAll('.gem-row').forEach(r=>{ r.classList.remove('in-list'); r.querySelector('.row-icon').textContent=''; });
   renderCart();
 }
 
 function copyList(){
   const wanted=allGems.filter(g=>wantedGems.has(g.key)).map(g=>({...g,src:getSource(g,selectedClass)}));
-  const owned=allGems.filter(g=>ownedGems.has(g.key));
-  const free=wanted.filter(g=>g.src.type==='quest'), buy=wanted.filter(g=>g.src.type!=='quest');
+  const questGems=wanted.filter(g=>g.src.type==='quest');
+  const vendorGems=wanted.filter(g=>g.src.type!=='quest');
   const costMap={};
-  buy.forEach(g=>{ if(g.vendorCost) costMap[g.vendorCost.orb]=(costMap[g.vendorCost.orb]||0)+g.vendorCost.qty; });
+  vendorGems.forEach(g=>{ if(g.vendorCost) costMap[g.vendorCost.orb]=(costMap[g.vendorCost.orb]||0)+g.vendorCost.qty; });
 
   let t=`=== PoE Gem Planner — ${selectedClass} ===\n\n`;
-  if(owned.length){ t+=`OWNED (${owned.length}):\n`; owned.forEach(g=>t+=`  ✓ ${g.name}\n`); t+='\n'; }
-  if(free.length){ t+=`QUEST REWARDS — FREE (${free.length}):\n`; free.forEach(g=>t+=`  • ${g.name} — Act ${g.src.entry?.act??'?'}: ${g.src.entry?.quest||'—'}\n`); t+='\n'; }
-  if(buy.length){
-    t+=`TO PURCHASE (${buy.length}):\n`;
-    buy.forEach(g=>{
+  if(questGems.length){
+    t+=`QUEST REWARDS (${questGems.length}):\n`;
+    questGems.forEach(g=>{
+      const owned=ownedGems.has(g.key)?'[owned] ':'';
+      const cost=g.vendorCost?`${g.vendorCost.qty}× ${g.vendorCost.orb}`:'—';
+      t+=`  ${owned}• ${g.name} — Act ${g.src.entry?.act??'?'}: ${g.src.entry?.quest||'—'} — ${cost}\n`;
+    });
+    t+='\n';
+  }
+  if(vendorGems.length){
+    t+=`TO PURCHASE (${vendorGems.length}):\n`;
+    vendorGems.forEach(g=>{
+      const owned=ownedGems.has(g.key)?'[owned] ':'';
       const where=g.src.type==='vendor'?`${g.src.entry?.npc||'—'} (Act ${g.src.entry?.act??'?'})`:
                   g.src.type==='siosa'?'Siosa (A Fixture of Fate)':
                   g.src.type==='lilyroth'?'Lilly Roth (Act 6)':'Drop only';
-      t+=`  • ${g.name} — ${where} — ${g.vendorCost?`${g.vendorCost.qty}× ${g.vendorCost.orb}`:'—'}\n`;
+      t+=`  ${owned}• ${g.name} — ${where} — ${g.vendorCost?`${g.vendorCost.qty}× ${g.vendorCost.orb}`:'—'}\n`;
     });
     t+=`\nTotal: ${Object.entries(costMap).map(([o,q])=>`${q}× ${o}`).join(', ')}\n`;
   }

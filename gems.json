@@ -1,15 +1,16 @@
 {
-  "generatedAt": "2026-02-27T17:33:38.501Z",
+  "generatedAt": "2026-02-27T17:56:42.224Z",
   "count": 586,
   "gems": [
     {
       "key": "Absolution",
       "name": "Absolution",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -53,11 +54,12 @@
     {
       "key": "Added Chaos Damage Support",
       "name": "Added Chaos Damage Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -73,11 +75,12 @@
     {
       "key": "Added Cold Damage Support",
       "name": "Added Cold Damage Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -116,11 +119,12 @@
     {
       "key": "Added Fire Damage Support",
       "name": "Added Fire Damage Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -169,11 +173,12 @@
     {
       "key": "Added Lightning Damage Support",
       "name": "Added Lightning Damage Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -213,11 +218,12 @@
     {
       "key": "Additional Accuracy Support",
       "name": "Additional Accuracy Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -254,11 +260,12 @@
     {
       "key": "Advanced Traps Support",
       "name": "Advanced Traps Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -295,6 +302,7 @@
       "name": "Agate Amulet",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -318,11 +326,12 @@
     {
       "key": "Alchemist's Mark",
       "name": "Alchemist's Mark",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -353,6 +362,7 @@
       "name": "Alder Spiked Shield",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -374,6 +384,7 @@
       "name": "Amber Amulet",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -391,11 +402,12 @@
     {
       "key": "Ambush",
       "name": "Ambush",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -427,6 +439,7 @@
       "name": "Ambusher",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -450,6 +463,7 @@
       "name": "Amethyst Flask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -467,8 +481,9 @@
     {
       "key": "Ancestral Call Support",
       "name": "Ancestral Call Support",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -512,11 +527,12 @@
     {
       "key": "Ancestral Cry",
       "name": "Ancestral Cry",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -568,11 +584,12 @@
     {
       "key": "Anger",
       "name": "Anger",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -618,11 +635,12 @@
     {
       "key": "Animate Guardian",
       "name": "Animate Guardian",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -652,8 +670,9 @@
     {
       "key": "Animate Weapon",
       "name": "Animate Weapon",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -692,6 +711,7 @@
       "name": "Aquamarine Flask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -721,11 +741,12 @@
     {
       "key": "Arc",
       "name": "Arc",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -775,11 +796,12 @@
     {
       "key": "Arcane Cloak",
       "name": "Arcane Cloak",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -820,6 +842,7 @@
       "name": "Arcane Surge Support",
       "requiredLevel": 1,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -868,11 +891,12 @@
     {
       "key": "Arcanist Brand",
       "name": "Arcanist Brand",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -916,11 +940,12 @@
     {
       "key": "Archmage Support",
       "name": "Archmage Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -966,11 +991,12 @@
     {
       "key": "Arctic Armour",
       "name": "Arctic Armour",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -1019,11 +1045,12 @@
     {
       "key": "Armageddon Brand",
       "name": "Armageddon Brand",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -1073,11 +1100,12 @@
     {
       "key": "Arrogance Support",
       "name": "Arrogance Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -1123,11 +1151,12 @@
     {
       "key": "Arrow Nova Support",
       "name": "Arrow Nova Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -1178,11 +1207,12 @@
     {
       "key": "Artillery Ballista",
       "name": "Artillery Ballista",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -1234,11 +1264,12 @@
     {
       "key": "Assassin's Mark",
       "name": "Assassin's Mark",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -1275,11 +1306,12 @@
     {
       "key": "Autoexertion",
       "name": "Autoexertion",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -1314,11 +1346,12 @@
     {
       "key": "Automation",
       "name": "Automation",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -1341,11 +1374,12 @@
     {
       "key": "Ball Lightning",
       "name": "Ball Lightning",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -1389,11 +1423,12 @@
     {
       "key": "Ballista Totem Support",
       "name": "Ballista Totem Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -1435,11 +1470,12 @@
     {
       "key": "Bane",
       "name": "Bane",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -1480,6 +1516,7 @@
       "name": "Barbed Club",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -1501,11 +1538,12 @@
     {
       "key": "Barrage",
       "name": "Barrage",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -1540,11 +1578,12 @@
     {
       "key": "Barrage Support",
       "name": "Barrage Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -1588,6 +1627,7 @@
       "name": "Basalt Flask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -1611,11 +1651,12 @@
     {
       "key": "Battlemage's Cry",
       "name": "Battlemage's Cry",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -1666,8 +1707,9 @@
     {
       "key": "Bear Trap",
       "name": "Bear Trap",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -1723,11 +1765,12 @@
     {
       "key": "Behead Support",
       "name": "Behead Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -1758,11 +1801,12 @@
     {
       "key": "Berserk",
       "name": "Berserk",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -1808,6 +1852,7 @@
       "name": "Bismuth Flask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -1825,11 +1870,12 @@
     {
       "key": "Blade Blast",
       "name": "Blade Blast",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -1874,11 +1920,12 @@
     {
       "key": "Blade Flurry",
       "name": "Blade Flurry",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -1924,11 +1971,12 @@
     {
       "key": "Blade Trap",
       "name": "Blade Trap",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -1969,11 +2017,12 @@
     {
       "key": "Blade Vortex",
       "name": "Blade Vortex",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -2025,11 +2074,12 @@
     {
       "key": "Bladefall",
       "name": "Bladefall",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -2074,11 +2124,12 @@
     {
       "key": "Bladestorm",
       "name": "Bladestorm",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -2114,11 +2165,12 @@
     {
       "key": "Blasphemy Support",
       "name": "Blasphemy Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -2165,11 +2217,12 @@
     {
       "key": "Blast Rain",
       "name": "Blast Rain",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -2220,11 +2273,12 @@
     {
       "key": "Blastchain Mine Support",
       "name": "Blastchain Mine Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -2267,11 +2321,12 @@
     {
       "key": "Blazing Salvo",
       "name": "Blazing Salvo",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -2325,6 +2380,7 @@
       "name": "Blight",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -2365,11 +2421,12 @@
     {
       "key": "Blind Support",
       "name": "Blind Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -2405,11 +2462,12 @@
     {
       "key": "Blink Arrow",
       "name": "Blink Arrow",
-      "requiredLevel": 1,
+      "requiredLevel": 10,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -2448,8 +2506,9 @@
     {
       "key": "Blood and Sand",
       "name": "Blood and Sand",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -2489,11 +2548,12 @@
     {
       "key": "Blood Rage",
       "name": "Blood Rage",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -2535,6 +2595,7 @@
       "name": "Blood Raiment",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -2568,11 +2629,12 @@
     {
       "key": "Bloodlust Support",
       "name": "Bloodlust Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -2630,11 +2692,12 @@
     {
       "key": "Bloodthirst Support",
       "name": "Bloodthirst Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -2689,6 +2752,7 @@
       "name": "Blunt Arrow Quiver",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -2710,11 +2774,12 @@
     {
       "key": "Bodyswap",
       "name": "Bodyswap",
-      "requiredLevel": 1,
+      "requiredLevel": 10,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -2766,11 +2831,12 @@
     {
       "key": "Bone Offering",
       "name": "Bone Offering",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -2811,11 +2877,12 @@
     {
       "key": "Bonechill Support",
       "name": "Bonechill Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -2860,11 +2927,12 @@
     {
       "key": "Boneshatter",
       "name": "Boneshatter",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -2894,6 +2962,7 @@
       "name": "Book of Regrets (A Dirty Job)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -2913,6 +2982,7 @@
       "name": "Book of Regrets (Fallen from Grace)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -2932,6 +3002,7 @@
       "name": "Book of Regrets (Fastis Fortuna)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -2951,6 +3022,7 @@
       "name": "Book of Regrets (No Love for Old Ghosts)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -2970,6 +3042,7 @@
       "name": "Book of Skill (An End to Hunger)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -2989,6 +3062,7 @@
       "name": "Book of Skill (An Indomitable Spirit)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3008,6 +3082,7 @@
       "name": "Book of Skill (In Service to Science)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3027,6 +3102,7 @@
       "name": "Book of Skill (Kishara's Star)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3046,6 +3122,7 @@
       "name": "Book of Skill (Kitava's Torments)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3065,6 +3142,7 @@
       "name": "Book of Skill (Love is Dead)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3084,6 +3162,7 @@
       "name": "Book of Skill (Piety's Pets)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3103,6 +3182,7 @@
       "name": "Book of Skill (Queen of Despair)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3122,6 +3202,7 @@
       "name": "Book of Skill (Queen of the Sands)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3141,6 +3222,7 @@
       "name": "Book of Skill (Reflection of Terror)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3160,6 +3242,7 @@
       "name": "Book of Skill (The Cloven One)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3179,6 +3262,7 @@
       "name": "Book of Skill (The Dweller of the Deep)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3198,6 +3282,7 @@
       "name": "Book of Skill (The Father of War)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3217,6 +3302,7 @@
       "name": "Book of Skill (The Gemling Legion)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3236,6 +3322,7 @@
       "name": "Book of Skill (The Marooned Mariner)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3255,6 +3342,7 @@
       "name": "Book of Skill (The Master of a Million Faces)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3274,6 +3362,7 @@
       "name": "Book of Skill (The Puppet Mistress)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3293,6 +3382,7 @@
       "name": "Book of Skill (The Ruler of Highgate)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3312,6 +3402,7 @@
       "name": "Book of Skill (The Way Forward)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3331,6 +3422,7 @@
       "name": "Book of Skill (Through Sacred Ground)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3350,6 +3442,7 @@
       "name": "Book of Skill (Victario's Secrets)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3369,6 +3462,7 @@
       "name": "Book of Skill (Vilenta's Vengeance)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3388,6 +3482,7 @@
       "name": "Book of Skill (Web of Secrets)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3407,6 +3502,7 @@
       "name": "Bottled Storm",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3424,11 +3520,12 @@
     {
       "key": "Brand Recall",
       "name": "Brand Recall",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -3481,6 +3578,7 @@
       "name": "Branded Kite Shield",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3500,11 +3598,12 @@
     {
       "key": "Brutality Support",
       "name": "Brutality Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -3549,6 +3648,7 @@
       "name": "Burning Arrow",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3593,11 +3693,12 @@
     {
       "key": "Burning Damage Support",
       "name": "Burning Damage Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -3651,6 +3752,7 @@
       "name": "Burnished Foil",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3672,6 +3774,7 @@
       "name": "Butcher Knife",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3695,6 +3798,7 @@
       "name": "Callous Mask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3719,6 +3823,7 @@
       "name": "Carnal Boots",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3741,11 +3846,12 @@
     {
       "key": "Cast On Critical Strike Support",
       "name": "Cast On Critical Strike Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -3761,11 +3867,12 @@
     {
       "key": "Cast on Death Support",
       "name": "Cast on Death Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -3795,11 +3902,12 @@
     {
       "key": "Cast on Melee Kill Support",
       "name": "Cast on Melee Kill Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -3829,11 +3937,12 @@
     {
       "key": "Cast when Damage Taken Support",
       "name": "Cast when Damage Taken Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -3863,11 +3972,12 @@
     {
       "key": "Cast when Stunned Support",
       "name": "Cast when Stunned Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -3883,11 +3993,12 @@
     {
       "key": "Cast while Channelling Support",
       "name": "Cast while Channelling Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -3905,6 +4016,7 @@
       "name": "Caustic Arrow",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3953,6 +4065,7 @@
       "name": "Chain Belt",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -3982,11 +4095,12 @@
     {
       "key": "Chain Hook",
       "name": "Chain Hook",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -4036,11 +4150,12 @@
     {
       "key": "Chain Support",
       "name": "Chain Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -4073,6 +4188,7 @@
       "name": "Chance to Bleed Support",
       "requiredLevel": 1,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -4123,11 +4239,12 @@
     {
       "key": "Chance to Flee Support",
       "name": "Chance to Flee Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -4158,6 +4275,7 @@
       "name": "Chance to Poison Support",
       "requiredLevel": 1,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -4207,11 +4325,12 @@
     {
       "key": "Charged Dash",
       "name": "Charged Dash",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -4260,11 +4379,12 @@
     {
       "key": "Charged Mines Support",
       "name": "Charged Mines Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -4300,11 +4420,12 @@
     {
       "key": "Charged Traps Support",
       "name": "Charged Traps Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -4342,6 +4463,7 @@
       "name": "Citrine Amulet",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -4365,11 +4487,12 @@
     {
       "key": "Clarity",
       "name": "Clarity",
-      "requiredLevel": 1,
+      "requiredLevel": 10,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -4419,6 +4542,7 @@
       "name": "Cleave",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -4465,11 +4589,12 @@
     {
       "key": "Close Combat Support",
       "name": "Close Combat Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -4526,6 +4651,7 @@
       "name": "Cloth Belt",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -4543,11 +4669,12 @@
     {
       "key": "Cluster Traps Support",
       "name": "Cluster Traps Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -4579,6 +4706,7 @@
       "name": "Cobalt Jewel",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -4604,6 +4732,7 @@
       "name": "Cobra Lash",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -4658,6 +4787,7 @@
       "name": "Coiled Wand",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -4680,11 +4810,12 @@
     {
       "key": "Cold Penetration Support",
       "name": "Cold Penetration Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -4725,11 +4856,12 @@
     {
       "key": "Cold Snap",
       "name": "Cold Snap",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -4782,11 +4914,12 @@
     {
       "key": "Cold to Fire Support",
       "name": "Cold to Fire Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -4826,11 +4959,12 @@
     {
       "key": "Combustion Support",
       "name": "Combustion Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -4868,11 +5002,12 @@
     {
       "key": "Concentrated Effect Support",
       "name": "Concentrated Effect Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -4911,11 +5046,12 @@
     {
       "key": "Conductivity",
       "name": "Conductivity",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -4962,11 +5098,12 @@
     {
       "key": "Conflagration",
       "name": "Conflagration",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -5009,6 +5146,7 @@
       "name": "Conjurer Boots",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -5031,11 +5169,12 @@
     {
       "key": "Consecrated Path",
       "name": "Consecrated Path",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -5085,8 +5224,9 @@
     {
       "key": "Contagion",
       "name": "Contagion",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -5141,11 +5281,12 @@
     {
       "key": "Controlled Blaze Support",
       "name": "Controlled Blaze Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -5182,11 +5323,12 @@
     {
       "key": "Controlled Destruction Support",
       "name": "Controlled Destruction Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -5236,8 +5378,9 @@
     {
       "key": "Conversion Trap",
       "name": "Conversion Trap",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -5282,11 +5425,12 @@
     {
       "key": "Convocation",
       "name": "Convocation",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -5304,6 +5448,7 @@
       "name": "Coral Ring",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -5321,11 +5466,12 @@
     {
       "key": "Corrupting Cry Support",
       "name": "Corrupting Cry Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -5368,11 +5514,12 @@
     {
       "key": "Corrupting Fever",
       "name": "Corrupting Fever",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -5413,6 +5560,7 @@
       "name": "Corundum Flask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -5436,11 +5584,12 @@
     {
       "key": "Crackling Lance",
       "name": "Crackling Lance",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -5491,11 +5640,12 @@
     {
       "key": "Creeping Frost",
       "name": "Creeping Frost",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -5546,11 +5696,12 @@
     {
       "key": "Cremation",
       "name": "Cremation",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -5591,6 +5742,7 @@
       "name": "Crimson Jewel",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -5614,11 +5766,12 @@
     {
       "key": "Critical Strike Affliction Support",
       "name": "Critical Strike Affliction Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -5655,11 +5808,12 @@
     {
       "key": "Cruelty Support",
       "name": "Cruelty Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -5700,8 +5854,9 @@
     {
       "key": "Crushing Fist",
       "name": "Crushing Fist",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -5749,11 +5904,12 @@
     {
       "key": "Culling Strike Support",
       "name": "Culling Strike Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -5783,11 +5939,12 @@
     {
       "key": "Cursed Ground Support",
       "name": "Cursed Ground Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -5816,6 +5973,7 @@
       "name": "Cutlass",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -5837,11 +5995,12 @@
     {
       "key": "Cyclone",
       "name": "Cyclone",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -5888,11 +6047,12 @@
     {
       "key": "Damage on Full Life Support",
       "name": "Damage on Full Life Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -5932,11 +6092,12 @@
     {
       "key": "Dark Pact",
       "name": "Dark Pact",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -5963,8 +6124,9 @@
     {
       "key": "Dash",
       "name": "Dash",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -6009,11 +6171,12 @@
     {
       "key": "Deadly Ailments Support",
       "name": "Deadly Ailments Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -6067,11 +6230,12 @@
     {
       "key": "Decay Support",
       "name": "Decay Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -6108,8 +6272,9 @@
     {
       "key": "Decoy Totem",
       "name": "Decoy Totem",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -6168,6 +6333,7 @@
       "name": "Decurve Bow",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -6190,11 +6356,12 @@
     {
       "key": "Defiance Banner",
       "name": "Defiance Banner",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -6245,11 +6412,12 @@
     {
       "key": "Desecrate",
       "name": "Desecrate",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -6301,11 +6469,12 @@
     {
       "key": "Despair",
       "name": "Despair",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -6344,11 +6513,12 @@
     {
       "key": "Destructive Link",
       "name": "Destructive Link",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -6382,11 +6552,12 @@
     {
       "key": "Determination",
       "name": "Determination",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -6436,8 +6607,9 @@
     {
       "key": "Detonate Dead",
       "name": "Detonate Dead",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -6491,11 +6663,12 @@
     {
       "key": "Detonate Mines",
       "name": "Detonate Mines",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -6525,11 +6698,12 @@
     {
       "key": "Devour Support",
       "name": "Devour Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -6566,8 +6740,9 @@
     {
       "key": "Devouring Totem",
       "name": "Devouring Totem",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -6616,6 +6791,7 @@
       "name": "Diamond Flask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -6639,11 +6815,12 @@
     {
       "key": "Discharge",
       "name": "Discharge",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -6680,11 +6857,12 @@
     {
       "key": "Discipline",
       "name": "Discipline",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -6735,11 +6913,12 @@
     {
       "key": "Divine Ire",
       "name": "Divine Ire",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -6786,6 +6965,7 @@
       "name": "Divine Life Flask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -6805,6 +6985,7 @@
       "name": "Divine Mana Flask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -6822,11 +7003,12 @@
     {
       "key": "Divine Retribution",
       "name": "Divine Retribution",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -6869,11 +7051,12 @@
     {
       "key": "Dominating Blow",
       "name": "Dominating Blow",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -6926,6 +7109,7 @@
       "name": "Double Strike",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -6971,11 +7155,12 @@
     {
       "key": "Dread Banner",
       "name": "Dread Banner",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -7029,6 +7214,7 @@
       "name": "Dual Strike",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -7067,11 +7253,12 @@
     {
       "key": "Earthquake",
       "name": "Earthquake",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -7122,11 +7309,12 @@
     {
       "key": "Earthshatter",
       "name": "Earthshatter",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -7180,6 +7368,7 @@
       "name": "Ebony Tower Shield",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -7199,11 +7388,12 @@
     {
       "key": "Efficacy Support",
       "name": "Efficacy Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -7242,6 +7432,7 @@
       "name": "Elegant Ringmail",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -7264,11 +7455,12 @@
     {
       "key": "Elemental Army Support",
       "name": "Elemental Army Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -7295,11 +7487,12 @@
     {
       "key": "Elemental Damage with Attacks Support",
       "name": "Elemental Damage with Attacks Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -7356,11 +7549,12 @@
     {
       "key": "Elemental Focus Support",
       "name": "Elemental Focus Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -7406,11 +7600,12 @@
     {
       "key": "Elemental Hit",
       "name": "Elemental Hit",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -7456,6 +7651,7 @@
       "name": "Elemental Proliferation Support",
       "requiredLevel": 1,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -7505,11 +7701,12 @@
     {
       "key": "Elemental Weakness",
       "name": "Elemental Weakness",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -7549,11 +7746,12 @@
     {
       "key": "Endurance Charge on Melee Stun Support",
       "name": "Endurance Charge on Melee Stun Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -7600,11 +7798,12 @@
     {
       "key": "Enduring Cry",
       "name": "Enduring Cry",
-      "requiredLevel": 1,
+      "requiredLevel": 10,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -7656,11 +7855,12 @@
     {
       "key": "Energy Blade",
       "name": "Energy Blade",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -7695,11 +7895,12 @@
     {
       "key": "Energy Leech Support",
       "name": "Energy Leech Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -7739,11 +7940,12 @@
     {
       "key": "Enfeeble",
       "name": "Enfeeble",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -7789,11 +7991,12 @@
     {
       "key": "Ensnaring Arrow",
       "name": "Ensnaring Arrow",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -7844,11 +8047,12 @@
     {
       "key": "Essence Drain",
       "name": "Essence Drain",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -7902,6 +8106,7 @@
       "name": "Etched Kite Shield",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -7921,11 +8126,12 @@
     {
       "key": "Eternal Blessing Support",
       "name": "Eternal Blessing Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -7964,6 +8170,7 @@
       "name": "Ethereal Knives",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -8016,11 +8223,12 @@
     {
       "key": "Eviscerate",
       "name": "Eviscerate",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -8065,11 +8273,12 @@
     {
       "key": "Expert Retaliation Support",
       "name": "Expert Retaliation Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -8113,11 +8322,12 @@
     {
       "key": "Explosive Arrow",
       "name": "Explosive Arrow",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -8151,11 +8361,12 @@
     {
       "key": "Explosive Concoction",
       "name": "Explosive Concoction",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -8201,6 +8412,7 @@
       "name": "Explosive Trap",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -8240,11 +8452,12 @@
     {
       "key": "Exsanguinate",
       "name": "Exsanguinate",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -8289,11 +8502,12 @@
     {
       "key": "Eye of Winter",
       "name": "Eye of Winter",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -8339,6 +8553,7 @@
       "name": "Ezomyte Blade",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -8359,11 +8574,12 @@
     {
       "key": "Faster Attacks Support",
       "name": "Faster Attacks Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -8405,11 +8621,12 @@
     {
       "key": "Faster Casting Support",
       "name": "Faster Casting Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -8461,11 +8678,12 @@
     {
       "key": "Faster Projectiles Support",
       "name": "Faster Projectiles Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -8509,11 +8727,12 @@
     {
       "key": "Feeding Frenzy Support",
       "name": "Feeding Frenzy Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -8558,6 +8777,7 @@
       "name": "Fencer Helm",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -8580,11 +8800,12 @@
     {
       "key": "Fire Penetration Support",
       "name": "Fire Penetration Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -8631,11 +8852,12 @@
     {
       "key": "Fire Trap",
       "name": "Fire Trap",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -8681,6 +8903,7 @@
       "name": "Fireball",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -8719,11 +8942,12 @@
     {
       "key": "Firestorm",
       "name": "Firestorm",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -8768,11 +8992,12 @@
     {
       "key": "Fist of War Support",
       "name": "Fist of War Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -8811,11 +9036,12 @@
     {
       "key": "Flame Dash",
       "name": "Flame Dash",
-      "requiredLevel": 1,
+      "requiredLevel": 10,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -8862,11 +9088,12 @@
     {
       "key": "Flame Link",
       "name": "Flame Link",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -8903,11 +9130,12 @@
     {
       "key": "Flame Surge",
       "name": "Flame Surge",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -8942,8 +9170,9 @@
     {
       "key": "Flame Wall",
       "name": "Flame Wall",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -8991,11 +9220,12 @@
     {
       "key": "Flameblast",
       "name": "Flameblast",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -9042,11 +9272,12 @@
     {
       "key": "Flamethrower Trap",
       "name": "Flamethrower Trap",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -9089,11 +9320,12 @@
     {
       "key": "Flamewood Support",
       "name": "Flamewood Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -9136,11 +9368,12 @@
     {
       "key": "Flammability",
       "name": "Flammability",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -9188,11 +9421,12 @@
     {
       "key": "Flesh and Stone",
       "name": "Flesh and Stone",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -9235,11 +9469,12 @@
     {
       "key": "Flesh Offering",
       "name": "Flesh Offering",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -9282,11 +9517,12 @@
     {
       "key": "Flicker Strike",
       "name": "Flicker Strike",
-      "requiredLevel": 1,
+      "requiredLevel": 10,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -9315,11 +9551,12 @@
     {
       "key": "Focused Ballista Support",
       "name": "Focused Ballista Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -9363,11 +9600,12 @@
     {
       "key": "Focused Channelling Support",
       "name": "Focused Channelling Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -9412,11 +9650,12 @@
     {
       "key": "Forbidden Rite",
       "name": "Forbidden Rite",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -9443,11 +9682,12 @@
     {
       "key": "Fork Support",
       "name": "Fork Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -9492,11 +9732,12 @@
     {
       "key": "Fortify Support",
       "name": "Fortify Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -9548,6 +9789,7 @@
       "name": "Fossilised Spirit Shield",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -9569,6 +9811,7 @@
       "name": "Freezing Pulse",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -9615,11 +9858,12 @@
     {
       "key": "Frenzy",
       "name": "Frenzy",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -9666,11 +9910,12 @@
     {
       "key": "Fresh Meat Support",
       "name": "Fresh Meat Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -9713,11 +9958,12 @@
     {
       "key": "Frigid Bond Support",
       "name": "Frigid Bond Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -9756,6 +10002,7 @@
       "name": "Frost Blades",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -9802,8 +10049,9 @@
     {
       "key": "Frost Bomb",
       "name": "Frost Bomb",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -9852,11 +10100,12 @@
     {
       "key": "Frost Shield",
       "name": "Frost Shield",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -9896,8 +10145,9 @@
     {
       "key": "Frost Wall",
       "name": "Frost Wall",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -9934,11 +10184,12 @@
     {
       "key": "Frostbite",
       "name": "Frostbite",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -9986,8 +10237,9 @@
     {
       "key": "Frostblink",
       "name": "Frostblink",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -10034,6 +10286,7 @@
       "name": "Frostbolt",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -10080,11 +10333,12 @@
     {
       "key": "Frozen Legion",
       "name": "Frozen Legion",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -10123,6 +10377,7 @@
       "name": "Galvanic Arrow",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -10169,11 +10424,12 @@
     {
       "key": "Galvanic Field",
       "name": "Galvanic Field",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -10204,6 +10460,7 @@
       "name": "Gavel",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -10225,11 +10482,12 @@
     {
       "key": "General's Cry",
       "name": "General's Cry",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -10266,11 +10524,12 @@
     {
       "key": "Generosity Support",
       "name": "Generosity Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -10305,11 +10564,12 @@
     {
       "key": "Glacial Cascade",
       "name": "Glacial Cascade",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -10355,6 +10615,7 @@
       "name": "Glacial Hammer",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -10391,11 +10652,12 @@
     {
       "key": "Glacial Shield Swipe",
       "name": "Glacial Shield Swipe",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -10441,6 +10703,7 @@
       "name": "Gladius",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -10464,6 +10727,7 @@
       "name": "Gold Amulet",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -10489,6 +10753,7 @@
       "name": "Gold Ring",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -10508,6 +10773,7 @@
       "name": "Goliath Greaves",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -10532,6 +10798,7 @@
       "name": "Gouger",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -10552,11 +10819,12 @@
     {
       "key": "Grace",
       "name": "Grace",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -10609,6 +10877,7 @@
       "name": "Granite Flask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -10634,6 +10903,7 @@
       "name": "Greater Life Flask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -10653,6 +10923,7 @@
       "name": "Greater Mana Flask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -10670,11 +10941,12 @@
     {
       "key": "Greater Multiple Projectiles Support",
       "name": "Greater Multiple Projectiles Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -10705,11 +10977,12 @@
     {
       "key": "Greater Volley Support",
       "name": "Greater Volley Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -10746,6 +11019,7 @@
       "name": "Ground Slam",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -10798,11 +11072,12 @@
     {
       "key": "Guardian's Blessing Support",
       "name": "Guardian's Blessing Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -10845,11 +11120,12 @@
     {
       "key": "Haste",
       "name": "Haste",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -10891,11 +11167,12 @@
     {
       "key": "Hatred",
       "name": "Hatred",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -10953,6 +11230,7 @@
       "name": "Headsman Axe",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -10974,6 +11252,7 @@
       "name": "Heavy Belt",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -10999,6 +11278,7 @@
       "name": "Heavy Strike",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -11043,11 +11323,12 @@
     {
       "key": "Herald of Agony",
       "name": "Herald of Agony",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -11092,11 +11373,12 @@
     {
       "key": "Herald of Ash",
       "name": "Herald of Ash",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -11126,11 +11408,12 @@
     {
       "key": "Herald of Ice",
       "name": "Herald of Ice",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -11182,11 +11465,12 @@
     {
       "key": "Herald of Purity",
       "name": "Herald of Purity",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -11238,11 +11522,12 @@
     {
       "key": "Herald of Thunder",
       "name": "Herald of Thunder",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -11294,11 +11579,12 @@
     {
       "key": "Hex Bloom Support",
       "name": "Hex Bloom Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -11334,11 +11620,12 @@
     {
       "key": "Hexblast",
       "name": "Hexblast",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -11384,11 +11671,12 @@
     {
       "key": "Hextouch Support",
       "name": "Hextouch Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -11404,11 +11692,12 @@
     {
       "key": "High-Impact Mine Support",
       "name": "High-Impact Mine Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -11453,6 +11742,7 @@
       "name": "Highland Blade",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -11473,8 +11763,9 @@
     {
       "key": "Holy Flame Totem",
       "name": "Holy Flame Totem",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -11513,11 +11804,12 @@
     {
       "key": "Hydrosphere",
       "name": "Hydrosphere",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -11555,11 +11847,12 @@
     {
       "key": "Hypothermia Support",
       "name": "Hypothermia Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -11606,11 +11899,12 @@
     {
       "key": "Ice Bite Support",
       "name": "Ice Bite Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -11658,11 +11952,12 @@
     {
       "key": "Ice Crash",
       "name": "Ice Crash",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -11717,11 +12012,12 @@
     {
       "key": "Ice Nova",
       "name": "Ice Nova",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -11776,6 +12072,7 @@
       "name": "Ice Shot",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -11828,11 +12125,12 @@
     {
       "key": "Ice Spear",
       "name": "Ice Spear",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -11874,11 +12172,12 @@
     {
       "key": "Ice Trap",
       "name": "Ice Trap",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -11919,11 +12218,12 @@
     {
       "key": "Icicle Mine",
       "name": "Icicle Mine",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -11974,11 +12274,12 @@
     {
       "key": "Ignite Proliferation Support",
       "name": "Ignite Proliferation Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -12014,11 +12315,12 @@
     {
       "key": "Immolate Support",
       "name": "Immolate Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -12056,11 +12358,12 @@
     {
       "key": "Immortal Call",
       "name": "Immortal Call",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -12081,11 +12384,12 @@
     {
       "key": "Impale Support",
       "name": "Impale Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -12132,11 +12436,12 @@
     {
       "key": "Impending Doom Support",
       "name": "Impending Doom Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -12182,11 +12487,12 @@
     {
       "key": "Incinerate",
       "name": "Incinerate",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -12221,11 +12527,12 @@
     {
       "key": "Increased Area of Effect Support",
       "name": "Increased Area of Effect Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -12263,11 +12570,12 @@
     {
       "key": "Increased Critical Damage Support",
       "name": "Increased Critical Damage Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -12302,11 +12610,12 @@
     {
       "key": "Increased Critical Strikes Support",
       "name": "Increased Critical Strikes Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -12341,11 +12650,12 @@
     {
       "key": "Infernal Blow",
       "name": "Infernal Blow",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -12397,11 +12707,12 @@
     {
       "key": "Infernal Cry",
       "name": "Infernal Cry",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -12438,11 +12749,12 @@
     {
       "key": "Infernal Legion Support",
       "name": "Infernal Legion Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -12486,6 +12798,7 @@
       "name": "Infernal Talc",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -12503,8 +12816,9 @@
     {
       "key": "Infused Channelling Support",
       "name": "Infused Channelling Support",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -12553,11 +12867,12 @@
     {
       "key": "Innervate Support",
       "name": "Innervate Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -12603,11 +12918,12 @@
     {
       "key": "Inspiration Support",
       "name": "Inspiration Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -12642,11 +12958,12 @@
     {
       "key": "Intensify Support",
       "name": "Intensify Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -12692,11 +13009,12 @@
     {
       "key": "Intimidating Cry",
       "name": "Intimidating Cry",
-      "requiredLevel": 1,
+      "requiredLevel": 10,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -12734,11 +13052,12 @@
     {
       "key": "Intuitive Link",
       "name": "Intuitive Link",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -12782,11 +13101,12 @@
     {
       "key": "Iron Grip Support",
       "name": "Iron Grip Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -12835,11 +13155,12 @@
     {
       "key": "Iron Will Support",
       "name": "Iron Will Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -12886,11 +13207,12 @@
     {
       "key": "Item Rarity Support",
       "name": "Item Rarity Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -12927,6 +13249,7 @@
       "name": "Jade Amulet",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -12946,6 +13269,7 @@
       "name": "Jade Flask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -12969,11 +13293,12 @@
     {
       "key": "Kinetic Blast",
       "name": "Kinetic Blast",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -13019,6 +13344,7 @@
       "name": "Kinetic Bolt",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -13072,11 +13398,12 @@
     {
       "key": "Kinetic Fusillade",
       "name": "Kinetic Fusillade",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -13110,11 +13437,12 @@
     {
       "key": "Kinetic Instability Support",
       "name": "Kinetic Instability Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -13157,11 +13485,12 @@
     {
       "key": "Kinetic Rain",
       "name": "Kinetic Rain",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -13207,6 +13536,7 @@
       "name": "Kinetic Wand",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -13227,11 +13557,12 @@
     {
       "key": "Knockback Support",
       "name": "Knockback Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -13266,11 +13597,12 @@
     {
       "key": "Lacerate",
       "name": "Lacerate",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -13325,6 +13657,7 @@
       "name": "Lacquered Buckler",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -13344,11 +13677,12 @@
     {
       "key": "Lancing Steel",
       "name": "Lancing Steel",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -13400,6 +13734,7 @@
       "name": "Lapis Amulet",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -13419,6 +13754,7 @@
       "name": "Lathi",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -13440,11 +13776,12 @@
     {
       "key": "Leap Slam",
       "name": "Leap Slam",
-      "requiredLevel": 1,
+      "requiredLevel": 10,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -13501,6 +13838,7 @@
       "name": "Leather Belt",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -13530,11 +13868,12 @@
     {
       "key": "Less Duration Support",
       "name": "Less Duration Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -13569,11 +13908,12 @@
     {
       "key": "Lesser Multiple Projectiles Support",
       "name": "Lesser Multiple Projectiles Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -13621,11 +13961,12 @@
     {
       "key": "Life Gain on Hit Support",
       "name": "Life Gain on Hit Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -13653,11 +13994,12 @@
     {
       "key": "Life Leech Support",
       "name": "Life Leech Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -13706,11 +14048,12 @@
     {
       "key": "Lifetap Support",
       "name": "Lifetap Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -13757,11 +14100,12 @@
     {
       "key": "Lightning Arrow",
       "name": "Lightning Arrow",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -13811,11 +14155,12 @@
     {
       "key": "Lightning Conduit",
       "name": "Lightning Conduit",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -13844,11 +14189,12 @@
     {
       "key": "Lightning Penetration Support",
       "name": "Lightning Penetration Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -13895,11 +14241,12 @@
     {
       "key": "Lightning Spire Trap",
       "name": "Lightning Spire Trap",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -13949,11 +14296,12 @@
     {
       "key": "Lightning Strike",
       "name": "Lightning Strike",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -14007,6 +14355,7 @@
       "name": "Lightning Tendrils",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -14055,11 +14404,12 @@
     {
       "key": "Lightning Trap",
       "name": "Lightning Trap",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -14110,11 +14460,12 @@
     {
       "key": "Lightning Warp",
       "name": "Lightning Warp",
-      "requiredLevel": 1,
+      "requiredLevel": 10,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -14151,11 +14502,12 @@
     {
       "key": "Living Lightning Support",
       "name": "Living Lightning Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -14198,11 +14550,12 @@
     {
       "key": "Locus Mine Support",
       "name": "Locus Mine Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -14237,11 +14590,12 @@
     {
       "key": "Maim Support",
       "name": "Maim Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -14285,11 +14639,12 @@
     {
       "key": "Malevolence",
       "name": "Malevolence",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -14342,11 +14697,12 @@
     {
       "key": "Mana Leech Support",
       "name": "Mana Leech Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -14382,11 +14738,12 @@
     {
       "key": "Manabond",
       "name": "Manabond",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -14438,11 +14795,12 @@
     {
       "key": "Manaforged Arrows Support",
       "name": "Manaforged Arrows Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -14487,6 +14845,7 @@
       "name": "Maple Round Shield",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -14506,11 +14865,12 @@
     {
       "key": "Mark On Hit Support",
       "name": "Mark On Hit Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -14533,11 +14893,12 @@
     {
       "key": "Meat Shield Support",
       "name": "Meat Shield Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -14582,6 +14943,7 @@
       "name": "Medium Life Flask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -14601,6 +14963,7 @@
       "name": "Medium Mana Flask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -14618,11 +14981,12 @@
     {
       "key": "Melee Physical Damage Support",
       "name": "Melee Physical Damage Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -14665,11 +15029,12 @@
     {
       "key": "Melee Splash Support",
       "name": "Melee Splash Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -14714,6 +15079,7 @@
       "name": "Military Staff",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -14735,11 +15101,12 @@
     {
       "key": "Minefield Support",
       "name": "Minefield Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -14768,11 +15135,12 @@
     {
       "key": "Minion Damage Support",
       "name": "Minion Damage Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -14808,11 +15176,12 @@
     {
       "key": "Minion Life Support",
       "name": "Minion Life Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -14839,11 +15208,12 @@
     {
       "key": "Minion Speed Support",
       "name": "Minion Speed Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -14890,8 +15260,9 @@
     {
       "key": "Mirage Archer Support",
       "name": "Mirage Archer Support",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -14939,11 +15310,12 @@
     {
       "key": "Mirror Arrow",
       "name": "Mirror Arrow",
-      "requiredLevel": 1,
+      "requiredLevel": 10,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -14959,11 +15331,12 @@
     {
       "key": "Molten Shell",
       "name": "Molten Shell",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -15002,6 +15375,7 @@
       "name": "Molten Strike",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -15060,6 +15434,7 @@
       "name": "Momentum Support",
       "requiredLevel": 1,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -15112,11 +15487,12 @@
     {
       "key": "More Duration Support",
       "name": "More Duration Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -15152,11 +15528,12 @@
     {
       "key": "Multiple Totems Support",
       "name": "Multiple Totems Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -15182,11 +15559,12 @@
     {
       "key": "Multiple Traps Support",
       "name": "Multiple Traps Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -15223,11 +15601,12 @@
     {
       "key": "Multistrike Support",
       "name": "Multistrike Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -15258,11 +15637,12 @@
     {
       "key": "Nightblade Support",
       "name": "Nightblade Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -15311,6 +15691,7 @@
       "name": "Noble Tricorne",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -15335,6 +15716,7 @@
       "name": "Oak Buckler",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -15356,6 +15738,7 @@
       "name": "Obsidian Key",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -15375,6 +15758,7 @@
       "name": "Onyx Amulet",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -15394,6 +15778,7 @@
       "name": "Opal Sceptre",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -15414,8 +15799,9 @@
     {
       "key": "Orb of Storms",
       "name": "Orb of Storms",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -15463,11 +15849,12 @@
     {
       "key": "Overcharge Support",
       "name": "Overcharge Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -15497,11 +15884,12 @@
     {
       "key": "Overexertion Support",
       "name": "Overexertion Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -15540,6 +15928,7 @@
       "name": "Painted Tower Shield",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -15561,6 +15950,7 @@
       "name": "Paua Ring",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -15578,11 +15968,12 @@
     {
       "key": "Penance Brand",
       "name": "Penance Brand",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -15620,6 +16011,7 @@
       "name": "Perforate",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -15659,11 +16051,12 @@
     {
       "key": "Pestilent Strike",
       "name": "Pestilent Strike",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -15713,11 +16106,12 @@
     {
       "key": "Petrified Blood",
       "name": "Petrified Blood",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -15763,11 +16157,12 @@
     {
       "key": "Phase Run",
       "name": "Phase Run",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -15788,11 +16183,12 @@
     {
       "key": "Physical to Lightning Support",
       "name": "Physical to Lightning Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -15836,8 +16232,9 @@
     {
       "key": "Pierce Support",
       "name": "Pierce Support",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -15882,6 +16279,7 @@
       "name": "Piledriver",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -15902,11 +16300,12 @@
     {
       "key": "Pinpoint Support",
       "name": "Pinpoint Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -15944,11 +16343,12 @@
     {
       "key": "Plague Bearer",
       "name": "Plague Bearer",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -15993,11 +16393,12 @@
     {
       "key": "Poacher's Mark",
       "name": "Poacher's Mark",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -16035,11 +16436,12 @@
     {
       "key": "Point Blank Support",
       "name": "Point Blank Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -16079,11 +16481,12 @@
     {
       "key": "Poisonous Concoction",
       "name": "Poisonous Concoction",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -16127,11 +16530,12 @@
     {
       "key": "Power Charge On Critical Support",
       "name": "Power Charge On Critical Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -16171,11 +16575,12 @@
     {
       "key": "Power Siphon",
       "name": "Power Siphon",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -16209,11 +16614,12 @@
     {
       "key": "Precision",
       "name": "Precision",
-      "requiredLevel": 1,
+      "requiredLevel": 10,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -16261,11 +16667,12 @@
     {
       "key": "Predator Support",
       "name": "Predator Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -16312,11 +16719,12 @@
     {
       "key": "Pride",
       "name": "Pride",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -16365,6 +16773,7 @@
       "name": "Prismatic Burst Support",
       "requiredLevel": 1,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -16395,11 +16804,12 @@
     {
       "key": "Protective Link",
       "name": "Protective Link",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -16433,11 +16843,12 @@
     {
       "key": "Pulverise Support",
       "name": "Pulverise Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -16477,8 +16888,9 @@
     {
       "key": "Puncture",
       "name": "Puncture",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -16532,11 +16944,12 @@
     {
       "key": "Punishment",
       "name": "Punishment",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -16584,6 +16997,7 @@
       "name": "Purifying Flame",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -16623,11 +17037,12 @@
     {
       "key": "Purity of Elements",
       "name": "Purity of Elements",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -16673,11 +17088,12 @@
     {
       "key": "Purity of Fire",
       "name": "Purity of Fire",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -16712,11 +17128,12 @@
     {
       "key": "Purity of Ice",
       "name": "Purity of Ice",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -16751,11 +17168,12 @@
     {
       "key": "Purity of Lightning",
       "name": "Purity of Lightning",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -16790,11 +17208,12 @@
     {
       "key": "Pyroclast Mine",
       "name": "Pyroclast Mine",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -16840,6 +17259,7 @@
       "name": "Quartz Flask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -16865,6 +17285,7 @@
       "name": "Quicksilver Flask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -16888,11 +17309,12 @@
     {
       "key": "Rage Support",
       "name": "Rage Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -16946,11 +17368,12 @@
     {
       "key": "Rage Vortex",
       "name": "Rage Vortex",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -16994,11 +17417,12 @@
     {
       "key": "Rain of Arrows",
       "name": "Rain of Arrows",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -17044,11 +17468,12 @@
     {
       "key": "Raise Spectre",
       "name": "Raise Spectre",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -17093,6 +17518,7 @@
       "name": "Raise Zombie",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -17138,11 +17564,12 @@
     {
       "key": "Rallying Cry",
       "name": "Rallying Cry",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -17181,6 +17608,7 @@
       "name": "Ranger Bow",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -17203,11 +17631,12 @@
     {
       "key": "Reap",
       "name": "Reap",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -17252,11 +17681,12 @@
     {
       "key": "Reave",
       "name": "Reave",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -17302,6 +17732,7 @@
       "name": "Reaver Axe",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -17325,6 +17756,7 @@
       "name": "Redwood Spiked Shield",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -17344,8 +17776,9 @@
     {
       "key": "Rejuvenation Totem",
       "name": "Rejuvenation Totem",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -17383,11 +17816,12 @@
     {
       "key": "Returning Projectiles Support",
       "name": "Returning Projectiles Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -17421,11 +17855,12 @@
     {
       "key": "Righteous Fire",
       "name": "Righteous Fire",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -17455,6 +17890,7 @@
       "name": "Rolling Magma",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -17504,6 +17940,7 @@
       "name": "Ruby Flask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -17523,6 +17960,7 @@
       "name": "Ruby Ring",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -17540,11 +17978,12 @@
     {
       "key": "Rupture Support",
       "name": "Rupture Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -17584,6 +18023,7 @@
       "name": "Rustic Sash",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -17615,6 +18055,7 @@
       "name": "Ruthless Support",
       "requiredLevel": 1,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -17664,11 +18105,12 @@
     {
       "key": "Sacred Wisps Support",
       "name": "Sacred Wisps Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -17705,11 +18147,12 @@
     {
       "key": "Sacrifice Support",
       "name": "Sacrifice Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -17753,11 +18196,12 @@
     {
       "key": "Sadism Support",
       "name": "Sadism Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -17799,6 +18243,7 @@
       "name": "Sapphire Flask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -17818,6 +18263,7 @@
       "name": "Sapphire Ring",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -17835,11 +18281,12 @@
     {
       "key": "Scorching Ray",
       "name": "Scorching Ray",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -17885,11 +18332,12 @@
     {
       "key": "Scourge Arrow",
       "name": "Scourge Arrow",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -17933,11 +18381,12 @@
     {
       "key": "Searing Bond",
       "name": "Searing Bond",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -17973,11 +18422,12 @@
     {
       "key": "Second Wind Support",
       "name": "Second Wind Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -18017,11 +18467,12 @@
     {
       "key": "Seismic Cry",
       "name": "Seismic Cry",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -18066,11 +18517,12 @@
     {
       "key": "Seismic Trap",
       "name": "Seismic Trap",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -18115,6 +18567,7 @@
       "name": "Sekhem",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -18137,6 +18590,7 @@
       "name": "Sewer Keys",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -18156,6 +18610,7 @@
       "name": "Shagreen Boots",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -18178,11 +18633,12 @@
     {
       "key": "Shattering Steel",
       "name": "Shattering Steel",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -18225,8 +18681,9 @@
     {
       "key": "Shield Charge",
       "name": "Shield Charge",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -18273,6 +18730,7 @@
       "name": "Shield Crush",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -18319,11 +18777,12 @@
     {
       "key": "Shock Nova",
       "name": "Shock Nova",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -18367,11 +18826,12 @@
     {
       "key": "Shockwave Support",
       "name": "Shockwave Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -18409,11 +18869,12 @@
     {
       "key": "Shockwave Totem",
       "name": "Shockwave Totem",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -18456,8 +18917,9 @@
     {
       "key": "Shrapnel Ballista",
       "name": "Shrapnel Ballista",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -18498,11 +18960,12 @@
     {
       "key": "Siege Ballista",
       "name": "Siege Ballista",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -18548,6 +19011,7 @@
       "name": "Siege Helmet",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -18570,11 +19034,12 @@
     {
       "key": "Sigil of Power",
       "name": "Sigil of Power",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -18614,6 +19079,7 @@
       "name": "Silver Flask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -18631,11 +19097,12 @@
     {
       "key": "Siphoning Trap",
       "name": "Siphoning Trap",
-      "requiredLevel": 1,
+      "requiredLevel": 10,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -18678,11 +19145,12 @@
     {
       "key": "Slower Projectiles Support",
       "name": "Slower Projectiles Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -18712,6 +19180,7 @@
       "name": "Smite",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -18750,11 +19219,12 @@
     {
       "key": "Smoke Mine",
       "name": "Smoke Mine",
-      "requiredLevel": 1,
+      "requiredLevel": 10,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -18807,11 +19277,12 @@
     {
       "key": "Snipe",
       "name": "Snipe",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -18848,8 +19319,9 @@
     {
       "key": "Sniper's Mark",
       "name": "Sniper's Mark",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -18892,6 +19364,7 @@
       "name": "Soldier Boots",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -18914,11 +19387,12 @@
     {
       "key": "Somatic Shell",
       "name": "Somatic Shell",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -18962,11 +19436,12 @@
     {
       "key": "Soul Link",
       "name": "Soul Link",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -19010,11 +19485,12 @@
     {
       "key": "Soulrend",
       "name": "Soulrend",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -19069,6 +19545,7 @@
       "name": "Spark",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -19106,11 +19583,12 @@
     {
       "key": "Spectral Helix",
       "name": "Spectral Helix",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -19156,11 +19634,12 @@
     {
       "key": "Spectral Shield Throw",
       "name": "Spectral Shield Throw",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -19214,6 +19693,7 @@
       "name": "Spectral Throw",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -19253,8 +19733,9 @@
     {
       "key": "Spell Cascade Support",
       "name": "Spell Cascade Support",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -19304,11 +19785,12 @@
     {
       "key": "Spell Echo Support",
       "name": "Spell Echo Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -19346,11 +19828,12 @@
     {
       "key": "Spell Totem Support",
       "name": "Spell Totem Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -19385,11 +19868,12 @@
     {
       "key": "Spellblade Support",
       "name": "Spellblade Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -19426,11 +19910,12 @@
     {
       "key": "Spellslinger",
       "name": "Spellslinger",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -19469,6 +19954,7 @@
       "name": "Spike-Point Arrow Quiver",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -19490,11 +19976,12 @@
     {
       "key": "Spirit Offering",
       "name": "Spirit Offering",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -19537,6 +20024,7 @@
       "name": "Split Arrow",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -19593,6 +20081,7 @@
       "name": "Splitting Steel",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -19646,11 +20135,12 @@
     {
       "key": "Static Strike",
       "name": "Static Strike",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -19692,6 +20182,7 @@
       "name": "Steel Circlet",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -19716,6 +20207,7 @@
       "name": "Steelhead",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -19736,8 +20228,9 @@
     {
       "key": "Steelskin",
       "name": "Steelskin",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -19779,6 +20272,7 @@
       "name": "Stibnite Flask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -19796,11 +20290,12 @@
     {
       "key": "Storm Brand",
       "name": "Storm Brand",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -19843,11 +20338,12 @@
     {
       "key": "Storm Burst",
       "name": "Storm Burst",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -19899,11 +20395,12 @@
     {
       "key": "Storm Call",
       "name": "Storm Call",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -19954,11 +20451,12 @@
     {
       "key": "Storm Rain",
       "name": "Storm Rain",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -20009,11 +20507,12 @@
     {
       "key": "Stormbind",
       "name": "Stormbind",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -20053,6 +20552,7 @@
       "name": "Stormblast Mine",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -20108,6 +20608,7 @@
       "name": "Studded Belt",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -20125,11 +20626,12 @@
     {
       "key": "Stun Support",
       "name": "Stun Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -20166,6 +20668,7 @@
       "name": "Sulphur Flask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -20189,11 +20692,12 @@
     {
       "key": "Summon Carrion Golem",
       "name": "Summon Carrion Golem",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -20239,11 +20743,12 @@
     {
       "key": "Summon Chaos Golem",
       "name": "Summon Chaos Golem",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -20281,11 +20786,12 @@
     {
       "key": "Summon Flame Golem",
       "name": "Summon Flame Golem",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -20323,8 +20829,9 @@
     {
       "key": "Summon Holy Relic",
       "name": "Summon Holy Relic",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -20362,11 +20869,12 @@
     {
       "key": "Summon Ice Golem",
       "name": "Summon Ice Golem",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -20404,11 +20912,12 @@
     {
       "key": "Summon Lightning Golem",
       "name": "Summon Lightning Golem",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -20446,8 +20955,9 @@
     {
       "key": "Summon Phantasm Support",
       "name": "Summon Phantasm Support",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -20488,8 +20998,9 @@
     {
       "key": "Summon Raging Spirit",
       "name": "Summon Raging Spirit",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -20528,11 +21039,12 @@
     {
       "key": "Summon Reaper",
       "name": "Summon Reaper",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -20568,11 +21080,12 @@
     {
       "key": "Summon Skeletons",
       "name": "Summon Skeletons",
-      "requiredLevel": 1,
+      "requiredLevel": 10,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -20608,11 +21121,12 @@
     {
       "key": "Summon Skitterbots",
       "name": "Summon Skitterbots",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -20663,11 +21177,12 @@
     {
       "key": "Summon Stone Golem",
       "name": "Summon Stone Golem",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -20712,11 +21227,12 @@
     {
       "key": "Sunder",
       "name": "Sunder",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -20769,6 +21285,7 @@
       "name": "Sundering Axe",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -20788,11 +21305,12 @@
     {
       "key": "Sweep",
       "name": "Sweep",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -20843,11 +21361,12 @@
     {
       "key": "Swift Affliction Support",
       "name": "Swift Affliction Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -20893,8 +21412,9 @@
     {
       "key": "Swift Assembly Support",
       "name": "Swift Assembly Support",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -20942,11 +21462,12 @@
     {
       "key": "Swiftbrand Support",
       "name": "Swiftbrand Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -20990,11 +21511,12 @@
     {
       "key": "Swordstorm",
       "name": "Swordstorm",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -21039,6 +21561,7 @@
       "name": "Teak Round Shield",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -21058,11 +21581,12 @@
     {
       "key": "Tectonic Slam",
       "name": "Tectonic Slam",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -21102,6 +21626,7 @@
       "name": "Tempered Foil",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -21121,11 +21646,12 @@
     {
       "key": "Tempest Shield",
       "name": "Tempest Shield",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -21169,11 +21695,12 @@
     {
       "key": "Temporal Chains",
       "name": "Temporal Chains",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -21219,11 +21746,12 @@
     {
       "key": "Temporal Rift",
       "name": "Temporal Rift",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -21269,6 +21797,7 @@
       "name": "Throat Stabber",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -21289,11 +21818,12 @@
     {
       "key": "Thunderstorm",
       "name": "Thunderstorm",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -21340,6 +21870,7 @@
       "name": "Tomahawk",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -21363,6 +21894,7 @@
       "name": "Topaz Flask",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -21382,6 +21914,7 @@
       "name": "Topaz Ring",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -21399,11 +21932,12 @@
     {
       "key": "Tornado",
       "name": "Tornado",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -21440,11 +21974,12 @@
     {
       "key": "Tornado Shot",
       "name": "Tornado Shot",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -21489,11 +22024,12 @@
     {
       "key": "Toxic Rain",
       "name": "Toxic Rain",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -21530,11 +22066,12 @@
     {
       "key": "Trap and Mine Damage Support",
       "name": "Trap and Mine Damage Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -21585,11 +22122,12 @@
     {
       "key": "Trap Support",
       "name": "Trap Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -21618,11 +22156,12 @@
     {
       "key": "Trauma Support",
       "name": "Trauma Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -21660,11 +22199,12 @@
     {
       "key": "Trinity Support",
       "name": "Trinity Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -21715,6 +22255,7 @@
       "name": "Turquoise Amulet",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -21740,6 +22281,7 @@
       "name": "Two-Stone Ring (ruby and sapphire)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -21765,6 +22307,7 @@
       "name": "Two-Stone Ring (ruby and topaz)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -21790,6 +22333,7 @@
       "name": "Two-Stone Ring (sapphire and topaz)",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -21813,11 +22357,12 @@
     {
       "key": "Unbound Ailments Support",
       "name": "Unbound Ailments Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -21862,11 +22407,12 @@
     {
       "key": "Unearth",
       "name": "Unearth",
-      "requiredLevel": 1,
+      "requiredLevel": 10,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -21911,11 +22457,12 @@
     {
       "key": "Unleash Support",
       "name": "Unleash Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -21957,6 +22504,7 @@
       "name": "Unset Ring",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -21974,11 +22522,12 @@
     {
       "key": "Urgent Orders Support",
       "name": "Urgent Orders Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -22023,11 +22572,12 @@
     {
       "key": "Vampiric Link",
       "name": "Vampiric Link",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -22054,11 +22604,12 @@
     {
       "key": "Vengeful Cry",
       "name": "Vengeful Cry",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -22101,11 +22652,12 @@
     {
       "key": "Venom Gyre",
       "name": "Venom Gyre",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -22148,11 +22700,12 @@
     {
       "key": "Vicious Projectiles Support",
       "name": "Vicious Projectiles Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -22190,8 +22743,9 @@
     {
       "key": "Vigilant Strike",
       "name": "Vigilant Strike",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -22242,11 +22796,12 @@
     {
       "key": "Vile Toxins Support",
       "name": "Vile Toxins Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -22284,6 +22839,7 @@
       "name": "Viper Strike",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -22323,6 +22879,7 @@
       "name": "Viridian Jewel",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -22346,11 +22903,12 @@
     {
       "key": "Vitality",
       "name": "Vitality",
-      "requiredLevel": 1,
+      "requiredLevel": 10,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -22391,11 +22949,12 @@
     {
       "key": "Void Manipulation Support",
       "name": "Void Manipulation Support",
-      "requiredLevel": 1,
+      "requiredLevel": 8,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -22435,11 +22994,12 @@
     {
       "key": "Void Sphere",
       "name": "Void Sphere",
-      "requiredLevel": 1,
+      "requiredLevel": 34,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -22479,11 +23039,12 @@
     {
       "key": "Volatile Dead",
       "name": "Volatile Dead",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -22529,11 +23090,12 @@
     {
       "key": "Volatility Support",
       "name": "Volatility Support",
-      "requiredLevel": 1,
+      "requiredLevel": 18,
       "isSupport": true,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -22577,11 +23139,12 @@
     {
       "key": "Volcanic Fissure",
       "name": "Volcanic Fissure",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -22599,8 +23162,9 @@
     {
       "key": "Volley Support",
       "name": "Volley Support",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -22652,11 +23216,12 @@
     {
       "key": "Voltaxic Burst",
       "name": "Voltaxic Burst",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -22699,11 +23264,12 @@
     {
       "key": "Vortex",
       "name": "Vortex",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -22738,11 +23304,12 @@
     {
       "key": "Vulnerability",
       "name": "Vulnerability",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -22781,11 +23348,12 @@
     {
       "key": "Wall of Force",
       "name": "Wall of Force",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -22830,6 +23398,7 @@
       "name": "Walnut Spirit Shield",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -22849,8 +23418,9 @@
     {
       "key": "War Banner",
       "name": "War Banner",
-      "requiredLevel": 1,
+      "requiredLevel": 4,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -22898,11 +23468,12 @@
     {
       "key": "Warlord's Mark",
       "name": "Warlord's Mark",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "str",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -22940,11 +23511,12 @@
     {
       "key": "Wave of Conviction",
       "name": "Wave of Conviction",
-      "requiredLevel": 1,
+      "requiredLevel": 16,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -22988,11 +23560,12 @@
     {
       "key": "Whirling Blades",
       "name": "Whirling Blades",
-      "requiredLevel": 1,
+      "requiredLevel": 10,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -23039,6 +23612,7 @@
       "name": "Widowsilk Robe",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -23061,11 +23635,12 @@
     {
       "key": "Wild Strike",
       "name": "Wild Strike",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -23108,11 +23683,12 @@
     {
       "key": "Windburst Support",
       "name": "Windburst Support",
-      "requiredLevel": 1,
+      "requiredLevel": 31,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [
         {
@@ -23150,11 +23726,12 @@
     {
       "key": "Winter Orb",
       "name": "Winter Orb",
-      "requiredLevel": 1,
+      "requiredLevel": 28,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Chance"
       },
       "questRewards": [],
       "vendorRewards": [
@@ -23189,11 +23766,12 @@
     {
       "key": "Wintertide Brand",
       "name": "Wintertide Brand",
-      "requiredLevel": 1,
+      "requiredLevel": 12,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -23237,11 +23815,12 @@
     {
       "key": "Wither",
       "name": "Wither",
-      "requiredLevel": 1,
+      "requiredLevel": 10,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -23285,11 +23864,12 @@
     {
       "key": "Withering Step",
       "name": "Withering Step",
-      "requiredLevel": 1,
+      "requiredLevel": 10,
       "isSupport": false,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Transmutation"
       },
       "questRewards": [
         {
@@ -23328,11 +23908,12 @@
     {
       "key": "Withering Touch Support",
       "name": "Withering Touch Support",
-      "requiredLevel": 1,
+      "requiredLevel": 38,
       "isSupport": true,
+      "color": "dex",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alchemy"
       },
       "questRewards": [
         {
@@ -23370,11 +23951,12 @@
     {
       "key": "Wrath",
       "name": "Wrath",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -23415,6 +23997,7 @@
       "name": "Wyrmscale Boots",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -23439,6 +24022,7 @@
       "name": "Zealot Helmet",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
@@ -23461,11 +24045,12 @@
     {
       "key": "Zealotry",
       "name": "Zealotry",
-      "requiredLevel": 1,
+      "requiredLevel": 24,
       "isSupport": false,
+      "color": "int",
       "vendorCost": {
         "qty": 1,
-        "orb": "Scroll of Wisdom"
+        "orb": "Orb of Alteration"
       },
       "questRewards": [
         {
@@ -23506,6 +24091,7 @@
       "name": "Zodiac Leather",
       "requiredLevel": 1,
       "isSupport": false,
+      "color": "gen",
       "vendorCost": {
         "qty": 1,
         "orb": "Scroll of Wisdom"
