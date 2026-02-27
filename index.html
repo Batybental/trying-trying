@@ -333,7 +333,7 @@ function renderGems() {
     if(src.type==='quest'){
       srcHtml=`<span class="tag tag-free">Quest</span>`;
       locHtml=src.entry?`<span class="act-b">Act ${src.entry.act}</span>${esc(src.entry.quest)}`:'';
-      costHtml=`<span class="cost-free">FREE</span>`;
+      costHtml=`<span class="cost-free">FREE</span> <span style="color:var(--tx3)">(${orbHtml(g.vendorCost)})</span>`;
     } else if(src.type==='vendor'){
       srcHtml=`<span class="tag tag-vendor">Vendor</span>`;
       locHtml=src.entry?`<span class="act-b">Act ${src.entry.act}</span>${esc(src.entry.npc)}`:'';
