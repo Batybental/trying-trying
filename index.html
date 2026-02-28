@@ -50,13 +50,13 @@ header{display:flex;align-items:center;justify-content:space-between;padding:0 1
 .notes-toggle-btn.active{border-color:var(--yellow);color:var(--yellow);}
 .stats-bar{display:flex;align-items:center;padding:5px 12px;background:var(--bg2);border-bottom:1px solid var(--bd);font-size:11px;color:var(--tx3);flex-shrink:0;}
 .si b{color:var(--tx);font-weight:500;}
-.col-head{display:grid;grid-template-columns:16px 1fr 50px 55px 36px 90px;padding:5px 12px;background:var(--bg2);border-bottom:1px solid var(--bd);font-size:10px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--tx3);position:sticky;top:0;z-index:10;}
+.col-head{display:grid;grid-template-columns:16px 1fr 50px 90px 36px 90px;padding:5px 12px;background:var(--bg2);border-bottom:1px solid var(--bd);font-size:10px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--tx3);position:sticky;top:0;z-index:10;}
 .col-head span{cursor:pointer;user-select:none;}
 .col-head span:hover{color:var(--tx2);}
 .gem-list{display:flex;flex-direction:column;}
 .pin-sep{padding:3px 12px;background:rgba(58,143,255,.04);border-top:1px solid rgba(58,143,255,.14);border-bottom:1px solid rgba(58,143,255,.14);font-size:9px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:rgba(58,143,255,.45);display:flex;align-items:center;gap:6px;}
 .pin-sep::after{content:'';flex:1;height:1px;background:rgba(58,143,255,.1);}
-.gem-row{display:grid;grid-template-columns:16px 1fr 50px 55px 36px 90px;padding:5px 12px;border-bottom:1px solid rgba(37,37,37,.7);align-items:center;cursor:pointer;transition:background .08s;min-height:30px;}
+.gem-row{display:grid;grid-template-columns:16px 1fr 50px 90px 36px 90px;padding:5px 12px;border-bottom:1px solid rgba(37,37,37,.7);align-items:center;cursor:pointer;transition:background .08s;min-height:30px;}
 .gem-row:hover{background:rgba(255,255,255,.025);}
 .gem-row.in-list{background:rgba(58,143,255,.07);}
 .gem-row.in-list:hover{background:rgba(58,143,255,.12);}
@@ -75,7 +75,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:0 1
 .type-cell{font-size:10px;font-weight:500;}
 .type-cell.skill{color:#d4a836;}
 .type-cell.support{color:#9b7fd4;}
-.src-cell{font-size:10px;}
+.src-cell{font-size:10px;white-space:nowrap;overflow:hidden;}
 .tag{display:inline-flex;align-items:center;padding:1px 4px;border-radius:2px;font-size:9px;font-weight:500;}
 .tag-free{background:rgba(76,175,114,.1);color:var(--green);border:1px solid rgba(76,175,114,.2);}
 .tag-vendor{background:rgba(212,168,54,.08);color:var(--yellow);border:1px solid rgba(212,168,54,.2);}
@@ -498,7 +498,7 @@ function selectGroup(gid){activeGroupId=gid;renderGroupsBar();renderCart();saveS
 function addGroup(){document.getElementById('groupNameInput').value='';openModal('modalGroup');setTimeout(()=>document.getElementById('groupNameInput').focus(),50);}
 function confirmAddGroup(){
   const name=document.getElementById('groupNameInput').value.trim();if(!name)return;
-  const id='g'+Date.now();groups.push({id,name});activeGroupId=id;
+  const id='g'+Date.now();groups.push({id,name});
   closeModal('modalGroup');renderGroupsBar();renderCart();renderNotes();saveState();
 }
 function deleteGroup(gid){
@@ -549,11 +549,28 @@ function pinRowDOM(key, pin){
       sep.textContent = 'All gems';
     }
 
-    // Always: prepend row to very top, then ensure sep comes right after all pinned rows
-    list.prepend(row);
     row.classList.add('pinned-row');
 
-    // Place sep after last pinned row
+    // Insert in alpha order within pinned zone (before sep)
+    const existingPinned = [...list.querySelectorAll('.pinned-row')].filter(r=>r!==row);
+    const rowName = key.toLowerCase();
+    let inserted = false;
+    for(const pr of existingPinned){
+      const prKey = pr.dataset?.key||'';
+      if(prKey.toLowerCase() > rowName){
+        pr.before(row);
+        inserted = true;
+        break;
+      }
+    }
+    if(!inserted){
+      // Goes last among pinned — put just before sep (or at top if no sep yet)
+      if(sep && sep.parentNode === list) sep.before(row);
+      else if(existingPinned.length) existingPinned[existingPinned.length-1].after(row);
+      else list.prepend(row);
+    }
+
+    // Place sep right after last pinned row
     const allPinned = [...list.querySelectorAll('.pinned-row')];
     const lastPinned = allPinned[allPinned.length - 1];
     lastPinned.after(sep);
