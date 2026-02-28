@@ -235,6 +235,26 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
 .rx-preset-row:last-child{border-bottom:none;}
 .rx-preset-name{font-size:10px;color:var(--tx2);width:90px;flex-shrink:0;}
 .rx-preset-val{flex:1;font-family:monospace;font-size:10px;color:var(--tx3);word-break:break-all;line-height:1.4;}
+/* MOD CHECKBOXES */
+.rx-mod-panel{padding:8px 12px 4px;border-bottom:1px solid var(--bd);background:var(--bg2);flex-shrink:0;}
+.rx-mod-group{margin-bottom:6px;}
+.rx-mod-group-lbl{font-size:9px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--tx3);margin-bottom:4px;}
+.rx-mod-checks{display:flex;flex-wrap:wrap;gap:3px 8px;}
+.rx-mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px 4px;}
+.rx-chk-label{display:flex;align-items:center;gap:4px;cursor:pointer;padding:2px 4px;border-radius:2px;transition:background .1s;}
+.rx-chk-label:hover{background:var(--bg3);}
+.rx-chk-label input{display:none;}
+.rx-chk-box{width:11px;height:11px;border:1px solid var(--bd2);background:var(--bg3);border-radius:2px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .12s;}
+.rx-chk-box::after{content:'✓';color:#fff;font-size:7px;display:none;font-weight:700;}
+.rx-chk-label input:checked+.rx-chk-box{background:var(--blue);border-color:var(--blue);}
+.rx-chk-label input:checked+.rx-chk-box::after{display:block;}
+.rx-chk-lbl{font-size:10px;color:var(--tx2);}
+.rx-chk-label:has(input:checked) .rx-chk-lbl{color:var(--tx);}
+/* SPLIT BADGE */
+.rx-split-badge{font-size:8px;font-weight:700;background:rgba(212,168,54,.15);color:var(--yellow);border:1px solid rgba(212,168,54,.3);border-radius:2px;padding:1px 4px;flex-shrink:0;white-space:nowrap;}
+/* override rx-panel to not be scrollable alone (mod panel is sticky-ish) */
+.rx-panel{padding:0;gap:0;}
+.rx-panel > .rx-group-card, .rx-panel > div:not(.rx-mod-panel){margin:8px 12px 0;}
 </style>
 </head>
 <body>
@@ -398,7 +418,7 @@ function saveState(){
   try{
     const s={class:selectedClass,groups,
       wanted:[...wantedGems.entries()].map(([iid,v])=>({iid,key:v.key,groupId:v.groupId})),
-      owned:[...ownedGems],notesSections,cartView,activeGroupId};
+      owned:[...ownedGems],notesSections,cartView,activeGroupId,modChecked};
     localStorage.setItem(SAVE_KEY,JSON.stringify(s));
   }catch(e){}
 }
@@ -411,6 +431,7 @@ function restoreState(){
     if(s.notesSections)notesSections=s.notesSections;
     if(s.cartView){cartView=s.cartView;['groups','acts','split'].forEach(x=>document.getElementById('vt-'+x)?.classList.toggle('active',x===s.cartView));}
     if(s.activeGroupId)activeGroupId=s.activeGroupId;
+    if(s.modChecked)modChecked={...s.modChecked};
     if(s.wanted){wantedGems.clear();s.wanted.forEach(({iid,key,groupId})=>{const id=iid||(key+'#1');wantedGems.set(id,{key:key||id.split('#')[0],groupId:groupId||'__none__'});});}
     if(s.owned){ownedGems.clear();s.owned.forEach(k=>ownedGems.add(k));}
   }catch(e){console.warn('State restore failed',e);}
@@ -930,88 +951,212 @@ function combinedRegex(groupId){
 }
 
 // ── Render regex panel ────────────────────────────────────────────────────────
-const PRESETS = [
-  {name:'Movement Speed', rx:'mov'},
-  {name:'Life (70+)', rx:'[7-9][0-9].* life'},
-  {name:'Resistances', rx:'resi'},
-  {name:'6-Link', rx:'([rgbw]-){5}[rgbw]'},
-  {name:'6-Socket', rx:'([rgbw][ -]){5}[rgbw]'},
-  {name:'4-Link', rx:'([rgbw]-){3}[rgbw]'},
-  {name:'RGB 3-Link', rx:'r-g-b|r-b-g|b-r-g|b-g-r|g-r-b|g-b-r'},
-  {name:'Tabula Rasa', rx:'tabula'},
-  {name:'Chromatic recipe', rx:'[rgb][rgb][rgb]'},
-  {name:'Quality 20%', rx:'uality: \+20'},
+// ── Vendor mod options ───────────────────────────────────────────────────────
+// Each mod has id, label, rx (regex string to append), group name
+const MOD_OPTIONS = [
+  // Movement Speed
+  {id:'ms10', group:'Movement speed', label:'10%',    rx:'ms: [1][0-4]%'},
+  {id:'ms15', group:'Movement speed', label:'15%+',   rx:'ms: [1][5-9]%|ms: [2-9][0-9]%'},
+  // Misc weapon mods
+  {id:'w1any',  group:'Misc',  label:'+1 wand (any)',       rx:'l of all .* skill'},
+  {id:'w1lit',  group:'Misc',  label:'+1 lightning wand',   rx:'l of all li'},
+  {id:'w1fire', group:'Misc',  label:'+1 fire wand',        rx:'l of all fi'},
+  {id:'w1cold', group:'Misc',  label:'+1 cold wand',        rx:'l of all co'},
+  {id:'w1phys', group:'Misc',  label:'+1 phys wand',        rx:'l of all ph'},
+  {id:'w1chaos',group:'Misc',  label:'+1 chaos wand',       rx:'l of all ch'},
+  {id:'physdmg',group:'Misc',  label:'Physical damage',     rx:'ll g'},
+  {id:'fdot',   group:'Misc',  label:'Fire DOT multi',      rx:'fire.*multi|multi.*fire'},
+  {id:'cdot',   group:'Misc',  label:'Cold DOT multi',      rx:'cold.*multi|multi.*cold'},
+  {id:'chdot',  group:'Misc',  label:'Chaos DOT multi',     rx:'chaos.*multi|multi.*chaos'},
+  // Weapon bases
+  {id:'waxe',   group:'Weapon bases', label:'Axe',     rx:'axe'},
+  {id:'wmace',  group:'Weapon bases', label:'Mace',    rx:'mace'},
+  {id:'wsword', group:'Weapon bases', label:'Sword',   rx:'sword'},
+  {id:'wstaff', group:'Weapon bases', label:'Staff',   rx:'staff'},
+  {id:'wsceptre',group:'Weapon bases',label:'Sceptre', rx:'sceptre'},
+  {id:'wclaw',  group:'Weapon bases', label:'Claw',    rx:'claw'},
+  {id:'wbow',   group:'Weapon bases', label:'Bow',     rx:'bow'},
+  {id:'wwand',  group:'Weapon bases', label:'Wand',    rx:'wand'},
+  {id:'wdagger',group:'Weapon bases', label:'Dagger',  rx:'dagger'},
 ];
 
-function copyRx(str, btn){
-  navigator.clipboard.writeText(str).then(()=>{
-    btn.textContent='✓ Copied!';btn.classList.add('copied');
-    setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('copied');},1500);
-  }).catch(()=>prompt('Copy:',str));
+// persisted checkbox state
+let modChecked = {};
+
+function toggleMod(id){
+  modChecked[id] = !modChecked[id];
+  saveState();
+  renderRegexPanel();
+}
+
+// ── Split long regex into ≤250-char chunks on | boundaries ──────────────────
+function splitRegex(str, max=250){
+  if(str.length <= max) return [str];
+  const parts = str.split('|');
+  const chunks = [];
+  let cur = '';
+  for(const p of parts){
+    const add = cur ? cur+'|'+p : p;
+    if(add.length > max){
+      if(cur) chunks.push(cur);
+      cur = p;
+    } else {
+      cur = add;
+    }
+  }
+  if(cur) chunks.push(cur);
+  return chunks;
+}
+
+// ── Build final regex string: gems|links|mods for a scope ──────────────────
+function buildFinalRx(gemRxStr, linkRxStr, extraMods){
+  const parts = [gemRxStr, linkRxStr, ...extraMods].filter(Boolean);
+  return parts.join('|');
+}
+
+// ── Get checked mod rx strings ──────────────────────────────────────────────
+function checkedModRxList(){
+  return MOD_OPTIONS.filter(m=>modChecked[m.id]).map(m=>m.rx);
+}
+
+// ── Render regex panel (full rewrite) ────────────────────────────────────────
+
+// Group MOD_OPTIONS by group name
+function modsByGroup(){
+  const map = {};
+  MOD_OPTIONS.forEach(m=>{
+    if(!map[m.group]) map[m.group]=[];
+    map[m.group].push(m);
+  });
+  return map;
+}
+
+// Render a regex row with copy button and split indicator
+function rxRowHtml(lbl, fullRx){
+  if(!fullRx) return '';
+  const chunks = splitRegex(fullRx);
+  const isLong = chunks.length > 1;
+  const displayRx = esc(fullRx);
+  const copyBtns = chunks.map((ch,i)=>`<button class="rx-copy-btn" onclick="copyRx('${ea(ch)}',this)">${chunks.length>1?`Copy ${i+1}/${chunks.length}`:'Copy'}</button>`).join('');
+  const badge = isLong ? `<span class="rx-split-badge" title="Exceeds 250 chars — split into ${chunks.length} parts">${chunks.length}×</span>` : '';
+  return `<div class="rx-row">
+    <span class="rx-row-lbl">${lbl}</span>
+    <span class="rx-row-val">${displayRx}</span>
+    ${badge}${copyBtns}
+  </div>`;
+}
+
+// Mod checkboxes section
+function modCheckboxesHtml(){
+  const groups = modsByGroup();
+  let html = '<div class="rx-mod-panel">';
+  for(const [grpName, mods] of Object.entries(groups)){
+    const isBases = grpName === 'Weapon bases';
+    html += `<div class="rx-mod-group"><div class="rx-mod-group-lbl">${esc(grpName)}</div>`;
+    html += `<div class="rx-mod-checks ${isBases?'rx-mod-grid':''}">`;
+    mods.forEach(m=>{
+      const checked = modChecked[m.id]||false;
+      html += `<label class="rx-chk-label"><input type="checkbox" ${checked?'checked':''} onchange="toggleMod('${m.id}')"><span class="rx-chk-box"></span><span class="rx-chk-lbl">${esc(m.label)}</span></label>`;
+    });
+    html += `</div></div>`;
+  }
+  html += '</div>';
+  return html;
 }
 
 function renderRegexPanel(){
   const el = document.getElementById('rxPanel'); if(!el) return;
-  // Build group list: actual groups + ungrouped bucket
+
+  const extraMods = checkedModRxList();
+
+  // Scopes: All, Gems-only, Links-only, then per-group
   const groupList = [...groups];
   const hasUngrouped = [...wantedGems.values()].some(v=>!groups.find(g=>g.id===v.groupId));
   if(hasUngrouped) groupList.push({id:'__none__', name:'Ungrouped'});
 
-  if(!groupList.length && !wantedGems.size){
-    el.innerHTML='<div style="padding:16px 10px;font-size:12px;color:var(--tx3);text-align:center">Add gems to your shopping list first.</div>';
-    return;
+  const allNames = allGems.map(g=>g.name);
+
+  // Helper: gem rx for a set of group ids (or null=all)
+  function scopeGemRx(gids){
+    let items;
+    if(gids===null){
+      items = [...wantedGems.entries()].filter(([iid])=>!ownedGems.has(iid));
+    } else {
+      items = [...wantedGems.entries()]
+        .filter(([,v])=>gids.includes(v.groupId==='__none__'||!groups.find(g=>g.id===v.groupId)?'__none__':v.groupId))
+        .filter(([iid])=>!ownedGems.has(iid));
+    }
+    const uniqueKeys=[...new Set(items.map(([,v])=>v.key))];
+    const gems=uniqueKeys.map(k=>allGems.find(g=>g.key===k)).filter(Boolean);
+    return gems.map(g=>shortestUnique(g.name,allNames)).join('|');
+  }
+
+  function scopeLinkRx(gids){
+    let counts={R:0,G:0,B:0};
+    const items = gids===null
+      ? [...wantedGems.entries()].filter(([iid])=>!ownedGems.has(iid))
+      : [...wantedGems.entries()]
+          .filter(([,v])=>gids.includes(v.groupId==='__none__'||!groups.find(g=>g.id===v.groupId)?'__none__':v.groupId))
+          .filter(([iid])=>!ownedGems.has(iid));
+    items.forEach(([,v])=>{
+      const gem=allGems.find(g=>g.key===v.key); if(!gem) return;
+      if(gem.color==='str') counts.R++;
+      else if(gem.color==='dex') counts.G++;
+      else if(gem.color==='int') counts.B++;
+    });
+    return linkRegex(counts);
+  }
+
+  // ── Scope cards ──────────────────────────────────────────────────────────
+  function scopeCard(title, gids, sockCounts){
+    const gr = scopeGemRx(gids);
+    const lr = scopeLinkRx(gids);
+    const cr = buildFinalRx(gr, lr, extraMods);
+    const gemsOnly = buildFinalRx(gr,'',extraMods);
+    const linksOnly = buildFinalRx('',lr,extraMods);
+
+    // Socket pills
+    const sc = sockCounts || (()=>{const c={R:0,G:0,B:0};[...(gids?wantedGems.entries():[...wantedGems.entries()])].filter(([iid])=>!ownedGems.has(iid)).forEach(([,v])=>{const gem=allGems.find(g=>g.key===v.key);if(!gem)return;if(gem.color==='str')c.R++;else if(gem.color==='dex')c.G++;else if(gem.color==='int')c.B++;});return c;})();
+
+    if(!gr && !lr && !extraMods.length) return '';
+
+    const sockPills=[
+      ...Array(sc.R||0).fill('<span class="rx-sock-pill R">R</span>'),
+      ...Array(sc.G||0).fill('<span class="rx-sock-pill G">G</span>'),
+      ...Array(sc.B||0).fill('<span class="rx-sock-pill B">B</span>'),
+    ].join('');
+
+    return `<div class="rx-group-card">
+      <div class="rx-group-head">
+        <span class="rx-group-name">${esc(title)}</span>
+        <div class="rx-sock-pills">${sockPills}</div>
+      </div>
+      <div class="rx-rows">
+        ${rxRowHtml('Gems', gemsOnly)}
+        ${rxRowHtml('Links', linksOnly)}
+        ${rxRowHtml('Combined', cr)}
+      </div>
+    </div>`;
   }
 
   let html = '';
 
-  // Per-group cards
+  // Mod checkboxes always at top
+  html += modCheckboxesHtml();
+
+  // Scope: All (every gem regardless of group)
+  html += scopeCard('All gems', null);
+
+  // Per-group scopes
   groupList.forEach(grp=>{
+    const gid = grp.id==='__none__'||!groups.find(g=>g.id===grp.id) ? '__none__' : grp.id;
     const counts = groupSocketCounts(grp.id);
-    const total = counts.R + counts.G + counts.B;
-    if(!total) return;
-
-    const sockPills = [
-      ...Array(counts.R).fill('<span class="rx-sock-pill R">R</span>'),
-      ...Array(counts.G).fill('<span class="rx-sock-pill G">G</span>'),
-      ...Array(counts.B).fill('<span class="rx-sock-pill B">B</span>'),
-    ].join('');
-
-    const gr = gemRegex(grp.id);
-    const lr = linkRegex(counts);
-    const cr = combinedRegex(grp.id);
-
-    const rxRow = (lbl, val) => val ? `
-      <div class="rx-row">
-        <span class="rx-row-lbl">${lbl}</span>
-        <span class="rx-row-val">${esc(val)}</span>
-        <button class="rx-copy-btn" onclick="copyRx('${ea(val)}',this)">Copy</button>
-      </div>` : '';
-
-    html += `<div class="rx-group-card">
-      <div class="rx-group-head">
-        <span class="rx-group-name">${esc(grp.name)}</span>
-        <div class="rx-sock-pills">${sockPills}</div>
-      </div>
-      <div class="rx-rows">
-        ${rxRow('Gems', gr)}
-        ${rxRow('Links', lr)}
-        ${rxRow('Combined', cr)}
-      </div>
-    </div>`;
+    const total = counts.R+counts.G+counts.B;
+    if(!total && !extraMods.length) return;
+    html += scopeCard(grp.name, [gid], counts);
   });
 
-  // Presets
-  html += `<div class="rx-presets-card">
-    <div class="rx-presets-head">⚡ Starter presets</div>
-    ${PRESETS.map(p=>`
-    <div class="rx-preset-row">
-      <span class="rx-preset-name">${esc(p.name)}</span>
-      <span class="rx-preset-val">${esc(p.rx)}</span>
-      <button class="rx-copy-btn" onclick="copyRx('${ea(p.rx)}',this)">Copy</button>
-    </div>`).join('')}
-  </div>`;
-
-  // Attribution footer
+  // Attribution
   html += `<div style="padding:8px 10px;font-size:9px;color:var(--tx3);line-height:1.6;border-top:1px solid var(--bd);margin-top:4px;">
     Shortest unique substring algorithm inspired by
     <a href="https://poe.re" target="_blank" style="color:var(--tx2);text-decoration:none;" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--tx2)'">poe.re</a>
@@ -1021,6 +1166,8 @@ function renderRegexPanel(){
 
   el.innerHTML = html;
 }
+
+
 
 function addNotesSection(){notesSections.push({id:'n'+Date.now(),title:'New section',text:''});renderNotes();saveState();}
 function deleteNotesSection(id){notesSections=notesSections.filter(s=>s.id!==id);renderNotes();saveState();}
