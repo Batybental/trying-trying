@@ -206,6 +206,35 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
 .toast{position:fixed;bottom:14px;left:50%;transform:translateX(-50%) translateY(60px);background:var(--bg4);border:1px solid var(--bd2);color:var(--tx);padding:7px 16px;font-size:12px;border-radius:4px;transition:transform .25s;z-index:300;pointer-events:none;}
 .toast.show{transform:translateX(-50%) translateY(0);}
 ::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:transparent;}::-webkit-scrollbar-thumb{background:var(--bd2);border-radius:2px;}
+/* NOTES TABS */
+.notes-tabs{display:flex;gap:2px;flex:1;}
+.notes-tab{padding:3px 10px;border:1px solid var(--bd2);background:transparent;color:var(--tx3);font-family:inherit;font-size:11px;font-weight:500;cursor:pointer;border-radius:3px;transition:all .12s;}
+.notes-tab:hover{color:var(--tx2);}
+.notes-tab.active{background:var(--bg4);border-color:var(--bd3);color:var(--tx);}
+/* REGEX PANEL */
+.rx-panel{flex:1;overflow-y:auto;padding:10px 12px;display:flex;flex-direction:column;gap:10px;}
+.rx-group-card{background:var(--bg3);border:1px solid var(--bd);border-radius:4px;overflow:hidden;}
+.rx-group-head{padding:6px 10px;background:var(--bg4);border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;gap:6px;}
+.rx-group-name{font-size:11px;font-weight:600;color:var(--tx);flex:1;}
+.rx-sock-pills{display:flex;gap:3px;align-items:center;}
+.rx-sock-pill{width:14px;height:14px;border-radius:2px;font-size:8px;font-weight:700;display:flex;align-items:center;justify-content:center;cursor:default;border:1px solid transparent;}
+.rx-sock-pill.R{background:rgba(196,122,58,.2);color:#c47a3a;border-color:rgba(196,122,58,.3);}
+.rx-sock-pill.G{background:rgba(84,168,96,.2);color:#54a860;border-color:rgba(84,168,96,.3);}
+.rx-sock-pill.B{background:rgba(107,159,212,.2);color:#6b9fd4;border-color:rgba(107,159,212,.3);}
+.rx-rows{display:flex;flex-direction:column;gap:1px;}
+.rx-row{display:flex;align-items:center;gap:6px;padding:5px 10px;border-bottom:1px solid rgba(37,37,37,.4);}
+.rx-row:last-child{border-bottom:none;}
+.rx-row-lbl{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--tx3);width:52px;flex-shrink:0;}
+.rx-row-val{flex:1;font-family:monospace;font-size:10px;color:var(--tx2);word-break:break-all;line-height:1.4;background:var(--bg);border:1px solid var(--bd);border-radius:2px;padding:3px 6px;}
+.rx-copy-btn{padding:2px 7px;border:1px solid var(--bd2);background:transparent;color:var(--tx3);font-family:inherit;font-size:9px;cursor:pointer;border-radius:2px;flex-shrink:0;transition:all .1s;white-space:nowrap;}
+.rx-copy-btn:hover{border-color:var(--blue);color:var(--blue);}
+.rx-copy-btn.copied{border-color:var(--green);color:var(--green);}
+.rx-presets-card{background:var(--bg3);border:1px solid var(--bd);border-radius:4px;overflow:hidden;}
+.rx-presets-head{padding:6px 10px;background:var(--bg4);border-bottom:1px solid var(--bd);font-size:11px;font-weight:600;color:var(--tx);}
+.rx-preset-row{display:flex;align-items:center;gap:6px;padding:5px 10px;border-bottom:1px solid rgba(37,37,37,.4);}
+.rx-preset-row:last-child{border-bottom:none;}
+.rx-preset-name{font-size:10px;color:var(--tx2);width:90px;flex-shrink:0;}
+.rx-preset-val{flex:1;font-family:monospace;font-size:10px;color:var(--tx3);word-break:break-all;line-height:1.4;}
 </style>
 </head>
 <body>
@@ -276,11 +305,19 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
 </main>
 <div class="notes-center" id="notesCenterPanel" style="display:none">
   <div class="notes-center-head">
-    <span class="notes-toolbar-lbl">Notes</span>
-    <button class="notes-toggle-btn" onclick="toggleNotes()">✕ Close</button>
+    <div class="notes-tabs">
+      <button class="notes-tab active" id="ntab-notes" onclick="switchNotesTab('notes')">📝 Notes</button>
+      <button class="notes-tab" id="ntab-regex" onclick="switchNotesTab('regex')">🔍 Regex</button>
+    </div>
+    <button class="notes-toggle-btn" onclick="toggleNotes()">✕</button>
   </div>
-  <div class="notes-sections" id="notesSections"></div>
-  <div class="notes-add-sec"><button class="notes-add-btn" onclick="addNotesSection()">+ Add section</button></div>
+  <div id="ntab-notes-body" style="display:flex;flex-direction:column;flex:1;overflow:hidden;">
+    <div class="notes-sections" id="notesSections"></div>
+    <div class="notes-add-sec"><button class="notes-add-btn" onclick="addNotesSection()">+ Add section</button></div>
+  </div>
+  <div id="ntab-regex-body" style="display:none;flex-direction:column;flex:1;overflow:hidden;">
+    <div class="rx-panel" id="rxPanel"></div>
+  </div>
 </div>
 </div>
 <aside class="right">
@@ -793,6 +830,7 @@ function toggleNotes(){
   const btn=document.getElementById('btnNotesCtr');
   if(btn)btn.classList.toggle('active',notesMode);
   if(notesMode)renderNotes();
+  if(notesMode && notesTab==='regex') renderRegexPanel();
 }
 function renderNotes(){
   const el=document.getElementById('notesSections');if(!el)return;
@@ -806,6 +844,184 @@ function renderNotes(){
     </div>`;
   }).join('');
 }
+// ── Notes tab switcher ───────────────────────────────────────────────────────
+let notesTab = 'notes';
+function switchNotesTab(tab){
+  notesTab = tab;
+  document.getElementById('ntab-notes-body').style.display = tab==='notes' ? 'flex' : 'none';
+  document.getElementById('ntab-regex-body').style.display = tab==='regex' ? 'flex' : 'none';
+  document.querySelectorAll('.notes-tab').forEach(b=>b.classList.toggle('active', b.id==='ntab-'+tab));
+  if(tab==='regex') renderRegexPanel();
+}
+
+// ── Shortest unique ngram for gem names ──────────────────────────────────────
+// Algorithm concept inspired by poe.re / veiset (github.com/veiset/poe-vendor-string)
+// Independent reimplementation: finds shortest substring of `name` not present in any other gem name
+function shortestUnique(name, allNames){
+  const lower = name.toLowerCase();
+  const others = allNames.filter(n=>n!==name).map(n=>n.toLowerCase());
+  for(let len=2; len<=lower.length; len++){
+    for(let i=0; i<=lower.length-len; i++){
+      const sub = lower.slice(i, i+len);
+      if(!others.some(o=>o.includes(sub))) return sub;
+    }
+  }
+  return lower; // fallback: full name
+}
+
+// ── Socket color counts for a group ──────────────────────────────────────────
+function groupSocketCounts(groupId){
+  const items = [...wantedGems.entries()]
+    .filter(([,v])=> groupId==='__none__' ? !groups.find(g=>g.id===v.groupId) : v.groupId===groupId)
+    .filter(([iid])=>!ownedGems.has(iid));
+  const counts = {R:0,G:0,B:0};
+  items.forEach(([,v])=>{
+    const gem = allGems.find(g=>g.key===v.key);
+    if(!gem) return;
+    if(gem.color==='str') counts.R++;
+    else if(gem.color==='dex') counts.G++;
+    else if(gem.color==='int') counts.B++;
+  });
+  return counts;
+}
+
+// ── Link regex from socket counts ────────────────────────────────────────────
+// Generates all permutations of R/G/B for a given count, joined with hyphens
+function permutations(arr){
+  if(arr.length<=1) return [arr];
+  const result=[];
+  arr.forEach((v,i)=>{
+    const rest=arr.filter((_,j)=>j!==i);
+    permutations(rest).forEach(p=>result.push([v,...p]));
+  });
+  return result;
+}
+function linkRegex(counts){
+  const sockets=[];
+  for(let i=0;i<counts.R;i++) sockets.push('r');
+  for(let i=0;i<counts.G;i++) sockets.push('g');
+  for(let i=0;i<counts.B;i++) sockets.push('b');
+  if(!sockets.length) return '';
+  const total = sockets.length;
+  // All unique permutations joined with -
+  const seen=new Set();
+  const perms=permutations(sockets).map(p=>p.join('-')).filter(p=>{if(seen.has(p))return false;seen.add(p);return true;});
+  return perms.join('|');
+}
+
+// ── Gem regex (shortest unique substrings) ────────────────────────────────────
+function gemRegex(groupId){
+  const allNames = allGems.map(g=>g.name);
+  const items = [...wantedGems.entries()]
+    .filter(([,v])=> groupId==='__none__' ? !groups.find(g=>g.id===v.groupId) : v.groupId===groupId)
+    .filter(([iid])=>!ownedGems.has(iid));
+  const uniqueKeys = [...new Set(items.map(([,v])=>v.key))];
+  const gems = uniqueKeys.map(k=>allGems.find(g=>g.key===k)).filter(Boolean);
+  if(!gems.length) return '';
+  return gems.map(g=>shortestUnique(g.name, allNames)).join('|');
+}
+
+// ── Combined regex ─────────────────────────────────────────────────────────
+function combinedRegex(groupId){
+  const gr = gemRegex(groupId);
+  const lr = linkRegex(groupSocketCounts(groupId));
+  if(gr && lr) return gr+'|'+lr;
+  return gr || lr;
+}
+
+// ── Render regex panel ────────────────────────────────────────────────────────
+const PRESETS = [
+  {name:'Movement Speed', rx:'mov'},
+  {name:'Life (70+)', rx:'[7-9][0-9].* life'},
+  {name:'Resistances', rx:'resi'},
+  {name:'6-Link', rx:'([rgbw]-){5}[rgbw]'},
+  {name:'6-Socket', rx:'([rgbw][ -]){5}[rgbw]'},
+  {name:'4-Link', rx:'([rgbw]-){3}[rgbw]'},
+  {name:'RGB 3-Link', rx:'r-g-b|r-b-g|b-r-g|b-g-r|g-r-b|g-b-r'},
+  {name:'Tabula Rasa', rx:'tabula'},
+  {name:'Chromatic recipe', rx:'[rgb][rgb][rgb]'},
+  {name:'Quality 20%', rx:'uality: \+20'},
+];
+
+function copyRx(str, btn){
+  navigator.clipboard.writeText(str).then(()=>{
+    btn.textContent='✓ Copied!';btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('copied');},1500);
+  }).catch(()=>prompt('Copy:',str));
+}
+
+function renderRegexPanel(){
+  const el = document.getElementById('rxPanel'); if(!el) return;
+  // Build group list: actual groups + ungrouped bucket
+  const groupList = [...groups];
+  const hasUngrouped = [...wantedGems.values()].some(v=>!groups.find(g=>g.id===v.groupId));
+  if(hasUngrouped) groupList.push({id:'__none__', name:'Ungrouped'});
+
+  if(!groupList.length && !wantedGems.size){
+    el.innerHTML='<div style="padding:16px 10px;font-size:12px;color:var(--tx3);text-align:center">Add gems to your shopping list first.</div>';
+    return;
+  }
+
+  let html = '';
+
+  // Per-group cards
+  groupList.forEach(grp=>{
+    const counts = groupSocketCounts(grp.id);
+    const total = counts.R + counts.G + counts.B;
+    if(!total) return;
+
+    const sockPills = [
+      ...Array(counts.R).fill('<span class="rx-sock-pill R">R</span>'),
+      ...Array(counts.G).fill('<span class="rx-sock-pill G">G</span>'),
+      ...Array(counts.B).fill('<span class="rx-sock-pill B">B</span>'),
+    ].join('');
+
+    const gr = gemRegex(grp.id);
+    const lr = linkRegex(counts);
+    const cr = combinedRegex(grp.id);
+
+    const rxRow = (lbl, val) => val ? `
+      <div class="rx-row">
+        <span class="rx-row-lbl">${lbl}</span>
+        <span class="rx-row-val">${esc(val)}</span>
+        <button class="rx-copy-btn" onclick="copyRx('${ea(val)}',this)">Copy</button>
+      </div>` : '';
+
+    html += `<div class="rx-group-card">
+      <div class="rx-group-head">
+        <span class="rx-group-name">${esc(grp.name)}</span>
+        <div class="rx-sock-pills">${sockPills}</div>
+      </div>
+      <div class="rx-rows">
+        ${rxRow('Gems', gr)}
+        ${rxRow('Links', lr)}
+        ${rxRow('Combined', cr)}
+      </div>
+    </div>`;
+  });
+
+  // Presets
+  html += `<div class="rx-presets-card">
+    <div class="rx-presets-head">⚡ Starter presets</div>
+    ${PRESETS.map(p=>`
+    <div class="rx-preset-row">
+      <span class="rx-preset-name">${esc(p.name)}</span>
+      <span class="rx-preset-val">${esc(p.rx)}</span>
+      <button class="rx-copy-btn" onclick="copyRx('${ea(p.rx)}',this)">Copy</button>
+    </div>`).join('')}
+  </div>`;
+
+  // Attribution footer
+  html += `<div style="padding:8px 10px;font-size:9px;color:var(--tx3);line-height:1.6;border-top:1px solid var(--bd);margin-top:4px;">
+    Shortest unique substring algorithm inspired by
+    <a href="https://poe.re" target="_blank" style="color:var(--tx2);text-decoration:none;" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--tx2)'">poe.re</a>
+    by <a href="https://github.com/veiset/poe-vendor-string" target="_blank" style="color:var(--tx2);text-decoration:none;" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--tx2)'">veiset</a>.
+    Independent reimplementation.
+  </div>`;
+
+  el.innerHTML = html;
+}
+
 function addNotesSection(){notesSections.push({id:'n'+Date.now(),title:'New section',text:''});renderNotes();saveState();}
 function deleteNotesSection(id){notesSections=notesSections.filter(s=>s.id!==id);renderNotes();saveState();}
 
