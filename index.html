@@ -383,6 +383,15 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
   background:var(--bg3);border-bottom:2px solid var(--bd);
   flex-shrink:0;
 }
+
+/* Mod section header row */
+.rx-mod-group-lbl-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;}
+.rx-mod-group-lbl{color:#aaa;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;}
+.rx-mod-grp-sel{
+  font-size:10px;font-family:inherit;background:#1e1e1e;border:1px solid #444;
+  color:#bbb;border-radius:3px;padding:2px 5px;cursor:pointer;max-width:130px;
+}
+.rx-mod-grp-sel:focus{outline:none;border-color:#6b9fd4;color:#fff;}
 </style>
 </head>
 <body>
@@ -551,7 +560,7 @@ function saveState(){
   try{
     const s={class:selectedClass,groups,
       wanted:[...wantedGems.entries()].map(([iid,v])=>({iid,key:v.key,groupId:v.groupId})),
-      owned:[...ownedGems],notesSections,cartView,activeGroupId,modChecked,modGroupAssign};
+      owned:[...ownedGems],notesSections,cartView,activeGroupId,modChecked,modGroupAssign,sectionGroupAssign};
     localStorage.setItem(SAVE_KEY,JSON.stringify(s));
   }catch(e){}
 }
@@ -566,6 +575,7 @@ function restoreState(){
     if(s.activeGroupId)activeGroupId=s.activeGroupId;
     if(s.modChecked)modChecked={...s.modChecked};
     if(s.modGroupAssign)modGroupAssign={...s.modGroupAssign};
+    if(s.sectionGroupAssign)sectionGroupAssign={...s.sectionGroupAssign};
     if(s.wanted){wantedGems.clear();s.wanted.forEach(({iid,key,groupId})=>{const id=iid||(key+'#1');wantedGems.set(id,{key:key||id.split('#')[0],groupId:groupId||'__none__'});});}
     if(s.owned){ownedGems.clear();s.owned.forEach(k=>ownedGems.add(k));}
   }catch(e){console.warn('State restore failed',e);}
@@ -1174,6 +1184,14 @@ function setModGroup(id, gid){
   saveState();
   renderRegexPanel();
 }
+// section-level group assign
+let sectionGroupAssign = {};
+function setSectionGroup(secName, gid){
+  sectionGroupAssign[secName] = gid;
+  MOD_OPTIONS.filter(m=>m.group===secName).forEach(m=>{ modGroupAssign[m.id]=gid; });
+  saveState();
+  renderRegexPanel();
+}
 
 // ── Split long regex into ≤250-char chunks on | boundaries ──────────────────
 function splitRegex(str, max=250){
@@ -1202,12 +1220,13 @@ function buildFinalRx(gemRxStr, linkRxStr, extraMods){
 
 // ── Get checked mod rx strings ──────────────────────────────────────────────
 function checkedModRxList(forGroupId){
-  // forGroupId: which gem-group we're building regex for, or null for 'All gems'
+  // forGroupId: gemGroupId | null (= 'All gems' scope)
   return MOD_OPTIONS.filter(m=>{
     if(!modChecked[m.id]) return false;
     const mg = modGroupAssign[m.id] || '__all__';
-    if(mg === '__all__') return true; // applies everywhere
-    if(forGroupId === null) return true; // 'All gems' scope includes everything
+    if(mg === '__none__') return forGroupId === null; // only in "All" scope
+    if(mg === '__all__') return true;   // every scope
+    if(forGroupId === null) return true; // All scope includes group-specific too
     return mg === forGroupId;
   }).map(m=>m.rx);
 }
@@ -1242,21 +1261,30 @@ function rxRowHtml(lbl, fullRx){
 // Mod checkboxes section
 function modCheckboxesHtml(){
   const modGroups = modsByGroup();
-  // Build group options for dropdown
-  const grpOpts = `<option value="__all__">All groups</option>`
-    + groups.map(g=>`<option value="${ea(g.id)}">${esc(g.name)}</option>`).join('');
   const hasGrpChoice = groups.length > 0;
 
   let html = '<div class="rx-mod-panel">';
-  for(const [grpName, mods] of Object.entries(modGroups)){
-    const isBases = grpName === 'Weapon bases';
-    html += `<div class="rx-mod-group"><div class="rx-mod-group-lbl">${esc(grpName)}</div>`;
+  for(const [secName, mods] of Object.entries(modGroups)){
+    const isBases = secName === 'Weapon bases';
+    const anyChecked = mods.some(m=>modChecked[m.id]);
+    // One dropdown per section
+    const secGid = sectionGroupAssign[secName] || '__all__';
+    let dropdown = '';
+    if(hasGrpChoice){
+      const opts = `<option value="__all__"${secGid==='__all__'?' selected':''}>All groups</option>`
+        + `<option value="__none__"${secGid==='__none__'?' selected':''}>— None (All only) —</option>`
+        + groups.map(g=>`<option value="${ea(g.id)}"${secGid===g.id?' selected':''}>${esc(g.name)}</option>`).join('');
+      dropdown = `<select class="rx-mod-grp-sel" title="Which group this applies to" onchange="setSectionGroup('${ea(secName)}',this.value)">${opts}</select>`;
+    }
+    html += `<div class="rx-mod-group">
+      <div class="rx-mod-group-lbl-row">
+        <span class="rx-mod-group-lbl">${esc(secName)}</span>
+        ${dropdown}
+      </div>`;
     html += `<div class="rx-mod-checks ${isBases?'rx-mod-grid':''}">`;
     mods.forEach(m=>{
       const checked = modChecked[m.id]||false;
-      const mg = modGroupAssign[m.id]||'__all__';
-      const dropdown = hasGrpChoice && checked ? `<select class="rx-mod-grp-sel" onchange="setModGroup('${m.id}',this.value)">${grpOpts.replace(`value="${ea(mg)}"`,`value="${ea(mg)}" selected`)}</select>` : '';
-      html += `<label class="rx-chk-label"><input type="checkbox" ${checked?'checked':''} onchange="toggleMod('${m.id}')"><span class="rx-chk-box"></span><span class="rx-chk-lbl">${esc(m.label)}</span></label>${dropdown}`;
+      html += `<label class="rx-chk-label"><input type="checkbox" ${checked?'checked':''} onchange="toggleMod('${m.id}')"><span class="rx-chk-box"></span><span class="rx-chk-lbl">${esc(m.label)}</span></label>`;
     });
     html += `</div></div>`;
   }
