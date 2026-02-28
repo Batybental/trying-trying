@@ -1035,7 +1035,7 @@ function cartItemHtml(iid,gem,src,gid,moveOpts){
 
 function sockHtml(items){
   let R=0,G=0,B=0;
-  items.forEach(({iid,gem})=>{if(ownedGems.has(iid))return;if(gem.color==='str')R++;else if(gem.color==='dex')G++;else if(gem.color==='int')B++;});
+  items.forEach(({iid,gem})=>{if(gem.color==='str')R++;else if(gem.color==='dex')G++;else if(gem.color==='int')B++;});
   if(!R&&!G&&!B)return'';
   const p=[];if(R)p.push(`<span class="sc-R">${R}R</span>`);if(G)p.push(`<span class="sc-G">${G}G</span>`);if(B)p.push(`<span class="sc-B">${B}B</span>`);
   return p.join('');
@@ -1509,7 +1509,7 @@ function copyList(){
   if(ce.length)t+=`Total: ${ce.map(([o,q])=>`${q}× ${o}`).join(', ')}\n`;
   navigator.clipboard.writeText(t).then(()=>showToast('Copied!')).catch(()=>prompt('Copy:',t));
 }
-function sockText(items){let R=0,G=0,B=0;items.forEach(({iid,gem})=>{if(ownedGems.has(iid))return;if(gem.color==='str')R++;else if(gem.color==='dex')G++;else if(gem.color==='int')B++;});const p=[];if(R)p.push(`${R}R`);if(G)p.push(`${G}G`);if(B)p.push(`${B}B`);return p.join('');}
+function sockText(items){let R=0,G=0,B=0;items.forEach(({iid,gem})=>{if(gem.color==='str')R++;else if(gem.color==='dex')G++;else if(gem.color==='int')B++;});const p=[];if(R)p.push(`${R}R`);if(G)p.push(`${G}G`);if(B)p.push(`${B}B`);return p.join('');}
 
 function openModal(id){document.getElementById(id).classList.add('open');}
 function closeModal(id){document.getElementById(id).classList.remove('open');}
