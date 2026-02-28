@@ -392,6 +392,23 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
   color:#bbb;border-radius:3px;padding:2px 5px;cursor:pointer;max-width:130px;
 }
 .rx-mod-grp-sel:focus{outline:none;border-color:#6b9fd4;color:#fff;}
+
+/* Cart item: dim when owned (click to toggle) */
+.cart-item{cursor:pointer;transition:opacity .15s;}
+.cart-item.ci-owned{opacity:.35;}
+.cart-item.ci-owned .ci-name::after{content:' ✓';color:var(--green);font-size:9px;}
+.cart-item:hover{background:rgba(255,255,255,.03);}
+.cart-item.ci-dragging{opacity:.3;border-style:dashed;}
+
+/* Drag handle for cart items */
+.ci-drag-handle{
+  font-size:13px;color:var(--tx3);cursor:grab;padding:0 4px 0 0;
+  opacity:.4;transition:opacity .1s;flex-shrink:0;user-select:none;
+}
+.cart-item:hover .ci-drag-handle{opacity:.8;}
+
+/* Remove the old ci-own button style (no longer used) */
+.ci-own{display:none;}
 </style>
 </head>
 <body>
@@ -467,12 +484,7 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
   </div>
 </main>
 <div class="notes-center" id="notesCenterPanel" style="display:none">
-  <div class="notes-center-head">
-    <div class="notes-tabs">
-      <button class="notes-tab active" id="ntab-notes" onclick="switchNotesTab('notes')">📝 Notes</button>
-      <button class="notes-tab" id="ntab-regex" onclick="switchNotesTab('regex')">🔍 Regex</button>
-    </div>
-  </div>
+
   <div id="ntab-notes-body" style="display:flex;flex-direction:column;flex:1;overflow:hidden;">
     <div class="notes-sections" id="notesSections"></div>
     <div class="notes-add-sec"><button class="notes-add-btn" onclick="addNotesSection()">+ Add section</button></div>
@@ -864,8 +876,35 @@ function toggleOwnedByKey(key){
   renderCart();saveState();
 }
 function moveToGroup(iid,gid){if(!wantedGems.has(iid))return;wantedGems.set(iid,{...wantedGems.get(iid),groupId:gid});renderGroupsBar();renderCart();saveState();}
-function removeInstance(iid){const v=wantedGems.get(iid);wantedGems.delete(iid);ownedGems.delete(iid);if(v)updateRowIcon(v.key);renderGroupsBar();renderCart();if(notesMode)renderNotes();saveState();}
+function removeInstance(iid){const v=wantedGems.get(iid);wantedGems.delete(iid);ownedGems.delete(iid);if(v){const stillWanted=[...wantedGems.values()].some(x=>x.key===v.key);if(!stillWanted)updateRowIcon(v.key);}renderGroupsBar();renderCart();renderGems();if(notesMode)renderNotes();saveState();}
 
+
+// ── Cart item drag & drop (reorder within group) ─────────────────────────────
+let dragItemIid = null, dragItemGid = null;
+function onItemDragStart(e, iid, gid){
+  dragItemIid=iid; dragItemGid=gid;
+  e.dataTransfer.effectAllowed='move';
+  e.dataTransfer.setData('text/plain', iid);
+  setTimeout(()=>{const el=document.querySelector(`.cart-item[data-iid="${iid}"]`);if(el)el.classList.add('ci-dragging');},0);
+}
+function onItemDragOver(e){e.preventDefault();e.dataTransfer.dropEffect='move';}
+function onItemDrop(e, targetIid, targetGid){
+  e.preventDefault();
+  if(!dragItemIid||dragItemIid===targetIid||dragItemGid!==targetGid)return;
+  // Reorder wantedGems map: rebuild with new order
+  const entries=[...wantedGems.entries()];
+  const fromIdx=entries.findIndex(([iid])=>iid===dragItemIid);
+  const toIdx=entries.findIndex(([iid])=>iid===targetIid);
+  if(fromIdx<0||toIdx<0)return;
+  const [moved]=entries.splice(fromIdx,1);
+  entries.splice(toIdx,0,moved);
+  wantedGems=new Map(entries);
+  renderCart();saveState();
+}
+function onItemDragEnd(){
+  dragItemIid=null; dragItemGid=null;
+  document.querySelectorAll('.cart-item.ci-dragging').forEach(el=>el.classList.remove('ci-dragging'));
+}
 function renderCart(){
   const total=wantedGems.size;
   const unique=new Set([...wantedGems.values()].map(v=>v.key)).size;
@@ -977,14 +1016,20 @@ function cartItemHtml(iid,gem,src,gid,moveOpts){
   const costStr=gem.vendorCost?orbHtmlI(gem.vendorCost):'—';
   const selOpts=moveOpts.replace(new RegExp(`value="${ea(gid)}"`),`value="${ea(gid)}" selected`);
   const moveSel=groups.length>0?`<select class="g-move" onchange="moveToGroup('${ea(iid)}',this.value);this.blur()">${selOpts}</select>`:'';
-  return`<div class="cart-item" style="${iO?'opacity:.4':''}">
+  return`<div class="cart-item ${iO?'ci-owned':''}" draggable="true"
+    data-iid="${ea(iid)}" data-gid="${ea(gid)}"
+    onclick="toggleOwned('${ea(iid)}')"
+    ondragstart="onItemDragStart(event,'${ea(iid)}','${ea(gid)}')"
+    ondragover="onItemDragOver(event)"
+    ondrop="onItemDrop(event,'${ea(iid)}','${ea(gid)}')"
+    ondragend="onItemDragEnd()">
+    <span class="ci-drag-handle" onclick="event.stopPropagation()">≡</span>
     <div class="ci-info">
       <div class="ci-name ${cc(gem)}">${esc(gem.name)}</div>
-      <div class="ci-meta">${srcTag}${extraTag}${moveSel?`<span>${moveSel}</span>`:''}</div>
+      <div class="ci-meta">${srcTag}${extraTag}${moveSel?`<span onclick="event.stopPropagation()">${moveSel}</span>`:''}</div>
     </div>
     <div class="ci-cost">${costStr}</div>
-    <button class="ci-own ${iO?'owned':''}" onclick="toggleOwned('${ea(iid)}')" title="${iO?'Unmark':'Owned'}">${iO?'✕':'✓'}</button>
-    <button class="ci-rm" onclick="removeInstance('${ea(iid)}')" title="Remove">✕</button>
+    <button class="ci-rm" onclick="event.stopPropagation();removeInstance('${ea(iid)}')" title="Remove">✕</button>
   </div>`;
 }
 
