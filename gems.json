@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-27T18:02:48.078Z",
+  "generatedAt": "2026-02-28T01:32:47.025Z",
   "count": 488,
   "gems": [
     {
@@ -844,7 +844,7 @@
       "key": "Autoexertion",
       "name": "Autoexertion",
       "requiredLevel": 24,
-      "isSupport": false,
+      "isSupport": true,
       "color": "str",
       "vendorCost": {
         "qty": 1,
@@ -884,7 +884,7 @@
       "key": "Automation",
       "name": "Automation",
       "requiredLevel": 24,
-      "isSupport": false,
+      "isSupport": true,
       "color": "int",
       "vendorCost": {
         "qty": 1,
@@ -12878,7 +12878,7 @@
       "key": "Spellslinger",
       "name": "Spellslinger",
       "requiredLevel": 24,
-      "isSupport": false,
+      "isSupport": true,
       "color": "int",
       "vendorCost": {
         "qty": 1,
@@ -13288,13 +13288,6 @@
           "quest": "A Fixture of Fate",
           "questId": "",
           "npc": "Siosa",
-          "classes": []
-        },
-        {
-          "act": 6,
-          "quest": "Fallen from Grace",
-          "questId": "",
-          "npc": "Lilly Roth",
           "classes": []
         },
         {
@@ -14981,6 +14974,13 @@
             "Duelist",
             "Ranger"
           ]
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
         },
         {
           "act": 6,

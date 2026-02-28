@@ -59,7 +59,7 @@ async function main() {
   const skillGemRows = await cargoQueryAll('skill_gems', {
     tables: 'skill_gems,items',
     join_on: 'skill_gems._pageID=items._pageID',
-    fields: 'skill_gems._pageName=gem,items.name=name,items.required_level=required_level,skill_gems.primary_attribute=primary_attribute,skill_gems.gem_tags=gem_tags',
+    fields: 'skill_gems._pageName=gem,items.name=name,items.required_level=required_level,skill_gems.primary_attribute=primary_attribute,skill_gems.gem_tags=gem_tags,skill_gems.support_gem_letter=support_letter',
     where: 'skill_gems.is_vaal_skill_gem=false',
   });
 
@@ -73,10 +73,15 @@ async function main() {
     else if (attr === 'dexterity')    color = 'dex';
     else if (attr === 'intelligence') color = 'int';
     const tags = (row.gem_tags || '').toLowerCase();
+    const name = row.name || row.gem || '';
+    // isSupport: check gem_tags field, support_gem_letter (non-empty = support), or name ends with "Support"
+    const isSupport = tags.includes('support') || 
+                      (row.support_letter && row.support_letter.trim() !== '') ||
+                      name.endsWith('Support');
     gemInfo[row.gem] = {
-      name: row.name || row.gem,
+      name,
       requiredLevel: parseInt(row.required_level) || 1,
-      isSupport: tags.includes('support'),
+      isSupport,
       color,
     };
   }

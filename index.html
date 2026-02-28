@@ -15,25 +15,18 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 body{background:var(--bg);color:var(--tx);font-family:'Inter',system-ui,sans-serif;font-size:14px;min-height:100vh;overflow:hidden;}
 
-/* ── HEADER ── */
+/* HEADER */
 header{display:flex;align-items:center;justify-content:space-between;padding:0 16px;height:44px;background:var(--bg2);border-bottom:1px solid var(--bd);flex-shrink:0;}
-.h-left{display:flex;align-items:center;gap:12px;}
-.h-title{font-size:14px;font-weight:600;}
-.h-title span{color:var(--tx3);font-weight:400;font-size:12px;margin-left:6px;}
-.tab-btns{display:flex;gap:2px;}
-.tab-btn{padding:4px 12px;border:1px solid var(--bd);background:var(--bg3);color:var(--tx3);font-family:inherit;font-size:11px;font-weight:500;cursor:pointer;border-radius:3px;transition:all .12s;}
-.tab-btn:hover{color:var(--tx2);border-color:var(--bd2);}
-.tab-btn.active{border-color:var(--blue);background:rgba(58,143,255,.1);color:#7dbfff;}
+.h-title{font-size:13px;font-weight:600;}
+.h-title span{color:var(--tx3);font-weight:400;font-size:11px;margin-left:6px;}
 .h-right{font-size:11px;color:var(--tx3);}
 .h-right b{color:var(--tx2);}
 
-/* ── LAYOUT ── */
-.app{display:grid;grid-template-columns:200px 1fr 340px;height:calc(100vh - 44px);}
-.tab-panel{display:none;height:100%;overflow:hidden;}
-.tab-panel.active{display:contents;}
+/* LAYOUT: left sidebar | gem list | shopping list */
+.app{display:grid;grid-template-columns:190px 1fr 380px;height:calc(100vh - 44px);}
 
-/* ── LEFT SIDEBAR ── */
-.left{background:var(--bg2);border-right:1px solid var(--bd);padding:10px;overflow-y:auto;display:flex;flex-direction:column;gap:14px;}
+/* LEFT SIDEBAR */
+.left{background:var(--bg2);border-right:1px solid var(--bd);padding:10px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;}
 .lbl{font-size:10px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--tx3);margin-bottom:5px;}
 .class-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;}
 .cbtn{padding:5px 4px;border:1px solid var(--bd);background:var(--bg3);color:var(--tx2);font-family:inherit;font-size:11px;font-weight:500;cursor:pointer;border-radius:3px;transition:all .12s;text-align:center;}
@@ -44,33 +37,32 @@ header{display:flex;align-items:center;justify-content:space-between;padding:0 1
 .ftoggle{display:flex;align-items:center;gap:7px;cursor:pointer;padding:4px 5px;border-radius:3px;transition:background .1s;user-select:none;}
 .ftoggle:hover{background:var(--bg3);}
 .ftoggle input{display:none;}
-.chk{width:13px;height:13px;border:1px solid var(--bd2);background:var(--bg3);border-radius:2px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .12s;}
+.chk{width:12px;height:12px;border:1px solid var(--bd2);background:var(--bg3);border-radius:2px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .12s;}
 .ftoggle input:checked+.chk{background:var(--blue);border-color:var(--blue);}
-.chk::after{content:'✓';color:#fff;font-size:9px;display:none;font-weight:700;line-height:1;}
+.chk::after{content:'✓';color:#fff;font-size:8px;display:none;font-weight:700;line-height:1;}
 .ftoggle input:checked+.chk::after{display:block;}
 .flbl{font-size:11px;color:var(--tx2);}
 .search{width:100%;padding:6px 9px;background:var(--bg3);border:1px solid var(--bd);border-radius:3px;color:var(--tx);font-family:inherit;font-size:12px;outline:none;transition:border-color .12s;}
 .search:focus{border-color:var(--bd3);}
 .search::placeholder{color:var(--tx3);}
-.info-box{font-size:10px;color:var(--tx3);line-height:1.7;margin-top:auto;padding:8px;background:var(--bg3);border:1px solid var(--bd);border-radius:4px;}
+.info-box{font-size:10px;color:var(--tx3);line-height:1.7;padding:8px;background:var(--bg3);border:1px solid var(--bd);border-radius:4px;margin-top:auto;}
 .info-box b{color:var(--tx2);}
 
-/* ── MAIN LIST ── */
-.main{background:var(--bg);overflow-y:auto;display:flex;flex-direction:column;}
-.stats-bar{display:flex;align-items:center;padding:5px 12px;background:var(--bg2);border-bottom:1px solid var(--bd);font-size:11px;color:var(--tx3);flex-shrink:0;gap:0;}
-.si{padding:0 10px;border-right:1px solid var(--bd);}
-.si:first-child{padding-left:0;}
-.si:last-child{border-right:none;}
+/* GEM LIST (center) */
+.main{background:var(--bg);overflow-y:auto;display:flex;flex-direction:column;min-width:0;}
+.stats-bar{display:flex;align-items:center;padding:5px 12px;background:var(--bg2);border-bottom:1px solid var(--bd);font-size:11px;color:var(--tx3);flex-shrink:0;}
 .si b{color:var(--tx);font-weight:500;}
-.col-head{display:grid;grid-template-columns:18px 1fr 60px 130px 40px 95px;padding:5px 12px;background:var(--bg2);border-bottom:1px solid var(--bd);font-size:10px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--tx3);position:sticky;top:0;z-index:10;flex-shrink:0;}
+.col-head{display:grid;grid-template-columns:16px 1fr 50px 55px 36px 90px;padding:5px 12px;background:var(--bg2);border-bottom:1px solid var(--bd);font-size:10px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--tx3);position:sticky;top:0;z-index:10;flex-shrink:0;}
 .col-head span{cursor:pointer;user-select:none;}
 .col-head span:hover{color:var(--tx2);}
 .gem-list{display:flex;flex-direction:column;}
-.gem-row{display:grid;grid-template-columns:18px 1fr 60px 130px 40px 95px;padding:5px 12px;border-bottom:1px solid rgba(37,37,37,.7);align-items:center;cursor:pointer;transition:background .08s;min-height:30px;}
-.gem-row:hover{background:rgba(255,255,255,.02);}
-.gem-row.in-list{background:rgba(58,143,255,.06);}
-.gem-row.in-list:hover{background:rgba(58,143,255,.1);}
-.row-icon{width:12px;height:12px;border:1px solid var(--bd2);border-radius:2px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;color:transparent;transition:all .1s;flex-shrink:0;}
+.gem-row{display:grid;grid-template-columns:16px 1fr 50px 55px 36px 90px;padding:4px 12px;border-bottom:1px solid rgba(37,37,37,.7);align-items:center;cursor:pointer;transition:background .08s;min-height:28px;}
+.gem-row:hover{background:rgba(255,255,255,.025);}
+.gem-row.in-list{background:rgba(58,143,255,.07);}
+.gem-row.in-list:hover{background:rgba(58,143,255,.12);}
+.gem-row.drop-only{opacity:.5;cursor:default;}
+.gem-row.drop-only:hover{background:none;}
+.row-icon{width:11px;height:11px;border:1px solid var(--bd2);border-radius:2px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:transparent;transition:all .1s;flex-shrink:0;}
 .gem-row.in-list .row-icon{background:var(--blue);border-color:var(--blue);color:#fff;}
 .name-cell{display:flex;align-items:center;gap:6px;min-width:0;}
 .name-cell a{text-decoration:none;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -82,10 +74,11 @@ header{display:flex;align-items:center;justify-content:space-between;padding:0 1
 .type-cell{font-size:10px;font-weight:500;}
 .type-cell.skill{color:#d4a836;}
 .type-cell.support{color:#9b7fd4;}
-.src-cell{font-size:11px;}
-.tag{display:inline-flex;align-items:center;padding:1px 5px;border-radius:2px;font-size:10px;font-weight:500;}
+.src-cell{font-size:10px;}
+.tag{display:inline-flex;align-items:center;padding:1px 4px;border-radius:2px;font-size:9px;font-weight:500;}
 .tag-free{background:rgba(76,175,114,.1);color:var(--green);border:1px solid rgba(76,175,114,.2);}
 .tag-vendor{background:rgba(212,168,54,.08);color:var(--yellow);border:1px solid rgba(212,168,54,.2);}
+.tag-drop{background:rgba(100,100,100,.08);color:var(--tx3);border:1px solid var(--bd);}
 .lvl-cell{font-size:10px;color:var(--tx3);text-align:center;}
 .cost-cell{font-size:10px;}
 .cost-dash{color:var(--tx3);}
@@ -94,566 +87,502 @@ header{display:flex;align-items:center;justify-content:space-between;padding:0 1
 .orb-alt{color:#d4a836;}
 .orb-chance{color:#a0d090;}
 .orb-alch{color:#e0a060;}
-.state-box{display:flex;flex-direction:column;align-items:center;justify-content:center;height:280px;gap:10px;color:var(--tx3);}
-.spinner{width:24px;height:24px;border:2px solid var(--bd2);border-top-color:var(--blue);border-radius:50%;animation:spin .7s linear infinite;}
+.state-box{display:flex;flex-direction:column;align-items:center;justify-content:center;height:200px;gap:8px;color:var(--tx3);}
+.spinner{width:22px;height:22px;border:2px solid var(--bd2);border-top-color:var(--blue);border-radius:50%;animation:spin .7s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg);}}
 .state-box p{font-size:12px;text-align:center;line-height:1.6;}
 code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
+.list-section-head{padding:4px 12px;background:var(--bg3);border-bottom:1px solid var(--bd);font-size:9px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--tx3);display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;}
+.list-section-head:hover{color:var(--tx2);}
 
-/* ── RIGHT PANEL (Shopping List) ── */
-.right{background:var(--bg2);border-left:1px solid var(--bd);display:flex;flex-direction:column;overflow:hidden;}
-.cart-head{padding:8px 12px;border-bottom:1px solid var(--bd);background:var(--bg3);flex-shrink:0;}
-.cart-title-row{display:flex;align-items:center;justify-content:space-between;}
-.cart-title{font-size:13px;font-weight:600;}
-.cart-actions-top{display:flex;gap:4px;}
-.icon-btn{padding:3px 7px;border:1px solid var(--bd2);background:var(--bg4);color:var(--tx2);font-family:inherit;font-size:10px;cursor:pointer;border-radius:3px;transition:all .12s;white-space:nowrap;}
-.icon-btn:hover{border-color:var(--bd3);color:var(--tx);}
-.icon-btn.danger:hover{border-color:var(--red);color:var(--red);}
-.cart-sub{margin-top:4px;font-size:11px;color:var(--tx3);display:flex;justify-content:space-between;align-items:center;}
-.cart-gemcount{color:var(--tx2);}
+/* RIGHT: SHOPPING LIST */
+.right{background:var(--bg2);border-left:1px solid var(--bd);display:flex;flex-direction:column;overflow:hidden;min-width:0;}
 
-/* Groups toolbar */
-.groups-toolbar{padding:6px 12px;border-bottom:1px solid var(--bd);background:var(--bg2);flex-shrink:0;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
-.group-chip{padding:3px 8px;border:1px solid var(--bd2);background:var(--bg3);border-radius:3px;font-size:10px;font-weight:500;cursor:pointer;color:var(--tx2);transition:all .12s;display:flex;align-items:center;gap:4px;white-space:nowrap;}
-.group-chip:hover{border-color:var(--bd3);color:var(--tx);}
-.group-chip.active-group{border-color:var(--blue);background:rgba(58,143,255,.12);color:#7dbfff;}
-.group-chip .del-g{color:var(--tx3);font-size:9px;margin-left:2px;line-height:1;}
-.group-chip .del-g:hover{color:var(--red);}
-.add-group-btn{padding:3px 8px;border:1px dashed var(--bd2);background:transparent;border-radius:3px;font-size:10px;color:var(--tx3);cursor:pointer;transition:all .12s;}
-.add-group-btn:hover{border-color:var(--bd3);color:var(--tx2);}
+/* Shopping list top toolbar: view toggle + actions */
+.cart-head{padding:7px 10px;border-bottom:1px solid var(--bd);background:var(--bg3);flex-shrink:0;}
+.cart-head-row1{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;}
+.cart-title{font-size:12px;font-weight:600;}
+.cart-head-btns{display:flex;gap:3px;}
+.hbtn{padding:2px 7px;border:1px solid var(--bd2);background:var(--bg4);color:var(--tx2);font-family:inherit;font-size:10px;cursor:pointer;border-radius:3px;transition:all .12s;}
+.hbtn:hover{border-color:var(--bd3);color:var(--tx);}
+.hbtn.danger:hover{border-color:var(--red);color:var(--red);}
+/* View mode toggle */
+.view-toggle{display:flex;gap:2px;background:var(--bg);border:1px solid var(--bd);border-radius:3px;padding:2px;}
+.vtbtn{padding:2px 8px;border:none;background:transparent;color:var(--tx3);font-family:inherit;font-size:10px;font-weight:500;cursor:pointer;border-radius:2px;transition:all .12s;}
+.vtbtn:hover{color:var(--tx2);}
+.vtbtn.active{background:var(--bg3);color:var(--tx);border:1px solid var(--bd2);}
+.cart-gemcount{font-size:10px;color:var(--tx3);}
 
-/* Cart list */
-.cart-list{flex:1;overflow-y:auto;padding:2px 0;}
-.cart-group-sec{padding:5px 12px 2px;font-size:10px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--tx3);display:flex;align-items:center;gap:6px;margin-top:2px;}
-.cart-group-sec .gsocket{font-size:10px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--tx2);margin-left:auto;}
-.cart-group-sec .gsocket .sc-R{color:#c47a3a;}
-.cart-group-sec .gsocket .sc-G{color:#54a860;}
-.cart-group-sec .gsocket .sc-B{color:#6b9fd4;}
-.cart-item{display:grid;grid-template-columns:1fr auto auto auto;padding:4px 12px;border-bottom:1px solid rgba(37,37,37,.5);gap:5px;align-items:center;}
+/* Groups bar */
+.groups-bar{padding:5px 10px;border-bottom:1px solid var(--bd);background:var(--bg2);flex-shrink:0;display:flex;align-items:center;gap:4px;flex-wrap:wrap;min-height:32px;}
+.g-chip{padding:2px 7px;border:1px solid var(--bd2);background:var(--bg3);border-radius:3px;font-size:10px;font-weight:500;cursor:pointer;color:var(--tx2);transition:all .12s;display:flex;align-items:center;gap:3px;white-space:nowrap;}
+.g-chip:hover{border-color:var(--bd3);color:var(--tx);}
+.g-chip.active{border-color:var(--blue);background:rgba(58,143,255,.12);color:#7dbfff;}
+.g-chip .gc-del{color:var(--tx3);font-size:8px;margin-left:1px;cursor:pointer;}
+.g-chip .gc-del:hover{color:var(--red);}
+.add-g-btn{padding:2px 7px;border:1px dashed var(--bd2);background:transparent;border-radius:3px;font-size:10px;color:var(--tx3);cursor:pointer;transition:all .12s;white-space:nowrap;}
+.add-g-btn:hover{border-color:var(--bd3);color:var(--tx2);}
+
+/* Cart body — two-column when split view */
+.cart-body{flex:1;overflow:hidden;display:flex;flex-direction:column;}
+.cart-body.split{flex-direction:row;}
+.cart-pane{flex:1;overflow-y:auto;min-width:0;}
+.cart-pane+.cart-pane{border-left:1px solid var(--bd);}
+.pane-head{padding:4px 10px;background:var(--bg3);border-bottom:1px solid var(--bd);font-size:9px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--tx3);position:sticky;top:0;z-index:5;}
+
+/* Cart items */
+.cart-sec{padding:4px 10px 1px;font-size:9px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--tx3);display:flex;align-items:center;gap:5px;}
+.cart-sec .gsock{margin-left:auto;font-size:9px;letter-spacing:0;text-transform:none;font-weight:600;}
+.cart-sec .gsock .sc-R{color:#c47a3a;}
+.cart-sec .gsock .sc-G{color:#54a860;}
+.cart-sec .gsock .sc-B{color:#6b9fd4;}
+.cart-item{display:grid;grid-template-columns:1fr auto auto auto;padding:3px 10px;border-bottom:1px solid rgba(37,37,37,.5);gap:4px;align-items:center;}
 .ci-info{min-width:0;}
-.ci-name{font-size:11px;color:var(--tx);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.ci-name{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .ci-name.c-str{color:#c47a3a;}
 .ci-name.c-dex{color:#54a860;}
 .ci-name.c-int{color:#6b9fd4;}
-.ci-meta{font-size:9px;color:var(--tx3);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.ci-name.c-gen{color:var(--tx);}
+.ci-meta{font-size:9px;color:var(--tx3);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:3px;}
+.g-move{font-size:9px;background:var(--bg3);border:1px solid var(--bd);color:var(--tx3);border-radius:2px;padding:1px 3px;cursor:pointer;max-width:80px;}
 .ci-cost{font-size:10px;white-space:nowrap;}
-.ci-own-btn{width:14px;height:14px;background:none;border:1px solid var(--bd2);border-radius:2px;cursor:pointer;font-size:8px;color:var(--tx3);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:0;transition:all .1s;}
-.ci-own-btn:hover{border-color:var(--green);color:var(--green);}
-.ci-own-btn.is-owned{border-color:var(--green);color:var(--green);background:rgba(76,175,114,.1);}
-.rm-btn{width:14px;height:14px;background:none;border:1px solid rgba(200,60,60,.15);border-radius:2px;color:rgba(200,60,60,.3);cursor:pointer;font-size:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .1s;padding:0;}
-.rm-btn:hover{background:rgba(200,60,60,.1);border-color:var(--red);color:var(--red);}
-.cart-empty{display:flex;align-items:center;justify-content:center;height:100px;}
+.ci-own{width:13px;height:13px;background:none;border:1px solid var(--bd2);border-radius:2px;cursor:pointer;font-size:7px;color:var(--tx3);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:0;transition:all .1s;}
+.ci-own:hover{border-color:var(--green);color:var(--green);}
+.ci-own.owned{border-color:var(--green);color:var(--green);background:rgba(76,175,114,.1);}
+.ci-rm{width:13px;height:13px;background:none;border:1px solid rgba(200,60,60,.15);border-radius:2px;color:rgba(200,60,60,.3);cursor:pointer;font-size:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:0;transition:all .1s;}
+.ci-rm:hover{background:rgba(200,60,60,.1);border-color:var(--red);color:var(--red);}
+.cart-empty{display:flex;align-items:center;justify-content:center;height:80px;}
 .cart-empty p{font-size:11px;color:var(--tx3);text-align:center;line-height:1.6;}
 
-/* Cost summary */
-.cost-summary{border-top:1px solid var(--bd);flex-shrink:0;}
-.cost-summary-head{display:flex;align-items:center;justify-content:space-between;padding:5px 12px;cursor:pointer;user-select:none;}
-.cost-summary-head:hover{background:rgba(255,255,255,.02);}
-.cost-sum-lbl{font-size:10px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--tx3);}
-.cost-sum-toggle{font-size:10px;color:var(--tx3);}
-.cost-summary-body{padding:4px 12px 8px;display:flex;flex-direction:column;gap:2px;}
-.cost-sum-row{display:flex;justify-content:space-between;font-size:10px;}
-.cost-sum-row .orb-name{color:var(--tx2);}
-.cost-sum-row .orb-qty{color:var(--yellow);font-weight:600;}
-.cost-sum-total{margin-top:3px;padding-top:4px;border-top:1px solid var(--bd);font-size:10px;font-weight:600;color:var(--tx);}
-
-/* Cart footer */
-.cart-footer{padding:8px 10px;border-top:1px solid var(--bd);display:flex;flex-direction:column;gap:5px;flex-shrink:0;}
-.btn{padding:6px 10px;font-family:inherit;font-size:11px;font-weight:500;cursor:pointer;transition:all .12s;text-align:center;border-radius:3px;width:100%;}
-.btn-primary{background:var(--blue);color:#fff;border:1px solid var(--blue);}
-.btn-primary:hover{background:#5aacff;}
-.btn-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;}
-.btn-sm{padding:5px 4px;font-family:inherit;font-size:10px;font-weight:500;cursor:pointer;border-radius:3px;transition:all .12s;text-align:center;}
-.btn-secondary{background:transparent;color:var(--tx2);border:1px solid var(--bd2);}
-.btn-secondary:hover{border-color:var(--bd3);color:var(--tx);}
-.btn-danger{background:transparent;color:rgba(200,60,60,.6);border:1px solid rgba(200,60,60,.2);}
-.btn-danger:hover{border-color:var(--red);color:var(--red);}
-.btn:disabled,.btn-sm:disabled{opacity:.35;cursor:not-allowed;}
-
-/* ── ACT VIEW ── */
-.act-view{background:var(--bg);overflow-y:auto;display:flex;flex-direction:column;}
-.act-section{border-bottom:1px solid var(--bd);}
-.act-header{padding:8px 16px;background:var(--bg2);font-size:12px;font-weight:600;color:var(--tx2);letter-spacing:.3px;position:sticky;top:0;z-index:5;border-bottom:1px solid var(--bd);}
-.act-quest{padding:4px 16px 2px;font-size:10px;font-weight:600;color:var(--tx3);text-transform:uppercase;letter-spacing:.5px;margin-top:4px;}
-.act-gem-row{display:flex;align-items:center;gap:8px;padding:4px 16px;border-bottom:1px solid rgba(37,37,37,.5);cursor:pointer;transition:background .08s;}
+/* Act view pane */
+.act-sec{border-bottom:1px solid rgba(37,37,37,.5);}
+.act-sec-head{padding:3px 10px;font-size:9px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--blue);opacity:.7;}
+.act-quest-head{padding:2px 10px 1px;font-size:9px;color:var(--tx3);font-style:italic;}
+.act-gem-row{display:flex;align-items:center;gap:6px;padding:3px 10px;border-bottom:1px solid rgba(37,37,37,.4);cursor:pointer;transition:background .08s;}
 .act-gem-row:hover{background:rgba(255,255,255,.02);}
-.act-gem-row.in-list{background:rgba(58,143,255,.05);}
+.act-gem-row.in-list{background:rgba(58,143,255,.06);}
 .act-row-icon{width:10px;height:10px;border:1px solid var(--bd2);border-radius:2px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:transparent;flex-shrink:0;transition:all .1s;}
 .act-gem-row.in-list .act-row-icon{background:var(--blue);border-color:var(--blue);color:#fff;}
-.act-gem-name{font-size:12px;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.act-gem-name{font-size:11px;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .act-gem-name.c-str{color:#c47a3a;}
 .act-gem-name.c-dex{color:#54a860;}
 .act-gem-name.c-int{color:#6b9fd4;}
 .act-gem-name.c-gen{color:var(--tx2);}
-.act-gem-meta{font-size:10px;color:var(--tx3);white-space:nowrap;}
-.act-gem-type{font-size:9px;font-weight:500;padding:1px 4px;border-radius:2px;}
+.act-gem-type{font-size:9px;font-weight:500;}
 .act-gem-type.skill{color:#d4a836;}
 .act-gem-type.support{color:#9b7fd4;}
 
-/* Toast */
-.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%) translateY(60px);background:var(--bg4);border:1px solid var(--bd2);color:var(--tx);padding:7px 14px;font-size:12px;border-radius:4px;transition:transform .25s;z-index:100;pointer-events:none;}
-.toast.show{transform:translateX(-50%) translateY(0);}
+/* Cost summary */
+.cost-summary{border-top:1px solid var(--bd);flex-shrink:0;}
+.cs-head{display:flex;align-items:center;justify-content:space-between;padding:4px 10px;cursor:pointer;user-select:none;}
+.cs-head:hover{background:rgba(255,255,255,.02);}
+.cs-lbl{font-size:9px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--tx3);}
+.cs-body{padding:3px 10px 7px;display:flex;flex-direction:column;gap:2px;}
+.cs-row{display:flex;justify-content:space-between;font-size:10px;}
+.cs-row .on{color:var(--tx2);}
+.cs-row .oq{color:var(--yellow);font-weight:600;}
+.cs-total{margin-top:3px;padding-top:3px;border-top:1px solid var(--bd);font-size:10px;font-weight:600;color:var(--tx);}
+
+/* Footer */
+.cart-footer{padding:6px 8px;border-top:1px solid var(--bd);display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;flex-shrink:0;}
+.fbtn{padding:5px 4px;font-family:inherit;font-size:10px;font-weight:500;cursor:pointer;border-radius:3px;transition:all .12s;text-align:center;border:1px solid var(--bd2);background:transparent;color:var(--tx2);}
+.fbtn:hover{border-color:var(--bd3);color:var(--tx);}
+.fbtn.danger{color:rgba(200,60,60,.6);border-color:rgba(200,60,60,.2);}
+.fbtn.danger:hover{border-color:var(--red);color:var(--red);}
+.fbtn:disabled{opacity:.35;cursor:not-allowed;}
 
 /* Modal */
-.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;align-items:center;justify-content:center;}
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:200;align-items:center;justify-content:center;}
 .modal-bg.open{display:flex;}
-.modal{background:var(--bg2);border:1px solid var(--bd2);border-radius:5px;padding:18px;min-width:280px;max-width:400px;width:90%;}
-.modal h3{font-size:13px;font-weight:600;margin-bottom:12px;}
-.modal input,.modal textarea{width:100%;padding:7px 10px;background:var(--bg3);border:1px solid var(--bd);border-radius:3px;color:var(--tx);font-family:inherit;font-size:12px;outline:none;margin-bottom:10px;}
+.modal{background:var(--bg2);border:1px solid var(--bd2);border-radius:5px;padding:16px;min-width:260px;max-width:380px;width:90%;}
+.modal h3{font-size:12px;font-weight:600;margin-bottom:10px;}
+.modal input,.modal textarea{width:100%;padding:6px 9px;background:var(--bg3);border:1px solid var(--bd);border-radius:3px;color:var(--tx);font-family:inherit;font-size:12px;outline:none;margin-bottom:8px;}
 .modal input:focus,.modal textarea:focus{border-color:var(--bd3);}
-.modal textarea{height:120px;resize:vertical;font-size:11px;}
-.modal-btns{display:flex;gap:6px;justify-content:flex-end;}
-.modal-btns button{padding:6px 14px;font-family:inherit;font-size:11px;font-weight:500;cursor:pointer;border-radius:3px;transition:all .12s;}
-.modal-btn-ok{background:var(--blue);color:#fff;border:1px solid var(--blue);}
-.modal-btn-ok:hover{background:#5aacff;}
-.modal-btn-cancel{background:transparent;color:var(--tx2);border:1px solid var(--bd2);}
-.modal-btn-cancel:hover{border-color:var(--bd3);color:var(--tx);}
+.modal textarea{height:110px;resize:vertical;font-size:11px;}
+.modal-btns{display:flex;gap:5px;justify-content:flex-end;}
+.modal-btns button{padding:5px 12px;font-family:inherit;font-size:11px;font-weight:500;cursor:pointer;border-radius:3px;transition:all .12s;}
+.mbtn-ok{background:var(--blue);color:#fff;border:1px solid var(--blue);}
+.mbtn-ok:hover{background:#5aacff;}
+.mbtn-cancel{background:transparent;color:var(--tx2);border:1px solid var(--bd2);}
+.mbtn-cancel:hover{border-color:var(--bd3);color:var(--tx);}
 
+.toast{position:fixed;bottom:14px;left:50%;transform:translateX(-50%) translateY(60px);background:var(--bg4);border:1px solid var(--bd2);color:var(--tx);padding:6px 14px;font-size:12px;border-radius:4px;transition:transform .25s;z-index:300;pointer-events:none;}
+.toast.show{transform:translateX(-50%) translateY(0);}
 ::-webkit-scrollbar{width:4px;}
 ::-webkit-scrollbar-track{background:transparent;}
 ::-webkit-scrollbar-thumb{background:var(--bd2);border-radius:2px;}
 </style>
 </head>
 <body>
-
 <header>
-  <div class="h-left">
-    <div class="h-title">PoE Gem Planner <span>Path of Exile 1</span></div>
-    <div class="tab-btns">
-      <button class="tab-btn active" onclick="switchTab('list')">Gem List</button>
-      <button class="tab-btn" onclick="switchTab('acts')">By Act</button>
-    </div>
-  </div>
+  <div class="h-title">PoE Gem Planner <span>Path of Exile 1</span></div>
   <div class="h-right">Data: <b id="dataDate">—</b> &nbsp;·&nbsp; <b id="dataCount">—</b> gems</div>
 </header>
 
 <div class="app">
-  <!-- LEFT SIDEBAR (shared) -->
-  <aside class="left">
-    <div>
-      <div class="lbl">Character Class</div>
-      <div class="class-grid">
-        <button class="cbtn active" data-class="Marauder">Marauder</button>
-        <button class="cbtn" data-class="Ranger">Ranger</button>
-        <button class="cbtn" data-class="Witch">Witch</button>
-        <button class="cbtn" data-class="Duelist">Duelist</button>
-        <button class="cbtn" data-class="Templar">Templar</button>
-        <button class="cbtn" data-class="Shadow">Shadow</button>
-        <button class="cbtn full" data-class="Scion">Scion</button>
-      </div>
-    </div>
-    <div>
-      <div class="lbl">Search</div>
-      <input class="search" id="searchInput" placeholder="Gem name...">
-    </div>
-    <div id="listFilters">
-      <div class="lbl">Source</div>
-      <div class="filter-group">
-        <label class="ftoggle"><input type="checkbox" id="fQuest" checked><span class="chk"></span><span class="flbl">🟢 Quest reward</span></label>
-        <label class="ftoggle"><input type="checkbox" id="fVendor" checked><span class="chk"></span><span class="flbl">🟡 Vendor only</span></label>
-      </div>
-      <div class="lbl" style="margin-top:10px">Gem Type</div>
-      <div class="filter-group">
-        <label class="ftoggle"><input type="checkbox" id="fSkill" checked><span class="chk"></span><span class="flbl">Skill Gems</span></label>
-        <label class="ftoggle"><input type="checkbox" id="fSupport" checked><span class="chk"></span><span class="flbl">Support Gems</span></label>
-      </div>
-    </div>
-    <div class="info-box">
-      <b>Click row</b> → shopping list<br>
-      <b>✓ in cart</b> → mark owned<br>
-      Only quest/vendor gems shown.<br><br>
-      Vendor price by req. level:<br>
-      1–7 → Wisdom · 8–15 → Transmute<br>
-      16–27 → Alt · 28–37 → Chance · 38+ → Alch
-    </div>
-  </aside>
-
-  <!-- TAB: GEM LIST -->
-  <div id="tabList" class="tab-panel active">
-    <main class="main">
-      <div class="stats-bar">
-        <div class="si">Shown: <b id="sTotal">—</b></div>
-      </div>
-      <div class="col-head">
-        <span></span>
-        <span onclick="sortBy('name')">Gem</span>
-        <span onclick="sortBy('type')">Type</span>
-        <span onclick="sortBy('source')">Source</span>
-        <span onclick="sortBy('lvl')" title="Required level at gem level 1">Lvl</span>
-        <span onclick="sortBy('cost')">Cost</span>
-      </div>
-      <div class="gem-list" id="gemList">
-        <div class="state-box"><div class="spinner"></div><p>Loading gems.json...</p></div>
-      </div>
-    </main>
-  </div>
-
-  <!-- TAB: BY ACT -->
-  <div id="tabActs" class="tab-panel">
-    <div class="act-view" id="actView">
-      <div class="state-box"><div class="spinner"></div><p>Loading...</p></div>
+<!-- LEFT -->
+<aside class="left">
+  <div>
+    <div class="lbl">Character Class</div>
+    <div class="class-grid">
+      <button class="cbtn active" data-class="Marauder">Marauder</button>
+      <button class="cbtn" data-class="Ranger">Ranger</button>
+      <button class="cbtn" data-class="Witch">Witch</button>
+      <button class="cbtn" data-class="Duelist">Duelist</button>
+      <button class="cbtn" data-class="Templar">Templar</button>
+      <button class="cbtn" data-class="Shadow">Shadow</button>
+      <button class="cbtn full" data-class="Scion">Scion</button>
     </div>
   </div>
+  <div>
+    <div class="lbl">Search</div>
+    <input class="search" id="searchInput" placeholder="Gem name...">
+  </div>
+  <div>
+    <div class="lbl">Source</div>
+    <div class="filter-group">
+      <label class="ftoggle"><input type="checkbox" id="fQuest" checked><span class="chk"></span><span class="flbl">🟢 Quest reward</span></label>
+      <label class="ftoggle"><input type="checkbox" id="fVendor" checked><span class="chk"></span><span class="flbl">🟡 Vendor only</span></label>
+      <label class="ftoggle"><input type="checkbox" id="fDrop"><span class="chk"></span><span class="flbl">⚫ Drop only</span></label>
+    </div>
+  </div>
+  <div>
+    <div class="lbl">Gem Type</div>
+    <div class="filter-group">
+      <label class="ftoggle"><input type="checkbox" id="fSkill" checked><span class="chk"></span><span class="flbl">Skill Gems</span></label>
+      <label class="ftoggle"><input type="checkbox" id="fSupport" checked><span class="chk"></span><span class="flbl">Support Gems</span></label>
+    </div>
+  </div>
+  <div class="info-box">
+    <b>Click gem</b> → add to list<br>
+    <b>Active group</b> → gem goes there<br>
+    <b>✓ in list</b> → mark owned<br><br>
+    Req. level → vendor price:<br>
+    1–7 Wisdom · 8–15 Transmute<br>
+    16–27 Alt · 28–37 Chance · 38+ Alch
+  </div>
+</aside>
 
-  <!-- RIGHT: SHOPPING LIST -->
-  <aside class="right">
-    <div class="cart-head">
-      <div class="cart-title-row">
-        <div class="cart-title">Shopping List</div>
-        <div class="cart-actions-top">
-          <button class="icon-btn" onclick="exportJSON()" title="Export as JSON">⬆ Export</button>
-          <button class="icon-btn" onclick="openImport()" title="Import JSON">⬇ Import</button>
-          <button class="icon-btn" onclick="copyList()" title="Copy as text">Copy</button>
-          <button class="icon-btn danger" onclick="clearAll()" title="Clear everything">✕ Clear</button>
-        </div>
-      </div>
-      <div class="cart-sub">
-        <span class="cart-gemcount" id="cartCount">0 gems</span>
+<!-- CENTER: GEM LIST -->
+<main class="main">
+  <div class="stats-bar"><div class="si">Shown: <b id="sTotal">—</b></div></div>
+  <div class="col-head">
+    <span></span>
+    <span onclick="sortBy('name')">Gem</span>
+    <span onclick="sortBy('type')">Type</span>
+    <span onclick="sortBy('source')">Source</span>
+    <span onclick="sortBy('lvl')" title="Req level at gem lvl 1">Lvl</span>
+    <span onclick="sortBy('cost')">Cost</span>
+  </div>
+  <div class="gem-list" id="gemList">
+    <div class="state-box"><div class="spinner"></div><p>Loading gems.json...</p></div>
+  </div>
+</main>
+
+<!-- RIGHT: SHOPPING LIST -->
+<aside class="right">
+  <div class="cart-head">
+    <div class="cart-head-row1">
+      <span class="cart-title">Shopping List</span>
+      <div class="cart-head-btns">
+        <button class="hbtn" onclick="exportJSON()">⬆ JSON</button>
+        <button class="hbtn" onclick="openImport()">⬇ Import</button>
+        <button class="hbtn danger" onclick="clearAll()">✕</button>
       </div>
     </div>
-
-    <!-- Groups toolbar -->
-    <div class="groups-toolbar" id="groupsToolbar">
-      <div class="group-chip active-group" data-gid="__none__" onclick="selectActiveGroup('__none__')">No group</div>
-      <button class="add-group-btn" onclick="addGroup()">+ Group</button>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-top:4px;">
+      <span class="cart-gemcount" id="cartCount">0 gems</span>
+      <div class="view-toggle">
+        <button class="vtbtn active" id="vt-groups" onclick="setView('groups')">Groups</button>
+        <button class="vtbtn" id="vt-acts" onclick="setView('acts')">Acts</button>
+        <button class="vtbtn" id="vt-split" onclick="setView('split')">Both</button>
+      </div>
     </div>
+  </div>
 
-    <div class="cart-list" id="cartList">
+  <!-- Groups bar -->
+  <div class="groups-bar" id="groupsBar">
+    <div class="g-chip active" id="chip-none" onclick="selectGroup('__none__')">No group</div>
+    <button class="add-g-btn" onclick="addGroup()">+ Group</button>
+  </div>
+
+  <!-- Body: switches between views -->
+  <div class="cart-body" id="cartBody">
+    <div class="cart-pane" id="paneGroups">
       <div class="cart-empty"><p>Click a gem to add<br>it to your list.</p></div>
     </div>
+  </div>
 
-    <!-- Cost summary (collapsible) -->
-    <div class="cost-summary" id="costSummary" style="display:none">
-      <div class="cost-summary-head" onclick="toggleCostSummary()">
-        <span class="cost-sum-lbl">Cost Summary</span>
-        <span class="cost-sum-toggle" id="costToggleIcon">▲</span>
-      </div>
-      <div class="cost-summary-body" id="costSummaryBody"></div>
+  <!-- Cost summary -->
+  <div class="cost-summary" id="costSummary" style="display:none">
+    <div class="cs-head" onclick="toggleCS()">
+      <span class="cs-lbl">Cost Summary</span>
+      <span id="csIcon" style="font-size:10px;color:var(--tx3)">▲</span>
     </div>
+    <div class="cs-body" id="csBody"></div>
+  </div>
 
-    <div class="cart-footer">
-      <div class="btn-row">
-        <button class="btn-sm btn-secondary" onclick="copyList()">📋 Copy text</button>
-        <button class="btn-sm btn-secondary" onclick="exportJSON()">⬆ JSON</button>
-        <button class="btn-sm btn-danger" onclick="clearAll()">✕ Clear all</button>
-      </div>
-    </div>
-  </aside>
+  <div class="cart-footer">
+    <button class="fbtn" onclick="copyList()">📋 Copy</button>
+    <button class="fbtn" onclick="exportJSON()">⬆ Export</button>
+    <button class="fbtn danger" onclick="clearAll()">✕ Clear</button>
+  </div>
+</aside>
 </div>
 
-<!-- Add group modal -->
+<!-- Modal: new group -->
 <div class="modal-bg" id="modalGroup">
   <div class="modal">
     <h3>New Group</h3>
-    <input type="text" id="groupNameInput" placeholder="e.g. Body Armour, Boots..." maxlength="40">
+    <input type="text" id="groupNameInput" placeholder="e.g. Body Armour, Boots…" maxlength="40">
     <div class="modal-btns">
-      <button class="modal-btn-cancel" onclick="closeModal('modalGroup')">Cancel</button>
-      <button class="modal-btn-ok" onclick="confirmAddGroup()">Create</button>
+      <button class="mbtn-cancel" onclick="closeModal('modalGroup')">Cancel</button>
+      <button class="mbtn-ok" onclick="confirmAddGroup()">Create</button>
     </div>
   </div>
 </div>
 
-<!-- Import modal -->
+<!-- Modal: import -->
 <div class="modal-bg" id="modalImport">
   <div class="modal">
     <h3>Import Shopping List (JSON)</h3>
-    <textarea id="importText" placeholder="Paste JSON here..."></textarea>
+    <textarea id="importText" placeholder="Paste JSON here…"></textarea>
     <div class="modal-btns">
-      <button class="modal-btn-cancel" onclick="closeModal('modalImport')">Cancel</button>
-      <button class="modal-btn-ok" onclick="confirmImport()">Import</button>
+      <button class="mbtn-cancel" onclick="closeModal('modalImport')">Cancel</button>
+      <button class="mbtn-ok" onclick="confirmImport()">Import</button>
     </div>
   </div>
 </div>
 
 <div class="toast" id="toast"></div>
-
 <script>
 // ── State ────────────────────────────────────────────────────────
 let allGems = [];
-// wantedGems: Map<key, {groupId: string}>
-let wantedGems = new Map();
-// ownedGems: Set<key>
-let ownedGems = new Set();
-// groups: Array<{id, name}>
-let groups = [];
+let wantedGems = new Map();   // key → {groupId}
+let ownedGems  = new Set();
+let groups = [];               // [{id, name}]
 let activeGroupId = '__none__';
+let cartView = 'groups';       // 'groups' | 'acts' | 'split'
 let sortKey = 'name', sortDir = 1;
 let selectedClass = 'Marauder';
-let currentTab = 'list';
-let costSummaryOpen = true;
+let csOpen = true;
+let dropOnlyCollapsed = true;
 
-const ORB_ORDER = {'Scroll of Wisdom':0,'Orb of Transmutation':1,'Orb of Alteration':2,'Orb of Chance':3,'Orb of Alchemy':4};
-const ORB_SHORT = {'Scroll of Wisdom':'Wisdom','Orb of Transmutation':'Transmute','Orb of Alteration':'Alteration','Orb of Chance':'Chance','Orb of Alchemy':'Alchemy'};
-const ORB_CLASS = {'Scroll of Wisdom':'orb-wisdom','Orb of Transmutation':'orb-transmute','Orb of Alteration':'orb-alt','Orb of Chance':'orb-chance','Orb of Alchemy':'orb-alch'};
+const ORB_ORDER  = {'Scroll of Wisdom':0,'Orb of Transmutation':1,'Orb of Alteration':2,'Orb of Chance':3,'Orb of Alchemy':4};
+const ORB_SHORT  = {'Scroll of Wisdom':'Wisdom','Orb of Transmutation':'Transmute','Orb of Alteration':'Alteration','Orb of Chance':'Chance','Orb of Alchemy':'Alchemy'};
+const ORB_CLASS  = {'Scroll of Wisdom':'orb-wisdom','Orb of Transmutation':'orb-transmute','Orb of Alteration':'orb-alt','Orb of Chance':'orb-chance','Orb of Alchemy':'orb-alch'};
 
-// ── Load ─────────────────────────────────────────────────────────
+// ── Load ──────────────────────────────────────────────────────────
 async function loadGems() {
   try {
     const res = await fetch('gems.json');
     if (!res.ok) throw new Error(res.status);
     const data = await res.json();
-    // Filter: only gems with quest or vendor rewards (no drop-only, no alt gems)
-    allGems = (data.gems || []).filter(g =>
-      (g.questRewards && g.questRewards.length > 0) ||
-      (g.vendorRewards && g.vendorRewards.length > 0)
-    );
+    allGems = data.gems || [];
+    // Fix isSupport by name fallback (in case gems.json was generated before fix)
+    allGems.forEach(g => {
+      if (!g.isSupport && g.name && g.name.endsWith(' Support')) g.isSupport = true;
+    });
     if (data.generatedAt) {
       const d = new Date(data.generatedAt);
       document.getElementById('dataDate').textContent = d.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});
     }
     document.getElementById('dataCount').textContent = allGems.length;
     renderGems();
-    renderActView();
+    renderCart();
   } catch(e) {
-    document.getElementById('gemList').innerHTML = `
-      <div class="state-box">
-        <p style="color:var(--red);font-size:13px">gems.json not found</p>
-        <p>Run <code>node fetch-gems.mjs</code> first.</p>
-      </div>`;
+    document.getElementById('gemList').innerHTML = `<div class="state-box"><p style="color:var(--red)">gems.json not found</p><p>Run <code>node fetch-gems.mjs</code></p></div>`;
   }
 }
 
-// ── Source logic ──────────────────────────────────────────────────
+// ── Source ────────────────────────────────────────────────────────
 function getSource(gem, cls) {
-  const free = gem.questRewards.find(e => !e.classes.length || e.classes.some(c=>c.toLowerCase()===cls.toLowerCase()));
-  if (free) return {type:'quest', entry:free};
-  const vendor = gem.vendorRewards.find(e => !e.classes.length || e.classes.some(c=>c.toLowerCase()===cls.toLowerCase()));
-  if (vendor) return {type:'vendor', entry:vendor};
-  // Available to other classes via Siosa/Lilly
-  if (gem.vendorRewards.length) {
-    const any = gem.vendorRewards[0];
-    return {type: any.act <= 3 ? 'siosa' : 'lilyroth', entry: any};
-  }
-  if (gem.questRewards.length) {
-    const any = gem.questRewards[0];
-    return {type: any.act <= 3 ? 'siosa' : 'lilyroth', entry: any};
-  }
+  const qr = gem.questRewards.find(e => !e.classes.length || e.classes.some(c=>c.toLowerCase()===cls.toLowerCase()));
+  if (qr) return {type:'quest', entry:qr};
+  const vr = gem.vendorRewards.find(e => !e.classes.length || e.classes.some(c=>c.toLowerCase()===cls.toLowerCase()));
+  if (vr) return {type:'vendor', entry:vr};
+  // Other class → Siosa or Lilly
+  const any = gem.vendorRewards[0] || gem.questRewards[0];
+  if (any) return {type: any.act <= 3 ? 'siosa' : 'lilyroth', entry: any};
   return {type:'drop', entry:null};
 }
-
+function hasQuestForClass(gem, cls) {
+  return gem.questRewards.some(e => !e.classes.length || e.classes.some(c=>c.toLowerCase()===cls.toLowerCase()));
+}
 function srcOrder(t){ return {quest:0,vendor:1,siosa:2,lilyroth:3,drop:4}[t]??5; }
-
-// ── Tab switching ─────────────────────────────────────────────────
-function switchTab(tab) {
-  currentTab = tab;
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active', b.textContent.toLowerCase().includes(tab==='list'?'gem':'act')));
-  document.getElementById('tabList').classList.toggle('active', tab==='list');
-  document.getElementById('tabActs').classList.toggle('active', tab==='acts');
-  document.getElementById('listFilters').style.display = tab==='list'?'':'none';
+function isAvailable(gem) {
+  return gem.questRewards.length > 0 || gem.vendorRewards.length > 0;
 }
 
-// ── Gem color class ───────────────────────────────────────────────
-function gc(gem){ return 'gc-'+(gem.color||'gen'); }
-function ciColor(gem){ return gem.color==='str'?'c-str':gem.color==='dex'?'c-dex':gem.color==='int'?'c-int':'c-gen'; }
+// ── Gem color helpers ─────────────────────────────────────────────
+function gc(gem) { return 'gc-'+(gem.color||'gen'); }
+function cc(gem) { const c=gem.color; return c==='str'?'c-str':c==='dex'?'c-dex':c==='int'?'c-int':'c-gen'; }
 
 // ── Render gem list ───────────────────────────────────────────────
 function renderGems() {
   const search = document.getElementById('searchInput').value.trim().toLowerCase();
-  const fQ=document.getElementById('fQuest').checked;
-  const fV=document.getElementById('fVendor').checked;
-  const fSk=document.getElementById('fSkill').checked;
-  const fSu=document.getElementById('fSupport').checked;
+  const fQ  = document.getElementById('fQuest').checked;
+  const fV  = document.getElementById('fVendor').checked;
+  const fD  = document.getElementById('fDrop').checked;
+  const fSk = document.getElementById('fSkill').checked;
+  const fSu = document.getElementById('fSupport').checked;
 
-  let gems = allGems
-    .filter(g => g.isSupport ? fSu : fSk)
-    .filter(g => !search || g.name.toLowerCase().includes(search))
-    .map(g => ({...g, src:getSource(g, selectedClass)}));
-
-  // Source filter: quest = has quest reward for this class, vendor = vendor only (incl siosa/lilly)
-  gems = gems.filter(g => {
-    const t = g.src.type;
-    if (t==='quest' && fQ) return true;
-    if ((t==='vendor'||t==='siosa'||t==='lilyroth') && fV) return true;
-    if (t==='quest' && fV) return true; // quest gems are also available from vendor
-    return false;
-  });
-
-  gems.sort((a,b)=>{
-    let va,vb;
-    if(sortKey==='name')  {va=a.name;vb=b.name;}
-    else if(sortKey==='type')  {va=a.isSupport?1:0;vb=b.isSupport?1:0;}
-    else if(sortKey==='source'){va=srcOrder(a.src.type);vb=srcOrder(b.src.type);}
-    else if(sortKey==='lvl')   {va=a.requiredLevel;vb=b.requiredLevel;}
-    else if(sortKey==='cost')  {va=ORB_ORDER[a.vendorCost?.orb]??5;vb=ORB_ORDER[b.vendorCost?.orb]??5;}
-    else {va=a.name;vb=b.name;}
-    return va<vb?-sortDir:va>vb?sortDir:0;
-  });
-
-  document.getElementById('sTotal').textContent = gems.length;
-
-  if (!gems.length) {
-    document.getElementById('gemList').innerHTML=`<div class="state-box"><p>No gems match the filters.</p></div>`;
-    return;
-  }
-
-  document.getElementById('gemList').innerHTML = gems.map(g => {
-    const iW = wantedGems.has(g.key);
-    const {src} = g;
-    let srcHtml, locHtml, costHtml;
-
-    const hasQuest = g.questRewards.some(e => !e.classes.length || e.classes.some(c=>c.toLowerCase()===selectedClass.toLowerCase()));
-    const hasVendor = g.vendorRewards.some(e => !e.classes.length || e.classes.some(c=>c.toLowerCase()===selectedClass.toLowerCase()));
-
-    // Source tag: if has both quest and vendor → show Quest (primary), if vendor only → Vendor
-    if (hasQuest) {
-      srcHtml = `<span class="tag tag-free">Quest</span>`;
-      locHtml = src.entry ? `Act ${src.entry.act}` : '';
-    } else if (hasVendor || src.type==='vendor') {
-      srcHtml = `<span class="tag tag-vendor">Vendor</span>`;
-      locHtml = src.entry ? `Act ${src.entry.act}` : '';
-    } else if (src.type==='siosa') {
-      srcHtml = `<span class="tag tag-vendor">Siosa</span>`;
-      locHtml = 'Act 3';
-    } else {
-      srcHtml = `<span class="tag tag-vendor">Lilly</span>`;
-      locHtml = 'Act 6';
-    }
-
-    costHtml = g.vendorCost ? orbHtml(g.vendorCost) : `<span class="cost-dash">—</span>`;
-
-    const wiki = `https://www.poewiki.net/wiki/${encodeURIComponent(g.key.replace(/ /g,'_'))}`;
-    return `<div class="gem-row ${iW?'in-list':''} ${gc(g)}" data-key="${ea(g.key)}" onclick="rowClick('${ea(g.key)}')">
-      <div class="row-icon">${iW?'✓':''}</div>
-      <div class="name-cell">
-        <a href="${wiki}" target="_blank" onclick="event.stopPropagation()">${esc(g.name)}</a>
-      </div>
-      <div class="type-cell ${g.isSupport?'support':'skill'}">${g.isSupport?'Sup':'Skill'}</div>
-      <div class="src-cell">${srcHtml} <span style="font-size:10px;color:var(--tx3)">${locHtml}</span></div>
-      <div class="lvl-cell">${g.requiredLevel}</div>
-      <div class="cost-cell">${costHtml}</div>
-    </div>`;
-  }).join('');
-}
-
-// ── Render Act view ───────────────────────────────────────────────
-function renderActView() {
-  if (!allGems.length) return;
-  const container = document.getElementById('actView');
-
-  // Build act→quest→gems structure
-  // For each gem, get all quest rewards + vendor rewards for selected class
-  const actMap = {}; // act → quest → [{gem, type:'quest'|'vendor', npc}]
+  let available = [], dropOnly = [];
 
   for (const g of allGems) {
-    const addEntry = (e, type, npc) => {
-      const act = e.act;
-      const quest = e.quest || (type==='vendor' ? `${npc} (vendor)` : 'Unknown quest');
-      if (!actMap[act]) actMap[act] = {};
-      if (!actMap[act][quest]) actMap[act][quest] = [];
-      actMap[act][quest].push({gem:g, type, npc});
-    };
+    if (g.isSupport ? !fSu : !fSk) continue;
+    if (search && !g.name.toLowerCase().includes(search)) continue;
+    if (isAvailable(g)) available.push(g);
+    else dropOnly.push(g);
+  }
 
-    for (const e of g.questRewards) {
-      if (!e.classes.length || e.classes.some(c=>c.toLowerCase()===selectedClass.toLowerCase()))
-        addEntry(e, 'quest');
-    }
-    for (const e of g.vendorRewards) {
-      if (!e.classes.length || e.classes.some(c=>c.toLowerCase()===selectedClass.toLowerCase()))
-        addEntry(e, 'vendor', e.npc);
+  // Apply source filter to available gems
+  available = available.map(g => ({...g, src:getSource(g, selectedClass)})).filter(g => {
+    const t = g.src.type;
+    const isQ = hasQuestForClass(g, selectedClass);
+    const isV = !isQ && (t==='vendor'||t==='siosa'||t==='lilyroth');
+    return (isQ && fQ) || (isV && fV) || (isQ && fV); // quest gems also available from vendor
+  });
+
+  // Sort
+  const sortFn = (a,b) => {
+    let va,vb;
+    if(sortKey==='name')  {va=a.name;vb=b.name;}
+    else if(sortKey==='type'){va=a.isSupport?1:0;vb=b.isSupport?1:0;}
+    else if(sortKey==='source'){va=srcOrder(a.src?.type);vb=srcOrder(b.src?.type);}
+    else if(sortKey==='lvl'){va=a.requiredLevel;vb=b.requiredLevel;}
+    else if(sortKey==='cost'){va=ORB_ORDER[a.vendorCost?.orb]??5;vb=ORB_ORDER[b.vendorCost?.orb]??5;}
+    else {va=a.name;vb=b.name;}
+    return va<vb?-sortDir:va>vb?sortDir:0;
+  };
+  available.sort(sortFn);
+  dropOnly.sort((a,b)=>a.name.localeCompare(b.name));
+
+  document.getElementById('sTotal').textContent = available.length + (fD ? dropOnly.length : 0);
+
+  let html = available.map(g => rowHtml(g)).join('');
+
+  // Drop-only section
+  if (fD && dropOnly.length) {
+    html += `<div class="list-section-head" onclick="toggleDropSection(this)">
+      <span>⚫ Drop only (${dropOnly.length})</span>
+      <span id="dropToggleIcon">${dropOnlyCollapsed?'▼ show':'▲ hide'}</span>
+    </div>`;
+    if (!dropOnlyCollapsed) {
+      html += dropOnly.map(g => rowHtml(g, true)).join('');
     }
   }
 
-  const acts = Object.keys(actMap).map(Number).sort((a,b)=>a-b);
-  let html = '';
-  for (const act of acts) {
-    html += `<div class="act-section"><div class="act-header">Act ${act}</div>`;
-    const quests = Object.keys(actMap[act]).sort();
-    for (const quest of quests) {
-      html += `<div class="act-quest">${esc(quest)}</div>`;
-      for (const {gem:g, type, npc} of actMap[act][quest]) {
-        const iW = wantedGems.has(g.key);
-        const typeLabel = type==='quest'?'Quest':'Vendor';
-        const metaStr = type==='vendor' && npc ? esc(npc) : '';
-        html += `<div class="act-gem-row ${iW?'in-list':''}" onclick="rowClick('${ea(g.key)}')">
-          <div class="act-row-icon">${iW?'✓':''}</div>
-          <span class="act-gem-name ${ciColor(g)}">${esc(g.name)}</span>
-          <span class="act-gem-type ${g.isSupport?'support':'skill'}">${g.isSupport?'Sup':'Skill'}</span>
-          <span class="act-gem-meta">${metaStr}</span>
-        </div>`;
-      }
-    }
-    html += `</div>`;
+  document.getElementById('gemList').innerHTML = html || `<div class="state-box"><p>No gems match.</p></div>`;
+}
+
+function rowHtml(g, isDropOnly=false) {
+  const iW = wantedGems.has(g.key);
+  const src = g.src || getSource(g, selectedClass);
+  const isQ = hasQuestForClass(g, selectedClass);
+  let srcHtml, locHtml;
+  if (isDropOnly) {
+    srcHtml = `<span class="tag tag-drop">Drop</span>`;
+    locHtml = '';
+  } else if (isQ) {
+    srcHtml = `<span class="tag tag-free">Quest</span>`;
+    locHtml = `<span style="color:var(--tx3);font-size:9px">A${src.entry?.act??'?'}</span>`;
+  } else if (src.type==='siosa') {
+    srcHtml = `<span class="tag tag-vendor">Siosa</span>`;
+    locHtml = `<span style="color:var(--tx3);font-size:9px">A3</span>`;
+  } else if (src.type==='lilyroth') {
+    srcHtml = `<span class="tag tag-vendor">Lilly</span>`;
+    locHtml = `<span style="color:var(--tx3);font-size:9px">A6</span>`;
+  } else {
+    srcHtml = `<span class="tag tag-vendor">Vendor</span>`;
+    locHtml = `<span style="color:var(--tx3);font-size:9px">A${src.entry?.act??'?'}</span>`;
   }
-  container.innerHTML = html || '<div class="state-box"><p>No gems for this class.</p></div>';
+  const costHtml = isDropOnly ? `<span class="cost-dash">—</span>` : (g.vendorCost ? orbHtml(g.vendorCost) : `<span class="cost-dash">—</span>`);
+  const wiki = `https://www.poewiki.net/wiki/${encodeURIComponent(g.key.replace(/ /g,'_'))}`;
+  const clickable = !isDropOnly;
+  return `<div class="gem-row ${iW?'in-list':''} ${gc(g)} ${isDropOnly?'drop-only':''}" data-key="${ea(g.key)}" ${clickable?`onclick="rowClick('${ea(g.key)}')"`:''}>
+    <div class="row-icon">${iW?'✓':''}</div>
+    <div class="name-cell"><a href="${wiki}" target="_blank" onclick="event.stopPropagation()">${esc(g.name)}</a></div>
+    <div class="type-cell ${g.isSupport?'support':'skill'}">${g.isSupport?'Sup':'Skill'}</div>
+    <div class="src-cell">${srcHtml} ${locHtml}</div>
+    <div class="lvl-cell">${g.requiredLevel}</div>
+    <div class="cost-cell">${costHtml}</div>
+  </div>`;
+}
+
+function toggleDropSection(el) {
+  dropOnlyCollapsed = !dropOnlyCollapsed;
+  renderGems();
+}
+
+// ── View toggle ───────────────────────────────────────────────────
+function setView(v) {
+  cartView = v;
+  ['groups','acts','split'].forEach(x => document.getElementById('vt-'+x).classList.toggle('active', x===v));
+  renderCart();
 }
 
 // ── Groups ────────────────────────────────────────────────────────
-function renderGroupsToolbar() {
-  const tb = document.getElementById('groupsToolbar');
-  let html = `<div class="group-chip ${activeGroupId==='__none__'?'active-group':''}" onclick="selectActiveGroup('__none__')">No group</div>`;
+function renderGroupsBar() {
+  const bar = document.getElementById('groupsBar');
+  let html = `<div class="g-chip ${activeGroupId==='__none__'?'active':''}" onclick="selectGroup('__none__')">No group</div>`;
   for (const grp of groups) {
-    const count = [...wantedGems.values()].filter(v=>v.groupId===grp.id).length;
-    html += `<div class="group-chip ${activeGroupId===grp.id?'active-group':''}" onclick="selectActiveGroup('${ea(grp.id)}')">
-      ${esc(grp.name)}${count>0?` <span style="color:var(--tx3)">${count}</span>`:''}
-      <span class="del-g" onclick="event.stopPropagation();deleteGroup('${ea(grp.id)}')" title="Delete group">✕</span>
+    const cnt = [...wantedGems.values()].filter(v=>v.groupId===grp.id).length;
+    html += `<div class="g-chip ${activeGroupId===grp.id?'active':''}" onclick="selectGroup('${ea(grp.id)}')">
+      ${esc(grp.name)}${cnt>0?`<span style="color:var(--tx3);font-size:9px;margin-left:1px">${cnt}</span>`:''}
+      <span class="gc-del" onclick="event.stopPropagation();deleteGroup('${ea(grp.id)}')">✕</span>
     </div>`;
   }
-  html += `<button class="add-group-btn" onclick="addGroup()">+ Group</button>`;
-  tb.innerHTML = html;
+  html += `<button class="add-g-btn" onclick="addGroup()">+ Group</button>`;
+  bar.innerHTML = html;
 }
 
-function selectActiveGroup(gid) {
-  activeGroupId = gid;
-  renderGroupsToolbar();
-}
+function selectGroup(gid) { activeGroupId = gid; renderGroupsBar(); }
 
 function addGroup() {
-  document.getElementById('groupNameInput').value = '';
+  document.getElementById('groupNameInput').value='';
   openModal('modalGroup');
-  setTimeout(()=>document.getElementById('groupNameInput').focus(), 50);
+  setTimeout(()=>document.getElementById('groupNameInput').focus(),50);
 }
-
 function confirmAddGroup() {
   const name = document.getElementById('groupNameInput').value.trim();
   if (!name) return;
-  const id = 'g_' + Date.now();
+  const id = 'g'+Date.now();
   groups.push({id, name});
   activeGroupId = id;
   closeModal('modalGroup');
-  renderGroupsToolbar();
+  renderGroupsBar();
   renderCart();
 }
-
 function deleteGroup(gid) {
   groups = groups.filter(g=>g.id!==gid);
-  // Move gems from deleted group to no-group
-  for (const [key, val] of wantedGems) {
-    if (val.groupId===gid) wantedGems.set(key, {...val, groupId:'__none__'});
-  }
+  for (const [k,v] of wantedGems) if(v.groupId===gid) wantedGems.set(k,{groupId:'__none__'});
   if (activeGroupId===gid) activeGroupId='__none__';
-  renderGroupsToolbar();
+  renderGroupsBar();
   renderCart();
 }
 
-// ── Toggle wanted / owned ─────────────────────────────────────────
+// ── Toggle wanted ─────────────────────────────────────────────────
 function rowClick(key) {
-  if (wantedGems.has(key)) {
-    wantedGems.delete(key);
-  } else {
-    wantedGems.set(key, {groupId: activeGroupId});
-  }
-  // Update row in gem list
+  if (wantedGems.has(key)) { wantedGems.delete(key); }
+  else { wantedGems.set(key, {groupId: activeGroupId}); }
+  // Update all rows with this key
   document.querySelectorAll(`[data-key="${ea(key)}"]`).forEach(row => {
     const iW = wantedGems.has(key);
     row.classList.toggle('in-list', iW);
-    const icon = row.querySelector('.row-icon,.act-row-icon');
-    if (icon) icon.textContent = iW ? '✓' : '';
+    const ic = row.querySelector('.row-icon,.act-row-icon');
+    if(ic) ic.textContent = iW?'✓':'';
+    if(ic) ic.style.color = iW?'#fff':'transparent';
   });
-  renderGroupsToolbar();
+  renderGroupsBar();
   renderCart();
 }
-
 function toggleOwned(key) {
-  ownedGems.has(key) ? ownedGems.delete(key) : ownedGems.add(key);
+  ownedGems.has(key)?ownedGems.delete(key):ownedGems.add(key);
   renderCart();
 }
-
 function moveToGroup(key, gid) {
-  if (wantedGems.has(key)) {
-    wantedGems.set(key, {groupId: gid});
-    renderCart();
-    renderGroupsToolbar();
-  }
+  if (wantedGems.has(key)) { wantedGems.set(key,{groupId:gid}); renderGroupsBar(); renderCart(); }
 }
 
 // ── Render cart ───────────────────────────────────────────────────
@@ -661,237 +590,200 @@ function renderCart() {
   const total = wantedGems.size;
   document.getElementById('cartCount').textContent = `${total} gem${total!==1?'s':''}`;
 
-  // Build group → gems
-  const grouped = {}; // groupId → [{gem, src, entry}]
-  grouped['__none__'] = [];
-  for (const grp of groups) grouped[grp.id] = [];
-
-  for (const [key, {groupId}] of wantedGems) {
-    const gem = allGems.find(g=>g.key===key);
-    if (!gem) continue;
-    const src = getSource(gem, selectedClass);
-    const gid = groups.find(g=>g.id===groupId) ? groupId : '__none__';
-    if (!grouped[gid]) grouped[gid] = [];
-    grouped[gid].push({gem, src});
-  }
+  const body = document.getElementById('cartBody');
+  body.className = 'cart-body' + (cartView==='split'?' split':'');
 
   if (total===0) {
-    document.getElementById('cartList').innerHTML = `<div class="cart-empty"><p>Click a gem to add<br>it to your list.</p></div>`;
-    document.getElementById('costSummary').style.display = 'none';
+    body.innerHTML = `<div class="cart-pane"><div class="cart-empty"><p>Click a gem to add<br>it to your list.</p></div></div>`;
+    document.getElementById('costSummary').style.display='none';
     return;
   }
 
-  // Build group order: named groups first, then no-group
-  const groupOrder = [...groups.map(g=>g.id), '__none__'];
-
-  let html = '';
-  const groupSelectOptions = `<option value="__none__">No group</option>${groups.map(g=>`<option value="${ea(g.id)}">${esc(g.name)}</option>`).join('')}`;
-
-  for (const gid of groupOrder) {
-    const items = grouped[gid] || [];
-    if (!items.length) continue;
-
-    // Group header
-    const gname = gid==='__none__' ? 'Ungrouped' : (groups.find(g=>g.id===gid)?.name||'?');
-    // Socket summary for group
-    const socketSummary = buildSocketSummary(items.map(({gem})=>gem));
-    const socketHtml = socketSummary ? `<span class="gsocket">${socketSummary}</span>` : '';
-    html += `<div class="cart-group-sec">${esc(gname)}${socketHtml}</div>`;
-
-    for (const {gem:g, src} of items) {
-      const iO = ownedGems.has(g.key);
-      const isQuest = src.type==='quest';
-      let meta = '';
-      if (src.type==='quest') meta = `Act ${src.entry?.act??'?'} quest`;
-      else if (src.type==='vendor') meta = `${src.entry?.npc||'Vendor'} · Act ${src.entry?.act??'?'}`;
-      else if (src.type==='siosa') meta = 'Siosa · Act 3';
-      else if (src.type==='lilyroth') meta = 'Lilly · Act 6';
-
-      const costStr = g.vendorCost ? (isQuest
-        ? `${orbHtmlInline(g.vendorCost)} <span style="color:var(--green);font-size:9px">Q</span>`
-        : orbHtmlInline(g.vendorCost)) : '—';
-
-      // Group move select (small dropdown)
-      const moveSelect = groups.length > 0
-        ? `<select style="font-size:9px;background:var(--bg3);border:1px solid var(--bd);color:var(--tx2);border-radius:2px;padding:1px 2px;cursor:pointer;max-width:70px" onchange="moveToGroup('${ea(g.key)}',this.value);this.blur()">
-            <option value="__none__" ${gid==='__none__'?'selected':''}>ungrouped</option>
-            ${groups.map(gr=>`<option value="${ea(gr.id)}" ${gid===gr.id?'selected':''}>${esc(gr.name)}</option>`).join('')}
-          </select>` : '';
-
-      html += `<div class="cart-item" style="${iO?'opacity:.4':''}">
-        <div class="ci-info">
-          <div class="ci-name ${ciColor(g)}">${esc(g.name)}</div>
-          <div class="ci-meta">${esc(meta)}${moveSelect?` · ${moveSelect}`:''}</div>
-        </div>
-        <div class="ci-cost">${costStr}</div>
-        <button class="ci-own-btn ${iO?'is-owned':''}" onclick="toggleOwned('${ea(g.key)}')" title="${iO?'Unmark':'Mark as owned'}">${iO?'✕':'✓'}</button>
-        <button class="rm-btn" onclick="rowClick('${ea(g.key)}')">✕</button>
-      </div>`;
-    }
+  // Build group→items map
+  const byGroup = {}; // gid → [{gem,src}]
+  byGroup['__none__'] = [];
+  for (const grp of groups) byGroup[grp.id] = [];
+  for (const [key,{groupId}] of wantedGems) {
+    const gem = allGems.find(g=>g.key===key); if(!gem) continue;
+    const src = getSource(gem, selectedClass);
+    const gid = groups.find(g=>g.id===groupId) ? groupId : '__none__';
+    byGroup[gid].push({gem,src});
   }
 
-  document.getElementById('cartList').innerHTML = html;
+  const groupOrder = [...groups.map(g=>g.id),'__none__'];
+  const moveOpts = `<option value="__none__">—</option>${groups.map(g=>`<option value="${ea(g.id)}">${esc(g.name)}</option>`).join('')}`;
 
-  // Cost summary
+  if (cartView==='groups' || cartView==='split') {
+    const pane = document.createElement('div');
+    pane.className='cart-pane';
+    if(cartView==='split') pane.innerHTML=`<div class="pane-head">By Group</div>`;
+    let h='';
+    for (const gid of groupOrder) {
+      const items = byGroup[gid]||[];
+      if(!items.length) continue;
+      const gname = gid==='__none__'?'Ungrouped':(groups.find(g=>g.id===gid)?.name||'?');
+      const sock = sockSummary(items.map(({gem})=>gem));
+      h+=`<div class="cart-sec">${esc(gname)}<span class="gsock">${sock}</span></div>`;
+      h+=items.map(({gem:g,src})=>cartItemHtml(g,src,gid,moveOpts)).join('');
+    }
+    pane.innerHTML += h||`<div class="cart-empty"><p>No gems.</p></div>`;
+    body.innerHTML='';
+    body.appendChild(pane);
+  }
+
+  if (cartView==='acts' || cartView==='split') {
+    const pane = document.createElement('div');
+    pane.className='cart-pane';
+    if(cartView==='split') pane.innerHTML=`<div class="pane-head">By Act</div>`;
+    // Build act→quest→items
+    const actMap={};
+    for (const [key] of wantedGems) {
+      const gem=allGems.find(g=>g.key===key); if(!gem) continue;
+      // All quest rewards for this class
+      const rewards=[
+        ...gem.questRewards.filter(e=>!e.classes.length||e.classes.some(c=>c.toLowerCase()===selectedClass.toLowerCase())).map(e=>({...e,type:'quest'})),
+        ...gem.vendorRewards.filter(e=>!e.classes.length||e.classes.some(c=>c.toLowerCase()===selectedClass.toLowerCase())).map(e=>({...e,type:'vendor'})),
+      ];
+      // Use earliest act entry
+      const entry = rewards.sort((a,b)=>a.act-b.act)[0] || gem.questRewards[0] || gem.vendorRewards[0];
+      if(!entry) continue;
+      const act=entry.act;
+      const quest=entry.quest||(entry.type==='vendor'?entry.npc:'?');
+      if(!actMap[act]) actMap[act]={};
+      if(!actMap[act][quest]) actMap[act][quest]=[];
+      actMap[act][quest].push({gem,src:getSource(gem,selectedClass),entry});
+    }
+    let h='';
+    for(const act of Object.keys(actMap).map(Number).sort((a,b)=>a-b)){
+      h+=`<div class="act-sec"><div class="act-sec-head">Act ${act}</div>`;
+      for(const quest of Object.keys(actMap[act]).sort()){
+        h+=`<div class="act-quest-head">${esc(quest)}</div>`;
+        for(const{gem:g,src}of actMap[act][quest]){
+          const iW=wantedGems.has(g.key);
+          h+=`<div class="act-gem-row ${iW?'in-list':''}" onclick="rowClick('${ea(g.key)}')">
+            <div class="act-row-icon" style="color:${iW?'#fff':'transparent'}">${iW?'✓':''}</div>
+            <span class="act-gem-name ${cc(g)}">${esc(g.name)}</span>
+            <span class="act-gem-type ${g.isSupport?'support':'skill'}">${g.isSupport?'Sup':'Skill'}</span>
+          </div>`;
+        }
+      }
+      h+=`</div>`;
+    }
+    pane.innerHTML += h||`<div class="cart-empty"><p>No gems.</p></div>`;
+    if(cartView==='split') body.appendChild(pane);
+    else {body.innerHTML=''; body.appendChild(pane);}
+  }
+
   renderCostSummary();
 }
 
-function buildSocketSummary(gems) {
+function cartItemHtml(g,src,gid,moveOpts){
+  const iO=ownedGems.has(g.key);
+  let meta='';
+  if(src.type==='quest') meta=`Act ${src.entry?.act??'?'} · ${esc(src.entry?.quest||'quest')}`;
+  else if(src.type==='vendor') meta=`${esc(src.entry?.npc||'Vendor')} · Act ${src.entry?.act??'?'}`;
+  else if(src.type==='siosa') meta='Siosa · Act 3';
+  else meta='Lilly · Act 6';
+  const isQ=src.type==='quest';
+  const costStr=g.vendorCost?(isQ
+    ?`${orbHtmlI(g.vendorCost)}<span style="color:var(--green);font-size:9px;margin-left:2px">Q</span>`
+    :orbHtmlI(g.vendorCost)):'—';
+  const moveSel=groups.length>0?`<select class="g-move" onchange="moveToGroup('${ea(g.key)}',this.value);this.blur()">
+    ${moveOpts.replace(`value="${ea(gid)}"`,`value="${ea(gid)}" selected`)}
+  </select>`:'';
+  return `<div class="cart-item" style="${iO?'opacity:.4':''}">
+    <div class="ci-info">
+      <div class="ci-name ${cc(g)}">${esc(g.name)}</div>
+      <div class="ci-meta">${meta}${moveSel?` · ${moveSel}`:''}</div>
+    </div>
+    <div class="ci-cost">${costStr}</div>
+    <button class="ci-own ${iO?'owned':''}" onclick="toggleOwned('${ea(g.key)}')" title="${iO?'Unmark':'Owned'}">${iO?'✕':'✓'}</button>
+    <button class="ci-rm" onclick="rowClick('${ea(g.key)}')">✕</button>
+  </div>`;
+}
+
+function sockSummary(gems){
   let R=0,G=0,B=0;
-  for (const g of gems) {
-    if (ownedGems.has(g.key)) continue;
-    if (g.color==='str') R++;
-    else if (g.color==='dex') G++;
-    else if (g.color==='int') B++;
-  }
-  if (!R&&!G&&!B) return '';
-  let parts = [];
-  if (R) parts.push(`<span class="sc-R">${R}R</span>`);
-  if (G) parts.push(`<span class="sc-G">${G}G</span>`);
-  if (B) parts.push(`<span class="sc-B">${B}B</span>`);
-  return parts.join('');
+  gems.forEach(g=>{if(ownedGems.has(g.key))return;if(g.color==='str')R++;else if(g.color==='dex')G++;else if(g.color==='int')B++;});
+  if(!R&&!G&&!B)return'';
+  const p=[];
+  if(R)p.push(`<span class="sc-R">${R}R</span>`);
+  if(G)p.push(`<span class="sc-G">${G}G</span>`);
+  if(B)p.push(`<span class="sc-B">${B}B</span>`);
+  return p.join('');
 }
 
-function renderCostSummary() {
-  const costMap = {};
-  for (const [key] of wantedGems) {
-    if (ownedGems.has(key)) continue;
-    const gem = allGems.find(g=>g.key===key);
-    if (!gem || !gem.vendorCost) continue;
-    const src = getSource(gem, selectedClass);
-    if (src.type==='quest') continue; // quest gems are free
-    const orb = gem.vendorCost.orb;
-    costMap[orb] = (costMap[orb]||0) + gem.vendorCost.qty;
-  }
-  const entries = Object.entries(costMap).sort((a,b)=>(ORB_ORDER[a[0]]??9)-(ORB_ORDER[b[0]]??9));
-  const el = document.getElementById('costSummary');
-  if (!entries.length) { el.style.display='none'; return; }
-  el.style.display='block';
-
-  const total = entries.map(([o,q])=>`${q}× ${ORB_SHORT[o]||o}`).join(', ');
-  let bodyHtml = entries.map(([o,q])=>`
-    <div class="cost-sum-row">
-      <span class="orb-name">${o}</span>
-      <span class="orb-qty">${q}×</span>
-    </div>`).join('');
-  bodyHtml += `<div class="cost-sum-total">${total}</div>`;
-
-  document.getElementById('costSummaryBody').innerHTML = bodyHtml;
-  document.getElementById('costSummaryBody').style.display = costSummaryOpen ? '' : 'none';
-  document.getElementById('costToggleIcon').textContent = costSummaryOpen ? '▲' : '▼';
-}
-
-function toggleCostSummary() {
-  costSummaryOpen = !costSummaryOpen;
-  document.getElementById('costSummaryBody').style.display = costSummaryOpen ? '' : 'none';
-  document.getElementById('costToggleIcon').textContent = costSummaryOpen ? '▲' : '▼';
-}
-
-function orbHtml(c) {
-  if(!c) return `<span class="cost-dash">—</span>`;
-  return `<span class="${ORB_CLASS[c.orb]||''}">${c.qty}× ${ORB_SHORT[c.orb]||c.orb}</span>`;
-}
-function orbHtmlInline(c) {
-  if(!c) return '—';
-  return `<span class="${ORB_CLASS[c.orb]||''}">${c.qty}× ${ORB_SHORT[c.orb]||c.orb}</span>`;
-}
-
-// ── Clear / Export / Import ───────────────────────────────────────
-function clearAll() {
-  wantedGems.clear(); ownedGems.clear();
-  document.querySelectorAll('.gem-row,.act-gem-row').forEach(r=>{
-    r.classList.remove('in-list');
-    const ic = r.querySelector('.row-icon,.act-row-icon');
-    if(ic) ic.textContent='';
-  });
-  renderGroupsToolbar();
-  renderCart();
-}
-
-function exportJSON() {
-  const payload = {
-    version: 1,
-    class: selectedClass,
-    groups: groups,
-    wanted: [...wantedGems.entries()].map(([key,val])=>({key, groupId:val.groupId})),
-    owned: [...ownedGems],
-  };
-  const str = JSON.stringify(payload, null, 2);
-  navigator.clipboard.writeText(str).then(()=>showToast('JSON copied!')).catch(()=>prompt('Copy JSON:', str));
-}
-
-function openImport() {
-  document.getElementById('importText').value = '';
-  openModal('modalImport');
-}
-
-function confirmImport() {
-  try {
-    const data = JSON.parse(document.getElementById('importText').value.trim());
-    if (data.groups) groups = data.groups;
-    if (data.wanted) {
-      wantedGems.clear();
-      for (const {key, groupId} of data.wanted) wantedGems.set(key, {groupId: groupId||'__none__'});
-    }
-    if (data.owned) { ownedGems.clear(); data.owned.forEach(k=>ownedGems.add(k)); }
-    closeModal('modalImport');
-    renderGems();
-    renderActView();
-    renderGroupsToolbar();
-    renderCart();
-    showToast('Imported!');
-  } catch(e) {
-    alert('Invalid JSON: ' + e.message);
-  }
-}
-
-function copyList() {
-  let t = `=== PoE Gem Planner — ${selectedClass} ===\n\n`;
-  const groupOrder = [...groups.map(g=>g.id), '__none__'];
-  for (const gid of groupOrder) {
-    const gname = gid==='__none__'?'Ungrouped':(groups.find(g=>g.id===gid)?.name||'?');
-    const items = [];
-    for (const [key,{groupId}] of wantedGems) {
-      const eff = groups.find(g=>g.id===groupId)?groupId:'__none__';
-      if (eff!==gid) continue;
-      const gem = allGems.find(g=>g.key===key); if(!gem) continue;
-      const src = getSource(gem, selectedClass);
-      items.push({gem, src});
-    }
-    if (!items.length) continue;
-    const sock = buildSocketSummaryText(items.map(({gem})=>gem));
-    t += `[${gname}${sock?` — ${sock}`:''}]\n`;
-    for (const {gem:g, src} of items) {
-      const owned = ownedGems.has(g.key)?'[✓] ':'';
-      const isQ = src.type==='quest';
-      const where = isQ?`Act ${src.entry?.act??'?'} quest`:
-        src.type==='vendor'?`${src.entry?.npc||'Vendor'} (Act ${src.entry?.act??'?'})`:
-        src.type==='siosa'?'Siosa (Act 3)':'Lilly Roth (Act 6)';
-      const cost = g.vendorCost?`${g.vendorCost.qty}× ${g.vendorCost.orb}`:'—';
-      t += `  ${owned}• ${g.name} — ${where} — ${cost}\n`;
-    }
-    t += '\n';
-  }
-  // Cost summary
+function renderCostSummary(){
   const costMap={};
   for(const[key]of wantedGems){
     if(ownedGems.has(key))continue;
-    const gem=allGems.find(g=>g.key===key);if(!gem)continue;
+    const gem=allGems.find(g=>g.key===key);if(!gem||!gem.vendorCost)continue;
     const src=getSource(gem,selectedClass);
     if(src.type==='quest')continue;
-    const orb=gem.vendorCost?.orb;if(orb)costMap[orb]=(costMap[orb]||0)+1;
+    costMap[gem.vendorCost.orb]=(costMap[gem.vendorCost.orb]||0)+gem.vendorCost.qty;
   }
-  const costEntries=Object.entries(costMap).sort((a,b)=>(ORB_ORDER[a[0]]??9)-(ORB_ORDER[b[0]]??9));
-  if(costEntries.length) t+=`Total cost: ${costEntries.map(([o,q])=>`${q}× ${o}`).join(', ')}\n`;
-  navigator.clipboard.writeText(t).then(()=>showToast('Copied!')).catch(()=>prompt('Copy:',t));
+  const entries=Object.entries(costMap).sort((a,b)=>(ORB_ORDER[a[0]]??9)-(ORB_ORDER[b[0]]??9));
+  const el=document.getElementById('costSummary');
+  if(!entries.length){el.style.display='none';return;}
+  el.style.display='block';
+  let h=entries.map(([o,q])=>`<div class="cs-row"><span class="on">${o}</span><span class="oq">${q}×</span></div>`).join('');
+  h+=`<div class="cs-total">${entries.map(([o,q])=>`${q}× ${ORB_SHORT[o]||o}`).join(' + ')}</div>`;
+  document.getElementById('csBody').innerHTML=h;
+  document.getElementById('csBody').style.display=csOpen?'':'none';
+  document.getElementById('csIcon').textContent=csOpen?'▲':'▼';
 }
 
-function buildSocketSummaryText(gems) {
-  let R=0,G=0,B=0;
-  for(const g of gems){if(ownedGems.has(g.key))continue;if(g.color==='str')R++;else if(g.color==='dex')G++;else if(g.color==='int')B++;}
-  const p=[];if(R)p.push(`${R}R`);if(G)p.push(`${G}G`);if(B)p.push(`${B}B`);
-  return p.join('');
+function toggleCS(){csOpen=!csOpen;renderCostSummary();}
+
+function orbHtml(c){return`<span class="${ORB_CLASS[c.orb]||''}">${c.qty}× ${ORB_SHORT[c.orb]||c.orb}</span>`;}
+function orbHtmlI(c){return`<span class="${ORB_CLASS[c.orb]||''}">${c.qty}× ${ORB_SHORT[c.orb]||c.orb}</span>`;}
+
+// ── Export / Import / Copy ────────────────────────────────────────
+function clearAll(){
+  wantedGems.clear();ownedGems.clear();
+  document.querySelectorAll('[data-key]').forEach(r=>{r.classList.remove('in-list');const ic=r.querySelector('.row-icon,.act-row-icon');if(ic){ic.textContent='';ic.style.color='transparent';}});
+  renderGroupsBar();renderCart();
 }
+function exportJSON(){
+  const payload={version:1,class:selectedClass,groups,wanted:[...wantedGems.entries()].map(([k,v])=>({key:k,groupId:v.groupId})),owned:[...ownedGems]};
+  const s=JSON.stringify(payload,null,2);
+  navigator.clipboard.writeText(s).then(()=>showToast('JSON copied!')).catch(()=>prompt('Copy JSON:',s));
+}
+function openImport(){document.getElementById('importText').value='';openModal('modalImport');}
+function confirmImport(){
+  try{
+    const d=JSON.parse(document.getElementById('importText').value.trim());
+    if(d.groups)groups=d.groups;
+    if(d.wanted){wantedGems.clear();d.wanted.forEach(({key,groupId})=>wantedGems.set(key,{groupId:groupId||'__none__'}));}
+    if(d.owned){ownedGems.clear();d.owned.forEach(k=>ownedGems.add(k));}
+    closeModal('modalImport');
+    renderGems();renderGroupsBar();renderCart();showToast('Imported!');
+  }catch(e){alert('Invalid JSON: '+e.message);}
+}
+function copyList(){
+  let t=`=== PoE Gem Planner — ${selectedClass} ===\n\n`;
+  const byGroup={};byGroup['__none__']=[];
+  for(const grp of groups)byGroup[grp.id]=[];
+  for(const[k,{groupId}]of wantedGems){const gem=allGems.find(g=>g.key===k);if(!gem)continue;const src=getSource(gem,selectedClass);const gid=groups.find(g=>g.id===groupId)?groupId:'__none__';byGroup[gid].push({gem,src});}
+  for(const gid of[...groups.map(g=>g.id),'__none__']){
+    const items=byGroup[gid]||[];if(!items.length)continue;
+    const gname=gid==='__none__'?'Ungrouped':(groups.find(g=>g.id===gid)?.name||'?');
+    const sock=sockSummaryText(items.map(({gem})=>gem));
+    t+=`[${gname}${sock?' — '+sock:''}]\n`;
+    items.forEach(({gem:g,src})=>{
+      const owned=ownedGems.has(g.key)?'[✓] ':'';
+      const where=src.type==='quest'?`Act ${src.entry?.act??'?'} (${src.entry?.quest||'quest'})`:src.type==='vendor'?`${src.entry?.npc||'Vendor'} Act ${src.entry?.act??'?'}`:src.type==='siosa'?'Siosa (Act 3)':'Lilly (Act 6)';
+      t+=`  ${owned}• ${g.name} — ${where} — ${g.vendorCost?`${g.vendorCost.qty}× ${g.vendorCost.orb}`:'—'}\n`;
+    });
+    t+='\n';
+  }
+  const costMap={};
+  for(const[k]of wantedGems){if(ownedGems.has(k))continue;const gem=allGems.find(g=>g.key===k);if(!gem)continue;const src=getSource(gem,selectedClass);if(src.type==='quest')continue;if(gem.vendorCost)costMap[gem.vendorCost.orb]=(costMap[gem.vendorCost.orb]||0)+1;}
+  const ce=Object.entries(costMap).sort((a,b)=>(ORB_ORDER[a[0]]??9)-(ORB_ORDER[b[0]]??9));
+  if(ce.length)t+=`Total: ${ce.map(([o,q])=>`${q}× ${o}`).join(', ')}\n`;
+  navigator.clipboard.writeText(t).then(()=>showToast('Copied!')).catch(()=>prompt('Copy:',t));
+}
+function sockSummaryText(gems){let R=0,G=0,B=0;gems.forEach(g=>{if(ownedGems.has(g.key))return;if(g.color==='str')R++;else if(g.color==='dex')G++;else if(g.color==='int')B++;});const p=[];if(R)p.push(`${R}R`);if(G)p.push(`${G}G`);if(B)p.push(`${B}B`);return p.join('');}
 
 // ── Modals ────────────────────────────────────────────────────────
 function openModal(id){document.getElementById(id).classList.add('open');}
@@ -900,15 +792,15 @@ document.getElementById('groupNameInput').addEventListener('keydown',e=>{if(e.ke
 document.getElementById('modalGroup').addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal('modalGroup');});
 document.getElementById('modalImport').addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal('modalImport');});
 
-// ── Sort / class / search ─────────────────────────────────────────
+// ── Sort / filter / class ─────────────────────────────────────────
 function sortBy(k){sortKey===k?sortDir*=-1:(sortKey=k,sortDir=1);renderGems();}
 document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('.cbtn').forEach(x=>x.classList.remove('active'));
-  b.classList.add('active'); selectedClass=b.dataset.class;
-  renderGems(); renderActView();
+  b.classList.add('active');selectedClass=b.dataset.class;
+  renderGems();renderCart();
 }));
 document.getElementById('searchInput').addEventListener('input',renderGems);
-['fQuest','fVendor','fSkill','fSupport'].forEach(id=>document.getElementById(id).addEventListener('change',renderGems));
+['fQuest','fVendor','fDrop','fSkill','fSupport'].forEach(id=>document.getElementById(id).addEventListener('change',renderGems));
 
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function ea(s){return String(s).replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'&quot;');}
