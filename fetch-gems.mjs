@@ -54,13 +54,12 @@ async function main() {
   console.log('Fetching gem data from poewiki.net...\n');
 
   // Step 1: fetch skill_gems table — this is the authoritative list of gems
-  // is_vaal_skill_gem=false excludes Vaal variants (SkillGemVaalFireball etc.)
-  // We use this as the whitelist — only pages in skill_gems are real gems
+  // NOTE: no WHERE filter — we filter vaal gems in JS below because Cargo API
+  // doesn't support IS NULL in WHERE and support gems have is_vaal_skill_gem=NULL
   const skillGemRows = await cargoQueryAll('skill_gems', {
     tables: 'skill_gems,items',
     join_on: 'skill_gems._pageID=items._pageID',
-    fields: 'skill_gems._pageName=gem,items.name=name,items.required_level=required_level,skill_gems.primary_attribute=primary_attribute,skill_gems.gem_tags=gem_tags,skill_gems.support_gem_letter=support_letter',
-    where: 'skill_gems.is_vaal_skill_gem=false',
+    fields: 'skill_gems._pageName=gem,items.name=name,items.required_level=required_level,skill_gems.primary_attribute=primary_attribute,skill_gems.gem_tags=gem_tags,skill_gems.support_gem_letter=support_letter,skill_gems.is_vaal_skill_gem=is_vaal',
   });
 
   // Build gemInfo map — keyed by page name, only real gems
@@ -74,8 +73,10 @@ async function main() {
     else if (attr === 'intelligence') color = 'int';
     const tags = (row.gem_tags || '').toLowerCase();
     const name = row.name || row.gem || '';
-    // isSupport: check gem_tags field, support_gem_letter (non-empty = support), or name ends with "Support"
-    const isSupport = tags.includes('support') || 
+    // Skip vaal skill gems — is_vaal='1'; support gems have NULL so pass through
+    if (row.is_vaal === '1' || row.is_vaal === 'true' || row.is_vaal === true) continue;
+    // isSupport: check gem_tags, support_gem_letter (non-empty = support), or name ends with "Support"
+    const isSupport = tags.includes('support') ||
                       (row.support_letter && row.support_letter.trim() !== '') ||
                       name.endsWith('Support');
     gemInfo[row.gem] = {
@@ -84,6 +85,17 @@ async function main() {
       isSupport,
       color,
     };
+  }
+  // Post-filter: remove Vaal skill gems and wiki template garbage
+  for (const key of Object.keys(gemInfo)) {
+    if (key.startsWith('Template:') || key.includes('{{') || key.includes('subst:')) {
+      delete gemInfo[key];
+      continue;
+    }
+    // Vaal gems: skip (they're drop-only corruptions, not obtainable normally)
+    if (key.startsWith('Vaal ') && !gemInfo[key].isSupport) {
+      delete gemInfo[key];
+    }
   }
   console.log(`  Built info for ${Object.keys(gemInfo).length} gems ✓`);
 

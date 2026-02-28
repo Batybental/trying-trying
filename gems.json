@@ -1,33 +1,7 @@
 {
-  "generatedAt": "2026-02-28T01:32:47.025Z",
-  "count": 488,
+  "generatedAt": "2026-02-28T01:44:51.148Z",
+  "count": 698,
   "gems": [
-    {
-      "key": "Template:Preload skill gem article/doc/example/active",
-      "name": "{{subst:PAGENAME}}",
-      "requiredLevel": 1,
-      "isSupport": false,
-      "color": "gen",
-      "vendorCost": {
-        "qty": 1,
-        "orb": "Scroll of Wisdom"
-      },
-      "questRewards": [],
-      "vendorRewards": []
-    },
-    {
-      "key": "Template:Preload skill gem article/doc/example/support",
-      "name": "{{subst:PAGENAME}}",
-      "requiredLevel": 1,
-      "isSupport": false,
-      "color": "gen",
-      "vendorCost": {
-        "qty": 1,
-        "orb": "Scroll of Wisdom"
-      },
-      "questRewards": [],
-      "vendorRewards": []
-    },
     {
       "key": "Absolution",
       "name": "Absolution",
@@ -89,6 +63,252 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Added Chaos Damage Support",
+      "name": "Added Chaos Damage Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Added Cold Damage Support",
+      "name": "Added Cold Damage Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "classes": [
+            "Ranger",
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Added Fire Damage Support",
+      "name": "Added Fire Damage Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "classes": [
+            "Templar",
+            "Marauder",
+            "Duelist",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Added Lightning Damage Support",
+      "name": "Added Lightning Damage Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Templar",
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Additional Accuracy Support",
+      "name": "Additional Accuracy Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Advanced Traps Support",
+      "name": "Advanced Traps Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
     },
     {
       "key": "Alchemist's Mark",
@@ -156,6 +376,52 @@
             "Scion",
             "Shadow"
           ]
+        }
+      ]
+    },
+    {
+      "key": "Ancestral Call Support",
+      "name": "Ancestral Call Support",
+      "requiredLevel": 4,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Scroll of Wisdom"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "classes": [
+            "Templar",
+            "Marauder",
+            "Duelist",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
         }
       ]
     },
@@ -532,6 +798,57 @@
       ]
     },
     {
+      "key": "Arcane Surge Support",
+      "name": "Arcane Surge Support",
+      "requiredLevel": 1,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Scroll of Wisdom"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "classes": [
+            "Templar",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "Enemy at the Gate",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Witch"
+          ]
+        },
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Arcanist Brand",
       "name": "Arcanist Brand",
       "requiredLevel": 38,
@@ -569,6 +886,57 @@
           "quest": "Fallen from Grace",
           "questId": "",
           "npc": "Lilly Roth",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Archmage Support",
+      "name": "Archmage Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Templar",
+            "Shadow"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
           "classes": []
         },
         {
@@ -714,6 +1082,113 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Arrogance Support",
+      "name": "Arrogance Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Marauder",
+            "Templar",
+            "Duelist",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Marauder",
+            "Templar",
+            "Duelist"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Arrow Nova Support",
+      "name": "Arrow Nova Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "classes": [
+            "Ranger"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Scion",
+            "Shadow"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
     },
     {
       "key": "Artillery Ballista",
@@ -909,6 +1384,500 @@
       ]
     },
     {
+      "key": "Awakened Added Chaos Damage Support",
+      "name": "Awakened Added Chaos Damage Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Added Cold Damage Support",
+      "name": "Awakened Added Cold Damage Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Added Fire Damage Support",
+      "name": "Awakened Added Fire Damage Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Added Lightning Damage Support",
+      "name": "Awakened Added Lightning Damage Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Ancestral Call Support",
+      "name": "Awakened Ancestral Call Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Arrow Nova Support",
+      "name": "Awakened Arrow Nova Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Blasphemy Support",
+      "name": "Awakened Blasphemy Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Brutality Support",
+      "name": "Awakened Brutality Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Burning Damage Support",
+      "name": "Awakened Burning Damage Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Cast On Critical Strike Support",
+      "name": "Awakened Cast On Critical Strike Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Cast While Channelling Support",
+      "name": "Awakened Cast While Channelling Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Chain Support",
+      "name": "Awakened Chain Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Cold Penetration Support",
+      "name": "Awakened Cold Penetration Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Controlled Destruction Support",
+      "name": "Awakened Controlled Destruction Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Deadly Ailments Support",
+      "name": "Awakened Deadly Ailments Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Elemental Damage with Attacks Support",
+      "name": "Awakened Elemental Damage with Attacks Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Elemental Focus Support",
+      "name": "Awakened Elemental Focus Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Empower Support",
+      "name": "Awakened Empower Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Enhance Support",
+      "name": "Awakened Enhance Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Enlighten Support",
+      "name": "Awakened Enlighten Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Fire Penetration Support",
+      "name": "Awakened Fire Penetration Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Fork Support",
+      "name": "Awakened Fork Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Generosity Support",
+      "name": "Awakened Generosity Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Greater Multiple Projectiles Support",
+      "name": "Awakened Greater Multiple Projectiles Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Hextouch Support",
+      "name": "Awakened Hextouch Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Increased Area of Effect Support",
+      "name": "Awakened Increased Area of Effect Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Lightning Penetration Support",
+      "name": "Awakened Lightning Penetration Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Melee Physical Damage Support",
+      "name": "Awakened Melee Physical Damage Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Melee Splash Support",
+      "name": "Awakened Melee Splash Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Minion Damage Support",
+      "name": "Awakened Minion Damage Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Multistrike Support",
+      "name": "Awakened Multistrike Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Spell Cascade Support",
+      "name": "Awakened Spell Cascade Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Spell Echo Support",
+      "name": "Awakened Spell Echo Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Swift Affliction Support",
+      "name": "Awakened Swift Affliction Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Unbound Ailments Support",
+      "name": "Awakened Unbound Ailments Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Unleash Support",
+      "name": "Awakened Unleash Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Vicious Projectiles Support",
+      "name": "Awakened Vicious Projectiles Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Awakened Void Manipulation Support",
+      "name": "Awakened Void Manipulation Support",
+      "requiredLevel": 72,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
       "key": "Ball Lightning",
       "name": "Ball Lightning",
       "requiredLevel": 28,
@@ -982,6 +1951,53 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Ballista Totem Support",
+      "name": "Ballista Totem Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Scion",
+            "Shadow"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
     },
     {
       "key": "Bane",
@@ -1092,6 +2108,53 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Barrage Support",
+      "name": "Barrage Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
     },
     {
       "key": "Battlemage's Cry",
@@ -1219,6 +2282,42 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Behead Support",
+      "name": "Behead Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Marauder",
+            "Duelist"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": [
+            "Templar",
+            "Scion",
+            "Marauder",
+            "Duelist"
+          ]
+        }
+      ]
     },
     {
       "key": "Berserk",
@@ -1695,6 +2794,58 @@
       "vendorRewards": []
     },
     {
+      "key": "Blasphemy Support",
+      "name": "Blasphemy Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Templar"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": []
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Blast Rain",
       "name": "Blast Rain",
       "requiredLevel": 28,
@@ -1762,6 +2913,54 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Blastchain Mine Support",
+      "name": "Blastchain Mine Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
     },
     {
       "key": "Blazing Salvo",
@@ -1890,6 +3089,47 @@
       "vendorRewards": []
     },
     {
+      "key": "Blind Support",
+      "name": "Blind Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Shadow"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Blink Arrow",
       "name": "Blink Arrow",
       "requiredLevel": 10,
@@ -1955,6 +3195,19 @@
       "vendorCost": {
         "qty": 1,
         "orb": "Orb of Transmutation"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Block Chance Reduction Support",
+      "name": "Block Chance Reduction Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
       },
       "questRewards": [],
       "vendorRewards": []
@@ -2042,6 +3295,127 @@
           "quest": "A Fixture of Fate",
           "questId": "",
           "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Bloodlust Support",
+      "name": "Bloodlust Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar"
+          ]
+        },
+        {
+          "act": 2,
+          "quest": "The Root of the Problem",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Bloodthirst Support",
+      "name": "Bloodthirst Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Marauder",
+            "Duelist",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Marauder",
+            "Duelist",
+            "Scion",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
           "classes": []
         }
       ]
@@ -2145,6 +3519,56 @@
           "questId": "",
           "npc": "Siosa",
           "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Bonechill Support",
+      "name": "Bonechill Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Shadow"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
         },
         {
           "act": 6,
@@ -2278,6 +3702,54 @@
       ]
     },
     {
+      "key": "Brutality Support",
+      "name": "Brutality Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Marauder"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Scion"
+          ]
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Burning Arrow",
       "name": "Burning Arrow",
       "requiredLevel": 1,
@@ -2336,6 +3808,231 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Burning Damage Support",
+      "name": "Burning Damage Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Templar"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Marauder",
+            "Scion",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Cast On Critical Strike Support",
+      "name": "Cast On Critical Strike Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Cast on Death Support",
+      "name": "Cast on Death Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Cast on Melee Kill Support",
+      "name": "Cast on Melee Kill Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Cast when Damage Taken Support",
+      "name": "Cast when Damage Taken Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Cast when Stunned Support",
+      "name": "Cast when Stunned Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Cast while Channelling Support",
+      "name": "Cast while Channelling Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": []
+        }
+      ]
     },
     {
       "key": "Caustic Arrow",
@@ -2468,6 +4165,181 @@
       "vendorRewards": []
     },
     {
+      "key": "Chain Support",
+      "name": "Chain Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Templar",
+            "Marauder",
+            "Duelist",
+            "Ranger",
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Chance to Bleed Support",
+      "name": "Chance to Bleed Support",
+      "requiredLevel": 1,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Scroll of Wisdom"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "classes": [
+            "Templar",
+            "Marauder",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "Enemy at the Gate",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Duelist"
+          ]
+        },
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Chance to Flee Support",
+      "name": "Chance to Flee Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Shadow"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Chance to Poison Support",
+      "name": "Chance to Poison Support",
+      "requiredLevel": 1,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Scroll of Wisdom"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Duelist",
+            "Ranger",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "Enemy at the Gate",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Shadow"
+          ]
+        },
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Ranger",
+            "Scion"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Charged Dash",
       "name": "Charged Dash",
       "requiredLevel": 28,
@@ -2517,6 +4389,88 @@
           "quest": "Fallen from Grace",
           "questId": "",
           "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Charged Mines Support",
+      "name": "Charged Mines Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Shadow"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Charged Traps Support",
+      "name": "Charged Traps Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Shadow"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
           "classes": []
         }
       ]
@@ -2637,6 +4591,101 @@
       "vendorRewards": []
     },
     {
+      "key": "Close Combat Support",
+      "name": "Close Combat Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Marauder",
+            "Duelist",
+            "Ranger"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar"
+          ]
+        },
+        {
+          "act": 2,
+          "quest": "The Root of the Problem",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Cluster Traps Support",
+      "name": "Cluster Traps Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Shadow"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": [
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Witch"
+          ]
+        }
+      ]
+    },
+    {
       "key": "Cobra Lash",
       "name": "Cobra Lash",
       "requiredLevel": 1,
@@ -2687,6 +4736,52 @@
           "quest": "Fallen from Grace",
           "questId": "",
           "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Cold Penetration Support",
+      "name": "Cold Penetration Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Templar",
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
           "classes": []
         }
       ]
@@ -2761,6 +4856,138 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Cold to Fire Support",
+      "name": "Cold to Fire Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 2,
+          "quest": "The Root of the Problem",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Combustion Support",
+      "name": "Combustion Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Templar"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Marauder",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Concentrated Effect Support",
+      "name": "Concentrated Effect Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Templar",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
     },
     {
       "key": "Conductivity",
@@ -3012,6 +5239,103 @@
       "vendorRewards": []
     },
     {
+      "key": "Controlled Blaze Support",
+      "name": "Controlled Blaze Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Marauder"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Marauder",
+            "Templar",
+            "Duelist",
+            "Scion"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Controlled Destruction Support",
+      "name": "Controlled Destruction Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Templar"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 2,
+          "quest": "The Root of the Problem",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Conversion Trap",
       "name": "Conversion Trap",
       "requiredLevel": 4,
@@ -3091,6 +5415,54 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Corrupting Cry Support",
+      "name": "Corrupting Cry Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Marauder"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Marauder",
+            "Templar",
+            "Scion"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
     },
     {
       "key": "Corrupting Fever",
@@ -3345,6 +5717,94 @@
       "vendorRewards": []
     },
     {
+      "key": "Critical Strike Affliction Support",
+      "name": "Critical Strike Affliction Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Ranger",
+            "Shadow"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Ranger",
+            "Scion",
+            "Shadow"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Cruelty Support",
+      "name": "Cruelty Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Marauder",
+            "Templar",
+            "Witch",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Marauder",
+            "Templar",
+            "Witch",
+            "Scion",
+            "Duelist"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Crushing Fist",
       "name": "Crushing Fist",
       "requiredLevel": 4,
@@ -3390,6 +5850,73 @@
           "quest": "Fallen from Grace",
           "questId": "",
           "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Culling Strike Support",
+      "name": "Culling Strike Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": []
+        },
+        {
+          "act": 2,
+          "quest": "The Root of the Problem",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": []
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Cursed Ground Support",
+      "name": "Cursed Ground Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Shadow",
+            "Witch",
+            "Scion"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
           "classes": []
         }
       ]
@@ -3458,6 +5985,51 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Damage on Full Life Support",
+      "name": "Damage on Full Life Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Scion",
+            "Templar"
+          ]
+        },
+        {
+          "act": 2,
+          "quest": "The Root of the Problem",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Scion",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
     },
     {
       "key": "Dark Pact",
@@ -3541,6 +6113,107 @@
           "questId": "",
           "npc": "Siosa",
           "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Deadly Ailments Support",
+      "name": "Deadly Ailments Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 2,
+          "quest": "The Root of the Problem",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Decay Support",
+      "name": "Decay Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Witch"
+          ]
         },
         {
           "act": 6,
@@ -3974,6 +6647,48 @@
           "quest": "Fallen from Grace",
           "questId": "",
           "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Devour Support",
+      "name": "Devour Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "classes": [
+            "Witch"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Witch",
+            "Templar",
+            "Shadow",
+            "Scion"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
           "classes": []
         }
       ]
@@ -4669,6 +7384,193 @@
       "vendorRewards": []
     },
     {
+      "key": "Efficacy Support",
+      "name": "Efficacy Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "classes": [
+            "Witch"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Elemental Army Support",
+      "name": "Elemental Army Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Scion",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Elemental Damage with Attacks Support",
+      "name": "Elemental Damage with Attacks Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Templar",
+            "Marauder",
+            "Duelist",
+            "Ranger",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar"
+          ]
+        },
+        {
+          "act": 2,
+          "quest": "The Root of the Problem",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Elemental Focus Support",
+      "name": "Elemental Focus Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Templar",
+            "Shadow"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Elemental Hit",
       "name": "Elemental Hit",
       "requiredLevel": 12,
@@ -4731,6 +7633,71 @@
       "vendorRewards": []
     },
     {
+      "key": "Elemental Penetration Support",
+      "name": "Elemental Penetration Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Elemental Proliferation Support",
+      "name": "Elemental Proliferation Support",
+      "requiredLevel": 1,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Scroll of Wisdom"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "Enemy at the Gate",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Templar"
+          ]
+        },
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Elemental Weakness",
       "name": "Elemental Weakness",
       "requiredLevel": 24,
@@ -4771,6 +7738,71 @@
           "quest": "A Fixture of Fate",
           "questId": "",
           "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Empower Support",
+      "name": "Empower Support",
+      "requiredLevel": 1,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Scroll of Wisdom"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Endurance Charge on Melee Stun Support",
+      "name": "Endurance Charge on Melee Stun Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Scion",
+            "Templar"
+          ]
+        },
+        {
+          "act": 2,
+          "quest": "The Root of the Problem",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Scion",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
           "classes": []
         }
       ]
@@ -4873,6 +7905,51 @@
       ]
     },
     {
+      "key": "Energy Leech Support",
+      "name": "Energy Leech Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Templar",
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Enfeeble",
       "name": "Enfeeble",
       "requiredLevel": 24,
@@ -4922,6 +7999,32 @@
           "classes": []
         }
       ]
+    },
+    {
+      "key": "Enhance Support",
+      "name": "Enhance Support",
+      "requiredLevel": 1,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Scroll of Wisdom"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Enlighten Support",
+      "name": "Enlighten Support",
+      "requiredLevel": 1,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Scroll of Wisdom"
+      },
+      "questRewards": [],
+      "vendorRewards": []
     },
     {
       "key": "Ensnaring Arrow",
@@ -5063,6 +8166,48 @@
       "vendorRewards": []
     },
     {
+      "key": "Eternal Blessing Support",
+      "name": "Eternal Blessing Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Marauder"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Templar",
+            "Scion"
+          ]
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Ethereal Knives",
       "name": "Ethereal Knives",
       "requiredLevel": 1,
@@ -5173,6 +8318,55 @@
           "classes": [
             "Marauder",
             "Duelist",
+            "Templar",
+            "Scion"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Expert Retaliation Support",
+      "name": "Expert Retaliation Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Duelist"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Duelist",
+            "Marauder",
             "Templar",
             "Scion"
           ]
@@ -5501,6 +8695,259 @@
       "vendorRewards": []
     },
     {
+      "key": "Faster Attacks Support",
+      "name": "Faster Attacks Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "classes": [
+            "Marauder",
+            "Duelist",
+            "Ranger",
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Shadow",
+            "Scion"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Faster Casting Support",
+      "name": "Faster Casting Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Templar",
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 2,
+          "quest": "The Root of the Problem",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Faster Projectiles Support",
+      "name": "Faster Projectiles Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Shadow"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Feeding Frenzy Support",
+      "name": "Feeding Frenzy Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Witch"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Scion",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Fire Penetration Support",
+      "name": "Fire Penetration Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Templar",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Marauder",
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Fire Trap",
       "name": "Fire Trap",
       "requiredLevel": 12,
@@ -5678,6 +9125,50 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Fist of War Support",
+      "name": "Fist of War Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Templar",
+            "Marauder",
+            "Duelist"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Scion",
+            "Templar"
+          ]
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
     },
     {
       "key": "Flame Dash",
@@ -6016,6 +9507,54 @@
       ]
     },
     {
+      "key": "Flamewood Support",
+      "name": "Flamewood Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "classes": [
+            "Marauder"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Marauder",
+            "Templar",
+            "Scion"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Flammability",
       "name": "Flammability",
       "requiredLevel": 24,
@@ -6212,6 +9751,105 @@
       "vendorRewards": []
     },
     {
+      "key": "Focused Ballista Support",
+      "name": "Focused Ballista Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Ranger"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Duelist",
+            "Shadow",
+            "Scion",
+            "Ranger"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Focused Channelling Support",
+      "name": "Focused Channelling Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Shadow"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Forbidden Rite",
       "name": "Forbidden Rite",
       "requiredLevel": 16,
@@ -6255,6 +9893,111 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Fork Support",
+      "name": "Fork Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Ranger"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Fortify Support",
+      "name": "Fortify Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Templar",
+            "Marauder",
+            "Duelist",
+            "Ranger",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
     },
     {
       "key": "Freezing Pulse",
@@ -6369,6 +10112,96 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Fresh Meat Support",
+      "name": "Fresh Meat Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Witch"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Witch",
+            "Templar",
+            "Scion"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Frigid Bond Support",
+      "name": "Frigid Bond Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Templar",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": [
+            "Scion",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
     },
     {
       "key": "Frost Blades",
@@ -6975,6 +10808,46 @@
       ]
     },
     {
+      "key": "Generosity Support",
+      "name": "Generosity Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Marauder",
+            "Scion",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Glacial Cascade",
       "name": "Glacial Cascade",
       "requiredLevel": 28,
@@ -7194,6 +11067,82 @@
       ]
     },
     {
+      "key": "Greater Multiple Projectiles Support",
+      "name": "Greater Multiple Projectiles Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Templar",
+            "Marauder",
+            "Duelist",
+            "Ranger",
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Greater Volley Support",
+      "name": "Greater Volley Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Ground Slam",
       "name": "Ground Slam",
       "requiredLevel": 1,
@@ -7260,6 +11209,54 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Guardian's Blessing Support",
+      "name": "Guardian's Blessing Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Templar"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Templar",
+            "Witch",
+            "Scion"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
     },
     {
       "key": "Haste",
@@ -7686,6 +11683,47 @@
       ]
     },
     {
+      "key": "Hex Bloom Support",
+      "name": "Hex Bloom Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Witch"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": [
+            "Witch",
+            "Shadow",
+            "Scion"
+          ]
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Hexblast",
       "name": "Hexblast",
       "requiredLevel": 28,
@@ -7761,6 +11799,75 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Hextouch Support",
+      "name": "Hextouch Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "High-Impact Mine Support",
+      "name": "High-Impact Mine Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Shadow"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
     },
     {
       "key": "Holy Flame Totem",
@@ -7849,6 +11956,111 @@
             "Shadow",
             "Scion"
           ]
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Hypothermia Support",
+      "name": "Hypothermia Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Duelist",
+            "Ranger"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Ice Bite Support",
+      "name": "Ice Bite Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Ranger",
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
         },
         {
           "act": 6,
@@ -8286,6 +12498,90 @@
       "vendorRewards": []
     },
     {
+      "key": "Ignite Proliferation Support",
+      "name": "Ignite Proliferation Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Templar"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": [
+            "Scion",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Immolate Support",
+      "name": "Immolate Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": [
+            "Marauder",
+            "Scion",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Immortal Call",
       "name": "Immortal Call",
       "requiredLevel": 34,
@@ -8308,6 +12604,109 @@
             "Scion",
             "Templar"
           ]
+        }
+      ]
+    },
+    {
+      "key": "Impale Support",
+      "name": "Impale Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Marauder",
+            "Duelist",
+            "Ranger"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Shadow"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Impending Doom Support",
+      "name": "Impending Doom Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Shadow",
+            "Witch",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Shadow",
+            "Templar",
+            "Witch",
+            "Scion"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
         }
       ]
     },
@@ -8376,6 +12775,129 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Increased Area of Effect Support",
+      "name": "Increased Area of Effect Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Templar",
+            "Marauder",
+            "Duelist",
+            "Ranger",
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Increased Critical Damage Support",
+      "name": "Increased Critical Damage Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Increased Critical Strikes Support",
+      "name": "Increased Critical Strikes Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
     },
     {
       "key": "Infernal Blow",
@@ -8490,6 +13012,246 @@
       ]
     },
     {
+      "key": "Infernal Legion Support",
+      "name": "Infernal Legion Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "classes": [
+            "Witch"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Infused Channelling Support",
+      "name": "Infused Channelling Support",
+      "requiredLevel": 4,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Scroll of Wisdom"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Templar",
+            "Shadow"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Innervate Support",
+      "name": "Innervate Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Inspiration Support",
+      "name": "Inspiration Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Scion",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Intensify Support",
+      "name": "Intensify Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Templar",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Intimidating Cry",
       "name": "Intimidating Cry",
       "requiredLevel": 10,
@@ -8570,6 +13332,165 @@
           "quest": "Fallen from Grace",
           "questId": "",
           "npc": "Lilly Roth",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Iron Grip Support",
+      "name": "Iron Grip Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Templar"
+          ]
+        },
+        {
+          "act": 2,
+          "quest": "The Root of the Problem",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Iron Will Support",
+      "name": "Iron Will Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Scion",
+            "Templar"
+          ]
+        },
+        {
+          "act": 2,
+          "quest": "The Root of the Problem",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Scion",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Item Quantity Support",
+      "name": "Item Quantity Support",
+      "requiredLevel": 24,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [],
+      "vendorRewards": []
+    },
+    {
+      "key": "Item Rarity Support",
+      "name": "Item Rarity Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
           "classes": []
         },
         {
@@ -8752,6 +13673,54 @@
       ]
     },
     {
+      "key": "Kinetic Instability Support",
+      "name": "Kinetic Instability Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Witch"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Kinetic Rain",
       "name": "Kinetic Rain",
       "requiredLevel": 28,
@@ -8812,6 +13781,46 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Knockback Support",
+      "name": "Knockback Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Scion",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
     },
     {
       "key": "Lacerate",
@@ -9039,6 +14048,238 @@
       "vendorRewards": []
     },
     {
+      "key": "Less Duration Support",
+      "name": "Less Duration Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Scion",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Lesser Multiple Projectiles Support",
+      "name": "Lesser Multiple Projectiles Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Life Gain on Hit Support",
+      "name": "Life Gain on Hit Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Scion",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Life Leech Support",
+      "name": "Life Leech Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Marauder",
+            "Duelist",
+            "Ranger",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Lifetap Support",
+      "name": "Lifetap Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "classes": [
+            "Marauder",
+            "Templar",
+            "Duelist",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Marauder",
+            "Templar",
+            "Duelist",
+            "Scion"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Lightning Arrow",
       "name": "Lightning Arrow",
       "requiredLevel": 12,
@@ -9152,6 +14393,58 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Lightning Penetration Support",
+      "name": "Lightning Penetration Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Templar",
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
     },
     {
       "key": "Lightning Spire Trap",
@@ -9493,6 +14786,143 @@
       ]
     },
     {
+      "key": "Living Lightning Support",
+      "name": "Living Lightning Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Witch"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Scion",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Locus Mine Support",
+      "name": "Locus Mine Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Ranger",
+            "Witch",
+            "Shadow",
+            "Scion"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Maim Support",
+      "name": "Maim Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "classes": [
+            "Duelist"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Malevolence",
       "name": "Malevolence",
       "requiredLevel": 24,
@@ -9551,6 +14981,47 @@
       ]
     },
     {
+      "key": "Mana Leech Support",
+      "name": "Mana Leech Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Manabond",
       "name": "Manabond",
       "requiredLevel": 12,
@@ -9596,6 +15067,435 @@
           "quest": "Fallen from Grace",
           "questId": "",
           "npc": "Lilly Roth",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Manaforged Arrows Support",
+      "name": "Manaforged Arrows Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "classes": [
+            "Ranger"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Ranger",
+            "Scion",
+            "Shadow"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Mark On Hit Support",
+      "name": "Mark On Hit Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Meat Shield Support",
+      "name": "Meat Shield Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Witch"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Scion",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Melee Physical Damage Support",
+      "name": "Melee Physical Damage Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Templar",
+            "Marauder",
+            "Duelist",
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": []
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Melee Splash Support",
+      "name": "Melee Splash Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "classes": [
+            "Templar",
+            "Marauder",
+            "Duelist",
+            "Ranger",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": []
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Minefield Support",
+      "name": "Minefield Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Shadow"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Witch"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "Minion Damage Support",
+      "name": "Minion Damage Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "classes": [
+            "Witch"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Scion",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Minion Life Support",
+      "name": "Minion Life Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Scion",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Minion Speed Support",
+      "name": "Minion Speed Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Witch"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Scion",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 2,
+          "quest": "The Root of the Problem",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Scion",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Mirage Archer Support",
+      "name": "Mirage Archer Support",
+      "requiredLevel": 4,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Scroll of Wisdom"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "classes": [
+            "Duelist",
+            "Ranger"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Scion",
+            "Shadow"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
           "classes": []
         },
         {
@@ -9769,6 +15669,263 @@
       "vendorRewards": []
     },
     {
+      "key": "Momentum Support",
+      "name": "Momentum Support",
+      "requiredLevel": 1,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Scroll of Wisdom"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "classes": [
+            "Marauder",
+            "Duelist",
+            "Shadow"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "Enemy at the Gate",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Scion",
+            "Ranger"
+          ]
+        },
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Marauder",
+            "Duelist",
+            "Shadow",
+            "Scion",
+            "Ranger"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "More Duration Support",
+      "name": "More Duration Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Marauder"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Multiple Totems Support",
+      "name": "Multiple Totems Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Templar",
+            "Marauder"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Multiple Traps Support",
+      "name": "Multiple Traps Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "classes": [
+            "Shadow"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Multistrike Support",
+      "name": "Multistrike Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Templar",
+            "Marauder",
+            "Duelist",
+            "Ranger",
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Nightblade Support",
+      "name": "Nightblade Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Shadow"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Ranger",
+            "Scion",
+            "Shadow"
+          ]
+        },
+        {
+          "act": 2,
+          "quest": "The Root of the Problem",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Ranger",
+            "Scion",
+            "Shadow"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Orb of Storms",
       "name": "Orb of Storms",
       "requiredLevel": 4,
@@ -9808,6 +15965,83 @@
           "questId": "",
           "npc": "Siosa",
           "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Overcharge Support",
+      "name": "Overcharge Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Witch"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Ranger",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "Overexertion Support",
+      "name": "Overexertion Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Marauder"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": [
+            "Marauder",
+            "Templar",
+            "Duelist",
+            "Scion"
+          ]
         },
         {
           "act": 6,
@@ -10086,6 +16320,143 @@
       ]
     },
     {
+      "key": "Physical to Lightning Support",
+      "name": "Physical to Lightning Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar"
+          ]
+        },
+        {
+          "act": 2,
+          "quest": "The Root of the Problem",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Pierce Support",
+      "name": "Pierce Support",
+      "requiredLevel": 4,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Scroll of Wisdom"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "classes": [
+            "Duelist",
+            "Shadow",
+            "Scion",
+            "Ranger"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Duelist",
+            "Scion",
+            "Shadow",
+            "Ranger"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Pinpoint Support",
+      "name": "Pinpoint Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Shadow",
+            "Witch"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Shadow",
+            "Templar",
+            "Witch",
+            "Scion"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Plague Bearer",
       "name": "Plague Bearer",
       "requiredLevel": 24,
@@ -10192,6 +16563,51 @@
       "vendorRewards": []
     },
     {
+      "key": "Point Blank Support",
+      "name": "Point Blank Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Scion",
+            "Shadow"
+          ]
+        },
+        {
+          "act": 2,
+          "quest": "The Root of the Problem",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Scion",
+            "Shadow"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Poisonous Concoction",
       "name": "Poisonous Concoction",
       "requiredLevel": 12,
@@ -10265,6 +16681,51 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Power Charge On Critical Support",
+      "name": "Power Charge On Critical Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Witch"
+          ]
+        },
+        {
+          "act": 2,
+          "quest": "The Root of the Problem",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
     },
     {
       "key": "Power Siphon",
@@ -10372,6 +16833,58 @@
       ]
     },
     {
+      "key": "Predator Support",
+      "name": "Predator Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Witch"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Scion",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 2,
+          "quest": "The Root of the Problem",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Scion",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Pride",
       "name": "Pride",
       "requiredLevel": 24,
@@ -10424,6 +16937,39 @@
       ]
     },
     {
+      "key": "Prismatic Burst Support",
+      "name": "Prismatic Burst Support",
+      "requiredLevel": 1,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Scroll of Wisdom"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "Enemy at the Gate",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Templar",
+            "Shadow",
+            "Witch",
+            "Scion"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Protective Link",
       "name": "Protective Link",
       "requiredLevel": 34,
@@ -10458,6 +17004,51 @@
           "quest": "Fallen from Grace",
           "questId": "",
           "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Pulverise Support",
+      "name": "Pulverise Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Templar",
+            "Marauder",
+            "Duelist"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
           "classes": []
         }
       ]
@@ -10882,6 +17473,65 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Rage Support",
+      "name": "Rage Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Marauder",
+            "Duelist"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar"
+          ]
+        },
+        {
+          "act": 2,
+          "quest": "The Root of the Problem",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
     },
     {
       "key": "Rage Vortex",
@@ -11352,6 +18002,45 @@
       ]
     },
     {
+      "key": "Returning Projectiles Support",
+      "name": "Returning Projectiles Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Ranger",
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Righteous Fire",
       "name": "Righteous Fire",
       "requiredLevel": 16,
@@ -11430,6 +18119,237 @@
             "Templar",
             "Witch"
           ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Rupture Support",
+      "name": "Rupture Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Ranger"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": [
+            "Ranger",
+            "Marauder",
+            "Templar",
+            "Duelist",
+            "Scion"
+          ]
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Ruthless Support",
+      "name": "Ruthless Support",
+      "requiredLevel": 1,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Scroll of Wisdom"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "classes": [
+            "Templar",
+            "Duelist",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "Enemy at the Gate",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Marauder"
+          ]
+        },
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Duelist",
+            "Scion",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Sacred Wisps Support",
+      "name": "Sacred Wisps Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Witch"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Ranger",
+            "Scion",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Sacrifice Support",
+      "name": "Sacrifice Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Witch"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Witch",
+            "Templar",
+            "Scion",
+            "Shadow"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Sadism Support",
+      "name": "Sadism Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Duelist",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": []
         },
         {
           "act": 3,
@@ -11601,6 +18521,51 @@
           "npc": "Nessa",
           "classes": [
             "Marauder",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Second Wind Support",
+      "name": "Second Wind Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Ranger",
+            "Shadow"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Scion",
+            "Shadow",
             "Templar",
             "Witch"
           ]
@@ -11945,6 +18910,49 @@
       ]
     },
     {
+      "key": "Shockwave Support",
+      "name": "Shockwave Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Templar",
+            "Marauder"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Scion",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Shockwave Totem",
       "name": "Shockwave Totem",
       "requiredLevel": 28,
@@ -12210,6 +19218,39 @@
           "quest": "Fallen from Grace",
           "questId": "",
           "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Slower Projectiles Support",
+      "name": "Slower Projectiles Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Scion",
+            "Shadow"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
           "classes": []
         }
       ]
@@ -12873,6 +19914,183 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Spell Cascade Support",
+      "name": "Spell Cascade Support",
+      "requiredLevel": 4,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Scroll of Wisdom"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Templar",
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Spell Echo Support",
+      "name": "Spell Echo Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Templar",
+            "Marauder",
+            "Duelist",
+            "Ranger",
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Spell Totem Support",
+      "name": "Spell Totem Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Marauder",
+            "Scion",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Spellblade Support",
+      "name": "Spellblade Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Templar"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
     },
     {
       "key": "Spellslinger",
@@ -13563,6 +20781,46 @@
       ]
     },
     {
+      "key": "Stun Support",
+      "name": "Stun Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Scion",
+            "Templar"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Summon Carrion Golem",
       "name": "Summon Carrion Golem",
       "requiredLevel": 34,
@@ -13954,6 +21212,49 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Summon Phantasm Support",
+      "name": "Summon Phantasm Support",
+      "requiredLevel": 4,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Scroll of Wisdom"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
     },
     {
       "key": "Summon Raging Spirit",
@@ -14402,6 +21703,156 @@
           "quest": "Fallen from Grace",
           "questId": "",
           "npc": "Lilly Roth",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Swift Affliction Support",
+      "name": "Swift Affliction Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Shadow"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Swift Assembly Support",
+      "name": "Swift Assembly Support",
+      "requiredLevel": 4,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Scroll of Wisdom"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "classes": [
+            "Shadow"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Swiftbrand Support",
+      "name": "Swiftbrand Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Templar"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
           "classes": []
         },
         {
@@ -14903,6 +22354,243 @@
       "vendorRewards": []
     },
     {
+      "key": "Trap and Mine Damage Support",
+      "name": "Trap and Mine Damage Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Shadow"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 2,
+          "quest": "The Root of the Problem",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Trap Support",
+      "name": "Trap Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Trauma Support",
+      "name": "Trauma Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Marauder",
+            "Duelist"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": [
+            "Marauder",
+            "Duelist",
+            "Templar",
+            "Scion"
+          ]
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Trinity Support",
+      "name": "Trinity Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Shadow",
+            "Duelist",
+            "Ranger"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Witch",
+            "Shadow",
+            "Duelist",
+            "Ranger",
+            "Templar",
+            "Scion"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Unbound Ailments Support",
+      "name": "Unbound Ailments Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Unearth",
       "name": "Unearth",
       "requiredLevel": 10,
@@ -14934,6 +22622,101 @@
             "Shadow",
             "Templar",
             "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Unleash Support",
+      "name": "Unleash Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "int",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Templar",
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": [
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Urgent Orders Support",
+      "name": "Urgent Orders Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Marauder",
+            "Duelist"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Scion",
+            "Templar"
           ]
         },
         {
@@ -15088,6 +22871,49 @@
       ]
     },
     {
+      "key": "Vicious Projectiles Support",
+      "name": "Vicious Projectiles Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Scion"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Vigilant Strike",
       "name": "Vigilant Strike",
       "requiredLevel": 4,
@@ -15130,6 +22956,47 @@
           "questId": "",
           "npc": "Siosa",
           "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Vile Toxins Support",
+      "name": "Vile Toxins Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Shadow"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": [
+            "Ranger",
+            "Scion",
+            "Shadow"
+          ]
         },
         {
           "act": 6,
@@ -15235,6 +23102,51 @@
           "quest": "Fallen from Grace",
           "questId": "",
           "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Void Manipulation Support",
+      "name": "Void Manipulation Support",
+      "requiredLevel": 8,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Transmutation"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "classes": [
+            "Witch",
+            "Ranger",
+            "Shadow"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "The Caged Brute",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Templar",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
           "classes": []
         }
       ]
@@ -15375,6 +23287,55 @@
       "vendorRewards": []
     },
     {
+      "key": "Volatility Support",
+      "name": "Volatility Support",
+      "requiredLevel": 18,
+      "isSupport": true,
+      "color": "str",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alteration"
+      },
+      "questRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "classes": [
+            "Marauder"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 2,
+          "quest": "Sharp and Cruel",
+          "questId": "",
+          "npc": "Yeena",
+          "classes": [
+            "Marauder",
+            "Templar",
+            "Duelist",
+            "Scion"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Volcanic Fissure",
       "name": "Volcanic Fissure",
       "requiredLevel": 12,
@@ -15409,6 +23370,60 @@
       },
       "questRewards": [],
       "vendorRewards": []
+    },
+    {
+      "key": "Volley Support",
+      "name": "Volley Support",
+      "requiredLevel": 4,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Scroll of Wisdom"
+      },
+      "questRewards": [
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Shadow",
+            "Scion"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 1,
+          "quest": "Mercy Mission",
+          "questId": "",
+          "npc": "Nessa",
+          "classes": [
+            "Duelist",
+            "Marauder",
+            "Ranger",
+            "Scion",
+            "Shadow",
+            "Witch"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
+          "classes": []
+        }
+      ]
     },
     {
       "key": "Voltaxic Burst",
@@ -15870,6 +23885,49 @@
       "vendorRewards": []
     },
     {
+      "key": "Windburst Support",
+      "name": "Windburst Support",
+      "requiredLevel": 31,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Chance"
+      },
+      "questRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "classes": [
+            "Duelist",
+            "Ranger"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Clarissa",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Scion",
+            "Shadow"
+          ]
+        },
+        {
+          "act": 3,
+          "quest": "A Fixture of Fate",
+          "questId": "",
+          "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
       "key": "Winter Orb",
       "name": "Winter Orb",
       "requiredLevel": 28,
@@ -16047,6 +24105,49 @@
           "quest": "A Fixture of Fate",
           "questId": "",
           "npc": "Siosa",
+          "classes": []
+        }
+      ]
+    },
+    {
+      "key": "Withering Touch Support",
+      "name": "Withering Touch Support",
+      "requiredLevel": 38,
+      "isSupport": true,
+      "color": "dex",
+      "vendorCost": {
+        "qty": 1,
+        "orb": "Orb of Alchemy"
+      },
+      "questRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "classes": [
+            "Ranger",
+            "Shadow"
+          ]
+        }
+      ],
+      "vendorRewards": [
+        {
+          "act": 4,
+          "quest": "The Eternal Nightmare",
+          "questId": "",
+          "npc": "Petarus and Vanja",
+          "classes": [
+            "Duelist",
+            "Ranger",
+            "Scion",
+            "Shadow"
+          ]
+        },
+        {
+          "act": 6,
+          "quest": "Fallen from Grace",
+          "questId": "",
+          "npc": "Lilly Roth",
           "classes": []
         }
       ]
