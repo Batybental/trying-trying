@@ -314,6 +314,67 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
 
 /* Mod grid (weapon bases) */
 .rx-mod-grid{gap:3px 6px !important;}
+
+/* ── 3-WAY NAV SWITCHER ─────────────────────────────────────────────── */
+.view-switcher{display:flex;gap:3px;align-items:center;}
+.vsw-btn{padding:4px 12px;border:1px solid var(--bd2);background:transparent;color:var(--tx3);
+  font-family:inherit;font-size:12px;font-weight:500;cursor:pointer;border-radius:3px;
+  transition:all .13s;white-space:nowrap;}
+.vsw-btn:hover{color:var(--tx);border-color:var(--bd3);}
+.vsw-btn.active{background:var(--bg4);border-color:#6b9fd4;color:#6b9fd4;font-weight:700;}
+
+/* ── RX PANEL: scrollable, full height, good contrast ───────────────── */
+#ntab-regex-body{overflow-y:auto !important;flex:1;}
+.rx-panel{padding:0;gap:0;display:block !important;overflow-y:visible !important;}
+.rx-panel > *{margin:8px 14px 0;}
+.rx-panel > *:last-child{margin-bottom:10px;}
+.rx-mod-panel{margin:0 !important;border-radius:0 !important;border-left:none !important;border-right:none !important;border-top:none !important;}
+
+/* Higher contrast regex values */
+.rx-row-val{
+  color:#d4d4d4 !important;
+  background:#111 !important;
+  border-color:#444 !important;
+  font-size:12px !important;
+  padding:5px 8px !important;
+  line-height:1.5 !important;
+  word-break:break-all;overflow-wrap:break-word;white-space:normal;min-width:0;
+}
+.rx-row-lbl{color:#aaa !important;font-size:10px !important;font-weight:700 !important;width:62px !important;}
+.rx-group-name{color:#e0e0e0 !important;font-size:13px !important;}
+.rx-group-head{background:#1e1e1e !important;padding:9px 12px !important;}
+.rx-rows{background:#161616;}
+.rx-row{padding:8px 12px !important;border-bottom:1px solid #2a2a2a;}
+.rx-copy-btn{padding:4px 10px !important;font-size:10px !important;border-color:#555 !important;color:#bbb !important;}
+.rx-copy-btn:hover{border-color:#6b9fd4 !important;color:#6b9fd4 !important;}
+.rx-copy-btn.copied{border-color:#54a860 !important;color:#54a860 !important;}
+
+/* Higher contrast mod checkboxes */
+.rx-mod-group-lbl{color:#aaa !important;font-size:10px !important;font-weight:700 !important;}
+.rx-chk-lbl{font-size:11px !important;color:#ccc !important;}
+.rx-chk-label:has(input:checked) .rx-chk-lbl{color:#fff !important;}
+.rx-chk-box{border-color:#555 !important;background:#1a1a1a !important;}
+
+/* Mod group dropdown */
+.rx-mod-grp-sel{
+  font-size:9px;font-family:inherit;background:#1a1a1a;border:1px solid #444;
+  color:#aaa;border-radius:2px;padding:1px 3px;cursor:pointer;margin-left:2px;
+  max-width:80px;
+}
+.rx-mod-grp-sel:focus{outline:none;border-color:#6b9fd4;}
+
+/* ── DRAG & DROP GROUP CHIPS ────────────────────────────────────────── */
+.g-drag-handle{
+  display:inline-block;cursor:grab;color:var(--tx3);font-size:11px;
+  margin-right:3px;opacity:.5;transition:opacity .1s;user-select:none;
+}
+.g-chip:hover .g-drag-handle{opacity:1;}
+.g-chip.dragging{opacity:.4;border-style:dashed;}
+.g-chip[draggable]{cursor:default;}
+
+/* ── NOTES PANEL CONTRAST ────────────────────────────────────────────── */
+.notes-sec-body{color:#ccc !important;background:#111 !important;border-color:#444 !important;}
+.notes-sec-title{color:#e0e0e0 !important;background:#1a1a1a !important;border-color:#444 !important;}
 </style>
 </head>
 <body>
@@ -368,7 +429,11 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
 <main class="main" id="gemPanel">
   <div class="stats-bar">
     <div class="si">Shown: <b id="sTotal">—</b></div>
-    <button class="notes-toggle-btn" id="btnNotesCtr" onclick="toggleNotes()" title="Notes">📝 Notes</button>
+    <div class="view-switcher" id="viewSwitcher">
+      <button class="vsw-btn active" id="vsw-gems" onclick="switchCenterView('gems')">💎 Gems</button>
+      <button class="vsw-btn" id="vsw-notes" onclick="switchCenterView('notes')">📝 Notes</button>
+      <button class="vsw-btn" id="vsw-regex" onclick="switchCenterView('regex')">🔍 Regex</button>
+    </div>
   </div>
   <div class="col-head">
     <span></span>
@@ -388,7 +453,6 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
       <button class="notes-tab active" id="ntab-notes" onclick="switchNotesTab('notes')">📝 Notes</button>
       <button class="notes-tab" id="ntab-regex" onclick="switchNotesTab('regex')">🔍 Regex</button>
     </div>
-    <button class="notes-toggle-btn" onclick="toggleNotes()">✕</button>
   </div>
   <div id="ntab-notes-body" style="display:flex;flex-direction:column;flex:1;overflow:hidden;">
     <div class="notes-sections" id="notesSections"></div>
@@ -477,7 +541,7 @@ function saveState(){
   try{
     const s={class:selectedClass,groups,
       wanted:[...wantedGems.entries()].map(([iid,v])=>({iid,key:v.key,groupId:v.groupId})),
-      owned:[...ownedGems],notesSections,cartView,activeGroupId,modChecked};
+      owned:[...ownedGems],notesSections,cartView,activeGroupId,modChecked,modGroupAssign};
     localStorage.setItem(SAVE_KEY,JSON.stringify(s));
   }catch(e){}
 }
@@ -491,6 +555,7 @@ function restoreState(){
     if(s.cartView){cartView=s.cartView;['groups','acts','split'].forEach(x=>document.getElementById('vt-'+x)?.classList.toggle('active',x===s.cartView));}
     if(s.activeGroupId)activeGroupId=s.activeGroupId;
     if(s.modChecked)modChecked={...s.modChecked};
+    if(s.modGroupAssign)modGroupAssign={...s.modGroupAssign};
     if(s.wanted){wantedGems.clear();s.wanted.forEach(({iid,key,groupId})=>{const id=iid||(key+'#1');wantedGems.set(id,{key:key||id.split('#')[0],groupId:groupId||'__none__'});});}
     if(s.owned){ownedGems.clear();s.owned.forEach(k=>ownedGems.add(k));}
   }catch(e){console.warn('State restore failed',e);}
@@ -596,6 +661,7 @@ function rowHtml(g,isDropOnly=false,isPinned=false){
 function toggleDropSection(){dropCollapsed=!dropCollapsed;renderGems();}
 function setView(v){cartView=v;['groups','acts','split'].forEach(x=>document.getElementById('vt-'+x).classList.toggle('active',x===v));renderCart();saveState();}
 
+let dragSrcGid = null;
 function renderGroupsBar(){
   const bar=document.getElementById('groupsBar');
   let html=`<div class="g-chip ${activeGroupId==='__all__'?'active':''}" onclick="selectGroup('__all__')">All</div>`;
@@ -603,13 +669,42 @@ function renderGroupsBar(){
   if(groups.length>0&&uc>0)html+=`<div class="g-chip ${activeGroupId==='__none__'?'active':''}" onclick="selectGroup('__none__')">Ungrouped <span class="gc-cnt">${uc}</span></div>`;
   for(const grp of groups){
     const cnt=[...wantedGems.values()].filter(v=>v.groupId===grp.id).length;
-    html+=`<div class="g-chip ${activeGroupId===grp.id?'active':''}" onclick="selectGroup('${ea(grp.id)}')">
+    html+=`<div class="g-chip ${activeGroupId===grp.id?'active':''}"
+      draggable="true"
+      data-gid="${ea(grp.id)}"
+      onclick="selectGroup('${ea(grp.id)}')"
+      ondragstart="onGrpDragStart(event,'${ea(grp.id)}')"
+      ondragover="onGrpDragOver(event)"
+      ondrop="onGrpDrop(event,'${ea(grp.id)}')"
+      ondragend="onGrpDragEnd()">
+      <span class="g-drag-handle">≡</span>
       ${esc(grp.name)}${cnt>0?` <span class="gc-cnt">${cnt}</span>`:''}
       <span class="gc-del" onclick="event.stopPropagation();deleteGroup('${ea(grp.id)}')">✕</span>
     </div>`;
   }
   html+=`<button class="add-g-btn" onclick="addGroup()">+ Group</button>`;
   bar.innerHTML=html;
+}
+function onGrpDragStart(e,gid){
+  dragSrcGid=gid;
+  e.dataTransfer.effectAllowed='move';
+  e.dataTransfer.setData('text/plain',gid);
+  setTimeout(()=>{const el=document.querySelector(`.g-chip[data-gid="${gid}"]`);if(el)el.classList.add('dragging');},0);
+}
+function onGrpDragOver(e){e.preventDefault();e.dataTransfer.dropEffect='move';}
+function onGrpDrop(e,targetGid){
+  e.preventDefault();
+  if(!dragSrcGid||dragSrcGid===targetGid)return;
+  const from=groups.findIndex(g=>g.id===dragSrcGid);
+  const to=groups.findIndex(g=>g.id===targetGid);
+  if(from<0||to<0)return;
+  const [moved]=groups.splice(from,1);
+  groups.splice(to,0,moved);
+  renderGroupsBar();renderCart();saveState();
+}
+function onGrpDragEnd(){
+  dragSrcGid=null;
+  document.querySelectorAll('.g-chip.dragging').forEach(el=>el.classList.remove('dragging'));
 }
 function selectGroup(gid){activeGroupId=gid;renderGroupsBar();renderCart();saveState();}
 function addGroup(){document.getElementById('groupNameInput').value='';openModal('modalGroup');setTimeout(()=>document.getElementById('groupNameInput').focus(),50);}
@@ -903,15 +998,7 @@ function orbHtml(c){return`<span class="${ORB_CLASS[c.orb]||''}">${c.qty}× ${OR
 function orbHtmlI(c){return`<span class="${ORB_CLASS[c.orb]||''}">${c.qty}× ${ORB_SHORT[c.orb]||c.orb}</span>`;}
 
 /* NOTES */
-function toggleNotes(){
-  notesMode=!notesMode;
-  document.getElementById('gemPanel').style.display=notesMode?'none':'flex';
-  document.getElementById('notesCenterPanel').style.display=notesMode?'flex':'none';
-  const btn=document.getElementById('btnNotesCtr');
-  if(btn)btn.classList.toggle('active',notesMode);
-  if(notesMode)renderNotes();
-  if(notesMode && notesTab==='regex') renderRegexPanel();
-}
+// toggleNotes replaced by switchCenterView
 function renderNotes(){
   const el=document.getElementById('notesSections');if(!el)return;
   el.innerHTML=notesSections.map((sec,i)=>{
@@ -924,15 +1011,31 @@ function renderNotes(){
     </div>`;
   }).join('');
 }
-// ── Notes tab switcher ───────────────────────────────────────────────────────
-let notesTab = 'notes';
-function switchNotesTab(tab){
-  notesTab = tab;
-  document.getElementById('ntab-notes-body').style.display = tab==='notes' ? 'flex' : 'none';
-  document.getElementById('ntab-regex-body').style.display = tab==='regex' ? 'flex' : 'none';
-  document.querySelectorAll('.notes-tab').forEach(b=>b.classList.toggle('active', b.id==='ntab-'+tab));
-  if(tab==='regex') renderRegexPanel();
+// ── Center view switcher (Gems / Notes / Regex) ──────────────────────────────
+let centerView = 'gems'; // 'gems' | 'notes' | 'regex'
+function switchCenterView(view){
+  centerView = view;
+  document.getElementById('gemPanel').style.display = view==='gems' ? 'flex' : 'none';
+  document.getElementById('notesCenterPanel').style.display = view!=='gems' ? 'flex' : 'none';
+  // notes vs regex sub-tab
+  const notesBody = document.getElementById('ntab-notes-body');
+  const regexBody = document.getElementById('ntab-regex-body');
+  if(notesBody) notesBody.style.display = view==='notes' ? 'flex' : 'none';
+  if(regexBody) regexBody.style.display = view==='regex' ? 'flex' : 'none';
+  document.querySelectorAll('.notes-tab').forEach(b=>{
+    b.classList.toggle('active', (view==='notes'&&b.id==='ntab-notes')||(view==='regex'&&b.id==='ntab-regex'));
+  });
+  // nav buttons
+  ['gems','notes','regex'].forEach(v=>{
+    const b=document.getElementById('vsw-'+v); if(b) b.classList.toggle('active', v===view);
+  });
+  if(view==='notes') renderNotes();
+  if(view==='regex') renderRegexPanel();
+  notesMode = view!=='gems';
 }
+// legacy compat
+function toggleNotes(){ switchCenterView(centerView==='gems'?'notes':'gems'); }
+function switchNotesTab(tab){ switchCenterView(tab); }
 
 // ── Shortest unique ngram for gem names ──────────────────────────────────────
 // Algorithm concept inspired by poe.re / veiset (github.com/veiset/poe-vendor-string)
@@ -1019,40 +1122,45 @@ function combinedRegex(groupId){
 // ── Vendor mod options ───────────────────────────────────────────────────────
 // Each mod has id, label, rx (regex string to append), group name
 const MOD_OPTIONS = [
-  // Movement Speed — "runner" matches boot base names with MS (any tier).
-  // For specific % ranges, matches the mod text "X% increased Movement Speed".
-  {id:'ms10', group:'Movement speed', label:'Any MS',  rx:'runn'},
-  {id:'ms15', group:'Movement speed', label:'15%+',    rx:'rint'},
+  // Movement Speed
+  {id:'ms10', group:'Movement speed', label:'Any MS',  rx:'runn', modGroup:'__all__'},
+  {id:'ms15', group:'Movement speed', label:'15%+',    rx:'rint',  modGroup:'__all__'},
   // +1 wand mods — shortest unique substrings of the in-game mod text
   // e.g. "+1 to Level of all Fire Spell Skill Gems" → "ll fi" is unique to fire variant
-  {id:'w1any',  group:'Wand +1',  label:'Any',       rx:'ll g'},
-  {id:'w1lit',  group:'Wand +1',  label:'Lightning', rx:'ll li'},
-  {id:'w1fire', group:'Wand +1',  label:'Fire',      rx:'ll fi'},
-  {id:'w1cold', group:'Wand +1',  label:'Cold',      rx:'ll co'},
-  {id:'w1phys', group:'Wand +1',  label:'Physical',  rx:'ll ph'},
-  {id:'w1chaos',group:'Wand +1',  label:'Chaos',     rx:'ll ch'},
+  {id:'w1any',  group:'Wand +1',  label:'Any',       rx:'ll g', modGroup:'__all__'},
+  {id:'w1lit',  group:'Wand +1',  label:'Lightning', rx:'ll li', modGroup:'__all__'},
+  {id:'w1fire', group:'Wand +1',  label:'Fire',      rx:'ll fi', modGroup:'__all__'},
+  {id:'w1cold', group:'Wand +1',  label:'Cold',      rx:'ll co', modGroup:'__all__'},
+  {id:'w1phys', group:'Wand +1',  label:'Physical',  rx:'ll ph', modGroup:'__all__'},
+  {id:'w1chaos',group:'Wand +1',  label:'Chaos',     rx:'ll ch', modGroup:'__all__'},
   // Misc mods
-  {id:'physdmg',group:'Misc',  label:'Physical damage',  rx:'ll g'},
-  {id:'fdot',   group:'Misc',  label:'Fire DOT multi',   rx:'re ov'},
-  {id:'cdot',   group:'Misc',  label:'Cold DOT multi',   rx:'ld ov'},
-  {id:'chdot',  group:'Misc',  label:'Chaos DOT multi',  rx:'os ov'},
+  {id:'physdmg',group:'Misc',  label:'Physical damage',  rx:'ll g', modGroup:'__all__'},
+  {id:'fdot',   group:'Misc',  label:'Fire DOT multi',   rx:'re ov', modGroup:'__all__'},
+  {id:'cdot',   group:'Misc',  label:'Cold DOT multi',   rx:'ld ov', modGroup:'__all__'},
+  {id:'chdot',  group:'Misc',  label:'Chaos DOT multi',  rx:'os ov', modGroup:'__all__'},
   // Weapon bases — base item names, no false positives
-  {id:'waxe',    group:'Weapon bases', label:'Axe',     rx:'axe'},
-  {id:'wmace',   group:'Weapon bases', label:'Mace',    rx:'mace'},
-  {id:'wsword',  group:'Weapon bases', label:'Sword',   rx:'sword'},
-  {id:'wstaff',  group:'Weapon bases', label:'Staff',   rx:'staff'},
-  {id:'wsceptre',group:'Weapon bases', label:'Sceptre', rx:'ceptr'},
-  {id:'wclaw',   group:'Weapon bases', label:'Claw',    rx:'claw'},
-  {id:'wbow',    group:'Weapon bases', label:'Bow',     rx:'bow'},
-  {id:'wwand',   group:'Weapon bases', label:'Wand',    rx:'wand'},
-  {id:'wdagger', group:'Weapon bases', label:'Dagger',  rx:'agge'},
+  {id:'waxe',    group:'Weapon bases', label:'Axe',     rx:'axe', modGroup:'__all__'},
+  {id:'wmace',   group:'Weapon bases', label:'Mace',    rx:'mace', modGroup:'__all__'},
+  {id:'wsword',  group:'Weapon bases', label:'Sword',   rx:'sword', modGroup:'__all__'},
+  {id:'wstaff',  group:'Weapon bases', label:'Staff',   rx:'staff', modGroup:'__all__'},
+  {id:'wsceptre',group:'Weapon bases', label:'Sceptre', rx:'ceptr', modGroup:'__all__'},
+  {id:'wclaw',   group:'Weapon bases', label:'Claw',    rx:'claw', modGroup:'__all__'},
+  {id:'wbow',    group:'Weapon bases', label:'Bow',     rx:'bow', modGroup:'__all__'},
+  {id:'wwand',   group:'Weapon bases', label:'Wand',    rx:'wand', modGroup:'__all__'},
+  {id:'wdagger', group:'Weapon bases', label:'Dagger',  rx:'agge', modGroup:'__all__'},
 ];
 
 // persisted checkbox state
 let modChecked = {};
+let modGroupAssign = {}; // modId -> gemGroupId or '__all__'
 
 function toggleMod(id){
   modChecked[id] = !modChecked[id];
+  saveState();
+  renderRegexPanel();
+}
+function setModGroup(id, gid){
+  modGroupAssign[id] = gid;
   saveState();
   renderRegexPanel();
 }
@@ -1083,8 +1191,15 @@ function buildFinalRx(gemRxStr, linkRxStr, extraMods){
 }
 
 // ── Get checked mod rx strings ──────────────────────────────────────────────
-function checkedModRxList(){
-  return MOD_OPTIONS.filter(m=>modChecked[m.id]).map(m=>m.rx);
+function checkedModRxList(forGroupId){
+  // forGroupId: which gem-group we're building regex for, or null for 'All gems'
+  return MOD_OPTIONS.filter(m=>{
+    if(!modChecked[m.id]) return false;
+    const mg = modGroupAssign[m.id] || '__all__';
+    if(mg === '__all__') return true; // applies everywhere
+    if(forGroupId === null) return true; // 'All gems' scope includes everything
+    return mg === forGroupId;
+  }).map(m=>m.rx);
 }
 
 // ── Render regex panel (full rewrite) ────────────────────────────────────────
@@ -1116,15 +1231,22 @@ function rxRowHtml(lbl, fullRx){
 
 // Mod checkboxes section
 function modCheckboxesHtml(){
-  const groups = modsByGroup();
+  const modGroups = modsByGroup();
+  // Build group options for dropdown
+  const grpOpts = `<option value="__all__">All groups</option>`
+    + groups.map(g=>`<option value="${ea(g.id)}">${esc(g.name)}</option>`).join('');
+  const hasGrpChoice = groups.length > 0;
+
   let html = '<div class="rx-mod-panel">';
-  for(const [grpName, mods] of Object.entries(groups)){
+  for(const [grpName, mods] of Object.entries(modGroups)){
     const isBases = grpName === 'Weapon bases';
     html += `<div class="rx-mod-group"><div class="rx-mod-group-lbl">${esc(grpName)}</div>`;
     html += `<div class="rx-mod-checks ${isBases?'rx-mod-grid':''}">`;
     mods.forEach(m=>{
       const checked = modChecked[m.id]||false;
-      html += `<label class="rx-chk-label"><input type="checkbox" ${checked?'checked':''} onchange="toggleMod('${m.id}')"><span class="rx-chk-box"></span><span class="rx-chk-lbl">${esc(m.label)}</span></label>`;
+      const mg = modGroupAssign[m.id]||'__all__';
+      const dropdown = hasGrpChoice && checked ? `<select class="rx-mod-grp-sel" onchange="setModGroup('${m.id}',this.value)">${grpOpts.replace(`value="${ea(mg)}"`,`value="${ea(mg)}" selected`)}</select>` : '';
+      html += `<label class="rx-chk-label"><input type="checkbox" ${checked?'checked':''} onchange="toggleMod('${m.id}')"><span class="rx-chk-box"></span><span class="rx-chk-lbl">${esc(m.label)}</span></label>${dropdown}`;
     });
     html += `</div></div>`;
   }
@@ -1140,7 +1262,7 @@ function renderRegexPanel(){
     For more regex options, I recommend <a href="https://poe.re" target="_blank" class="rx-recommend-link">poe.re</a> by veiset.
   </div>`;
 
-  const extraMods = checkedModRxList();
+  // extraMods computed per-scope inside scopeCard
 
   // Scopes: All, Gems-only, Links-only, then per-group
   const groupList = [...groups];
@@ -1182,11 +1304,12 @@ function renderRegexPanel(){
 
   // ── Scope cards ──────────────────────────────────────────────────────────
   function scopeCard(title, gids, sockCounts){
+    const scopeExtraMods = checkedModRxList(gids===null ? null : (gids[0]||null));
     const gr = scopeGemRx(gids);
     const lr = scopeLinkRx(gids);
-    const cr = buildFinalRx(gr, lr, extraMods);
-    const gemsOnly = buildFinalRx(gr,'',extraMods);
-    const linksOnly = buildFinalRx('',lr,extraMods);
+    const cr = buildFinalRx(gr, lr, scopeExtraMods);
+    const gemsOnly = buildFinalRx(gr,'',scopeExtraMods);
+    const linksOnly = buildFinalRx('',lr,scopeExtraMods);
 
     // Socket pills
     const sc = sockCounts || (()=>{const c={R:0,G:0,B:0};[...(gids?wantedGems.entries():[...wantedGems.entries()])].filter(([iid])=>!ownedGems.has(iid)).forEach(([,v])=>{const gem=allGems.find(g=>g.key===v.key);if(!gem)return;if(gem.color==='str')c.R++;else if(gem.color==='dex')c.G++;else if(gem.color==='int')c.B++;});return c;})();
