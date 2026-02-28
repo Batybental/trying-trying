@@ -19,7 +19,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:0 1
 .h-title span{color:var(--tx3);font-weight:400;font-size:11px;margin-left:6px;}
 .h-right{font-size:11px;color:var(--tx3);}
 .h-right b{color:var(--tx2);}
-.app{display:grid;grid-template-columns:180px 1fr 580px;height:calc(100vh - 44px);}
+.app{display:grid;grid-template-columns:180px 1fr 660px;height:calc(100vh - 44px);}
 .left{background:var(--bg2);border-right:1px solid var(--bd);padding:10px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;}
 .lbl{font-size:10px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--tx3);margin-bottom:5px;}
 .class-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;}
@@ -41,7 +41,13 @@ header{display:flex;align-items:center;justify-content:space-between;padding:0 1
 .search::placeholder{color:var(--tx3);}
 .info-box{font-size:10px;color:var(--tx3);line-height:1.7;padding:8px;background:var(--bg3);border:1px solid var(--bd);border-radius:4px;margin-top:auto;}
 .info-box b{color:var(--tx2);}
-.main{background:var(--bg);overflow-y:auto;display:flex;flex-direction:column;min-width:0;}
+.center-col{display:flex;flex-direction:column;min-width:0;overflow:hidden;position:relative;}
+.main{background:var(--bg);overflow-y:auto;display:flex;flex-direction:column;flex:1;min-width:0;}
+.notes-center{display:flex;flex-direction:column;flex:1;overflow:hidden;background:var(--bg2);border-right:1px solid var(--bd);}
+.notes-center-head{padding:7px 12px;border-bottom:1px solid var(--bd);background:var(--bg3);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.notes-toggle-btn{padding:2px 8px;border:1px solid var(--bd2);background:transparent;color:var(--tx3);font-family:inherit;font-size:10px;cursor:pointer;border-radius:3px;transition:all .12s;margin-left:auto;}
+.notes-toggle-btn:hover{border-color:var(--bd3);color:var(--tx);}
+.notes-toggle-btn.active{border-color:var(--yellow);color:var(--yellow);}
 .stats-bar{display:flex;align-items:center;padding:5px 12px;background:var(--bg2);border-bottom:1px solid var(--bd);font-size:11px;color:var(--tx3);flex-shrink:0;}
 .si b{color:var(--tx);font-weight:500;}
 .col-head{display:grid;grid-template-columns:16px 1fr 50px 55px 36px 90px;padding:5px 12px;background:var(--bg2);border-bottom:1px solid var(--bd);font-size:10px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--tx3);position:sticky;top:0;z-index:10;}
@@ -168,14 +174,8 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
 .fbtn:hover{border-color:var(--bd3);color:var(--tx);}
 .fbtn.danger{color:rgba(200,60,60,.6);border-color:rgba(200,60,60,.2);}
 .fbtn.danger:hover{border-color:var(--red);color:var(--red);}
-/* NOTES PANEL */
-.notes-panel{display:none;flex:1;flex-direction:column;overflow:hidden;}
-.notes-panel.visible{display:flex;}
-.notes-toolbar{padding:7px 12px;border-bottom:1px solid var(--bd);background:var(--bg3);flex-shrink:0;display:flex;align-items:center;gap:8px;}
-.notes-toolbar-lbl{font-size:10px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--tx3);}
-.notes-toolbar-btns{display:flex;gap:4px;margin-left:auto;}
-.nbtn{padding:3px 9px;border:1px solid var(--bd2);background:var(--bg4);color:var(--tx2);font-family:inherit;font-size:10px;cursor:pointer;border-radius:3px;transition:all .12s;}
-.nbtn:hover{border-color:var(--bd3);color:var(--tx);}
+/* NOTES CENTER */
+.notes-toolbar-lbl{font-size:11px;font-weight:600;color:var(--tx2);}
 .notes-sections{flex:1;overflow-y:auto;padding:10px 12px;display:flex;flex-direction:column;gap:10px;}
 .notes-section{background:var(--bg3);border:1px solid var(--bd);border-radius:4px;overflow:hidden;}
 .notes-sec-head{display:flex;align-items:center;padding:6px 10px;border-bottom:1px solid var(--bd);gap:6px;}
@@ -186,9 +186,7 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
 .notes-sec-del:hover{color:var(--red);}
 .notes-textarea{width:100%;padding:8px 10px;background:transparent;border:none;outline:none;color:var(--tx2);font-family:'Courier New',monospace;font-size:11px;line-height:1.6;resize:none;min-height:60px;}
 .notes-textarea::placeholder{color:var(--tx3);}
-.notes-regex-preview{padding:5px 10px 7px;font-size:10px;border-top:1px solid var(--bd);font-family:monospace;word-break:break-all;line-height:1.6;}
-.notes-regex-lbl{font-size:9px;color:var(--tx3);margin-right:4px;}
-.rx-str{color:#c47a3a;}.rx-dex{color:#54a860;}.rx-int{color:#6b9fd4;}.rx-gen{color:var(--tx2);}
+/* regex styles removed */
 .notes-add-sec{padding:4px 12px 10px;flex-shrink:0;}
 .notes-add-btn{width:100%;padding:7px;border:1px dashed var(--bd2);background:transparent;border-radius:3px;font-size:11px;color:var(--tx3);cursor:pointer;transition:all .12s;}
 .notes-add-btn:hover{border-color:var(--bd3);color:var(--tx2);}
@@ -258,8 +256,12 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
     16–27 Alt · 28–37 Chance · 38+ Alch
   </div>
 </aside>
-<main class="main">
-  <div class="stats-bar"><div class="si">Shown: <b id="sTotal">—</b></div></div>
+<div class="center-col">
+<main class="main" id="gemPanel">
+  <div class="stats-bar">
+    <div class="si">Shown: <b id="sTotal">—</b></div>
+    <button class="notes-toggle-btn" id="btnNotesCtr" onclick="toggleNotes()" title="Notes">📝 Notes</button>
+  </div>
   <div class="col-head">
     <span></span>
     <span onclick="sortBy('name')">Gem</span>
@@ -272,12 +274,20 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
     <div class="state-box"><div class="spinner"></div><p>Loading gems.json...</p></div>
   </div>
 </main>
+<div class="notes-center" id="notesCenterPanel" style="display:none">
+  <div class="notes-center-head">
+    <span class="notes-toolbar-lbl">Notes</span>
+    <button class="notes-toggle-btn" onclick="toggleNotes()">✕ Close</button>
+  </div>
+  <div class="notes-sections" id="notesSections"></div>
+  <div class="notes-add-sec"><button class="notes-add-btn" onclick="addNotesSection()">+ Add section</button></div>
+</div>
+</div>
 <aside class="right">
   <div class="cart-head">
     <div class="cart-head-row1">
-      <span class="cart-title" id="panelTitle">Shopping List</span>
+      <span class="cart-title">Shopping List</span>
       <div class="cart-head-btns">
-        <button class="hbtn" id="btnNotes" onclick="toggleNotes()" title="Notes & Regex panel">📝 Notes</button>
         <button class="hbtn" onclick="exportJSON()">⬆ JSON</button>
         <button class="hbtn" onclick="openImport()">⬇ Import</button>
         <button class="hbtn danger" onclick="clearAll()">✕</button>
@@ -313,17 +323,7 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
       <button class="fbtn danger" onclick="clearAll()">✕ Clear</button>
     </div>
   </div>
-  <div class="notes-panel" id="notesPanel">
-    <div class="notes-toolbar">
-      <span class="notes-toolbar-lbl">Notes &amp; Regex</span>
-      <div class="notes-toolbar-btns">
-        <button class="nbtn" onclick="copyAllRegex()">Copy all regex</button>
-        <button class="nbtn" onclick="copyGroupRegexes()">Copy by group</button>
-      </div>
-    </div>
-    <div class="notes-sections" id="notesSections"></div>
-    <div class="notes-add-sec"><button class="notes-add-btn" onclick="addNotesSection()">+ Add section</button></div>
-  </div>
+
 </aside>
 </div>
 <div class="modal-bg" id="modalGroup">
@@ -355,6 +355,30 @@ const ORB_ORDER={'Scroll of Wisdom':0,'Orb of Transmutation':1,'Orb of Alteratio
 const ORB_SHORT={'Scroll of Wisdom':'Wisdom','Orb of Transmutation':'Transmute','Orb of Alteration':'Alteration','Orb of Chance':'Chance','Orb of Alchemy':'Alchemy'};
 const ORB_CLASS={'Scroll of Wisdom':'orb-wisdom','Orb of Transmutation':'orb-transmute','Orb of Alteration':'orb-alt','Orb of Chance':'orb-chance','Orb of Alchemy':'orb-alch'};
 
+// ── localStorage persistence ──────────────────────────────────────────────
+const SAVE_KEY='poe-gem-planner-v2';
+function saveState(){
+  try{
+    const s={class:selectedClass,groups,
+      wanted:[...wantedGems.entries()].map(([iid,v])=>({iid,key:v.key,groupId:v.groupId})),
+      owned:[...ownedGems],notesSections,cartView,activeGroupId};
+    localStorage.setItem(SAVE_KEY,JSON.stringify(s));
+  }catch(e){}
+}
+function restoreState(){
+  try{
+    const raw=localStorage.getItem(SAVE_KEY); if(!raw)return;
+    const s=JSON.parse(raw);
+    if(s.class){selectedClass=s.class;document.querySelectorAll('.cbtn').forEach(b=>{b.classList.toggle('active',b.dataset.class===s.class);});}
+    if(s.groups)groups=s.groups;
+    if(s.notesSections)notesSections=s.notesSections;
+    if(s.cartView){cartView=s.cartView;['groups','acts','split'].forEach(x=>document.getElementById('vt-'+x)?.classList.toggle('active',x===s.cartView));}
+    if(s.activeGroupId)activeGroupId=s.activeGroupId;
+    if(s.wanted){wantedGems.clear();s.wanted.forEach(({iid,key,groupId})=>{const id=iid||(key+'#1');wantedGems.set(id,{key:key||id.split('#')[0],groupId:groupId||'__none__'});});}
+    if(s.owned){ownedGems.clear();s.owned.forEach(k=>ownedGems.add(k));}
+  }catch(e){console.warn('State restore failed',e);}
+}
+
 async function loadGems(){
   try{
     const res=await fetch('gems.json'); if(!res.ok)throw new Error(res.status);
@@ -363,7 +387,8 @@ async function loadGems(){
     allGems.forEach(g=>{if(!g.isSupport&&(g.key.endsWith(' Support')||(g.name&&g.name.endsWith(' Support'))))g.isSupport=true;});
     if(data.generatedAt){const d=new Date(data.generatedAt);document.getElementById('dataDate').textContent=d.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});}
     document.getElementById('dataCount').textContent=allGems.length;
-    renderGems(); renderNotes();
+    restoreState();
+    renderGems(); renderGroupsBar(); renderCart(); renderNotes();
   }catch(e){document.getElementById('gemList').innerHTML=`<div class="state-box"><p style="color:var(--red)">gems.json not found</p><p>Run <code>node fetch-gems.mjs</code></p></div>`;}
 }
 
@@ -452,7 +477,7 @@ function rowHtml(g,isDropOnly=false,isPinned=false){
   </div>`;
 }
 function toggleDropSection(){dropCollapsed=!dropCollapsed;renderGems();}
-function setView(v){cartView=v;['groups','acts','split'].forEach(x=>document.getElementById('vt-'+x).classList.toggle('active',x===v));renderCart();}
+function setView(v){cartView=v;['groups','acts','split'].forEach(x=>document.getElementById('vt-'+x).classList.toggle('active',x===v));renderCart();saveState();}
 
 function renderGroupsBar(){
   const bar=document.getElementById('groupsBar');
@@ -469,18 +494,18 @@ function renderGroupsBar(){
   html+=`<button class="add-g-btn" onclick="addGroup()">+ Group</button>`;
   bar.innerHTML=html;
 }
-function selectGroup(gid){activeGroupId=gid;renderGroupsBar();renderCart();}
+function selectGroup(gid){activeGroupId=gid;renderGroupsBar();renderCart();saveState();}
 function addGroup(){document.getElementById('groupNameInput').value='';openModal('modalGroup');setTimeout(()=>document.getElementById('groupNameInput').focus(),50);}
 function confirmAddGroup(){
   const name=document.getElementById('groupNameInput').value.trim();if(!name)return;
   const id='g'+Date.now();groups.push({id,name});activeGroupId=id;
-  closeModal('modalGroup');renderGroupsBar();renderCart();renderNotes();
+  closeModal('modalGroup');renderGroupsBar();renderCart();renderNotes();saveState();
 }
 function deleteGroup(gid){
   groups=groups.filter(g=>g.id!==gid);
   for(const[iid,v]of wantedGems)if(v.groupId===gid)wantedGems.set(iid,{...v,groupId:'__none__'});
   if(activeGroupId===gid)activeGroupId='__all__';
-  renderGroupsBar();renderCart();renderNotes();
+  renderGroupsBar();renderCart();renderNotes();saveState();
 }
 
 function rowClick(key){
@@ -488,7 +513,7 @@ function rowClick(key){
   const existing=[...wantedGems.entries()].find(([,v])=>v.key===key&&v.groupId===target);
   if(existing){wantedGems.delete(existing[0]);ownedGems.delete(existing[0]);}
   else{const c=[...wantedGems.values()].filter(v=>v.key===key).length;wantedGems.set(key+'#'+(c+1),{key,groupId:target});}
-  updateRowIcon(key);renderGroupsBar();renderCart();if(notesMode)renderNotes();
+  updateRowIcon(key);renderGroupsBar();renderCart();if(notesMode)renderNotes();saveState();
 }
 function updateRowIcon(key){
   const cnt=[...wantedGems.values()].filter(v=>v.key===key).length;
@@ -501,9 +526,9 @@ function updateRowIcon(key){
     else{ic.textContent=cnt;ic.style.color='#fff';ic.style.fontSize='9px';}
   });
 }
-function toggleOwned(iid){ownedGems.has(iid)?ownedGems.delete(iid):ownedGems.add(iid);renderCart();}
-function moveToGroup(iid,gid){if(!wantedGems.has(iid))return;wantedGems.set(iid,{...wantedGems.get(iid),groupId:gid});renderGroupsBar();renderCart();}
-function removeInstance(iid){const v=wantedGems.get(iid);wantedGems.delete(iid);ownedGems.delete(iid);if(v)updateRowIcon(v.key);renderGroupsBar();renderCart();if(notesMode)renderNotes();}
+function toggleOwned(iid){ownedGems.has(iid)?ownedGems.delete(iid):ownedGems.add(iid);renderCart();saveState();}
+function moveToGroup(iid,gid){if(!wantedGems.has(iid))return;wantedGems.set(iid,{...wantedGems.get(iid),groupId:gid});renderGroupsBar();renderCart();saveState();}
+function removeInstance(iid){const v=wantedGems.get(iid);wantedGems.delete(iid);ownedGems.delete(iid);if(v)updateRowIcon(v.key);renderGroupsBar();renderCart();if(notesMode)renderNotes();saveState();}
 
 function renderCart(){
   const total=wantedGems.size;
@@ -656,72 +681,32 @@ function orbHtmlI(c){return`<span class="${ORB_CLASS[c.orb]||''}">${c.qty}× ${O
 /* NOTES */
 function toggleNotes(){
   notesMode=!notesMode;
-  document.getElementById('shoppingPanel').style.display=notesMode?'none':'flex';
-  document.getElementById('notesPanel').classList.toggle('visible',notesMode);
-  document.getElementById('btnNotes').classList.toggle('active-mode',notesMode);
-  document.getElementById('panelTitle').textContent=notesMode?'Notes & Regex':'Shopping List';
-  document.getElementById('cartRow2').style.display=notesMode?'none':'flex';
-  document.getElementById('groupsBar').style.display=notesMode?'none':'flex';
+  document.getElementById('gemPanel').style.display=notesMode?'none':'flex';
+  document.getElementById('notesCenterPanel').style.display=notesMode?'flex':'none';
+  const btn=document.getElementById('btnNotesCtr');
+  if(btn)btn.classList.toggle('active',notesMode);
   if(notesMode)renderNotes();
 }
 function renderNotes(){
   const el=document.getElementById('notesSections');if(!el)return;
   el.innerHTML=notesSections.map((sec,i)=>{
-    const pr=buildRegexPreview(sec);
-    const matchedGroup=groups.find(g=>g.name.toLowerCase()===sec.title.toLowerCase());
-    const hint=matchedGroup?`linked to group "${esc(matchedGroup.name)}"`:
-      (sec.title.toLowerCase()==='all'||sec.title.toLowerCase()==='main build')?'shows all gems':'name a section after a group to auto-link';
     return`<div class="notes-section">
       <div class="notes-sec-head">
-        <input class="notes-sec-title" value="${esc(sec.title)}" placeholder="Section title…" oninput="notesSections[${i}].title=this.value;renderNotes()">
-        <span class="notes-sec-hint">${hint}</span>
+        <input class="notes-sec-title" value="${esc(sec.title)}" placeholder="Section title…" oninput="notesSections[${i}].title=this.value;saveState()">
         <button class="notes-sec-del" onclick="deleteNotesSection('${sec.id}')">✕</button>
       </div>
-      <textarea class="notes-textarea" placeholder="Notes, links, build ideas…" oninput="notesSections[${i}].text=this.value">${esc(sec.text)}</textarea>
-      ${pr?`<div class="notes-regex-preview"><span class="notes-regex-lbl">regex:</span>${pr}</div>`:''}
+      <textarea class="notes-textarea" placeholder="Notes, links, build ideas…" rows="4" oninput="notesSections[${i}].text=this.value;saveState()">${esc(sec.text)}</textarea>
     </div>`;
   }).join('');
 }
-function buildRegexPreview(sec){
-  let gems=[];
-  const matchedGroup=groups.find(g=>g.name.toLowerCase()===sec.title.toLowerCase());
-  if(matchedGroup){
-    gems=[...wantedGems.values()].filter(v=>v.groupId===matchedGroup.id).map(v=>allGems.find(g=>g.key===v.key)).filter(Boolean);
-  } else if(sec.title.toLowerCase()==='all'||sec.title.toLowerCase()==='main build'){
-    gems=[...new Set([...wantedGems.values()].map(v=>v.key))].map(k=>allGems.find(g=>g.key===k)).filter(Boolean);
-  }
-  if(!gems.length)return'';
-  const unique=[...new Map(gems.map(g=>[g.key,g])).values()];
-  return unique.map(g=>{
-    const cls=g.color==='str'?'rx-str':g.color==='dex'?'rx-dex':g.color==='int'?'rx-int':'rx-gen';
-    return`<span class="${cls}">${esc(g.name)}</span>`;
-  }).join('<span style="color:var(--tx3)">|</span>');
-}
-function addNotesSection(){notesSections.push({id:'n'+Date.now(),title:'New section',text:''});renderNotes();}
-function deleteNotesSection(id){notesSections=notesSections.filter(s=>s.id!==id);renderNotes();}
-function buildRx(gems){return[...new Map(gems.map(g=>[g.key,g])).values()].map(g=>g.name.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|');}
-function copyAllRegex(){
-  const gems=[...new Set([...wantedGems.values()].map(v=>v.key))].map(k=>allGems.find(g=>g.key===k)).filter(Boolean);
-  const rx=buildRx(gems);
-  navigator.clipboard.writeText(rx).then(()=>showToast('Regex copied!')).catch(()=>prompt('Regex:',rx));
-}
-function copyGroupRegexes(){
-  let t='';
-  for(const gid of[...groups.map(g=>g.id),'__none__']){
-    const items=[...wantedGems.values()].filter(v=>(groups.find(g=>g.id===v.groupId)?v.groupId:'__none__')===gid);
-    if(!items.length)continue;
-    const gname=gid==='__none__'?'Ungrouped':(groups.find(g=>g.id===gid)?.name||'?');
-    const gems=items.map(v=>allGems.find(g=>g.key===v.key)).filter(Boolean);
-    t+=`[${gname}]\n${buildRx(gems)}\n\n`;
-  }
-  navigator.clipboard.writeText(t.trim()).then(()=>showToast('Group regexes copied!')).catch(()=>prompt('Copy:',t));
-}
+function addNotesSection(){notesSections.push({id:'n'+Date.now(),title:'New section',text:''});renderNotes();saveState();}
+function deleteNotesSection(id){notesSections=notesSections.filter(s=>s.id!==id);renderNotes();saveState();}
 
 function clearAll(){
   const keys=new Set([...wantedGems.values()].map(v=>v.key));
   wantedGems.clear();ownedGems.clear();
   keys.forEach(k=>updateRowIcon(k));
-  renderGroupsBar();renderCart();if(notesMode)renderNotes();
+  renderGroupsBar();renderCart();if(notesMode)renderNotes();saveState();
 }
 function exportJSON(){
   const payload={version:2,class:selectedClass,groups,
@@ -738,7 +723,7 @@ function confirmImport(){
     if(d.notesSections)notesSections=d.notesSections;
     if(d.wanted){wantedGems.clear();d.wanted.forEach(({iid,key,groupId})=>{const id=iid||(key+'#1');wantedGems.set(id,{key:key||id.split('#')[0],groupId:groupId||'__none__'});});}
     if(d.owned){ownedGems.clear();d.owned.forEach(k=>ownedGems.add(k));}
-    closeModal('modalImport');renderGems();renderGroupsBar();renderCart();renderNotes();showToast('Imported!');
+    closeModal('modalImport');renderGems();renderGroupsBar();renderCart();renderNotes();saveState();showToast('Imported!');
   }catch(e){alert('Invalid JSON: '+e.message);}
 }
 function copyList(){
