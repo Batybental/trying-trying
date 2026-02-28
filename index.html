@@ -524,88 +524,81 @@ function rowClick(key){
   renderGroupsBar();renderCart();if(notesMode)renderNotes();saveState();
 }
 
+// Find all DOM rows matching a gem key (safe — avoids CSS selector issues with apostrophes)
+function rowsByKey(key){
+  return [...document.getElementById('gemList')?.querySelectorAll('.gem-row')||[]].filter(r=>r.dataset.key===key);
+}
+
 // Move a gem row to/from the pinned section without re-rendering the whole list
 function pinRowDOM(key, pin){
   const list = document.getElementById('gemList');
   if(!list) return;
 
-  // Find the row for this key (first occurrence — there may be duplicates in pinned+all)
-  // We'll work with all rows for this key
-  const rows = [...list.querySelectorAll(`[data-key="${ea(key)}"]`)];
+  const rows = rowsByKey(key);
   if(!rows.length) return;
 
-  // Ensure pin-sep exists (or create it)
   let sep = list.querySelector('.pin-sep');
 
   if(pin){
-    // Check if already pinned (row is before sep or sep doesn't exist yet)
-    const firstRow = rows[0];
-    const firstChild = list.firstElementChild;
+    const row = rows[0];
 
     if(!sep){
+      // No sep yet — create it and put it right after this first row
       sep = document.createElement('div');
       sep.className = 'pin-sep';
       sep.textContent = 'All gems';
-      // Insert sep before first non-pinned row
-      // For now: insert after any already-pinned rows
-      const alreadyPinned = [...list.querySelectorAll('.pinned-row')];
-      if(alreadyPinned.length){
-        const last = alreadyPinned[alreadyPinned.length-1];
-        last.after(sep);
-      } else {
-        list.prepend(sep);
-      }
     }
 
-    // Move row before the sep (into pinned zone)
-    firstRow.classList.add('pinned-row');
-    sep.before(firstRow);
+    // Always: prepend row to very top, then ensure sep comes right after all pinned rows
+    list.prepend(row);
+    row.classList.add('pinned-row');
+
+    // Place sep after last pinned row
+    const allPinned = [...list.querySelectorAll('.pinned-row')];
+    const lastPinned = allPinned[allPinned.length - 1];
+    lastPinned.after(sep);
 
   } else {
-    // Unpinning: move row back after sep
     const stillPinned = [...wantedGems.values()].filter(v=>v.key===key).length > 0;
     if(!stillPinned){
-      // Remove from pinned zone — put it back after sep in alpha order
       rows.forEach(r => r.classList.remove('pinned-row'));
+      const row = rows[0];
+
       if(sep){
-        // Find correct alpha position after sep
-        const afterSep = [];
+        // Find correct alpha position in the unpinned zone (after sep)
         let el = sep.nextElementSibling;
-        while(el && !el.classList.contains('list-section-head')){
-          afterSep.push(el);
-          el = el.nextElementSibling;
-        }
-        const row = rows[0];
         const rowName = key.toLowerCase();
         let inserted = false;
-        for(const sibling of afterSep){
-          const sibKey = sibling.dataset?.key;
+        while(el && !el.classList.contains('list-section-head')){
+          const sibKey = el.dataset?.key;
           if(sibKey && sibKey.toLowerCase() > rowName){
-            sibling.before(row);
+            el.before(row);
             inserted = true;
             break;
           }
+          el = el.nextElementSibling;
         }
         if(!inserted){
-          // Put before drop-only section or at end
           const dropSec = list.querySelector('.list-section-head');
           if(dropSec) dropSec.before(row);
-          else if(el) el.before(row);
           else list.appendChild(row);
         }
       }
     }
 
-    // Remove sep if no more pinned rows
+    // Remove sep if no pinned rows remain
     const remainingPinned = [...list.querySelectorAll('.pinned-row')];
     if(sep && remainingPinned.length === 0) sep.remove();
   }
 }
 function updateRowIcon(key){
   const cnt=[...wantedGems.values()].filter(v=>v.key===key).length;
-  document.querySelectorAll(`[data-key="${ea(key)}"]`).forEach(row=>{
+  // Use safe DOM scan instead of CSS attr selector (apostrophes break querySelector)
+  const allRows=[...document.querySelectorAll('.gem-row, .act-gem-row')].filter(r=>r.dataset.key===key);
+  allRows.forEach(row=>{
     row.classList.toggle('in-list',cnt>0);
-    row.classList.toggle('pinned-row',cnt>0&&!row.classList.contains('drop-only'));
+    if(row.classList.contains('gem-row'))
+      row.classList.toggle('pinned-row',cnt>0&&!row.classList.contains('drop-only'));
     const ic=row.querySelector('.row-icon,.act-row-icon');if(!ic)return;
     if(cnt===0){ic.textContent='';ic.style.color='transparent';}
     else if(cnt===1){ic.textContent='✓';ic.style.color='#fff';ic.style.fontSize='8px';}
