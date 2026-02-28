@@ -375,6 +375,14 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
 /* ── NOTES PANEL CONTRAST ────────────────────────────────────────────── */
 .notes-sec-body{color:#ccc !important;background:#111 !important;border-color:#444 !important;}
 .notes-sec-title{color:#e0e0e0 !important;background:#1a1a1a !important;border-color:#444 !important;}
+
+/* ── CENTER NAV BAR (always visible above both panels) ─────────── */
+.center-col{display:flex;flex-direction:column;flex:1;overflow:hidden;}
+.center-nav{
+  display:flex;align-items:center;padding:7px 12px;gap:10px;
+  background:var(--bg3);border-bottom:2px solid var(--bd);
+  flex-shrink:0;
+}
 </style>
 </head>
 <body>
@@ -426,14 +434,16 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
   </div>
 </aside>
 <div class="center-col">
+<div class="center-nav">
+  <div class="view-switcher" id="viewSwitcher">
+    <button class="vsw-btn active" id="vsw-gems" onclick="switchCenterView('gems')">💎 Gems</button>
+    <button class="vsw-btn" id="vsw-notes" onclick="switchCenterView('notes')">📝 Notes</button>
+    <button class="vsw-btn" id="vsw-regex" onclick="switchCenterView('regex')">🔍 Regex</button>
+  </div>
+</div>
 <main class="main" id="gemPanel">
   <div class="stats-bar">
     <div class="si">Shown: <b id="sTotal">—</b></div>
-    <div class="view-switcher" id="viewSwitcher">
-      <button class="vsw-btn active" id="vsw-gems" onclick="switchCenterView('gems')">💎 Gems</button>
-      <button class="vsw-btn" id="vsw-notes" onclick="switchCenterView('notes')">📝 Notes</button>
-      <button class="vsw-btn" id="vsw-regex" onclick="switchCenterView('regex')">🔍 Regex</button>
-    </div>
   </div>
   <div class="col-head">
     <span></span>
@@ -1314,7 +1324,7 @@ function renderRegexPanel(){
     // Socket pills
     const sc = sockCounts || (()=>{const c={R:0,G:0,B:0};[...(gids?wantedGems.entries():[...wantedGems.entries()])].filter(([iid])=>!ownedGems.has(iid)).forEach(([,v])=>{const gem=allGems.find(g=>g.key===v.key);if(!gem)return;if(gem.color==='str')c.R++;else if(gem.color==='dex')c.G++;else if(gem.color==='int')c.B++;});return c;})();
 
-    if(!gr && !lr && !extraMods.length) return '';
+    if(!gr && !lr && !scopeExtraMods.length) return '';
 
     const sockPills=[
       ...Array(sc.R||0).fill('<span class="rx-sock-pill R">R</span>'),
@@ -1348,7 +1358,7 @@ function renderRegexPanel(){
     const gid = grp.id==='__none__'||!groups.find(g=>g.id===grp.id) ? '__none__' : grp.id;
     const counts = groupSocketCounts(grp.id);
     const total = counts.R+counts.G+counts.B;
-    if(!total && !extraMods.length) return;
+    if(!total && !checkedModRxList(grp.id).length) return;
     html += scopeCard(grp.name, [gid], counts);
   });
 
