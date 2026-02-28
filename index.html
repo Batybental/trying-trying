@@ -10,22 +10,22 @@
   --bg:#0a0a0a;--bg2:#111;--bg3:#181818;--bg4:#202020;
   --bd:#252525;--bd2:#333;--bd3:#444;
   --tx:#e0e0e0;--tx2:#888;--tx3:#555;
-  --green:#4caf72;--yellow:#d4a836;--blue:#3a8fff;--red:#e05555;--purple:#9b7fd4;
+  --green:#4caf72;--yellow:#d4a836;--blue:#3a8fff;--red:#e05555;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-body{background:var(--bg);color:var(--tx);font-family:'Inter',system-ui,sans-serif;font-size:14px;min-height:100vh;overflow:hidden;}
+body{background:var(--bg);color:var(--tx);font-family:'Inter',system-ui,sans-serif;font-size:14px;height:100vh;overflow:hidden;}
 
 /* HEADER */
-header{display:flex;align-items:center;justify-content:space-between;padding:0 16px;height:44px;background:var(--bg2);border-bottom:1px solid var(--bd);flex-shrink:0;}
+header{display:flex;align-items:center;justify-content:space-between;padding:0 16px;height:44px;background:var(--bg2);border-bottom:1px solid var(--bd);}
 .h-title{font-size:13px;font-weight:600;}
 .h-title span{color:var(--tx3);font-weight:400;font-size:11px;margin-left:6px;}
 .h-right{font-size:11px;color:var(--tx3);}
 .h-right b{color:var(--tx2);}
 
-/* LAYOUT: left sidebar | gem list | shopping list */
-.app{display:grid;grid-template-columns:190px 1fr 440px;height:calc(100vh - 44px);}
+/* LAYOUT */
+.app{display:grid;grid-template-columns:190px 1fr 500px;height:calc(100vh - 44px);}
 
-/* LEFT SIDEBAR */
+/* LEFT */
 .left{background:var(--bg2);border-right:1px solid var(--bd);padding:10px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;}
 .lbl{font-size:10px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--tx3);margin-bottom:5px;}
 .class-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;}
@@ -39,7 +39,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:0 1
 .ftoggle input{display:none;}
 .chk{width:12px;height:12px;border:1px solid var(--bd2);background:var(--bg3);border-radius:2px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .12s;}
 .ftoggle input:checked+.chk{background:var(--blue);border-color:var(--blue);}
-.chk::after{content:'✓';color:#fff;font-size:8px;display:none;font-weight:700;line-height:1;}
+.chk::after{content:'✓';color:#fff;font-size:8px;display:none;font-weight:700;}
 .ftoggle input:checked+.chk::after{display:block;}
 .flbl{font-size:11px;color:var(--tx2);}
 .search{width:100%;padding:6px 9px;background:var(--bg3);border:1px solid var(--bd);border-radius:3px;color:var(--tx);font-family:inherit;font-size:12px;outline:none;transition:border-color .12s;}
@@ -48,21 +48,21 @@ header{display:flex;align-items:center;justify-content:space-between;padding:0 1
 .info-box{font-size:10px;color:var(--tx3);line-height:1.7;padding:8px;background:var(--bg3);border:1px solid var(--bd);border-radius:4px;margin-top:auto;}
 .info-box b{color:var(--tx2);}
 
-/* GEM LIST (center) */
+/* CENTER */
 .main{background:var(--bg);overflow-y:auto;display:flex;flex-direction:column;min-width:0;}
 .stats-bar{display:flex;align-items:center;padding:5px 12px;background:var(--bg2);border-bottom:1px solid var(--bd);font-size:11px;color:var(--tx3);flex-shrink:0;}
 .si b{color:var(--tx);font-weight:500;}
-.col-head{display:grid;grid-template-columns:16px 1fr 50px 55px 36px 90px;padding:5px 12px;background:var(--bg2);border-bottom:1px solid var(--bd);font-size:10px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--tx3);position:sticky;top:0;z-index:10;flex-shrink:0;}
+.col-head{display:grid;grid-template-columns:16px 1fr 50px 55px 36px 90px;padding:5px 12px;background:var(--bg2);border-bottom:1px solid var(--bd);font-size:10px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--tx3);position:sticky;top:0;z-index:10;}
 .col-head span{cursor:pointer;user-select:none;}
 .col-head span:hover{color:var(--tx2);}
 .gem-list{display:flex;flex-direction:column;}
-.gem-row{display:grid;grid-template-columns:16px 1fr 50px 55px 36px 90px;padding:4px 12px;border-bottom:1px solid rgba(37,37,37,.7);align-items:center;cursor:pointer;transition:background .08s;min-height:28px;}
+.gem-row{display:grid;grid-template-columns:16px 1fr 50px 55px 36px 90px;padding:5px 12px;border-bottom:1px solid rgba(37,37,37,.7);align-items:center;cursor:pointer;transition:background .08s;min-height:30px;}
 .gem-row:hover{background:rgba(255,255,255,.025);}
 .gem-row.in-list{background:rgba(58,143,255,.07);}
 .gem-row.in-list:hover{background:rgba(58,143,255,.12);}
-.gem-row.drop-only{opacity:.5;cursor:default;}
+.gem-row.drop-only{opacity:.45;cursor:default;}
 .gem-row.drop-only:hover{background:none;}
-.row-icon{width:11px;height:11px;border:1px solid var(--bd2);border-radius:2px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:transparent;transition:all .1s;flex-shrink:0;}
+.row-icon{width:14px;height:14px;border:1px solid var(--bd2);border-radius:2px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;color:transparent;transition:all .1s;flex-shrink:0;}
 .gem-row.in-list .row-icon{background:var(--blue);border-color:var(--blue);color:#fff;}
 .name-cell{display:flex;align-items:center;gap:6px;min-width:0;}
 .name-cell a{text-decoration:none;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -96,117 +96,114 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
 .list-section-head:hover{color:var(--tx2);}
 
 /* RIGHT: SHOPPING LIST */
-.right{background:var(--bg2);border-left:1px solid var(--bd);display:flex;flex-direction:column;overflow:hidden;min-width:0;}
+.right{background:var(--bg2);border-left:1px solid var(--bd);display:flex;flex-direction:column;overflow:hidden;}
 
-/* Shopping list top toolbar: view toggle + actions */
-.cart-head{padding:7px 10px;border-bottom:1px solid var(--bd);background:var(--bg3);flex-shrink:0;}
-.cart-head-row1{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;}
-.cart-title{font-size:12px;font-weight:600;}
+/* Header */
+.cart-head{padding:8px 12px;border-bottom:1px solid var(--bd);background:var(--bg3);flex-shrink:0;}
+.cart-head-row1{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.cart-title{font-size:13px;font-weight:600;}
 .cart-head-btns{display:flex;gap:3px;}
-.hbtn{padding:2px 7px;border:1px solid var(--bd2);background:var(--bg4);color:var(--tx2);font-family:inherit;font-size:10px;cursor:pointer;border-radius:3px;transition:all .12s;}
+.hbtn{padding:3px 8px;border:1px solid var(--bd2);background:var(--bg4);color:var(--tx2);font-family:inherit;font-size:10px;cursor:pointer;border-radius:3px;transition:all .12s;}
 .hbtn:hover{border-color:var(--bd3);color:var(--tx);}
 .hbtn.danger:hover{border-color:var(--red);color:var(--red);}
-/* View mode toggle */
+.cart-head-row2{display:flex;align-items:center;justify-content:space-between;}
+.cart-gemcount{font-size:11px;color:var(--tx3);}
+/* View toggle */
 .view-toggle{display:flex;gap:2px;background:var(--bg);border:1px solid var(--bd);border-radius:3px;padding:2px;}
-.vtbtn{padding:2px 8px;border:none;background:transparent;color:var(--tx3);font-family:inherit;font-size:10px;font-weight:500;cursor:pointer;border-radius:2px;transition:all .12s;}
+.vtbtn{padding:3px 10px;border:none;background:transparent;color:var(--tx3);font-family:inherit;font-size:10px;font-weight:500;cursor:pointer;border-radius:2px;transition:all .12s;}
 .vtbtn:hover{color:var(--tx2);}
 .vtbtn.active{background:var(--bg3);color:var(--tx);border:1px solid var(--bd2);}
-.cart-gemcount{font-size:10px;color:var(--tx3);}
 
-/* Groups bar */
-.groups-bar{padding:5px 10px;border-bottom:1px solid var(--bd);background:var(--bg2);flex-shrink:0;display:flex;align-items:center;gap:4px;flex-wrap:wrap;min-height:32px;}
-.g-chip{padding:2px 7px;border:1px solid var(--bd2);background:var(--bg3);border-radius:3px;font-size:10px;font-weight:500;cursor:pointer;color:var(--tx2);transition:all .12s;display:flex;align-items:center;gap:3px;white-space:nowrap;}
+/* Groups bar — also acts as filter */
+.groups-bar{padding:6px 12px;border-bottom:1px solid var(--bd);background:var(--bg2);flex-shrink:0;display:flex;align-items:center;gap:5px;flex-wrap:wrap;min-height:36px;}
+.g-chip{padding:3px 9px;border:1px solid var(--bd2);background:var(--bg3);border-radius:3px;font-size:11px;font-weight:500;cursor:pointer;color:var(--tx2);transition:all .12s;display:flex;align-items:center;gap:4px;white-space:nowrap;user-select:none;}
 .g-chip:hover{border-color:var(--bd3);color:var(--tx);}
-.g-chip.active{border-color:var(--blue);background:rgba(58,143,255,.12);color:#7dbfff;}
-.g-chip .gc-del{color:var(--tx3);font-size:8px;margin-left:1px;cursor:pointer;}
+.g-chip.active{border-color:var(--blue);background:rgba(58,143,255,.14);color:#7dbfff;}
+.g-chip .gc-cnt{font-size:9px;color:var(--tx3);font-weight:400;}
+.g-chip .gc-del{color:var(--tx3);font-size:9px;cursor:pointer;padding:0 1px;line-height:1;}
 .g-chip .gc-del:hover{color:var(--red);}
-.add-g-btn{padding:2px 7px;border:1px dashed var(--bd2);background:transparent;border-radius:3px;font-size:10px;color:var(--tx3);cursor:pointer;transition:all .12s;white-space:nowrap;}
+.add-g-btn{padding:3px 9px;border:1px dashed var(--bd2);background:transparent;border-radius:3px;font-size:11px;color:var(--tx3);cursor:pointer;transition:all .12s;white-space:nowrap;}
 .add-g-btn:hover{border-color:var(--bd3);color:var(--tx2);}
 
-/* Cart body — two-column when split view */
+/* Cart body */
 .cart-body{flex:1;overflow:hidden;display:flex;flex-direction:column;}
 .cart-body.split{flex-direction:row;}
 .cart-pane{flex:1;overflow-y:auto;min-width:0;}
 .cart-pane+.cart-pane{border-left:1px solid var(--bd);}
-.pane-head{padding:4px 10px;background:var(--bg3);border-bottom:1px solid var(--bd);font-size:9px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--tx3);position:sticky;top:0;z-index:5;}
+.pane-head{padding:5px 12px;background:var(--bg3);border-bottom:1px solid var(--bd);font-size:9px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--tx3);position:sticky;top:0;z-index:5;}
 
-/* Cart items */
-.cart-sec{padding:4px 10px 1px;font-size:9px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--tx3);display:flex;align-items:center;gap:5px;}
-.cart-sec .gsock{margin-left:auto;font-size:9px;letter-spacing:0;text-transform:none;font-weight:600;}
-.cart-sec .gsock .sc-R{color:#c47a3a;}
-.cart-sec .gsock .sc-G{color:#54a860;}
-.cart-sec .gsock .sc-B{color:#6b9fd4;}
-.cart-item{display:grid;grid-template-columns:1fr auto auto auto;padding:3px 10px;border-bottom:1px solid rgba(37,37,37,.5);gap:4px;align-items:center;}
+/* Section headers inside panes */
+.cart-sec{padding:5px 12px 2px;font-size:9px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--tx3);display:flex;align-items:center;gap:5px;margin-top:2px;}
+.cart-sec .gsock{margin-left:auto;font-size:10px;letter-spacing:0;text-transform:none;font-weight:600;}
+.sc-R{color:#c47a3a;}.sc-G{color:#54a860;}.sc-B{color:#6b9fd4;}
+
+/* Cart item — bigger touch targets */
+.cart-item{display:grid;grid-template-columns:1fr auto auto auto;padding:6px 12px;border-bottom:1px solid rgba(37,37,37,.5);gap:6px;align-items:center;min-height:38px;}
 .ci-info{min-width:0;}
-.ci-name{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.ci-name.c-str{color:#c47a3a;}
-.ci-name.c-dex{color:#54a860;}
-.ci-name.c-int{color:#6b9fd4;}
-.ci-name.c-gen{color:var(--tx);}
-.ci-meta{font-size:9px;color:var(--tx3);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:3px;}
-.g-move{font-size:9px;background:var(--bg3);border:1px solid var(--bd);color:var(--tx3);border-radius:2px;padding:1px 3px;cursor:pointer;max-width:80px;}
-.ci-cost{font-size:10px;white-space:nowrap;}
-.ci-own{width:13px;height:13px;background:none;border:1px solid var(--bd2);border-radius:2px;cursor:pointer;font-size:7px;color:var(--tx3);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:0;transition:all .1s;}
-.ci-own:hover{border-color:var(--green);color:var(--green);}
-.ci-own.owned{border-color:var(--green);color:var(--green);background:rgba(76,175,114,.1);}
-.ci-rm{width:13px;height:13px;background:none;border:1px solid rgba(200,60,60,.15);border-radius:2px;color:rgba(200,60,60,.3);cursor:pointer;font-size:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:0;transition:all .1s;}
-.ci-rm:hover{background:rgba(200,60,60,.1);border-color:var(--red);color:var(--red);}
-.cart-empty{display:flex;align-items:center;justify-content:center;height:80px;}
-.cart-empty p{font-size:11px;color:var(--tx3);text-align:center;line-height:1.6;}
+.ci-name{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500;}
+.ci-name.c-str{color:#c47a3a;}.ci-name.c-dex{color:#54a860;}.ci-name.c-int{color:#6b9fd4;}.ci-name.c-gen{color:var(--tx);}
+.ci-meta{font-size:10px;color:var(--tx3);margin-top:2px;display:flex;align-items:center;gap:4px;flex-wrap:wrap;}
+.g-move{font-size:9px;background:var(--bg3);border:1px solid var(--bd);color:var(--tx3);border-radius:2px;padding:1px 4px;cursor:pointer;max-width:90px;}
+.ci-cost{font-size:11px;white-space:nowrap;padding:0 2px;}
 
-/* Act view pane */
-.act-sec{border-bottom:1px solid rgba(37,37,37,.5);}
-.act-sec-head{padding:3px 10px;font-size:9px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--blue);opacity:.7;}
-.act-quest-head{padding:2px 10px 1px;font-size:9px;color:var(--tx3);font-style:italic;}
-.act-gem-row{display:flex;align-items:center;gap:6px;padding:3px 10px;border-bottom:1px solid rgba(37,37,37,.4);cursor:pointer;transition:background .08s;}
+/* Bigger buttons */
+.ci-own{width:22px;height:22px;background:none;border:1px solid var(--bd2);border-radius:3px;cursor:pointer;font-size:11px;color:var(--tx3);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:0;transition:all .1s;}
+.ci-own:hover{border-color:var(--green);color:var(--green);background:rgba(76,175,114,.08);}
+.ci-own.owned{border-color:var(--green);color:var(--green);background:rgba(76,175,114,.12);}
+.ci-rm{width:22px;height:22px;background:none;border:1px solid rgba(200,60,60,.2);border-radius:3px;color:rgba(200,60,60,.4);cursor:pointer;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .1s;padding:0;}
+.ci-rm:hover{background:rgba(200,60,60,.1);border-color:var(--red);color:var(--red);}
+
+.cart-empty{display:flex;align-items:center;justify-content:center;height:100px;}
+.cart-empty p{font-size:12px;color:var(--tx3);text-align:center;line-height:1.7;}
+
+/* Act pane */
+.act-sec-head{padding:4px 12px;font-size:9px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--blue);opacity:.8;border-bottom:1px solid var(--bd);margin-top:3px;}
+.act-quest-head{padding:2px 12px;font-size:10px;color:var(--tx3);font-style:italic;border-bottom:1px solid rgba(37,37,37,.4);}
+.act-gem-row{display:flex;align-items:center;gap:7px;padding:5px 12px;border-bottom:1px solid rgba(37,37,37,.4);cursor:pointer;transition:background .08s;min-height:28px;}
 .act-gem-row:hover{background:rgba(255,255,255,.02);}
 .act-gem-row.in-list{background:rgba(58,143,255,.06);}
-.act-row-icon{width:10px;height:10px;border:1px solid var(--bd2);border-radius:2px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:transparent;flex-shrink:0;transition:all .1s;}
+.act-row-icon{width:14px;height:14px;border:1px solid var(--bd2);border-radius:2px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;color:transparent;flex-shrink:0;transition:all .1s;}
 .act-gem-row.in-list .act-row-icon{background:var(--blue);border-color:var(--blue);color:#fff;}
-.act-gem-name{font-size:11px;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.act-gem-name.c-str{color:#c47a3a;}
-.act-gem-name.c-dex{color:#54a860;}
-.act-gem-name.c-int{color:#6b9fd4;}
-.act-gem-name.c-gen{color:var(--tx2);}
+.act-gem-name{font-size:12px;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.act-gem-name.c-str{color:#c47a3a;}.act-gem-name.c-dex{color:#54a860;}.act-gem-name.c-int{color:#6b9fd4;}.act-gem-name.c-gen{color:var(--tx2);}
 .act-gem-type{font-size:9px;font-weight:500;}
-.act-gem-type.skill{color:#d4a836;}
-.act-gem-type.support{color:#9b7fd4;}
+.act-gem-type.skill{color:#d4a836;}.act-gem-type.support{color:#9b7fd4;}
+.act-count-badge{font-size:9px;color:var(--yellow);font-weight:700;background:rgba(212,168,54,.12);border:1px solid rgba(212,168,54,.25);border-radius:3px;padding:0 4px;line-height:14px;}
 
 /* Cost summary */
 .cost-summary{border-top:1px solid var(--bd);flex-shrink:0;}
-.cs-head{display:flex;align-items:center;justify-content:space-between;padding:4px 10px;cursor:pointer;user-select:none;}
+.cs-head{display:flex;align-items:center;justify-content:space-between;padding:5px 12px;cursor:pointer;user-select:none;}
 .cs-head:hover{background:rgba(255,255,255,.02);}
 .cs-lbl{font-size:9px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--tx3);}
-.cs-body{padding:3px 10px 7px;display:flex;flex-direction:column;gap:2px;}
-.cs-row{display:flex;justify-content:space-between;font-size:10px;}
+.cs-body{padding:4px 12px 8px;display:flex;flex-direction:column;gap:3px;}
+.cs-row{display:flex;justify-content:space-between;font-size:11px;}
 .cs-row .on{color:var(--tx2);}
 .cs-row .oq{color:var(--yellow);font-weight:600;}
-.cs-total{margin-top:3px;padding-top:3px;border-top:1px solid var(--bd);font-size:10px;font-weight:600;color:var(--tx);}
+.cs-total{margin-top:4px;padding-top:4px;border-top:1px solid var(--bd);font-size:11px;font-weight:600;color:var(--tx);}
 
 /* Footer */
-.cart-footer{padding:6px 8px;border-top:1px solid var(--bd);display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;flex-shrink:0;}
-.fbtn{padding:5px 4px;font-family:inherit;font-size:10px;font-weight:500;cursor:pointer;border-radius:3px;transition:all .12s;text-align:center;border:1px solid var(--bd2);background:transparent;color:var(--tx2);}
+.cart-footer{padding:7px 10px;border-top:1px solid var(--bd);display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;flex-shrink:0;}
+.fbtn{padding:7px 4px;font-family:inherit;font-size:11px;font-weight:500;cursor:pointer;border-radius:3px;transition:all .12s;text-align:center;border:1px solid var(--bd2);background:transparent;color:var(--tx2);}
 .fbtn:hover{border-color:var(--bd3);color:var(--tx);}
 .fbtn.danger{color:rgba(200,60,60,.6);border-color:rgba(200,60,60,.2);}
 .fbtn.danger:hover{border-color:var(--red);color:var(--red);}
-.fbtn:disabled{opacity:.35;cursor:not-allowed;}
 
 /* Modal */
 .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:200;align-items:center;justify-content:center;}
 .modal-bg.open{display:flex;}
-.modal{background:var(--bg2);border:1px solid var(--bd2);border-radius:5px;padding:16px;min-width:260px;max-width:380px;width:90%;}
-.modal h3{font-size:12px;font-weight:600;margin-bottom:10px;}
-.modal input,.modal textarea{width:100%;padding:6px 9px;background:var(--bg3);border:1px solid var(--bd);border-radius:3px;color:var(--tx);font-family:inherit;font-size:12px;outline:none;margin-bottom:8px;}
+.modal{background:var(--bg2);border:1px solid var(--bd2);border-radius:5px;padding:18px;min-width:270px;max-width:380px;width:90%;}
+.modal h3{font-size:13px;font-weight:600;margin-bottom:12px;}
+.modal input,.modal textarea{width:100%;padding:7px 10px;background:var(--bg3);border:1px solid var(--bd);border-radius:3px;color:var(--tx);font-family:inherit;font-size:12px;outline:none;margin-bottom:10px;}
 .modal input:focus,.modal textarea:focus{border-color:var(--bd3);}
-.modal textarea{height:110px;resize:vertical;font-size:11px;}
-.modal-btns{display:flex;gap:5px;justify-content:flex-end;}
-.modal-btns button{padding:5px 12px;font-family:inherit;font-size:11px;font-weight:500;cursor:pointer;border-radius:3px;transition:all .12s;}
+.modal textarea{height:120px;resize:vertical;font-size:11px;}
+.modal-btns{display:flex;gap:6px;justify-content:flex-end;}
+.modal-btns button{padding:6px 14px;font-family:inherit;font-size:11px;font-weight:500;cursor:pointer;border-radius:3px;transition:all .12s;}
 .mbtn-ok{background:var(--blue);color:#fff;border:1px solid var(--blue);}
 .mbtn-ok:hover{background:#5aacff;}
 .mbtn-cancel{background:transparent;color:var(--tx2);border:1px solid var(--bd2);}
 .mbtn-cancel:hover{border-color:var(--bd3);color:var(--tx);}
 
-.toast{position:fixed;bottom:14px;left:50%;transform:translateX(-50%) translateY(60px);background:var(--bg4);border:1px solid var(--bd2);color:var(--tx);padding:6px 14px;font-size:12px;border-radius:4px;transition:transform .25s;z-index:300;pointer-events:none;}
+.toast{position:fixed;bottom:14px;left:50%;transform:translateX(-50%) translateY(60px);background:var(--bg4);border:1px solid var(--bd2);color:var(--tx);padding:7px 16px;font-size:12px;border-radius:4px;transition:transform .25s;z-index:300;pointer-events:none;}
 .toast.show{transform:translateX(-50%) translateY(0);}
 ::-webkit-scrollbar{width:4px;}
 ::-webkit-scrollbar-track{background:transparent;}
@@ -255,15 +252,16 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
   </div>
   <div class="info-box">
     <b>Click gem</b> → add to list<br>
+    <b>Same gem again</b> → add duplicate<br>
     <b>Active group</b> → gem goes there<br>
     <b>✓ in list</b> → mark owned<br><br>
-    Req. level → vendor price:<br>
+    Vendor price by req. level:<br>
     1–7 Wisdom · 8–15 Transmute<br>
     16–27 Alt · 28–37 Chance · 38+ Alch
   </div>
 </aside>
 
-<!-- CENTER: GEM LIST -->
+<!-- CENTER -->
 <main class="main">
   <div class="stats-bar"><div class="si">Shown: <b id="sTotal">—</b></div></div>
   <div class="col-head">
@@ -271,7 +269,7 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
     <span onclick="sortBy('name')">Gem</span>
     <span onclick="sortBy('type')">Type</span>
     <span onclick="sortBy('source')">Source</span>
-    <span onclick="sortBy('lvl')" title="Req level at gem lvl 1">Lvl</span>
+    <span onclick="sortBy('lvl')">Lvl</span>
     <span onclick="sortBy('cost')">Cost</span>
   </div>
   <div class="gem-list" id="gemList">
@@ -287,11 +285,11 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
       <div class="cart-head-btns">
         <button class="hbtn" onclick="exportJSON()">⬆ JSON</button>
         <button class="hbtn" onclick="openImport()">⬇ Import</button>
-        <button class="hbtn danger" onclick="clearAll()">✕</button>
+        <button class="hbtn danger" onclick="clearAll()">✕ Clear</button>
       </div>
     </div>
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-top:4px;">
-      <span class="cart-gemcount" id="cartCount">0 gems</span>
+    <div class="cart-head-row2">
+      <span class="cart-gemcount" id="cartCount">0 gems · 0 slots</span>
       <div class="view-toggle">
         <button class="vtbtn active" id="vt-groups" onclick="setView('groups')">Groups</button>
         <button class="vtbtn" id="vt-acts" onclick="setView('acts')">Acts</button>
@@ -300,20 +298,18 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
     </div>
   </div>
 
-  <!-- Groups bar -->
+  <!-- Groups bar: "All" chip + named groups + add button -->
   <div class="groups-bar" id="groupsBar">
-    <div class="g-chip active" id="chip-none" onclick="selectGroup('__none__')">No group</div>
+    <div class="g-chip active" id="chip-all" onclick="selectGroup('__all__')">All</div>
     <button class="add-g-btn" onclick="addGroup()">+ Group</button>
   </div>
 
-  <!-- Body: switches between views -->
   <div class="cart-body" id="cartBody">
-    <div class="cart-pane" id="paneGroups">
-      <div class="cart-empty"><p>Click a gem to add<br>it to your list.</p></div>
+    <div class="cart-pane" id="paneMain">
+      <div class="cart-empty"><p>Click a gem to add it to your list.<br><span style="color:var(--tx3);font-size:10px">Click again to add a duplicate.</span></p></div>
     </div>
   </div>
 
-  <!-- Cost summary -->
   <div class="cost-summary" id="costSummary" style="display:none">
     <div class="cs-head" onclick="toggleCS()">
       <span class="cs-lbl">Cost Summary</span>
@@ -323,14 +319,14 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
   </div>
 
   <div class="cart-footer">
-    <button class="fbtn" onclick="copyList()">📋 Copy</button>
+    <button class="fbtn" onclick="copyList()">📋 Copy text</button>
     <button class="fbtn" onclick="exportJSON()">⬆ Export</button>
-    <button class="fbtn danger" onclick="clearAll()">✕ Clear</button>
+    <button class="fbtn danger" onclick="clearAll()">✕ Clear all</button>
   </div>
 </aside>
 </div>
 
-<!-- Modal: new group -->
+<!-- Modals -->
 <div class="modal-bg" id="modalGroup">
   <div class="modal">
     <h3>New Group</h3>
@@ -341,8 +337,6 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
     </div>
   </div>
 </div>
-
-<!-- Modal: import -->
 <div class="modal-bg" id="modalImport">
   <div class="modal">
     <h3>Import Shopping List (JSON)</h3>
@@ -356,34 +350,43 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
 
 <div class="toast" id="toast"></div>
 <script>
-// ── State ────────────────────────────────────────────────────────
+// ── State ──────────────────────────────────────────────────────────────────
 let allGems = [];
+
 // wantedGems: Map<instanceId, {key, groupId}>
-// instanceId = key + '#1', key + '#2' etc. — allows same gem in multiple groups
+// instanceId = key + '#' + n  →  same gem can appear in multiple groups
 let wantedGems = new Map();
-let ownedGems  = new Set();   // stores instanceIds
+let ownedGems  = new Set();    // Set<instanceId>
+
 let groups = [];               // [{id, name}]
-let activeGroupId = '__none__';
+
+// activeGroupId:
+//   '__all__'   → show all gems in cart, new gems go to 'ungrouped'
+//   '__none__'  → also "ungrouped" bucket
+//   'g123...'   → specific group (filter cart to that group, new gems go there)
+let activeGroupId = '__all__';
+
 let cartView = 'groups';       // 'groups' | 'acts' | 'split'
-let sortKey = 'name', sortDir = 1;
+let sortKey  = 'name', sortDir = 1;
 let selectedClass = 'Marauder';
 let csOpen = true;
 let dropOnlyCollapsed = true;
 
-const ORB_ORDER  = {'Scroll of Wisdom':0,'Orb of Transmutation':1,'Orb of Alteration':2,'Orb of Chance':3,'Orb of Alchemy':4};
-const ORB_SHORT  = {'Scroll of Wisdom':'Wisdom','Orb of Transmutation':'Transmute','Orb of Alteration':'Alteration','Orb of Chance':'Chance','Orb of Alchemy':'Alchemy'};
-const ORB_CLASS  = {'Scroll of Wisdom':'orb-wisdom','Orb of Transmutation':'orb-transmute','Orb of Alteration':'orb-alt','Orb of Chance':'orb-chance','Orb of Alchemy':'orb-alch'};
+const ORB_ORDER = {'Scroll of Wisdom':0,'Orb of Transmutation':1,'Orb of Alteration':2,'Orb of Chance':3,'Orb of Alchemy':4};
+const ORB_SHORT = {'Scroll of Wisdom':'Wisdom','Orb of Transmutation':'Transmute','Orb of Alteration':'Alteration','Orb of Chance':'Chance','Orb of Alchemy':'Alchemy'};
+const ORB_CLASS = {'Scroll of Wisdom':'orb-wisdom','Orb of Transmutation':'orb-transmute','Orb of Alteration':'orb-alt','Orb of Chance':'orb-chance','Orb of Alchemy':'orb-alch'};
 
-// ── Load ──────────────────────────────────────────────────────────
+// ── Load ───────────────────────────────────────────────────────────────────
 async function loadGems() {
   try {
     const res = await fetch('gems.json');
     if (!res.ok) throw new Error(res.status);
     const data = await res.json();
     allGems = data.gems || [];
-    // Fix isSupport by name fallback (in case gems.json was generated before fix)
+    // Fallback: fix isSupport by name (in case gems.json pre-dates the script fix)
     allGems.forEach(g => {
-      if (!g.isSupport && g.name && g.name.endsWith(' Support')) g.isSupport = true;
+      if (!g.isSupport && (g.key.endsWith(' Support') || (g.name && g.name.endsWith(' Support'))))
+        g.isSupport = true;
     });
     if (data.generatedAt) {
       const d = new Date(data.generatedAt);
@@ -391,19 +394,19 @@ async function loadGems() {
     }
     document.getElementById('dataCount').textContent = allGems.length;
     renderGems();
-    renderCart();
   } catch(e) {
-    document.getElementById('gemList').innerHTML = `<div class="state-box"><p style="color:var(--red)">gems.json not found</p><p>Run <code>node fetch-gems.mjs</code></p></div>`;
+    document.getElementById('gemList').innerHTML = `<div class="state-box">
+      <p style="color:var(--red)">gems.json not found</p>
+      <p>Run <code>node fetch-gems.mjs</code></p></div>`;
   }
 }
 
-// ── Source ────────────────────────────────────────────────────────
+// ── Source helpers ─────────────────────────────────────────────────────────
 function getSource(gem, cls) {
   const qr = gem.questRewards.find(e => !e.classes.length || e.classes.some(c=>c.toLowerCase()===cls.toLowerCase()));
   if (qr) return {type:'quest', entry:qr};
   const vr = gem.vendorRewards.find(e => !e.classes.length || e.classes.some(c=>c.toLowerCase()===cls.toLowerCase()));
   if (vr) return {type:'vendor', entry:vr};
-  // Other class → Siosa or Lilly
   const any = gem.vendorRewards[0] || gem.questRewards[0];
   if (any) return {type: any.act <= 3 ? 'siosa' : 'lilyroth', entry: any};
   return {type:'drop', entry:null};
@@ -411,26 +414,21 @@ function getSource(gem, cls) {
 function hasQuestForClass(gem, cls) {
   return gem.questRewards.some(e => !e.classes.length || e.classes.some(c=>c.toLowerCase()===cls.toLowerCase()));
 }
-function srcOrder(t){ return {quest:0,vendor:1,siosa:2,lilyroth:3,drop:4}[t]??5; }
-function isAvailable(gem) {
-  return gem.questRewards.length > 0 || gem.vendorRewards.length > 0;
-}
+function srcOrder(t){return{quest:0,vendor:1,siosa:2,lilyroth:3,drop:4}[t]??5;}
+function isAvailable(gem){return gem.questRewards.length>0||gem.vendorRewards.length>0;}
+function gc(gem){return 'gc-'+(gem.color||'gen');}
+function cc(gem){const c=gem.color;return c==='str'?'c-str':c==='dex'?'c-dex':c==='int'?'c-int':'c-gen';}
 
-// ── Gem color helpers ─────────────────────────────────────────────
-function gc(gem) { return 'gc-'+(gem.color||'gen'); }
-function cc(gem) { const c=gem.color; return c==='str'?'c-str':c==='dex'?'c-dex':c==='int'?'c-int':'c-gen'; }
-
-// ── Render gem list ───────────────────────────────────────────────
+// ── Render gem list ────────────────────────────────────────────────────────
 function renderGems() {
   const search = document.getElementById('searchInput').value.trim().toLowerCase();
-  const fQ  = document.getElementById('fQuest').checked;
-  const fV  = document.getElementById('fVendor').checked;
-  const fD  = document.getElementById('fDrop').checked;
-  const fSk = document.getElementById('fSkill').checked;
-  const fSu = document.getElementById('fSupport').checked;
+  const fQ=document.getElementById('fQuest').checked;
+  const fV=document.getElementById('fVendor').checked;
+  const fD=document.getElementById('fDrop').checked;
+  const fSk=document.getElementById('fSkill').checked;
+  const fSu=document.getElementById('fSupport').checked;
 
-  let available = [], dropOnly = [];
-
+  let available=[], dropOnly=[];
   for (const g of allGems) {
     if (g.isSupport ? !fSu : !fSk) continue;
     if (search && !g.name.toLowerCase().includes(search)) continue;
@@ -438,73 +436,67 @@ function renderGems() {
     else dropOnly.push(g);
   }
 
-  // Apply source filter to available gems
-  available = available.map(g => ({...g, src:getSource(g, selectedClass)})).filter(g => {
+  available = available.map(g=>({...g, src:getSource(g,selectedClass)})).filter(g=>{
+    const isQ = hasQuestForClass(g,selectedClass);
     const t = g.src.type;
-    const isQ = hasQuestForClass(g, selectedClass);
-    const isV = !isQ && (t==='vendor'||t==='siosa'||t==='lilyroth');
-    return (isQ && fQ) || (isV && fV) || (isQ && fV); // quest gems also available from vendor
+    if (isQ && fQ) return true;
+    if (!isQ && (t==='vendor'||t==='siosa'||t==='lilyroth') && fV) return true;
+    return false;
   });
 
-  // Sort
-  const sortFn = (a,b) => {
+  available.sort((a,b)=>{
     let va,vb;
-    if(sortKey==='name')  {va=a.name;vb=b.name;}
+    if(sortKey==='name'){va=a.name;vb=b.name;}
     else if(sortKey==='type'){va=a.isSupport?1:0;vb=b.isSupport?1:0;}
-    else if(sortKey==='source'){va=srcOrder(a.src?.type);vb=srcOrder(b.src?.type);}
+    else if(sortKey==='source'){va=srcOrder(a.src.type);vb=srcOrder(b.src.type);}
     else if(sortKey==='lvl'){va=a.requiredLevel;vb=b.requiredLevel;}
     else if(sortKey==='cost'){va=ORB_ORDER[a.vendorCost?.orb]??5;vb=ORB_ORDER[b.vendorCost?.orb]??5;}
-    else {va=a.name;vb=b.name;}
+    else{va=a.name;vb=b.name;}
     return va<vb?-sortDir:va>vb?sortDir:0;
-  };
-  available.sort(sortFn);
+  });
   dropOnly.sort((a,b)=>a.name.localeCompare(b.name));
 
-  document.getElementById('sTotal').textContent = available.length + (fD ? dropOnly.length : 0);
+  document.getElementById('sTotal').textContent = available.length + (fD?dropOnly.length:0);
 
-  let html = available.map(g => rowHtml(g)).join('');
+  let html = available.map(g=>rowHtml(g)).join('');
 
-  // Drop-only section
   if (fD && dropOnly.length) {
-    html += `<div class="list-section-head" onclick="toggleDropSection(this)">
+    html += `<div class="list-section-head" onclick="toggleDropSection()">
       <span>⚫ Drop only (${dropOnly.length})</span>
-      <span id="dropToggleIcon">${dropOnlyCollapsed?'▼ show':'▲ hide'}</span>
+      <span>${dropOnlyCollapsed?'▼ show':'▲ hide'}</span>
     </div>`;
-    if (!dropOnlyCollapsed) {
-      html += dropOnly.map(g => rowHtml(g, true)).join('');
-    }
+    if (!dropOnlyCollapsed) html += dropOnly.map(g=>rowHtml(g,true)).join('');
   }
 
   document.getElementById('gemList').innerHTML = html || `<div class="state-box"><p>No gems match.</p></div>`;
 }
 
 function rowHtml(g, isDropOnly=false) {
-  const gemInstances = [...wantedGems.values()].filter(v=>v.key===g.key).length;
-  const iW = gemInstances > 0;
-  const src = g.src || getSource(g, selectedClass);
-  const isQ = hasQuestForClass(g, selectedClass);
+  const instanceCount = [...wantedGems.values()].filter(v=>v.key===g.key).length;
+  const iW = instanceCount > 0;
+  const src = g.src || getSource(g,selectedClass);
+  const isQ = hasQuestForClass(g,selectedClass);
   let srcHtml, locHtml;
   if (isDropOnly) {
-    srcHtml = `<span class="tag tag-drop">Drop</span>`;
-    locHtml = '';
+    srcHtml=`<span class="tag tag-drop">Drop</span>`; locHtml='';
   } else if (isQ) {
-    srcHtml = `<span class="tag tag-free">Quest</span>`;
-    locHtml = `<span style="color:var(--tx3);font-size:9px">A${src.entry?.act??'?'}</span>`;
+    srcHtml=`<span class="tag tag-free">Quest</span>`;
+    locHtml=`<span style="color:var(--tx3);font-size:9px">A${src.entry?.act??'?'}</span>`;
   } else if (src.type==='siosa') {
-    srcHtml = `<span class="tag tag-vendor">Siosa</span>`;
-    locHtml = `<span style="color:var(--tx3);font-size:9px">A3</span>`;
+    srcHtml=`<span class="tag tag-vendor">Siosa</span>`;
+    locHtml=`<span style="color:var(--tx3);font-size:9px">A3</span>`;
   } else if (src.type==='lilyroth') {
-    srcHtml = `<span class="tag tag-vendor">Lilly</span>`;
-    locHtml = `<span style="color:var(--tx3);font-size:9px">A6</span>`;
+    srcHtml=`<span class="tag tag-vendor">Lilly</span>`;
+    locHtml=`<span style="color:var(--tx3);font-size:9px">A6</span>`;
   } else {
-    srcHtml = `<span class="tag tag-vendor">Vendor</span>`;
-    locHtml = `<span style="color:var(--tx3);font-size:9px">A${src.entry?.act??'?'}</span>`;
+    srcHtml=`<span class="tag tag-vendor">Vendor</span>`;
+    locHtml=`<span style="color:var(--tx3);font-size:9px">A${src.entry?.act??'?'}</span>`;
   }
-  const costHtml = isDropOnly ? `<span class="cost-dash">—</span>` : (g.vendorCost ? orbHtml(g.vendorCost) : `<span class="cost-dash">—</span>`);
-  const wiki = `https://www.poewiki.net/wiki/${encodeURIComponent(g.key.replace(/ /g,'_'))}`;
-  const clickable = !isDropOnly;
-  return `<div class="gem-row ${iW?'in-list':''} ${gc(g)} ${isDropOnly?'drop-only':''}" data-key="${ea(g.key)}" ${clickable?`onclick="rowClick('${ea(g.key)}')"`:''}>
-    <div class="row-icon">${gemInstances>1?gemInstances:iW?'✓':''}</div>
+  const costHtml = isDropOnly ? `<span class="cost-dash">—</span>` : (g.vendorCost?orbHtml(g.vendorCost):`<span class="cost-dash">—</span>`);
+  const iconContent = instanceCount>1 ? instanceCount : (iW?'✓':'');
+  const wiki=`https://www.poewiki.net/wiki/${encodeURIComponent(g.key.replace(/ /g,'_'))}`;
+  return `<div class="gem-row ${iW?'in-list':''} ${gc(g)} ${isDropOnly?'drop-only':''}" data-key="${ea(g.key)}" ${!isDropOnly?`onclick="rowClick('${ea(g.key)}')"`:''}>
+    <div class="row-icon" style="${iW?'':'color:transparent'}">${iconContent}</div>
     <div class="name-cell"><a href="${wiki}" target="_blank" onclick="event.stopPropagation()">${esc(g.name)}</a></div>
     <div class="type-cell ${g.isSupport?'support':'skill'}">${g.isSupport?'Sup':'Skill'}</div>
     <div class="src-cell">${srcHtml} ${locHtml}</div>
@@ -513,26 +505,28 @@ function rowHtml(g, isDropOnly=false) {
   </div>`;
 }
 
-function toggleDropSection(el) {
-  dropOnlyCollapsed = !dropOnlyCollapsed;
-  renderGems();
-}
+function toggleDropSection(){dropOnlyCollapsed=!dropOnlyCollapsed;renderGems();}
 
-// ── View toggle ───────────────────────────────────────────────────
+// ── View toggle ────────────────────────────────────────────────────────────
 function setView(v) {
-  cartView = v;
-  ['groups','acts','split'].forEach(x => document.getElementById('vt-'+x).classList.toggle('active', x===v));
+  cartView=v;
+  ['groups','acts','split'].forEach(x=>document.getElementById('vt-'+x).classList.toggle('active',x===v));
   renderCart();
 }
 
-// ── Groups ────────────────────────────────────────────────────────
+// ── Groups bar ─────────────────────────────────────────────────────────────
 function renderGroupsBar() {
   const bar = document.getElementById('groupsBar');
-  let html = `<div class="g-chip ${activeGroupId==='__none__'?'active':''}" onclick="selectGroup('__none__')">No group</div>`;
+  let html = `<div class="g-chip ${activeGroupId==='__all__'?'active':''}" onclick="selectGroup('__all__')">All</div>`;
+  // "Ungrouped" chip only if there are named groups AND some ungrouped items
+  const ungroupedCount = [...wantedGems.values()].filter(v=>v.groupId==='__none__').length;
+  if (groups.length > 0 && ungroupedCount > 0) {
+    html += `<div class="g-chip ${activeGroupId==='__none__'?'active':''}" onclick="selectGroup('__none__')">Ungrouped <span class="gc-cnt">${ungroupedCount}</span></div>`;
+  }
   for (const grp of groups) {
     const cnt = [...wantedGems.values()].filter(v=>v.groupId===grp.id).length;
     html += `<div class="g-chip ${activeGroupId===grp.id?'active':''}" onclick="selectGroup('${ea(grp.id)}')">
-      ${esc(grp.name)}${cnt>0?`<span style="color:var(--tx3);font-size:9px;margin-left:1px">${cnt}</span>`:''}
+      ${esc(grp.name)}${cnt>0?` <span class="gc-cnt">${cnt}</span>`:''}
       <span class="gc-del" onclick="event.stopPropagation();deleteGroup('${ea(grp.id)}')">✕</span>
     </div>`;
   }
@@ -540,7 +534,11 @@ function renderGroupsBar() {
   bar.innerHTML = html;
 }
 
-function selectGroup(gid) { activeGroupId = gid; renderGroupsBar(); }
+function selectGroup(gid) {
+  activeGroupId = gid;
+  renderGroupsBar();
+  renderCart();
+}
 
 function addGroup() {
   document.getElementById('groupNameInput').value='';
@@ -551,7 +549,7 @@ function confirmAddGroup() {
   const name = document.getElementById('groupNameInput').value.trim();
   if (!name) return;
   const id = 'g'+Date.now();
-  groups.push({id, name});
+  groups.push({id,name});
   activeGroupId = id;
   closeModal('modalGroup');
   renderGroupsBar();
@@ -559,197 +557,236 @@ function confirmAddGroup() {
 }
 function deleteGroup(gid) {
   groups = groups.filter(g=>g.id!==gid);
-  for (const [k,v] of wantedGems) if(v.groupId===gid) wantedGems.set(k,{...wantedGems.get(k), groupId:'__none__'});
-  if (activeGroupId===gid) activeGroupId='__none__';
+  // Move instances from deleted group → ungrouped
+  for (const [iid,v] of wantedGems) if(v.groupId===gid) wantedGems.set(iid,{...v,groupId:'__none__'});
+  if (activeGroupId===gid) activeGroupId='__all__';
   renderGroupsBar();
   renderCart();
 }
 
-// ── Toggle wanted ─────────────────────────────────────────────────
+// ── Toggle wanted ──────────────────────────────────────────────────────────
 function rowClick(key) {
-  // Find existing instance in the active group
-  const existingId = [...wantedGems.entries()].find(([id,v]) => v.key===key && v.groupId===activeGroupId)?.[0];
-  if (existingId) {
-    wantedGems.delete(existingId);
+  // Determine which group new instance goes to
+  const targetGroup = (activeGroupId==='__all__') ? '__none__' : activeGroupId;
+  // Check: does this gem already have an instance in targetGroup?
+  const existingInTarget = [...wantedGems.entries()].find(([,v])=>v.key===key && v.groupId===targetGroup);
+  if (existingInTarget) {
+    // Same gem, same group → remove that instance (toggle off)
+    const [iid] = existingInTarget;
+    wantedGems.delete(iid);
+    ownedGems.delete(iid);
   } else {
-    // Generate unique instance id
+    // Add new instance in target group
     const count = [...wantedGems.values()].filter(v=>v.key===key).length;
-    const instanceId = key + '#' + (count + 1);
-    wantedGems.set(instanceId, {key, groupId: activeGroupId});
+    const iid = key+'#'+(count+1);
+    wantedGems.set(iid, {key, groupId:targetGroup});
   }
-  updateRowIcons(key);
+  updateRowIcon(key);
   renderGroupsBar();
   renderCart();
 }
 
-function updateRowIcons(key) {
-  const totalCount = [...wantedGems.values()].filter(v=>v.key===key).length;
-  document.querySelectorAll(`[data-key="${ea(key)}"]`).forEach(row => {
-    row.classList.toggle('in-list', totalCount > 0);
+function updateRowIcon(key) {
+  const count = [...wantedGems.values()].filter(v=>v.key===key).length;
+  document.querySelectorAll(`[data-key="${ea(key)}"]`).forEach(row=>{
+    row.classList.toggle('in-list', count>0);
     const ic = row.querySelector('.row-icon,.act-row-icon');
-    if (ic) {
-      if (totalCount === 0) { ic.textContent=''; ic.style.color='transparent'; }
-      else if (totalCount === 1) { ic.textContent='✓'; ic.style.color='#fff'; }
-      else { ic.textContent=totalCount; ic.style.color='#fff'; ic.style.fontSize='8px'; }
-    }
+    if (!ic) return;
+    if (count===0) { ic.textContent=''; ic.style.color='transparent'; }
+    else if (count===1) { ic.textContent='✓'; ic.style.color='#fff'; ic.style.fontSize='8px'; }
+    else { ic.textContent=count; ic.style.color='#fff'; ic.style.fontSize='9px'; }
   });
 }
-function toggleOwned(instanceId) {
-  ownedGems.has(instanceId)?ownedGems.delete(instanceId):ownedGems.add(instanceId);
+
+function toggleOwned(iid) {
+  ownedGems.has(iid)?ownedGems.delete(iid):ownedGems.add(iid);
   renderCart();
 }
-function moveToGroup(instanceId, gid) {
-  if (wantedGems.has(instanceId)) {
-    const v = wantedGems.get(instanceId);
-    wantedGems.set(instanceId, {...v, groupId:gid});
-    renderGroupsBar(); renderCart();
-  }
+function moveToGroup(iid, gid) {
+  if (!wantedGems.has(iid)) return;
+  wantedGems.set(iid, {...wantedGems.get(iid), groupId:gid});
+  renderGroupsBar(); renderCart();
 }
-function removeInstance(instanceId) {
-  const v = wantedGems.get(instanceId);
-  wantedGems.delete(instanceId);
-  ownedGems.delete(instanceId);
-  if (v) updateRowIcons(v.key);
+function removeInstance(iid) {
+  const v = wantedGems.get(iid);
+  wantedGems.delete(iid);
+  ownedGems.delete(iid);
+  if (v) updateRowIcon(v.key);
   renderGroupsBar(); renderCart();
 }
 
-// ── Render cart ───────────────────────────────────────────────────
+// ── Render cart ────────────────────────────────────────────────────────────
 function renderCart() {
-  const total = wantedGems.size;
-  document.getElementById('cartCount').textContent = `${total} gem${total!==1?'s':''}`;
+  const totalInstances = wantedGems.size;
+  const totalSlots = new Set([...wantedGems.values()].map(v=>v.key)).size;
+  document.getElementById('cartCount').textContent =
+    `${totalInstances} slot${totalInstances!==1?'s':''} · ${totalSlots} unique`;
 
   const body = document.getElementById('cartBody');
-  body.className = 'cart-body' + (cartView==='split'?' split':'');
 
-  if (total===0) {
-    body.innerHTML = `<div class="cart-pane"><div class="cart-empty"><p>Click a gem to add<br>it to your list.</p></div></div>`;
+  if (totalInstances===0) {
+    body.className='cart-body';
+    body.innerHTML=`<div class="cart-pane"><div class="cart-empty"><p>Click a gem to add it to your list.<br><span style="color:var(--tx3);font-size:10px">Click again to add a duplicate.</span></p></div></div>`;
     document.getElementById('costSummary').style.display='none';
     return;
   }
 
-  // Build group→items map (instanceId-aware)
-  const byGroup = {}; // gid → [{instanceId, gem, src}]
-  byGroup['__none__'] = [];
-  for (const grp of groups) byGroup[grp.id] = [];
-  for (const [instanceId,{key,groupId}] of wantedGems) {
-    const gem = allGems.find(g=>g.key===key); if(!gem) continue;
-    const src = getSource(gem, selectedClass);
-    const gid = groups.find(g=>g.id===groupId) ? groupId : '__none__';
-    byGroup[gid].push({instanceId, gem, src});
+  // Filter instances by active group
+  let visibleInstances;
+  if (activeGroupId==='__all__') {
+    visibleInstances = [...wantedGems.entries()];
+  } else {
+    visibleInstances = [...wantedGems.entries()].filter(([,v])=>v.groupId===activeGroupId);
   }
 
-  const groupOrder = [...groups.map(g=>g.id),'__none__'];
-  const moveOpts = `<option value="__none__">—</option>${groups.map(g=>`<option value="${ea(g.id)}">${esc(g.name)}</option>`).join('')}`;
+  // Build group→items
+  const byGroup = {};
+  byGroup['__none__'] = [];
+  for (const grp of groups) byGroup[grp.id]=[];
+  for (const [iid,{key,groupId}] of visibleInstances) {
+    const gem=allGems.find(g=>g.key===key); if(!gem) continue;
+    const src=getSource(gem,selectedClass);
+    const gid = groups.find(g=>g.id===groupId)?groupId:'__none__';
+    byGroup[gid].push({iid,gem,src});
+  }
 
-  if (cartView==='groups' || cartView==='split') {
-    const pane = document.createElement('div');
+  // Build move options for dropdowns
+  const moveOpts = `<option value="__none__">Ungrouped</option>`+
+    groups.map(g=>`<option value="${ea(g.id)}">${esc(g.name)}</option>`).join('');
+
+  body.className = 'cart-body'+(cartView==='split'?' split':'');
+  body.innerHTML = '';
+
+  if (cartView==='groups'||cartView==='split') {
+    const pane=document.createElement('div');
     pane.className='cart-pane';
     if(cartView==='split') pane.innerHTML=`<div class="pane-head">By Group</div>`;
     let h='';
-    for (const gid of groupOrder) {
-      const items = byGroup[gid]||[];
+    const order=[...groups.map(g=>g.id),'__none__'];
+    for (const gid of order) {
+      const items=byGroup[gid]||[];
       if(!items.length) continue;
-      const gname = gid==='__none__'?'Ungrouped':(groups.find(g=>g.id===gid)?.name||'?');
-      const sock = sockSummary(items.map(({instanceId,gem})=>({id:instanceId,gem})));
-      h+=`<div class="cart-sec">${esc(gname)}<span class="gsock">${sock}</span></div>`;
-      h+=items.map(({instanceId,gem:g,src})=>cartItemHtml(instanceId,g,src,gid,moveOpts)).join('');
+      const gname = gid==='__none__'
+        ? (groups.length===0?'':'Ungrouped')
+        : (groups.find(g=>g.id===gid)?.name||'?');
+      if(gname) {
+        const sock=sockHtml(items);
+        h+=`<div class="cart-sec">${esc(gname)}<span class="gsock">${sock}</span></div>`;
+      }
+      h+=items.map(({iid,gem,src})=>cartItemHtml(iid,gem,src,gid,moveOpts)).join('');
     }
-    pane.innerHTML += h||`<div class="cart-empty"><p>No gems.</p></div>`;
-    body.innerHTML='';
+    pane.innerHTML+= h||`<div class="cart-empty"><p>No gems in this group.</p></div>`;
     body.appendChild(pane);
   }
 
-  if (cartView==='acts' || cartView==='split') {
-    const pane = document.createElement('div');
+  if (cartView==='acts'||cartView==='split') {
+    const pane=document.createElement('div');
     pane.className='cart-pane';
     if(cartView==='split') pane.innerHTML=`<div class="pane-head">By Act</div>`;
-    // Build act→quest→items
-    const actMap={};
-    for (const [key] of wantedGems) {
+
+    // Collect all visible gems, deduplicated by key for act view
+    const seenKeys=new Set();
+    const actsData={}; // act → quest → [{gem, iids:[]}]
+    for (const [iid,{key,groupId}] of visibleInstances) {
       const gem=allGems.find(g=>g.key===key); if(!gem) continue;
-      // All quest rewards for this class
-      const rewards=[
-        ...gem.questRewards.filter(e=>!e.classes.length||e.classes.some(c=>c.toLowerCase()===selectedClass.toLowerCase())).map(e=>({...e,type:'quest'})),
-        ...gem.vendorRewards.filter(e=>!e.classes.length||e.classes.some(c=>c.toLowerCase()===selectedClass.toLowerCase())).map(e=>({...e,type:'vendor'})),
+      // All reward entries for this class
+      const entries=[
+        ...gem.questRewards.filter(e=>!e.classes.length||e.classes.some(c=>c.toLowerCase()===selectedClass.toLowerCase())).map(e=>({...e,rtype:'quest'})),
+        ...gem.vendorRewards.filter(e=>!e.classes.length||e.classes.some(c=>c.toLowerCase()===selectedClass.toLowerCase())).map(e=>({...e,rtype:'vendor'})),
       ];
-      // Use earliest act entry
-      const entry = rewards.sort((a,b)=>a.act-b.act)[0] || gem.questRewards[0] || gem.vendorRewards[0];
-      if(!entry) continue;
+      if(!entries.length) {
+        const any=gem.questRewards[0]||gem.vendorRewards[0];
+        if(any) entries.push({...any,rtype:'other'});
+      }
+      const entry=entries.sort((a,b)=>a.act-b.act)[0]; if(!entry) continue;
       const act=entry.act;
-      const quest=entry.quest||(entry.type==='vendor'?entry.npc:'?');
-      if(!actMap[act]) actMap[act]={};
-      if(!actMap[act][quest]) actMap[act][quest]=[];
-      actMap[act][quest].push({gem,src:getSource(gem,selectedClass),entry});
+      const quest=entry.quest||(entry.rtype==='vendor'?entry.npc:'?');
+      if(!actsData[act]) actsData[act]={};
+      if(!actsData[act][quest]) actsData[act][quest]=[];
+      // Add this instance (could be multiple for same gem)
+      actsData[act][quest].push({gem,iid});
     }
+
     let h='';
-    for(const act of Object.keys(actMap).map(Number).sort((a,b)=>a-b)){
-      h+=`<div class="act-sec"><div class="act-sec-head">Act ${act}</div>`;
-      for(const quest of Object.keys(actMap[act]).sort()){
+    for (const act of Object.keys(actsData).map(Number).sort((a,b)=>a-b)) {
+      h+=`<div class="act-sec-head">Act ${act}</div>`;
+      for (const quest of Object.keys(actsData[act]).sort()) {
         h+=`<div class="act-quest-head">${esc(quest)}</div>`;
-        for(const{gem:g,src}of actMap[act][quest]){
-          const iW=[...wantedGems.values()].some(v=>v.key===g.key);
-          const gemCount=[...wantedGems.values()].filter(v=>v.key===g.key).length;
-          const countBadge=gemCount>1?`<span style="font-size:9px;color:var(--yellow);font-weight:600;margin-left:2px">${gemCount}×</span>`:'';
-          h+=`<div class="act-gem-row ${iW?'in-list':''}" onclick="rowClick('${ea(g.key)}')">
-            <div class="act-row-icon" style="color:${iW?'#fff':'transparent'}">${iW?(gemCount>1?gemCount:'✓'):''}</div>
-            <span class="act-gem-name ${cc(g)}">${esc(g.name)}</span>
-            ${countBadge}
-            <span class="act-gem-type ${g.isSupport?'support':'skill'}">${g.isSupport?'Sup':'Skill'}</span>
+        // Group by gem key, show count badge
+        const gemGroups={};
+        for (const {gem,iid} of actsData[act][quest]) {
+          if(!gemGroups[gem.key]) gemGroups[gem.key]={gem,iids:[]};
+          gemGroups[gem.key].iids.push(iid);
+        }
+        for (const {gem,iids} of Object.values(gemGroups)) {
+          const anyInList=[...wantedGems.values()].some(v=>v.key===gem.key);
+          const cnt=iids.length;
+          const cntBadge=cnt>1?`<span class="act-count-badge">${cnt}×</span>`:'';
+          const icContent=cnt>1?cnt:(anyInList?'✓':'');
+          h+=`<div class="act-gem-row ${anyInList?'in-list':''}" onclick="rowClick('${ea(gem.key)}')">
+            <div class="act-row-icon" style="${anyInList?'':'color:transparent'}">${icContent}</div>
+            <span class="act-gem-name ${cc(gem)}">${esc(gem.name)}</span>
+            ${cntBadge}
+            <span class="act-gem-type ${gem.isSupport?'support':'skill'}">${gem.isSupport?'Sup':'Skill'}</span>
           </div>`;
         }
       }
-      h+=`</div>`;
     }
-    pane.innerHTML += h||`<div class="cart-empty"><p>No gems.</p></div>`;
-    if(cartView==='split') body.appendChild(pane);
-    else {body.innerHTML=''; body.appendChild(pane);}
+    pane.innerHTML+=h||`<div class="cart-empty"><p>No gems.</p></div>`;
+    body.appendChild(pane);
   }
 
   renderCostSummary();
 }
 
-function cartItemHtml(instanceId,g,src,gid,moveOpts){
-  const iO=ownedGems.has(instanceId);
+function cartItemHtml(iid,gem,src,gid,moveOpts) {
+  const iO=ownedGems.has(iid);
   let meta='';
   if(src.type==='quest') meta=`Act ${src.entry?.act??'?'} · ${esc(src.entry?.quest||'quest')}`;
   else if(src.type==='vendor') meta=`${esc(src.entry?.npc||'Vendor')} · Act ${src.entry?.act??'?'}`;
   else if(src.type==='siosa') meta='Siosa · Act 3';
   else meta='Lilly · Act 6';
   const isQ=src.type==='quest';
-  const costStr=g.vendorCost?(isQ
-    ?`${orbHtmlI(g.vendorCost)}<span style="color:var(--green);font-size:9px;margin-left:2px">Q</span>`
-    :orbHtmlI(g.vendorCost)):'—';
-  const moveSel=groups.length>0?`<select class="g-move" onchange="moveToGroup('${ea(instanceId)}',this.value);this.blur()">
-    ${moveOpts.replace(`value="${ea(gid)}"`,`value="${ea(gid)}" selected`)}
-  </select>`:'';
+  const costStr=gem.vendorCost
+    ?(isQ?`${orbHtmlI(gem.vendorCost)} <span style="color:var(--green);font-size:9px">Q</span>`:orbHtmlI(gem.vendorCost))
+    :'—';
+  // Move dropdown
+  const selOpts = moveOpts.replace(
+    new RegExp(`(value="${ea(gid)}")`), '$1 selected'
+  );
+  const moveSel=groups.length>0
+    ?`<select class="g-move" onchange="moveToGroup('${ea(iid)}',this.value);this.blur()">${selOpts}</select>`
+    :'';
   return `<div class="cart-item" style="${iO?'opacity:.4':''}">
     <div class="ci-info">
-      <div class="ci-name ${cc(g)}">${esc(g.name)}</div>
+      <div class="ci-name ${cc(gem)}">${esc(gem.name)}</div>
       <div class="ci-meta">${meta}${moveSel?` · ${moveSel}`:''}</div>
     </div>
     <div class="ci-cost">${costStr}</div>
-    <button class="ci-own ${iO?'owned':''}" onclick="toggleOwned('${ea(instanceId)}')" title="${iO?'Unmark':'Owned'}">${iO?'✕':'✓'}</button>
-    <button class="ci-rm" onclick="removeInstance('${ea(instanceId)}')">✕</button>
+    <button class="ci-own ${iO?'owned':''}" onclick="toggleOwned('${ea(iid)}')" title="${iO?'Unmark owned':'Mark as owned'}">${iO?'✕':'✓'}</button>
+    <button class="ci-rm" onclick="removeInstance('${ea(iid)}')" title="Remove">✕</button>
   </div>`;
 }
 
-function sockSummary(items){
+function sockHtml(items) {
   let R=0,G=0,B=0;
-  items.forEach(({id,gem:g})=>{if(ownedGems.has(id))return;if(g.color==='str')R++;else if(g.color==='dex')G++;else if(g.color==='int')B++;});
-  if(!R&&!G&&!B)return'';
+  items.forEach(({iid,gem})=>{
+    if(ownedGems.has(iid)) return;
+    if(gem.color==='str')R++; else if(gem.color==='dex')G++; else if(gem.color==='int')B++;
+  });
+  if(!R&&!G&&!B) return '';
   const p=[];
-  if(R)p.push(`<span class="sc-R">${R}R</span>`);
-  if(G)p.push(`<span class="sc-G">${G}G</span>`);
-  if(B)p.push(`<span class="sc-B">${B}B</span>`);
+  if(R) p.push(`<span class="sc-R">${R}R</span>`);
+  if(G) p.push(`<span class="sc-G">${G}G</span>`);
+  if(B) p.push(`<span class="sc-B">${B}B</span>`);
   return p.join('');
 }
 
-function renderCostSummary(){
+function renderCostSummary() {
   const costMap={};
-  for(const[instanceId,{key}]of wantedGems){
-    if(ownedGems.has(instanceId))continue;
-    const gem=allGems.find(g=>g.key===key);if(!gem||!gem.vendorCost)continue;
-    // Include ALL gems (quest rewards also have a vendor price)
+  for (const [iid,{key}] of wantedGems) {
+    if(ownedGems.has(iid)) continue;
+    const gem=allGems.find(g=>g.key===key); if(!gem||!gem.vendorCost) continue;
     costMap[gem.vendorCost.orb]=(costMap[gem.vendorCost.orb]||0)+gem.vendorCost.qty;
   }
   const entries=Object.entries(costMap).sort((a,b)=>(ORB_ORDER[a[0]]??9)-(ORB_ORDER[b[0]]??9));
@@ -762,22 +799,22 @@ function renderCostSummary(){
   document.getElementById('csBody').style.display=csOpen?'':'none';
   document.getElementById('csIcon').textContent=csOpen?'▲':'▼';
 }
-
 function toggleCS(){csOpen=!csOpen;renderCostSummary();}
 
 function orbHtml(c){return`<span class="${ORB_CLASS[c.orb]||''}">${c.qty}× ${ORB_SHORT[c.orb]||c.orb}</span>`;}
 function orbHtmlI(c){return`<span class="${ORB_CLASS[c.orb]||''}">${c.qty}× ${ORB_SHORT[c.orb]||c.orb}</span>`;}
 
-// ── Export / Import / Copy ────────────────────────────────────────
+// ── Export / Import / Clear / Copy ─────────────────────────────────────────
 function clearAll(){
-  // Collect all gem keys before clearing so we can update their icons
-  const allKeys = new Set([...wantedGems.values()].map(v=>v.key));
-  wantedGems.clear();ownedGems.clear();
-  allKeys.forEach(key=>updateRowIcons(key));
-  renderGroupsBar();renderCart();
+  const keys=new Set([...wantedGems.values()].map(v=>v.key));
+  wantedGems.clear(); ownedGems.clear();
+  keys.forEach(k=>updateRowIcon(k));
+  renderGroupsBar(); renderCart();
 }
 function exportJSON(){
-  const payload={version:2,class:selectedClass,groups,wanted:[...wantedGems.entries()].map(([instanceId,v])=>({instanceId,key:v.key,groupId:v.groupId})),owned:[...ownedGems]};
+  const payload={version:2,class:selectedClass,groups,
+    wanted:[...wantedGems.entries()].map(([iid,v])=>({iid,key:v.key,groupId:v.groupId})),
+    owned:[...ownedGems]};
   const s=JSON.stringify(payload,null,2);
   navigator.clipboard.writeText(s).then(()=>showToast('JSON copied!')).catch(()=>prompt('Copy JSON:',s));
 }
@@ -785,58 +822,85 @@ function openImport(){document.getElementById('importText').value='';openModal('
 function confirmImport(){
   try{
     const d=JSON.parse(document.getElementById('importText').value.trim());
-    if(d.groups)groups=d.groups;
-    if(d.wanted){wantedGems.clear();d.wanted.forEach(({instanceId,key,groupId})=>{
-      // v2 format has instanceId; v1 fallback uses key as instanceId
-      const iid = instanceId || key;
-      wantedGems.set(iid,{key:key||iid.split('#')[0],groupId:groupId||'__none__'});
-    });}
+    if(d.groups) groups=d.groups;
+    if(d.wanted){
+      wantedGems.clear();
+      d.wanted.forEach(({iid,key,groupId})=>{
+        const id=iid||(key+'#1');
+        wantedGems.set(id,{key:key||id.split('#')[0],groupId:groupId||'__none__'});
+      });
+    }
     if(d.owned){ownedGems.clear();d.owned.forEach(k=>ownedGems.add(k));}
     closeModal('modalImport');
-    renderGems();renderGroupsBar();renderCart();showToast('Imported!');
+    renderGems(); renderGroupsBar(); renderCart();
+    showToast('Imported!');
   }catch(e){alert('Invalid JSON: '+e.message);}
 }
 function copyList(){
   let t=`=== PoE Gem Planner — ${selectedClass} ===\n\n`;
-  const byGroup={};byGroup['__none__']=[];
-  for(const grp of groups)byGroup[grp.id]=[];
-  for(const[instanceId,{key,groupId}]of wantedGems){const gem=allGems.find(g=>g.key===key);if(!gem)continue;const src=getSource(gem,selectedClass);const gid=groups.find(g=>g.id===groupId)?groupId:'__none__';byGroup[gid].push({instanceId,gem,src});}
+  const byGroup={'__none__':[]};
+  for(const g of groups) byGroup[g.id]=[];
+  for(const[iid,{key,groupId}]of wantedGems){
+    const gem=allGems.find(g=>g.key===key); if(!gem) continue;
+    const src=getSource(gem,selectedClass);
+    const gid=groups.find(g=>g.id===groupId)?groupId:'__none__';
+    byGroup[gid].push({iid,gem,src});
+  }
   for(const gid of[...groups.map(g=>g.id),'__none__']){
-    const items=byGroup[gid]||[];if(!items.length)continue;
+    const items=byGroup[gid]||[]; if(!items.length) continue;
     const gname=gid==='__none__'?'Ungrouped':(groups.find(g=>g.id===gid)?.name||'?');
-    const sock=sockSummaryText(items.map(({instanceId,gem})=>({instanceId,gem})));
+    const sock=sockText(items);
     t+=`[${gname}${sock?' — '+sock:''}]\n`;
-    items.forEach(({instanceId,gem:g,src})=>{
-      const owned=ownedGems.has(instanceId)?'[✓] ':'';
-      const where=src.type==='quest'?`Act ${src.entry?.act??'?'} (${src.entry?.quest||'quest'})`:src.type==='vendor'?`${src.entry?.npc||'Vendor'} Act ${src.entry?.act??'?'}`:src.type==='siosa'?'Siosa (Act 3)':'Lilly (Act 6)';
+    items.forEach(({iid,gem:g,src})=>{
+      const owned=ownedGems.has(iid)?'[✓] ':'';
+      const where=src.type==='quest'?`Act ${src.entry?.act??'?'} (${src.entry?.quest||'quest'})`:
+        src.type==='vendor'?`${src.entry?.npc||'Vendor'} (Act ${src.entry?.act??'?'})`:
+        src.type==='siosa'?'Siosa (Act 3)':'Lilly (Act 6)';
       t+=`  ${owned}• ${g.name} — ${where} — ${g.vendorCost?`${g.vendorCost.qty}× ${g.vendorCost.orb}`:'—'}\n`;
     });
     t+='\n';
   }
   const costMap={};
-  for(const[instanceId,{key}]of wantedGems){if(ownedGems.has(instanceId))continue;const gem=allGems.find(g=>g.key===key);if(!gem||!gem.vendorCost)continue;costMap[gem.vendorCost.orb]=(costMap[gem.vendorCost.orb]||0)+1;}
+  for(const[iid,{key}]of wantedGems){
+    if(ownedGems.has(iid)) continue;
+    const gem=allGems.find(g=>g.key===key); if(!gem||!gem.vendorCost) continue;
+    costMap[gem.vendorCost.orb]=(costMap[gem.vendorCost.orb]||0)+gem.vendorCost.qty;
+  }
   const ce=Object.entries(costMap).sort((a,b)=>(ORB_ORDER[a[0]]??9)-(ORB_ORDER[b[0]]??9));
-  if(ce.length)t+=`Total: ${ce.map(([o,q])=>`${q}× ${o}`).join(', ')}\n`;
+  if(ce.length) t+=`Total: ${ce.map(([o,q])=>`${q}× ${o}`).join(', ')}\n`;
   navigator.clipboard.writeText(t).then(()=>showToast('Copied!')).catch(()=>prompt('Copy:',t));
 }
-function sockSummaryText(items){let R=0,G=0,B=0;items.forEach(({instanceId,gem:g})=>{if(ownedGems.has(instanceId))return;if(g.color==='str')R++;else if(g.color==='dex')G++;else if(g.color==='int')B++;});const p=[];if(R)p.push(`${R}R`);if(G)p.push(`${G}G`);if(B)p.push(`${B}B`);return p.join('');}
+function sockText(items){
+  let R=0,G=0,B=0;
+  items.forEach(({iid,gem})=>{
+    if(ownedGems.has(iid))return;
+    if(gem.color==='str')R++; else if(gem.color==='dex')G++; else if(gem.color==='int')B++;
+  });
+  const p=[];if(R)p.push(`${R}R`);if(G)p.push(`${G}G`);if(B)p.push(`${B}B`);return p.join('');
+}
 
-// ── Modals ────────────────────────────────────────────────────────
+// ── Modals ─────────────────────────────────────────────────────────────────
 function openModal(id){document.getElementById(id).classList.add('open');}
 function closeModal(id){document.getElementById(id).classList.remove('open');}
-document.getElementById('groupNameInput').addEventListener('keydown',e=>{if(e.key==='Enter')confirmAddGroup();if(e.key==='Escape')closeModal('modalGroup');});
-document.getElementById('modalGroup').addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal('modalGroup');});
-document.getElementById('modalImport').addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal('modalImport');});
+document.getElementById('groupNameInput').addEventListener('keydown',e=>{
+  if(e.key==='Enter')confirmAddGroup();
+  if(e.key==='Escape')closeModal('modalGroup');
+});
+['modalGroup','modalImport'].forEach(id=>
+  document.getElementById(id).addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal(id);})
+);
 
-// ── Sort / filter / class ─────────────────────────────────────────
+// ── Filters / sort / class ─────────────────────────────────────────────────
 function sortBy(k){sortKey===k?sortDir*=-1:(sortKey=k,sortDir=1);renderGems();}
 document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('.cbtn').forEach(x=>x.classList.remove('active'));
-  b.classList.add('active');selectedClass=b.dataset.class;
-  renderGems();renderCart();
+  b.classList.add('active'); selectedClass=b.dataset.class;
+  renderGems(); renderCart();
 }));
 document.getElementById('searchInput').addEventListener('input',renderGems);
-['fQuest','fVendor','fDrop','fSkill','fSupport'].forEach(id=>document.getElementById(id).addEventListener('change',renderGems));
+['fQuest','fVendor','fDrop','fSkill','fSupport'].forEach(id=>
+  document.getElementById(id).addEventListener('change',renderGems)
+);
 
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function ea(s){return String(s).replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'&quot;');}
