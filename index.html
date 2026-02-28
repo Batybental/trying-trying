@@ -23,7 +23,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:0 1
 .h-right b{color:var(--tx2);}
 
 /* LAYOUT: left sidebar | gem list | shopping list */
-.app{display:grid;grid-template-columns:190px 1fr 380px;height:calc(100vh - 44px);}
+.app{display:grid;grid-template-columns:190px 1fr 440px;height:calc(100vh - 44px);}
 
 /* LEFT SIDEBAR */
 .left{background:var(--bg2);border-right:1px solid var(--bd);padding:10px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;}
@@ -242,7 +242,7 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
     <div class="lbl">Source</div>
     <div class="filter-group">
       <label class="ftoggle"><input type="checkbox" id="fQuest" checked><span class="chk"></span><span class="flbl">🟢 Quest reward</span></label>
-      <label class="ftoggle"><input type="checkbox" id="fVendor" checked><span class="chk"></span><span class="flbl">🟡 Vendor only</span></label>
+      <label class="ftoggle"><input type="checkbox" id="fVendor" checked><span class="chk"></span><span class="flbl">🟡 Vendor</span></label>
       <label class="ftoggle"><input type="checkbox" id="fDrop"><span class="chk"></span><span class="flbl">⚫ Drop only</span></label>
     </div>
   </div>
@@ -358,8 +358,10 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
 <script>
 // ── State ────────────────────────────────────────────────────────
 let allGems = [];
-let wantedGems = new Map();   // key → {groupId}
-let ownedGems  = new Set();
+// wantedGems: Map<instanceId, {key, groupId}>
+// instanceId = key + '#1', key + '#2' etc. — allows same gem in multiple groups
+let wantedGems = new Map();
+let ownedGems  = new Set();   // stores instanceIds
 let groups = [];               // [{id, name}]
 let activeGroupId = '__none__';
 let cartView = 'groups';       // 'groups' | 'acts' | 'split'
@@ -477,7 +479,8 @@ function renderGems() {
 }
 
 function rowHtml(g, isDropOnly=false) {
-  const iW = wantedGems.has(g.key);
+  const gemInstances = [...wantedGems.values()].filter(v=>v.key===g.key).length;
+  const iW = gemInstances > 0;
   const src = g.src || getSource(g, selectedClass);
   const isQ = hasQuestForClass(g, selectedClass);
   let srcHtml, locHtml;
@@ -501,7 +504,7 @@ function rowHtml(g, isDropOnly=false) {
   const wiki = `https://www.poewiki.net/wiki/${encodeURIComponent(g.key.replace(/ /g,'_'))}`;
   const clickable = !isDropOnly;
   return `<div class="gem-row ${iW?'in-list':''} ${gc(g)} ${isDropOnly?'drop-only':''}" data-key="${ea(g.key)}" ${clickable?`onclick="rowClick('${ea(g.key)}')"`:''}>
-    <div class="row-icon">${iW?'✓':''}</div>
+    <div class="row-icon">${gemInstances>1?gemInstances:iW?'✓':''}</div>
     <div class="name-cell"><a href="${wiki}" target="_blank" onclick="event.stopPropagation()">${esc(g.name)}</a></div>
     <div class="type-cell ${g.isSupport?'support':'skill'}">${g.isSupport?'Sup':'Skill'}</div>
     <div class="src-cell">${srcHtml} ${locHtml}</div>
@@ -556,7 +559,7 @@ function confirmAddGroup() {
 }
 function deleteGroup(gid) {
   groups = groups.filter(g=>g.id!==gid);
-  for (const [k,v] of wantedGems) if(v.groupId===gid) wantedGems.set(k,{groupId:'__none__'});
+  for (const [k,v] of wantedGems) if(v.groupId===gid) wantedGems.set(k,{...wantedGems.get(k), groupId:'__none__'});
   if (activeGroupId===gid) activeGroupId='__none__';
   renderGroupsBar();
   renderCart();
@@ -564,25 +567,50 @@ function deleteGroup(gid) {
 
 // ── Toggle wanted ─────────────────────────────────────────────────
 function rowClick(key) {
-  if (wantedGems.has(key)) { wantedGems.delete(key); }
-  else { wantedGems.set(key, {groupId: activeGroupId}); }
-  // Update all rows with this key
-  document.querySelectorAll(`[data-key="${ea(key)}"]`).forEach(row => {
-    const iW = wantedGems.has(key);
-    row.classList.toggle('in-list', iW);
-    const ic = row.querySelector('.row-icon,.act-row-icon');
-    if(ic) ic.textContent = iW?'✓':'';
-    if(ic) ic.style.color = iW?'#fff':'transparent';
-  });
+  // Find existing instance in the active group
+  const existingId = [...wantedGems.entries()].find(([id,v]) => v.key===key && v.groupId===activeGroupId)?.[0];
+  if (existingId) {
+    wantedGems.delete(existingId);
+  } else {
+    // Generate unique instance id
+    const count = [...wantedGems.values()].filter(v=>v.key===key).length;
+    const instanceId = key + '#' + (count + 1);
+    wantedGems.set(instanceId, {key, groupId: activeGroupId});
+  }
+  updateRowIcons(key);
   renderGroupsBar();
   renderCart();
 }
-function toggleOwned(key) {
-  ownedGems.has(key)?ownedGems.delete(key):ownedGems.add(key);
+
+function updateRowIcons(key) {
+  const totalCount = [...wantedGems.values()].filter(v=>v.key===key).length;
+  document.querySelectorAll(`[data-key="${ea(key)}"]`).forEach(row => {
+    row.classList.toggle('in-list', totalCount > 0);
+    const ic = row.querySelector('.row-icon,.act-row-icon');
+    if (ic) {
+      if (totalCount === 0) { ic.textContent=''; ic.style.color='transparent'; }
+      else if (totalCount === 1) { ic.textContent='✓'; ic.style.color='#fff'; }
+      else { ic.textContent=totalCount; ic.style.color='#fff'; ic.style.fontSize='8px'; }
+    }
+  });
+}
+function toggleOwned(instanceId) {
+  ownedGems.has(instanceId)?ownedGems.delete(instanceId):ownedGems.add(instanceId);
   renderCart();
 }
-function moveToGroup(key, gid) {
-  if (wantedGems.has(key)) { wantedGems.set(key,{groupId:gid}); renderGroupsBar(); renderCart(); }
+function moveToGroup(instanceId, gid) {
+  if (wantedGems.has(instanceId)) {
+    const v = wantedGems.get(instanceId);
+    wantedGems.set(instanceId, {...v, groupId:gid});
+    renderGroupsBar(); renderCart();
+  }
+}
+function removeInstance(instanceId) {
+  const v = wantedGems.get(instanceId);
+  wantedGems.delete(instanceId);
+  ownedGems.delete(instanceId);
+  if (v) updateRowIcons(v.key);
+  renderGroupsBar(); renderCart();
 }
 
 // ── Render cart ───────────────────────────────────────────────────
@@ -599,15 +627,15 @@ function renderCart() {
     return;
   }
 
-  // Build group→items map
-  const byGroup = {}; // gid → [{gem,src}]
+  // Build group→items map (instanceId-aware)
+  const byGroup = {}; // gid → [{instanceId, gem, src}]
   byGroup['__none__'] = [];
   for (const grp of groups) byGroup[grp.id] = [];
-  for (const [key,{groupId}] of wantedGems) {
+  for (const [instanceId,{key,groupId}] of wantedGems) {
     const gem = allGems.find(g=>g.key===key); if(!gem) continue;
     const src = getSource(gem, selectedClass);
     const gid = groups.find(g=>g.id===groupId) ? groupId : '__none__';
-    byGroup[gid].push({gem,src});
+    byGroup[gid].push({instanceId, gem, src});
   }
 
   const groupOrder = [...groups.map(g=>g.id),'__none__'];
@@ -622,9 +650,9 @@ function renderCart() {
       const items = byGroup[gid]||[];
       if(!items.length) continue;
       const gname = gid==='__none__'?'Ungrouped':(groups.find(g=>g.id===gid)?.name||'?');
-      const sock = sockSummary(items.map(({gem})=>gem));
+      const sock = sockSummary(items.map(({instanceId,gem})=>({id:instanceId,gem})));
       h+=`<div class="cart-sec">${esc(gname)}<span class="gsock">${sock}</span></div>`;
-      h+=items.map(({gem:g,src})=>cartItemHtml(g,src,gid,moveOpts)).join('');
+      h+=items.map(({instanceId,gem:g,src})=>cartItemHtml(instanceId,g,src,gid,moveOpts)).join('');
     }
     pane.innerHTML += h||`<div class="cart-empty"><p>No gems.</p></div>`;
     body.innerHTML='';
@@ -659,10 +687,13 @@ function renderCart() {
       for(const quest of Object.keys(actMap[act]).sort()){
         h+=`<div class="act-quest-head">${esc(quest)}</div>`;
         for(const{gem:g,src}of actMap[act][quest]){
-          const iW=wantedGems.has(g.key);
+          const iW=[...wantedGems.values()].some(v=>v.key===g.key);
+          const gemCount=[...wantedGems.values()].filter(v=>v.key===g.key).length;
+          const countBadge=gemCount>1?`<span style="font-size:9px;color:var(--yellow);font-weight:600;margin-left:2px">${gemCount}×</span>`:'';
           h+=`<div class="act-gem-row ${iW?'in-list':''}" onclick="rowClick('${ea(g.key)}')">
-            <div class="act-row-icon" style="color:${iW?'#fff':'transparent'}">${iW?'✓':''}</div>
+            <div class="act-row-icon" style="color:${iW?'#fff':'transparent'}">${iW?(gemCount>1?gemCount:'✓'):''}</div>
             <span class="act-gem-name ${cc(g)}">${esc(g.name)}</span>
+            ${countBadge}
             <span class="act-gem-type ${g.isSupport?'support':'skill'}">${g.isSupport?'Sup':'Skill'}</span>
           </div>`;
         }
@@ -677,8 +708,8 @@ function renderCart() {
   renderCostSummary();
 }
 
-function cartItemHtml(g,src,gid,moveOpts){
-  const iO=ownedGems.has(g.key);
+function cartItemHtml(instanceId,g,src,gid,moveOpts){
+  const iO=ownedGems.has(instanceId);
   let meta='';
   if(src.type==='quest') meta=`Act ${src.entry?.act??'?'} · ${esc(src.entry?.quest||'quest')}`;
   else if(src.type==='vendor') meta=`${esc(src.entry?.npc||'Vendor')} · Act ${src.entry?.act??'?'}`;
@@ -688,7 +719,7 @@ function cartItemHtml(g,src,gid,moveOpts){
   const costStr=g.vendorCost?(isQ
     ?`${orbHtmlI(g.vendorCost)}<span style="color:var(--green);font-size:9px;margin-left:2px">Q</span>`
     :orbHtmlI(g.vendorCost)):'—';
-  const moveSel=groups.length>0?`<select class="g-move" onchange="moveToGroup('${ea(g.key)}',this.value);this.blur()">
+  const moveSel=groups.length>0?`<select class="g-move" onchange="moveToGroup('${ea(instanceId)}',this.value);this.blur()">
     ${moveOpts.replace(`value="${ea(gid)}"`,`value="${ea(gid)}" selected`)}
   </select>`:'';
   return `<div class="cart-item" style="${iO?'opacity:.4':''}">
@@ -697,14 +728,14 @@ function cartItemHtml(g,src,gid,moveOpts){
       <div class="ci-meta">${meta}${moveSel?` · ${moveSel}`:''}</div>
     </div>
     <div class="ci-cost">${costStr}</div>
-    <button class="ci-own ${iO?'owned':''}" onclick="toggleOwned('${ea(g.key)}')" title="${iO?'Unmark':'Owned'}">${iO?'✕':'✓'}</button>
-    <button class="ci-rm" onclick="rowClick('${ea(g.key)}')">✕</button>
+    <button class="ci-own ${iO?'owned':''}" onclick="toggleOwned('${ea(instanceId)}')" title="${iO?'Unmark':'Owned'}">${iO?'✕':'✓'}</button>
+    <button class="ci-rm" onclick="removeInstance('${ea(instanceId)}')">✕</button>
   </div>`;
 }
 
-function sockSummary(gems){
+function sockSummary(items){
   let R=0,G=0,B=0;
-  gems.forEach(g=>{if(ownedGems.has(g.key))return;if(g.color==='str')R++;else if(g.color==='dex')G++;else if(g.color==='int')B++;});
+  items.forEach(({id,gem:g})=>{if(ownedGems.has(id))return;if(g.color==='str')R++;else if(g.color==='dex')G++;else if(g.color==='int')B++;});
   if(!R&&!G&&!B)return'';
   const p=[];
   if(R)p.push(`<span class="sc-R">${R}R</span>`);
@@ -715,11 +746,10 @@ function sockSummary(gems){
 
 function renderCostSummary(){
   const costMap={};
-  for(const[key]of wantedGems){
-    if(ownedGems.has(key))continue;
+  for(const[instanceId,{key}]of wantedGems){
+    if(ownedGems.has(instanceId))continue;
     const gem=allGems.find(g=>g.key===key);if(!gem||!gem.vendorCost)continue;
-    const src=getSource(gem,selectedClass);
-    if(src.type==='quest')continue;
+    // Include ALL gems (quest rewards also have a vendor price)
     costMap[gem.vendorCost.orb]=(costMap[gem.vendorCost.orb]||0)+gem.vendorCost.qty;
   }
   const entries=Object.entries(costMap).sort((a,b)=>(ORB_ORDER[a[0]]??9)-(ORB_ORDER[b[0]]??9));
@@ -740,12 +770,14 @@ function orbHtmlI(c){return`<span class="${ORB_CLASS[c.orb]||''}">${c.qty}× ${O
 
 // ── Export / Import / Copy ────────────────────────────────────────
 function clearAll(){
+  // Collect all gem keys before clearing so we can update their icons
+  const allKeys = new Set([...wantedGems.values()].map(v=>v.key));
   wantedGems.clear();ownedGems.clear();
-  document.querySelectorAll('[data-key]').forEach(r=>{r.classList.remove('in-list');const ic=r.querySelector('.row-icon,.act-row-icon');if(ic){ic.textContent='';ic.style.color='transparent';}});
+  allKeys.forEach(key=>updateRowIcons(key));
   renderGroupsBar();renderCart();
 }
 function exportJSON(){
-  const payload={version:1,class:selectedClass,groups,wanted:[...wantedGems.entries()].map(([k,v])=>({key:k,groupId:v.groupId})),owned:[...ownedGems]};
+  const payload={version:2,class:selectedClass,groups,wanted:[...wantedGems.entries()].map(([instanceId,v])=>({instanceId,key:v.key,groupId:v.groupId})),owned:[...ownedGems]};
   const s=JSON.stringify(payload,null,2);
   navigator.clipboard.writeText(s).then(()=>showToast('JSON copied!')).catch(()=>prompt('Copy JSON:',s));
 }
@@ -754,7 +786,11 @@ function confirmImport(){
   try{
     const d=JSON.parse(document.getElementById('importText').value.trim());
     if(d.groups)groups=d.groups;
-    if(d.wanted){wantedGems.clear();d.wanted.forEach(({key,groupId})=>wantedGems.set(key,{groupId:groupId||'__none__'}));}
+    if(d.wanted){wantedGems.clear();d.wanted.forEach(({instanceId,key,groupId})=>{
+      // v2 format has instanceId; v1 fallback uses key as instanceId
+      const iid = instanceId || key;
+      wantedGems.set(iid,{key:key||iid.split('#')[0],groupId:groupId||'__none__'});
+    });}
     if(d.owned){ownedGems.clear();d.owned.forEach(k=>ownedGems.add(k));}
     closeModal('modalImport');
     renderGems();renderGroupsBar();renderCart();showToast('Imported!');
@@ -764,26 +800,26 @@ function copyList(){
   let t=`=== PoE Gem Planner — ${selectedClass} ===\n\n`;
   const byGroup={};byGroup['__none__']=[];
   for(const grp of groups)byGroup[grp.id]=[];
-  for(const[k,{groupId}]of wantedGems){const gem=allGems.find(g=>g.key===k);if(!gem)continue;const src=getSource(gem,selectedClass);const gid=groups.find(g=>g.id===groupId)?groupId:'__none__';byGroup[gid].push({gem,src});}
+  for(const[instanceId,{key,groupId}]of wantedGems){const gem=allGems.find(g=>g.key===key);if(!gem)continue;const src=getSource(gem,selectedClass);const gid=groups.find(g=>g.id===groupId)?groupId:'__none__';byGroup[gid].push({instanceId,gem,src});}
   for(const gid of[...groups.map(g=>g.id),'__none__']){
     const items=byGroup[gid]||[];if(!items.length)continue;
     const gname=gid==='__none__'?'Ungrouped':(groups.find(g=>g.id===gid)?.name||'?');
-    const sock=sockSummaryText(items.map(({gem})=>gem));
+    const sock=sockSummaryText(items.map(({instanceId,gem})=>({instanceId,gem})));
     t+=`[${gname}${sock?' — '+sock:''}]\n`;
-    items.forEach(({gem:g,src})=>{
-      const owned=ownedGems.has(g.key)?'[✓] ':'';
+    items.forEach(({instanceId,gem:g,src})=>{
+      const owned=ownedGems.has(instanceId)?'[✓] ':'';
       const where=src.type==='quest'?`Act ${src.entry?.act??'?'} (${src.entry?.quest||'quest'})`:src.type==='vendor'?`${src.entry?.npc||'Vendor'} Act ${src.entry?.act??'?'}`:src.type==='siosa'?'Siosa (Act 3)':'Lilly (Act 6)';
       t+=`  ${owned}• ${g.name} — ${where} — ${g.vendorCost?`${g.vendorCost.qty}× ${g.vendorCost.orb}`:'—'}\n`;
     });
     t+='\n';
   }
   const costMap={};
-  for(const[k]of wantedGems){if(ownedGems.has(k))continue;const gem=allGems.find(g=>g.key===k);if(!gem)continue;const src=getSource(gem,selectedClass);if(src.type==='quest')continue;if(gem.vendorCost)costMap[gem.vendorCost.orb]=(costMap[gem.vendorCost.orb]||0)+1;}
+  for(const[instanceId,{key}]of wantedGems){if(ownedGems.has(instanceId))continue;const gem=allGems.find(g=>g.key===key);if(!gem||!gem.vendorCost)continue;costMap[gem.vendorCost.orb]=(costMap[gem.vendorCost.orb]||0)+1;}
   const ce=Object.entries(costMap).sort((a,b)=>(ORB_ORDER[a[0]]??9)-(ORB_ORDER[b[0]]??9));
   if(ce.length)t+=`Total: ${ce.map(([o,q])=>`${q}× ${o}`).join(', ')}\n`;
   navigator.clipboard.writeText(t).then(()=>showToast('Copied!')).catch(()=>prompt('Copy:',t));
 }
-function sockSummaryText(gems){let R=0,G=0,B=0;gems.forEach(g=>{if(ownedGems.has(g.key))return;if(g.color==='str')R++;else if(g.color==='dex')G++;else if(g.color==='int')B++;});const p=[];if(R)p.push(`${R}R`);if(G)p.push(`${G}G`);if(B)p.push(`${B}B`);return p.join('');}
+function sockSummaryText(items){let R=0,G=0,B=0;items.forEach(({instanceId,gem:g})=>{if(ownedGems.has(instanceId))return;if(g.color==='str')R++;else if(g.color==='dex')G++;else if(g.color==='int')B++;});const p=[];if(R)p.push(`${R}R`);if(G)p.push(`${G}G`);if(B)p.push(`${B}B`);return p.join('');}
 
 // ── Modals ────────────────────────────────────────────────────────
 function openModal(id){document.getElementById(id).classList.add('open');}
