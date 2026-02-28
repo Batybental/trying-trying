@@ -255,6 +255,65 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
 /* override rx-panel to not be scrollable alone (mod panel is sticky-ish) */
 .rx-panel{padding:0;gap:0;}
 .rx-panel > .rx-group-card, .rx-panel > div:not(.rx-mod-panel){margin:8px 12px 0;}
+
+/* ── NOTES PANEL BIGGER / MORE READABLE ───────────────────────────── */
+.notes-center-head{padding:10px 14px !important;}
+.notes-tabs{gap:4px !important;}
+.notes-tab{padding:5px 14px !important;font-size:12px !important;font-weight:600 !important;}
+.notes-toolbar-lbl{font-size:13px !important;font-weight:600;}
+.notes-toggle-btn{padding:4px 10px !important;font-size:12px !important;}
+
+/* Notes sections */
+.notes-section{padding:10px 14px !important;}
+.notes-sec-title{font-size:13px !important;padding:4px 8px !important;}
+.notes-sec-body{font-size:12px !important;line-height:1.6 !important;min-height:80px;}
+.notes-add-btn{font-size:12px !important;padding:7px 14px !important;}
+
+/* ── REGEX PANEL BIGGER / MORE READABLE ────────────────────────────── */
+/* Recommendation banner */
+.rx-recommend-banner{
+  padding:9px 14px;
+  font-size:11px;
+  color:var(--tx2);
+  background:rgba(107,159,212,.08);
+  border-bottom:1px solid rgba(107,159,212,.2);
+  line-height:1.5;
+  flex-shrink:0;
+}
+.rx-recommend-link{
+  color:var(--blue);
+  text-decoration:none;
+  font-weight:600;
+}
+.rx-recommend-link:hover{text-decoration:underline;}
+
+/* Mod checkboxes section */
+.rx-mod-panel{padding:10px 14px 8px !important;}
+.rx-mod-group{margin-bottom:9px !important;}
+.rx-mod-group-lbl{font-size:10px !important;margin-bottom:5px !important;letter-spacing:.7px;}
+.rx-chk-label{padding:3px 6px !important;gap:5px !important;}
+.rx-chk-box{width:13px !important;height:13px !important;}
+.rx-chk-box::after{font-size:9px !important;}
+.rx-chk-lbl{font-size:11px !important;}
+
+/* Group cards */
+.rx-group-card{margin:10px 14px 0 !important;border-radius:5px !important;}
+.rx-group-head{padding:8px 12px !important;}
+.rx-group-name{font-size:12px !important;font-weight:700 !important;}
+.rx-sock-pill{width:16px !important;height:16px !important;font-size:9px !important;}
+
+/* Regex rows */
+.rx-row{padding:7px 12px !important;gap:8px !important;}
+.rx-row-lbl{font-size:10px !important;width:60px !important;}
+.rx-row-val{font-size:11px !important;padding:4px 8px !important;line-height:1.5 !important;}
+.rx-copy-btn{padding:3px 9px !important;font-size:10px !important;}
+.rx-split-badge{font-size:9px !important;padding:2px 5px !important;}
+
+/* Attribution footer */
+.rx-panel > div:last-child{margin:10px 14px !important;padding:9px 12px !important;font-size:10px !important;}
+
+/* Mod grid (weapon bases) */
+.rx-mod-grid{gap:3px 6px !important;}
 </style>
 </head>
 <body>
@@ -954,30 +1013,33 @@ function combinedRegex(groupId){
 // ── Vendor mod options ───────────────────────────────────────────────────────
 // Each mod has id, label, rx (regex string to append), group name
 const MOD_OPTIONS = [
-  // Movement Speed
-  {id:'ms10', group:'Movement speed', label:'10%',    rx:'ms: [1][0-4]%'},
-  {id:'ms15', group:'Movement speed', label:'15%+',   rx:'ms: [1][5-9]%|ms: [2-9][0-9]%'},
-  // Misc weapon mods
-  {id:'w1any',  group:'Misc',  label:'+1 wand (any)',       rx:'l of all .* skill'},
-  {id:'w1lit',  group:'Misc',  label:'+1 lightning wand',   rx:'l of all li'},
-  {id:'w1fire', group:'Misc',  label:'+1 fire wand',        rx:'l of all fi'},
-  {id:'w1cold', group:'Misc',  label:'+1 cold wand',        rx:'l of all co'},
-  {id:'w1phys', group:'Misc',  label:'+1 phys wand',        rx:'l of all ph'},
-  {id:'w1chaos',group:'Misc',  label:'+1 chaos wand',       rx:'l of all ch'},
-  {id:'physdmg',group:'Misc',  label:'Physical damage',     rx:'ll g'},
-  {id:'fdot',   group:'Misc',  label:'Fire DOT multi',      rx:'fire.*multi|multi.*fire'},
-  {id:'cdot',   group:'Misc',  label:'Cold DOT multi',      rx:'cold.*multi|multi.*cold'},
-  {id:'chdot',  group:'Misc',  label:'Chaos DOT multi',     rx:'chaos.*multi|multi.*chaos'},
-  // Weapon bases
-  {id:'waxe',   group:'Weapon bases', label:'Axe',     rx:'axe'},
-  {id:'wmace',  group:'Weapon bases', label:'Mace',    rx:'mace'},
-  {id:'wsword', group:'Weapon bases', label:'Sword',   rx:'sword'},
-  {id:'wstaff', group:'Weapon bases', label:'Staff',   rx:'staff'},
-  {id:'wsceptre',group:'Weapon bases',label:'Sceptre', rx:'sceptre'},
-  {id:'wclaw',  group:'Weapon bases', label:'Claw',    rx:'claw'},
-  {id:'wbow',   group:'Weapon bases', label:'Bow',     rx:'bow'},
-  {id:'wwand',  group:'Weapon bases', label:'Wand',    rx:'wand'},
-  {id:'wdagger',group:'Weapon bases', label:'Dagger',  rx:'dagger'},
+  // Movement Speed — "runner" matches boot base names with MS (any tier).
+  // For specific % ranges, matches the mod text "X% increased Movement Speed".
+  {id:'ms10', group:'Movement speed', label:'10% (any MS)', rx:'unner'},
+  {id:'ms15', group:'Movement speed', label:'15%+',         rx:'[1][5-9]%.*ove|[2-9][0-9]%.*ove'},
+  // +1 wand mods — shortest unique substrings of the in-game mod text
+  // e.g. "+1 to Level of all Fire Spell Skill Gems" → "ll fi" is unique to fire variant
+  {id:'w1any',  group:'Wand +1',  label:'Any',       rx:'ll g'},
+  {id:'w1lit',  group:'Wand +1',  label:'Lightning', rx:'ll li'},
+  {id:'w1fire', group:'Wand +1',  label:'Fire',      rx:'ll fi'},
+  {id:'w1cold', group:'Wand +1',  label:'Cold',      rx:'ll co'},
+  {id:'w1phys', group:'Wand +1',  label:'Physical',  rx:'ll ph'},
+  {id:'w1chaos',group:'Wand +1',  label:'Chaos',     rx:'ll ch'},
+  // Misc mods
+  {id:'physdmg',group:'Misc',  label:'Physical damage',  rx:'ll g'},
+  {id:'fdot',   group:'Misc',  label:'Fire DOT multi',   rx:'re ov'},
+  {id:'cdot',   group:'Misc',  label:'Cold DOT multi',   rx:'ld ov'},
+  {id:'chdot',  group:'Misc',  label:'Chaos DOT multi',  rx:'os ov'},
+  // Weapon bases — base item names, no false positives
+  {id:'waxe',    group:'Weapon bases', label:'Axe',     rx:'axe'},
+  {id:'wmace',   group:'Weapon bases', label:'Mace',    rx:'mace'},
+  {id:'wsword',  group:'Weapon bases', label:'Sword',   rx:'sword'},
+  {id:'wstaff',  group:'Weapon bases', label:'Staff',   rx:'staff'},
+  {id:'wsceptre',group:'Weapon bases', label:'Sceptre', rx:'ceptr'},
+  {id:'wclaw',   group:'Weapon bases', label:'Claw',    rx:'claw'},
+  {id:'wbow',    group:'Weapon bases', label:'Bow',     rx:'bow'},
+  {id:'wwand',   group:'Weapon bases', label:'Wand',    rx:'wand'},
+  {id:'wdagger', group:'Weapon bases', label:'Dagger',  rx:'agge'},
 ];
 
 // persisted checkbox state
@@ -1067,6 +1129,13 @@ function modCheckboxesHtml(){
 function renderRegexPanel(){
   const el = document.getElementById('rxPanel'); if(!el) return;
 
+  // Recommendation banner
+  const bannerHtml = `<div class="rx-recommend-banner">
+    💡 Dla bardziej zaawansowanych regexów (mapy, itemy, uniq) polecam
+    <a href="https://poe.re" target="_blank" class="rx-recommend-link">poe.re</a>
+     — dedykowane narzędzie z gotowymi bazami modów.
+  </div>`;
+
   const extraMods = checkedModRxList();
 
   // Scopes: All, Gems-only, Links-only, then per-group
@@ -1139,7 +1208,7 @@ function renderRegexPanel(){
     </div>`;
   }
 
-  let html = '';
+  let html = bannerHtml;
 
   // Mod checkboxes always at top
   html += modCheckboxesHtml();
