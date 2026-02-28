@@ -225,7 +225,7 @@ code{background:var(--bg3);padding:2px 5px;border-radius:2px;font-size:11px;}
 .rx-row{display:flex;align-items:center;gap:6px;padding:5px 10px;border-bottom:1px solid rgba(37,37,37,.4);}
 .rx-row:last-child{border-bottom:none;}
 .rx-row-lbl{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--tx3);width:52px;flex-shrink:0;}
-.rx-row-val{flex:1;font-family:monospace;font-size:10px;color:var(--tx2);word-break:break-all;line-height:1.4;background:var(--bg);border:1px solid var(--bd);border-radius:2px;padding:3px 6px;}
+.rx-row-val{flex:1;font-family:monospace;font-size:10px;color:var(--tx2);word-break:break-all;overflow-wrap:break-word;white-space:normal;line-height:1.4;background:var(--bg);border:1px solid var(--bd);border-radius:2px;padding:3px 6px;min-width:0;}
 .rx-copy-btn{padding:2px 7px;border:1px solid var(--bd2);background:transparent;color:var(--tx3);font-family:inherit;font-size:9px;cursor:pointer;border-radius:2px;flex-shrink:0;transition:all .1s;white-space:nowrap;}
 .rx-copy-btn:hover{border-color:var(--blue);color:var(--blue);}
 .rx-copy-btn.copied{border-color:var(--green);color:var(--green);}
@@ -981,12 +981,18 @@ function linkRegex(counts){
   for(let i=0;i<counts.R;i++) sockets.push('r');
   for(let i=0;i<counts.G;i++) sockets.push('g');
   for(let i=0;i<counts.B;i++) sockets.push('b');
-  if(!sockets.length) return '';
-  const total = sockets.length;
-  // All unique permutations joined with -
-  const seen=new Set();
-  const perms=permutations(sockets).map(p=>p.join('-')).filter(p=>{if(seen.has(p))return false;seen.add(p);return true;});
-  return perms.join('|');
+  const total=sockets.length;
+  if(!total) return '';
+  // For <=4 unique-color combos use permutations (max 24), for larger use generic N-link
+  const uniqueColors=new Set(sockets).size;
+  if(total<=4 && uniqueColors>1){
+    const seen=new Set();
+    const perms=permutations(sockets).map(p=>p.join('-')).filter(p=>{if(seen.has(p))return false;seen.add(p);return true;});
+    return perms.join('|');
+  }
+  // Generic: any N-link item (doesn't filter by color but keeps regex short)
+  // e.g. for 4L: "([rgbw]-){3}[rgbw]"
+  return `([rgbw]-){${total-1}}[rgbw]`;
 }
 
 // ── Gem regex (shortest unique substrings) ────────────────────────────────────
@@ -1015,8 +1021,8 @@ function combinedRegex(groupId){
 const MOD_OPTIONS = [
   // Movement Speed — "runner" matches boot base names with MS (any tier).
   // For specific % ranges, matches the mod text "X% increased Movement Speed".
-  {id:'ms10', group:'Movement speed', label:'10% (any MS)', rx:'unner'},
-  {id:'ms15', group:'Movement speed', label:'15%+',         rx:'[1][5-9]%.*ove|[2-9][0-9]%.*ove'},
+  {id:'ms10', group:'Movement speed', label:'Any MS',  rx:'runn'},
+  {id:'ms15', group:'Movement speed', label:'15%+',    rx:'rint'},
   // +1 wand mods — shortest unique substrings of the in-game mod text
   // e.g. "+1 to Level of all Fire Spell Skill Gems" → "ll fi" is unique to fire variant
   {id:'w1any',  group:'Wand +1',  label:'Any',       rx:'ll g'},
@@ -1131,9 +1137,7 @@ function renderRegexPanel(){
 
   // Recommendation banner
   const bannerHtml = `<div class="rx-recommend-banner">
-    💡 Dla bardziej zaawansowanych regexów (mapy, itemy, uniq) polecam
-    <a href="https://poe.re" target="_blank" class="rx-recommend-link">poe.re</a>
-     — dedykowane narzędzie z gotowymi bazami modów.
+    For more regex options, I recommend <a href="https://poe.re" target="_blank" class="rx-recommend-link">poe.re</a> by veiset.
   </div>`;
 
   const extraMods = checkedModRxList();
