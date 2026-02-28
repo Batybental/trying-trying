@@ -467,7 +467,7 @@ function rowHtml(g,isDropOnly=false,isPinned=false){
   const costHtml=isDropOnly?`<span class="cost-dash">—</span>`:(g.vendorCost?orbHtml(g.vendorCost):`<span class="cost-dash">—</span>`);
   const icon=cnt>1?cnt:(iW?'✓':'');
   const wiki=`https://www.poewiki.net/wiki/${encodeURIComponent(g.key.replace(/ /g,'_'))}`;
-  return`<div class="gem-row ${iW?'in-list':''} ${gc(g)} ${isDropOnly?'drop-only':''} ${isPinned&&iW?'pinned-row':''}" data-key="${ea(g.key)}" ${!isDropOnly?`onclick="rowClick('${ea(g.key)}')"`:''}>
+  return`<div class="gem-row ${iW?'in-list':''} ${gc(g)} ${isDropOnly?'drop-only':''} ${isPinned&&iW?'pinned-row':''}" data-key="${esc(g.key)}" ${!isDropOnly?`onclick="rowClick('${ea(g.key)}')"`:''}>
     <div class="row-icon" style="${iW?'':'color:transparent'}">${icon}</div>
     <div class="name-cell"><a href="${wiki}" target="_blank" onclick="event.stopPropagation()">${esc(g.name)}</a></div>
     <div class="type-cell ${g.isSupport?'support':'skill'}">${g.isSupport?'Sup':'Skill'}</div>
@@ -606,6 +606,14 @@ function updateRowIcon(key){
   });
 }
 function toggleOwned(iid){ownedGems.has(iid)?ownedGems.delete(iid):ownedGems.add(iid);renderCart();saveState();}
+// Toggle owned for ALL instances of a gem (used in Acts view)
+function toggleOwnedByKey(key){
+  const iids=[...wantedGems.entries()].filter(([,v])=>v.key===key).map(([iid])=>iid);
+  if(!iids.length) return;
+  const allOwned=iids.every(iid=>ownedGems.has(iid));
+  iids.forEach(iid=>allOwned?ownedGems.delete(iid):ownedGems.add(iid));
+  renderCart();saveState();
+}
 function moveToGroup(iid,gid){if(!wantedGems.has(iid))return;wantedGems.set(iid,{...wantedGems.get(iid),groupId:gid});renderGroupsBar();renderCart();saveState();}
 function removeInstance(iid){const v=wantedGems.get(iid);wantedGems.delete(iid);ownedGems.delete(iid);if(v)updateRowIcon(v.key);renderGroupsBar();renderCart();if(notesMode)renderNotes();saveState();}
 
@@ -681,13 +689,16 @@ function renderCart(){
           let srcPills='';
           if(qEntry)srcPills+=`<span class="src-pill src-pill-quest">🟢 Quest · A${qEntry.act}${qEntry.quest?` · ${esc(qEntry.quest)}`:''}</span>`;
           if(vEntry)srcPills+=`<span class="src-pill src-pill-vendor">🟡 Vendor · A${vEntry.act}${vEntry.npc?` · ${esc(vEntry.npc)}`:''}</span>`;
-          h+=`<div class="act-gem-row ${inList?'in-list':''}" onclick="rowClick('${ea(gem.key)}')">
-            <div class="act-row-icon" style="${inList?'':'color:transparent'}">${icContent}</div>
+          // is any instance of this gem owned?
+          const anyOwned = iids.some(iid=>ownedGems.has(iid));
+          h+=`<div class="act-gem-row ${inList?'in-list':''} ${anyOwned?'act-owned':''}" data-key="${esc(gem.key)}" onclick="toggleOwnedByKey('${ea(gem.key)}')" style="${anyOwned?'opacity:.35':''}">
+            <div class="act-row-icon" style="${inList?'':'color:transparent'}">${anyOwned?'✕':icContent}</div>
             <div style="flex:1;min-width:0">
               <div style="display:flex;align-items:center;gap:5px;flex-wrap:wrap">
                 <span class="act-gem-name ${cc(gem)}">${esc(gem.name)}</span>
                 ${cntBadge}
                 <span class="act-gem-type ${gem.isSupport?'support':'skill'}">${gem.isSupport?'Sup':'Skill'}</span>
+                ${anyOwned?'<span style="font-size:10px;color:var(--green);margin-left:4px">✓ owned</span>':''}
                 <span style="font-size:10px;color:var(--tx3);margin-left:auto">${gem.vendorCost?orbHtml(gem.vendorCost):''}</span>
               </div>
               ${srcPills?`<div class="act-src-row">${srcPills}</div>`:''}
