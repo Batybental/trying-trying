@@ -511,9 +511,95 @@ function deleteGroup(gid){
 function rowClick(key){
   const target=(activeGroupId==='__all__')?'__none__':activeGroupId;
   const existing=[...wantedGems.entries()].find(([,v])=>v.key===key&&v.groupId===target);
-  if(existing){wantedGems.delete(existing[0]);ownedGems.delete(existing[0]);}
-  else{const c=[...wantedGems.values()].filter(v=>v.key===key).length;wantedGems.set(key+'#'+(c+1),{key,groupId:target});}
-  updateRowIcon(key);renderGroupsBar();renderCart();if(notesMode)renderNotes();saveState();
+  if(existing){
+    wantedGems.delete(existing[0]);ownedGems.delete(existing[0]);
+    updateRowIcon(key);
+    pinRowDOM(key, false);
+  } else {
+    const cnt=[...wantedGems.values()].filter(v=>v.key===key).length;
+    wantedGems.set(key+'#'+(cnt+1),{key,groupId:target});
+    updateRowIcon(key);
+    pinRowDOM(key, true);
+  }
+  renderGroupsBar();renderCart();if(notesMode)renderNotes();saveState();
+}
+
+// Move a gem row to/from the pinned section without re-rendering the whole list
+function pinRowDOM(key, pin){
+  const list = document.getElementById('gemList');
+  if(!list) return;
+
+  // Find the row for this key (first occurrence — there may be duplicates in pinned+all)
+  // We'll work with all rows for this key
+  const rows = [...list.querySelectorAll(`[data-key="${ea(key)}"]`)];
+  if(!rows.length) return;
+
+  // Ensure pin-sep exists (or create it)
+  let sep = list.querySelector('.pin-sep');
+
+  if(pin){
+    // Check if already pinned (row is before sep or sep doesn't exist yet)
+    const firstRow = rows[0];
+    const firstChild = list.firstElementChild;
+
+    if(!sep){
+      sep = document.createElement('div');
+      sep.className = 'pin-sep';
+      sep.textContent = 'All gems';
+      // Insert sep before first non-pinned row
+      // For now: insert after any already-pinned rows
+      const alreadyPinned = [...list.querySelectorAll('.pinned-row')];
+      if(alreadyPinned.length){
+        const last = alreadyPinned[alreadyPinned.length-1];
+        last.after(sep);
+      } else {
+        list.prepend(sep);
+      }
+    }
+
+    // Move row before the sep (into pinned zone)
+    firstRow.classList.add('pinned-row');
+    sep.before(firstRow);
+
+  } else {
+    // Unpinning: move row back after sep
+    const stillPinned = [...wantedGems.values()].filter(v=>v.key===key).length > 0;
+    if(!stillPinned){
+      // Remove from pinned zone — put it back after sep in alpha order
+      rows.forEach(r => r.classList.remove('pinned-row'));
+      if(sep){
+        // Find correct alpha position after sep
+        const afterSep = [];
+        let el = sep.nextElementSibling;
+        while(el && !el.classList.contains('list-section-head')){
+          afterSep.push(el);
+          el = el.nextElementSibling;
+        }
+        const row = rows[0];
+        const rowName = key.toLowerCase();
+        let inserted = false;
+        for(const sibling of afterSep){
+          const sibKey = sibling.dataset?.key;
+          if(sibKey && sibKey.toLowerCase() > rowName){
+            sibling.before(row);
+            inserted = true;
+            break;
+          }
+        }
+        if(!inserted){
+          // Put before drop-only section or at end
+          const dropSec = list.querySelector('.list-section-head');
+          if(dropSec) dropSec.before(row);
+          else if(el) el.before(row);
+          else list.appendChild(row);
+        }
+      }
+    }
+
+    // Remove sep if no more pinned rows
+    const remainingPinned = [...list.querySelectorAll('.pinned-row')];
+    if(sep && remainingPinned.length === 0) sep.remove();
+  }
 }
 function updateRowIcon(key){
   const cnt=[...wantedGems.values()].filter(v=>v.key===key).length;
